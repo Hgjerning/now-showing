@@ -18,5 +18,5 @@ Part of [Now Showing](https://hgjerning.github.io/now-showing) · read the artic
 
 Rebuild: `python code/run_bubbles.py && python code/reported_extra.py && python code/make_figures.py && python code/build_article.py && python code/make_pdfs.py`
 
-Before publishing: push this folder to `Hgjerning/now-showing` as `titanic/` (page: hgjerning.github.io/now-showing/titanic). Publication slot: Tuesday 6 October 2026 (No. 1). The data run to 18 September 2026;
-refresh the panel and re-run once, just before posting. A refresh is a new trial if any verdict is re-read.
+Before publishing: push this folder to `Hgjerning/now-showing` as `titanic/` (page: hgjerning.github.io/now-showing/titanic). Publication slot: Tuesday 6 October 2026 (No. 1). The data run to 18 September 2026, as pre-registered.
+No refresh before posting: a refresh would be a new trial, and C1-3 (p 0.06) is borderline.
