@@ -1,0 +1,30 @@
+# never commit licensed or per-stock data
+_private_data/
+*/data_private/
+*/data/*.csv
+!*/data/us_presidential_elections.csv
+!*/data/fed_days_long.csv
+*.pkl
+*/results/*stock*.csv
+*/results/scores_panel.csv
+*/results/gsy_events100.csv
+FACTSHEET_*.md
+__pycache__/
+.cache/
+
+# Unreleased articles: delete ONE line each Monday before the post (then commit and push)
+/back-to-the-future/
+/groundhog-day/
+/magnificent-seven/
+/viva-las-vegas/
+/usual-suspects/
+/minority-report/
+/under-pressure/
+/video-killed-the-radio-star/
+/miracle-on-34th-street/
+/inception/
+/money-for-nothing/
+/a-beautiful-mind/
+/stormy-weather/
+/free-fallin/
+/good-bad-ugly/

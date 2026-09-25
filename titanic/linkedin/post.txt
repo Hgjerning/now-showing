@@ -1,0 +1,17 @@
+TITANIC: every bubble was unsinkable. Is this one?
+
+Over the last five years, an equal-weight basket of eight AI leaders (NVIDIA, Broadcom, AMD, Microsoft, Meta, Alphabet, Amazon, Oracle) rose 305%. The Nikkei rose 237% into its 1989 peak. The Nasdaq rose 460% into 2000.
+
+So I ran the test that dated both of those bubbles in real time: Phillips-Shi-Yu's GSADF, which asks whether a price is rising faster than any random walk can explain. It caught Tokyo and the Nasdaq before their peaks. (It missed 1929. My data start too late.)
+
+On the AI basket today: not explosive (p = 0.06), and nothing flagged since 2021. NVIDIA alone was explosive in 2024-25 and has since cooled. The Nasdaq-100: nothing.
+
+Then the part that matters for a portfolio. Of 3,053 US stocks that doubled in two years, 48% then fell 40% within the next two, against 38% for all stocks. After a 150% run: 58%. Yet average returns afterwards stayed positive.
+
+Today 3 of the 8 AI names meet that doubling test: AMD (+241%), Alphabet (+112%), Broadcom (+111%).
+
+So: a boom with bubble-sized gains, but not a bubble-shaped path. The statistics point to crash risk in individual names rather than a collapse of the whole group.
+
+All three tests were pre-registered before I looked. Code, tables and the pre-registration: hgjerning.github.io/now-showing/titanic
+
+#AI #investing #markets #bubbles #statistics
