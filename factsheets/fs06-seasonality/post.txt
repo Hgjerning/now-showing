@@ -1,0 +1,14 @@
+A stock that did well relative to others in, say, March tends to do well again in March in later years, at annual lags up to 20 years. Heston & Sadka (2008) found it in US stocks 1965–2002; Keloharju, Linnainmaa & Nyberg (2016) found the same across markets and asset classes.
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (stocks with the highest past returns in the coming calendar month minus stocks with the lowest): -12.7% to +3.1% a year, positive in 1 of six markets. Adjusted for market beta: -12.5% to +2.6%.
+Long-only (stocks with the highest past returns in the coming calendar month): a better Sharpe than owning all the stocks equally in 1 of six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.62 to -0.56.
+
+360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs06-seasonality
+
+#investing #quant #factorinvesting #backtesting

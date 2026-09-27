@@ -1,0 +1,481 @@
+{
+ "n": 205,
+ "z_bonf": 3.6685788865873517,
+ "var_sr_month": 0.020851904511252236,
+ "by": [
+  {
+   "fs": "FS01",
+   "trials": 18,
+   "local_pass": 3,
+   "bonf": 0,
+   "bh": 3
+  },
+  {
+   "fs": "FS02",
+   "trials": 16,
+   "local_pass": 0,
+   "bonf": 0,
+   "bh": 1
+  },
+  {
+   "fs": "FS03",
+   "trials": 15,
+   "local_pass": 2,
+   "bonf": 1,
+   "bh": 2
+  },
+  {
+   "fs": "FS04",
+   "trials": 15,
+   "local_pass": 1,
+   "bonf": 0,
+   "bh": 1
+  },
+  {
+   "fs": "FS06",
+   "trials": 15,
+   "local_pass": 1,
+   "bonf": 0,
+   "bh": 3
+  },
+  {
+   "fs": "FS07",
+   "trials": 15,
+   "local_pass": 1,
+   "bonf": 0,
+   "bh": 1
+  },
+  {
+   "fs": "FS08",
+   "trials": 15,
+   "local_pass": 2,
+   "bonf": 0,
+   "bh": 2
+  },
+  {
+   "fs": "FS09",
+   "trials": 15,
+   "local_pass": 3,
+   "bonf": 1,
+   "bh": 3
+  },
+  {
+   "fs": "FS10",
+   "trials": 13,
+   "local_pass": 2,
+   "bonf": 1,
+   "bh": 2
+  },
+  {
+   "fs": "FS11",
+   "trials": 15,
+   "local_pass": 0,
+   "bonf": 0,
+   "bh": 0
+  },
+  {
+   "fs": "FS12",
+   "trials": 15,
+   "local_pass": 5,
+   "bonf": 2,
+   "bh": 6
+  },
+  {
+   "fs": "FS13",
+   "trials": 38,
+   "local_pass": 1,
+   "bonf": 0,
+   "bh": 2
+  }
+ ],
+ "dsr": [
+  {
+   "fs": "FS10",
+   "strategy": "Betting against beta",
+   "test": "long-only alpha vs EW, UK",
+   "t": 4.137193995857702,
+   "sr_ann": 0.9729470627768334,
+   "sr0_ann": 1.3874108387725768,
+   "dsr": 0.08484266579786076,
+   "T": 163,
+   "skew": -0.5493774352023564,
+   "kurt": 4.8275503179735475,
+   "sr0_null_ann": 0.7525552971667239,
+   "dsr_null": 0.767368949343884
+  },
+  {
+   "fs": "FS09",
+   "strategy": "52-week high",
+   "test": "long-only alpha vs EW, EU",
+   "t": 3.8544223600770176,
+   "sr_ann": 0.9882101550462828,
+   "sr0_ann": 1.3874108387725768,
+   "dsr": 0.08244677763631886,
+   "T": 163,
+   "skew": -0.1921589315617472,
+   "kurt": 3.9785462885617786,
+   "sr0_null_ann": 0.7525552971667239,
+   "dsr_null": 0.7938440478451888
+  },
+  {
+   "fs": "FS03",
+   "strategy": "Momentum",
+   "test": "long-only alpha vs EW, UK",
+   "t": 3.678142370508116,
+   "sr_ann": 0.9357317860844696,
+   "sr0_ann": 1.3874108387725768,
+   "dsr": 0.05883707614074479,
+   "T": 163,
+   "skew": -0.2839141504356815,
+   "kurt": 3.652295826798921,
+   "sr0_null_ann": 0.7525552971667239,
+   "dsr_null": 0.7371296405074067
+  },
+  {
+   "fs": "FS03",
+   "strategy": "Momentum",
+   "test": "long-only alpha vs EW, World",
+   "t": 3.6639120358963555,
+   "sr_ann": 0.8122689574683823,
+   "sr0_ann": 1.3874108387725768,
+   "dsr": 0.02391603941393977,
+   "T": 163,
+   "skew": -0.2976842584284008,
+   "kurt": 6.13568061689552,
+   "sr0_null_ann": 0.7525552971667239,
+   "dsr_null": 0.5813910184003929
+  },
+  {
+   "fs": "FS10",
+   "strategy": "Betting against beta",
+   "test": "L/S net mean, UK",
+   "t": 3.157800790779227,
+   "sr_ann": 0.8065686561856319,
+   "sr0_ann": 1.3874108387725768,
+   "dsr": 0.0216898579406445,
+   "T": 163,
+   "skew": -0.29868667303622687,
+   "kurt": 4.4404762807604365,
+   "sr0_null_ann": 0.7525552971667239,
+   "dsr_null": 0.5745013237929562
+  },
+  {
+   "fs": "FS09",
+   "strategy": "52-week high",
+   "test": "long-only alpha vs EW, DK",
+   "t": 3.0958600655967055,
+   "sr_ann": 0.7534161502125303,
+   "sr0_ann": 1.3874108387725768,
+   "dsr": 0.010476975887500378,
+   "T": 163,
+   "skew": 0.03224249880497957,
+   "kurt": 3.111055488575606,
+   "sr0_null_ann": 0.7525552971667239,
+   "dsr_null": 0.5012506665757621
+  }
+ ],
+ "n_pos": 9,
+ "n_neg": 17,
+ "n_pos_bonf": 3,
+ "pos_list": [
+  "Momentum: long-only alpha vs EW, UK",
+  "Momentum: long-only alpha vs EW, World",
+  "Low volatility: long-only alpha vs EW, UK",
+  "Size: long-only alpha vs EW, UK",
+  "52-week high: long-only alpha vs EW, EU",
+  "52-week high: long-only alpha vs EW, DK",
+  "52-week high: X3 + volatility targeting vs previous step, pooled holdout Sharpe",
+  "Betting against beta: L/S net mean, UK",
+  "Betting against beta: long-only alpha vs EW, UK"
+ ],
+ "passes": [
+  {
+   "fs": "FS01",
+   "strategy": "Turtle Traders",
+   "kind": "primary",
+   "test": "L/S net mean, US",
+   "t": -3.5871774266960603,
+   "p": 0.00033427687632991976,
+   "sharpe": -0.8617913447097046,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS02",
+   "strategy": "Lottery (MAX)",
+   "kind": "primary",
+   "test": "L/S net mean, US",
+   "t": -2.7499541183380507,
+   "p": 0.0059603609782756806,
+   "sharpe": -0.8084919130680329,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS01",
+   "strategy": "Turtle Traders",
+   "kind": "primary",
+   "test": "L/S net mean, SCANDI",
+   "t": -3.3234909385283165,
+   "p": 0.0008889831087910416,
+   "sharpe": -0.8322014416742042,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS01",
+   "strategy": "Turtle Traders",
+   "kind": "primary",
+   "test": "L/S net mean, World",
+   "t": -2.996203012706676,
+   "p": 0.002733643739177838,
+   "sharpe": -0.7919288911162293,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS03",
+   "strategy": "Momentum",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, UK",
+   "t": 3.678142370508116,
+   "p": 0.00023493881626968083,
+   "sharpe": 1.1519863618349404,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS03",
+   "strategy": "Momentum",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, World",
+   "t": 3.6639120358963555,
+   "p": 0.0002483921206843931,
+   "sharpe": 1.1031916236034782,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS04",
+   "strategy": "Low volatility",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, UK",
+   "t": 2.963975927065648,
+   "p": 0.003036920433200141,
+   "sharpe": 1.0196937648766091,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS06",
+   "strategy": "Same-month seasonality",
+   "kind": "primary",
+   "test": "L/S net mean, US",
+   "t": -2.809311384950817,
+   "p": 0.00496476012151037,
+   "sharpe": -0.6667470732896614,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS06",
+   "strategy": "Same-month seasonality",
+   "kind": "primary",
+   "test": "L/S net mean, EU",
+   "t": -3.600510119915231,
+   "p": 0.00031759346649984366,
+   "sharpe": -0.8262839288441246,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS06",
+   "strategy": "Same-month seasonality",
+   "kind": "primary",
+   "test": "L/S net mean, DK",
+   "t": -2.7355652480920414,
+   "p": 0.006227323922371797,
+   "sharpe": -0.8507339506852528,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS07",
+   "strategy": "Size",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, UK",
+   "t": 2.950518969347349,
+   "p": 0.0031724056328144012,
+   "sharpe": 1.0591835799708085,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS08",
+   "strategy": "Short-term reversal",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, US",
+   "t": -3.134683988757695,
+   "p": 0.0017203933066232135,
+   "sharpe": 0.5306880255802817,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS08",
+   "strategy": "Short-term reversal",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, World",
+   "t": -3.149798818490415,
+   "p": 0.001633829288225641,
+   "sharpe": 0.4460831859896496,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS09",
+   "strategy": "52-week high",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, EU",
+   "t": 3.8544223600770176,
+   "p": 0.00011600318771676221,
+   "sharpe": 1.2092625883316066,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS09",
+   "strategy": "52-week high",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, DK",
+   "t": 3.0958600655967055,
+   "p": 0.0019624294961442246,
+   "sharpe": 1.0933649451239074,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS09",
+   "strategy": "52-week high",
+   "kind": "fix (holdout)",
+   "test": "X3 + volatility targeting vs previous step, pooled holdout Sharpe",
+   "t": 3.352850132855149,
+   "p": 0.0007998400319936012,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS10",
+   "strategy": "Betting against beta",
+   "kind": "primary",
+   "test": "L/S net mean, UK",
+   "t": 3.157800790779227,
+   "p": 0.001589641465876701,
+   "sharpe": 0.8065686561856319,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS10",
+   "strategy": "Betting against beta",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, UK",
+   "t": 4.137193995857702,
+   "p": 3.5157885162284686e-05,
+   "sharpe": 1.0718342212876228,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS12",
+   "strategy": "Buy at the 52-week low",
+   "kind": "primary",
+   "test": "L/S net mean, US",
+   "t": -3.396079119380925,
+   "p": 0.0006835859691742829,
+   "sharpe": -0.8722951104213462,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS12",
+   "strategy": "Buy at the 52-week low",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, US",
+   "t": -2.758914290118641,
+   "p": 0.005799374324351625,
+   "sharpe": 0.5206544927966568,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS12",
+   "strategy": "Buy at the 52-week low",
+   "kind": "primary",
+   "test": "L/S net mean, EU",
+   "t": -3.3684671010638154,
+   "p": 0.0007558741734565722,
+   "sharpe": -0.9647135258214701,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS12",
+   "strategy": "Buy at the 52-week low",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, EU",
+   "t": -4.775095325217421,
+   "p": 1.7962214906575014e-06,
+   "sharpe": 0.16421747016825539,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS12",
+   "strategy": "Buy at the 52-week low",
+   "kind": "primary",
+   "test": "L/S net mean, World",
+   "t": -3.5818287991971864,
+   "p": 0.000341197367546453,
+   "sharpe": -0.9147612163200057,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS12",
+   "strategy": "Buy at the 52-week low",
+   "kind": "primary",
+   "test": "long-only alpha vs EW, World",
+   "t": -3.806782858101452,
+   "p": 0.00014078625305868897,
+   "sharpe": 0.41934098841241296,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS13",
+   "strategy": "Low skewness",
+   "kind": "battery",
+   "test": "beta-neutral, financed, 6-market average",
+   "t": -2.8230659204590416,
+   "p": 0.0047566790186506225,
+   "sharpe": -0.7972099376419837,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS13",
+   "strategy": "Same-month seasonality",
+   "kind": "battery",
+   "test": "beta-neutral, financed, 6-market average",
+   "t": -3.3911360346991444,
+   "p": 0.0006960354385983081,
+   "sharpe": -0.9360389956152902,
+   "bonferroni": false,
+   "bh": true
+  }
+ ],
+ "n_own": 167,
+ "n_battery": 38
+}

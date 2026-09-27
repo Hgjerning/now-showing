@@ -1,0 +1,206 @@
+fs,strategy,kind,test,t,p,sharpe,bonferroni,bh
+FS01,Turtle Traders,primary,"L/S net mean, US",-3.5871774266960603,0.00033427687632991976,-0.8617913447097046,False,True
+FS01,Turtle Traders,primary,"long-only alpha vs EW, US",-1.5814753637407781,0.11376938763413147,0.27333683851407103,False,False
+FS02,Lottery (MAX),primary,"L/S net mean, US",-2.7499541183380507,0.0059603609782756806,-0.8084919130680329,False,True
+FS02,Lottery (MAX),primary,"long-only alpha vs EW, US",-0.2940349976854566,0.7687311605140643,0.7964454677297262,False,False
+FS01,Turtle Traders,primary,"L/S net mean, EU",-2.151493452100807,0.031437272094381186,-0.47051457872262054,False,False
+FS01,Turtle Traders,primary,"long-only alpha vs EW, EU",-0.1903570830848679,0.8490293254585415,0.43511937464139167,False,False
+FS02,Lottery (MAX),primary,"L/S net mean, EU",-0.40745464648770136,0.6836740981401035,-0.11108546394702624,False,False
+FS02,Lottery (MAX),primary,"long-only alpha vs EW, EU",1.3307765636863813,0.18326254165026667,0.8531150083355434,False,False
+FS01,Turtle Traders,primary,"L/S net mean, UK",-2.1001224871397035,0.03571806766157981,-0.529486502231766,False,False
+FS01,Turtle Traders,primary,"long-only alpha vs EW, UK",-0.025405997010968375,0.979731127730137,0.49379524113300133,False,False
+FS02,Lottery (MAX),primary,"L/S net mean, UK",-0.7680244101751986,0.44247268288331654,-0.2292633471809279,False,False
+FS02,Lottery (MAX),primary,"long-only alpha vs EW, UK",2.34052053437785,0.019256879423850126,0.9518694301643807,False,False
+FS01,Turtle Traders,primary,"L/S net mean, DK",-0.9923794793810962,0.3210124453222969,-0.25341963093236447,False,False
+FS01,Turtle Traders,primary,"long-only alpha vs EW, DK",-1.495855905938667,0.13469120898153153,0.25221115912270503,False,False
+FS02,Lottery (MAX),primary,"L/S net mean, DK",-1.145143320617046,0.2521497927637366,-0.27819211779948766,False,False
+FS02,Lottery (MAX),primary,"long-only alpha vs EW, DK",-0.7720059165712426,0.4401109232661331,0.6110371018006804,False,False
+FS01,Turtle Traders,primary,"L/S net mean, SCANDI",-3.3234909385283165,0.0008889831087910416,-0.8322014416742042,False,True
+FS01,Turtle Traders,primary,"long-only alpha vs EW, SCANDI",-1.700981590649591,0.0889464441220511,0.23327915455407314,False,False
+FS02,Lottery (MAX),primary,"L/S net mean, SCANDI",-0.6735183010994403,0.5006176097486907,-0.18348066908608207,False,False
+FS02,Lottery (MAX),primary,"long-only alpha vs EW, SCANDI",-0.4669284175560871,0.6405510929820066,0.7334549790857756,False,False
+FS01,Turtle Traders,primary,"L/S net mean, World",-2.996203012706676,0.002733643739177838,-0.7919288911162293,False,True
+FS01,Turtle Traders,primary,"long-only alpha vs EW, World",-0.5975599877709525,0.5501335690215743,0.4818745463270369,False,False
+FS02,Lottery (MAX),primary,"L/S net mean, World",-2.5395389247299893,0.011099869299914689,-0.6869844314227472,False,False
+FS02,Lottery (MAX),primary,"long-only alpha vs EW, World",-0.3847896795152056,0.7003932460670661,0.6989581967593174,False,False
+FS01,Turtle Traders,fix (holdout),"T1 long-only vs previous step, pooled holdout Sharpe",2.652137327754846,0.007998400319936013,,False,False
+FS01,Turtle Traders,fix (holdout),"T2 + System 2 only vs previous step, pooled holdout Sharpe",0.722306627994397,0.47010597880423916,,False,False
+FS01,Turtle Traders,fix (holdout),"T3 + 4N stop vs previous step, pooled holdout Sharpe",1.4963092513830412,0.13457308538292342,,False,False
+FS01,Turtle Traders,fix (holdout),"T4 + market trend filter vs previous step, pooled holdout Sharpe",0.9511431877278027,0.34153169366126773,,False,False
+FS01,Turtle Traders,fix (holdout),final vs EW holdout (pooled Sharpe difference),-0.6401184717982885,0.5220955808838232,,False,False
+FS01,Turtle Traders,fix (holdout),T3 vs EW holdout (pooled Sharpe difference),-0.43678463029066367,0.6622675464907019,,False,False
+FS02,Lottery (MAX),fix (holdout),"L1 beta-neutral vs previous step, pooled holdout Sharpe",1.1543655567845763,0.2483503299340132,,False,False
+FS02,Lottery (MAX),fix (holdout),"L2 + vol-scaled MAX vs previous step, pooled holdout Sharpe",-0.039857971014665164,0.9682063587282543,,False,False
+FS02,Lottery (MAX),fix (holdout),"L3 + turnover buffer vs previous step, pooled holdout Sharpe",2.186292108158914,0.028794241151769647,,False,False
+FS02,Lottery (MAX),fix (holdout),L1 vs zero holdout,-1.2701611154004044,0.2040272454783223,,False,False
+FS03,Momentum,primary,"L/S net mean, US",1.3780799511224098,0.16817860483921332,0.3203796396710179,False,False
+FS03,Momentum,primary,"long-only alpha vs EW, US",2.3491928319562922,0.0188141603830696,1.0772509501077163,False,False
+FS03,Momentum,primary,"L/S net mean, EU",1.3075879114367726,0.1910131192947686,0.33710602137485607,False,False
+FS03,Momentum,primary,"long-only alpha vs EW, EU",1.7588106487753947,0.07860967547382436,0.9600090316436912,False,False
+FS03,Momentum,primary,"L/S net mean, UK",1.5905965390922179,0.11170040386639357,0.42905875340291627,False,False
+FS03,Momentum,primary,"long-only alpha vs EW, UK",3.678142370508116,0.00023493881626968083,1.1519863618349404,True,True
+FS03,Momentum,primary,"L/S net mean, DK",1.1954716256756388,0.2319028157820695,0.3087789645740313,False,False
+FS03,Momentum,primary,"long-only alpha vs EW, DK",2.6630604810881513,0.007743349506374786,1.051195623046728,False,False
+FS03,Momentum,primary,"L/S net mean, SCANDI",-0.7062423809957473,0.480037418639506,-0.18677372828781477,False,False
+FS03,Momentum,primary,"long-only alpha vs EW, SCANDI",0.2382873331523052,0.8116582451174708,0.788008571005099,False,False
+FS03,Momentum,primary,"L/S net mean, World",1.6625442580647092,0.09640369706593432,0.41299245128281037,False,False
+FS03,Momentum,primary,"long-only alpha vs EW, World",3.6639120358963555,0.0002483921206843931,1.1031916236034782,False,True
+FS03,Momentum,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",1.2282420206155453,0.21935612877424515,,False,False
+FS03,Momentum,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",0.9859958018436827,0.3241351729654069,,False,False
+FS03,Momentum,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",1.764876743378419,0.07758448310337933,,False,False
+FS04,Low volatility,primary,"L/S net mean, US",-2.2949978828040174,0.021733245630586095,-0.5975167702125991,False,False
+FS04,Low volatility,primary,"long-only alpha vs EW, US",1.0773906005952563,0.28130580153260243,0.8858231889019924,False,False
+FS04,Low volatility,primary,"L/S net mean, EU",-0.2940218367511013,0.7687412171752079,-0.07908152095451057,False,False
+FS04,Low volatility,primary,"long-only alpha vs EW, EU",2.1309024471935736,0.033097179746085725,1.0268022725182004,False,False
+FS04,Low volatility,primary,"L/S net mean, UK",-1.051210348978783,0.293161991112191,-0.29912375043217665,False,False
+FS04,Low volatility,primary,"long-only alpha vs EW, UK",2.963975927065648,0.003036920433200141,1.0196937648766091,False,True
+FS04,Low volatility,primary,"L/S net mean, DK",-0.2850911484537343,0.7755743112981011,-0.08208002201217848,False,False
+FS04,Low volatility,primary,"long-only alpha vs EW, DK",2.0087235336789657,0.04456646150611632,0.9782105639892552,False,False
+FS04,Low volatility,primary,"L/S net mean, SCANDI",-0.9157520382457108,0.35979696437990616,-0.26114950368040096,False,False
+FS04,Low volatility,primary,"long-only alpha vs EW, SCANDI",1.6610212070990582,0.09670918757424829,1.0239841442198554,False,False
+FS04,Low volatility,primary,"L/S net mean, World",-1.8569594721052614,0.06331692027694702,-0.48027631824451616,False,False
+FS04,Low volatility,primary,"long-only alpha vs EW, World",1.5552134219977645,0.11989524873525603,0.8898346437593356,False,False
+FS04,Low volatility,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",1.7842372428511402,0.07438512297540492,,False,False
+FS04,Low volatility,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",-0.08984005556273343,0.9284143171365726,,False,False
+FS04,Low volatility,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",1.634377717267655,0.10217956408718257,,False,False
+FS06,Same-month seasonality,primary,"L/S net mean, US",-2.809311384950817,0.00496476012151037,-0.6667470732896614,False,True
+FS06,Same-month seasonality,primary,"long-only alpha vs EW, US",-2.183672824354542,0.02898629806277353,0.658807167327677,False,False
+FS06,Same-month seasonality,primary,"L/S net mean, EU",-3.600510119915231,0.00031759346649984366,-0.8262839288441246,False,True
+FS06,Same-month seasonality,primary,"long-only alpha vs EW, EU",-2.504871927067125,0.012249574022886067,0.42053660093564993,False,False
+FS06,Same-month seasonality,primary,"L/S net mean, UK",0.6438287725055076,0.5196864738080276,0.2167331888310214,False,False
+FS06,Same-month seasonality,primary,"long-only alpha vs EW, UK",0.8133179788140509,0.4160357716648304,0.7844106339900727,False,False
+FS06,Same-month seasonality,primary,"L/S net mean, DK",-2.7355652480920414,0.006227323922371797,-0.8507339506852528,False,True
+FS06,Same-month seasonality,primary,"long-only alpha vs EW, DK",-2.6160284829378866,0.008895913643946374,0.3858557201955695,False,False
+FS06,Same-month seasonality,primary,"L/S net mean, SCANDI",-2.1280846500799857,0.03333006575999842,-0.6039964997011164,False,False
+FS06,Same-month seasonality,primary,"long-only alpha vs EW, SCANDI",-0.9209638155639746,0.3570693189349474,0.6938701929808951,False,False
+FS06,Same-month seasonality,primary,"L/S net mean, World",-1.1681409315800735,0.2427499221294085,-0.30387930708951044,False,False
+FS06,Same-month seasonality,primary,"long-only alpha vs EW, World",-0.49806380299871084,0.6184390723940199,0.7101304605429027,False,False
+FS06,Same-month seasonality,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",-0.10545245290354878,0.9160167966406718,,False,False
+FS06,Same-month seasonality,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",2.175481123188277,0.02959408118376325,,False,False
+FS06,Same-month seasonality,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",1.3710289652803527,0.17036592681463708,,False,False
+FS07,Size,primary,"L/S net mean, US",0.16594607910104,0.8681993843136699,0.036650297551801055,False,False
+FS07,Size,primary,"long-only alpha vs EW, US",-1.325276669959903,0.1850794040041439,0.7735556688326353,False,False
+FS07,Size,primary,"L/S net mean, EU",-0.6443335880375122,0.5193591396833814,-0.1849460754786713,False,False
+FS07,Size,primary,"long-only alpha vs EW, EU",-0.8467806610535931,0.3971173894373867,0.5685975291281563,False,False
+FS07,Size,primary,"L/S net mean, UK",1.4260510110138727,0.1538536181003627,0.4528069809125018,False,False
+FS07,Size,primary,"long-only alpha vs EW, UK",2.950518969347349,0.0031724056328144012,1.0591835799708085,False,True
+FS07,Size,primary,"L/S net mean, DK",-0.7915740868437482,0.42860906142895905,-0.21024465420004348,False,False
+FS07,Size,primary,"long-only alpha vs EW, DK",-0.6289396521671676,0.5293885653583155,0.6443352927322469,False,False
+FS07,Size,primary,"L/S net mean, SCANDI",1.0688444849576306,0.2851397505485398,0.2534965554462917,False,False
+FS07,Size,primary,"long-only alpha vs EW, SCANDI",0.8317652742603537,0.40554144840395057,0.9052346611489048,False,False
+FS07,Size,primary,"L/S net mean, World",0.07271902666398697,0.9420297075451329,0.019827061485904948,False,False
+FS07,Size,primary,"long-only alpha vs EW, World",-1.0398669668334626,0.29840171134981164,0.7018716138008004,False,False
+FS07,Size,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",-0.026317371620927413,0.979004199160168,,False,False
+FS07,Size,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",1.8721362034321287,0.0611877624475105,,False,False
+FS07,Size,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",-0.04688174370768102,0.9626074785042992,,False,False
+FS08,Short-term reversal,primary,"L/S net mean, US",-1.580842453869132,0.11391406481969923,-0.359491377427619,False,False
+FS08,Short-term reversal,primary,"long-only alpha vs EW, US",-3.134683988757695,0.0017203933066232135,0.5306880255802817,False,True
+FS08,Short-term reversal,primary,"L/S net mean, EU",-2.251202364159468,0.024372723237876093,-0.6074942671762079,False,False
+FS08,Short-term reversal,primary,"long-only alpha vs EW, EU",-2.583350411532249,0.009784588790890725,0.36641851559134625,False,False
+FS08,Short-term reversal,primary,"L/S net mean, UK",-0.5805608209352402,0.5615364841763313,-0.17043616536431097,False,False
+FS08,Short-term reversal,primary,"long-only alpha vs EW, UK",-1.3029902352698781,0.19257809528075454,0.4415209061330814,False,False
+FS08,Short-term reversal,primary,"L/S net mean, DK",-1.6089859148148595,0.10761942154328641,-0.37559792046671125,False,False
+FS08,Short-term reversal,primary,"long-only alpha vs EW, DK",-1.655437135328652,0.09783585843882969,0.5765305488227456,False,False
+FS08,Short-term reversal,primary,"L/S net mean, SCANDI",0.02091828522966234,0.9833108403112114,0.00577999577903931,False,False
+FS08,Short-term reversal,primary,"long-only alpha vs EW, SCANDI",-0.3752756844974751,0.707455447885551,0.7582020889497818,False,False
+FS08,Short-term reversal,primary,"L/S net mean, World",-1.8454088925250929,0.06497808054625187,-0.49429693055466645,False,False
+FS08,Short-term reversal,primary,"long-only alpha vs EW, World",-3.149798818490415,0.001633829288225641,0.4460831859896496,False,True
+FS08,Short-term reversal,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",-0.15093879736839452,0.8800239952009599,,False,False
+FS08,Short-term reversal,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",1.7891834076081374,0.07358528294341132,,False,False
+FS08,Short-term reversal,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",1.1984192315220858,0.23075384923015396,,False,False
+FS09,52-week high,primary,"L/S net mean, US",-1.189985842055837,0.23405195674559365,-0.2754059726659003,False,False
+FS09,52-week high,primary,"long-only alpha vs EW, US",-0.07129122743342138,0.9431659769596916,0.7930663241027198,False,False
+FS09,52-week high,primary,"L/S net mean, EU",0.8443507210319006,0.398473450856625,0.19731167989627013,False,False
+FS09,52-week high,primary,"long-only alpha vs EW, EU",3.8544223600770176,0.00011600318771676221,1.2092625883316066,True,True
+FS09,52-week high,primary,"L/S net mean, UK",-0.12643741273543047,0.8993856886934821,-0.033236677046124756,False,False
+FS09,52-week high,primary,"long-only alpha vs EW, UK",1.8775852447482286,0.06043792581576213,0.9298544102462073,False,False
+FS09,52-week high,primary,"L/S net mean, DK",1.3927502236692044,0.1636953353368611,0.32668990578921375,False,False
+FS09,52-week high,primary,"long-only alpha vs EW, DK",3.0958600655967055,0.0019624294961442246,1.0933649451239074,False,True
+FS09,52-week high,primary,"L/S net mean, SCANDI",-0.43786119048152755,0.6614869103337973,-0.10347007902514485,False,False
+FS09,52-week high,primary,"long-only alpha vs EW, SCANDI",2.2770613290939554,0.0227825635493899,1.049649075288151,False,False
+FS09,52-week high,primary,"L/S net mean, World",-0.7830385060482762,0.4336045004170599,-0.19617225207226371,False,False
+FS09,52-week high,primary,"long-only alpha vs EW, World",1.0666477608412586,0.2861309247234949,0.802039419595599,False,False
+FS09,52-week high,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",1.2720388160581861,0.20335932813437313,,False,False
+FS09,52-week high,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",1.461890401262636,0.14377124575084982,,False,False
+FS09,52-week high,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",3.352850132855149,0.0007998400319936012,,False,True
+FS10,Betting against beta,primary,"L/S net mean, US",0.5353400335884239,0.5924147482056223,0.11809620493791886,False,False
+FS10,Betting against beta,primary,"long-only alpha vs EW, US",1.1453888357152173,0.25204812097189144,0.9458381130681609,False,False
+FS10,Betting against beta,primary,"L/S net mean, EU",1.5496782812675867,0.1212187535461422,0.34071514721327867,False,False
+FS10,Betting against beta,primary,"long-only alpha vs EW, EU",2.1592769421002496,0.030828687892660245,0.9288286215828552,False,False
+FS10,Betting against beta,primary,"L/S net mean, UK",3.157800790779227,0.001589641465876701,0.8065686561856319,False,True
+FS10,Betting against beta,primary,"long-only alpha vs EW, UK",4.137193995857702,3.5157885162284686e-05,1.0718342212876228,True,True
+FS10,Betting against beta,primary,"L/S net mean, DK",0.6566486458731411,0.5114068620423857,0.16948644688419134,False,False
+FS10,Betting against beta,primary,"long-only alpha vs EW, DK",1.5956544408475257,0.11056596561258858,0.9102034716024001,False,False
+FS10,Betting against beta,primary,"L/S net mean, SCANDI",0.8696093630879087,0.38451391920332645,0.2083186340171399,False,False
+FS10,Betting against beta,primary,"long-only alpha vs EW, SCANDI",2.0785408463200485,0.037659572844188416,1.019140807211626,False,False
+FS10,Betting against beta,primary,"L/S net mean, World",1.8423442508730115,0.06542481086826468,0.387344639398373,False,False
+FS10,Betting against beta,primary,"long-only alpha vs EW, World",1.8873401387652324,0.059114590969495895,0.8991885724360357,False,False
+FS10,Betting against beta,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",0.9762628733495422,0.32893421315736854,,False,False
+FS11,Residual momentum,primary,"L/S net mean, US",0.7936622424975845,0.4273920867393466,0.1979803172555819,False,False
+FS11,Residual momentum,primary,"long-only alpha vs EW, US",1.952320000294536,0.050900224364182955,0.9792407464000878,False,False
+FS11,Residual momentum,primary,"L/S net mean, EU",0.8464287044253325,0.397313631096478,0.25076062909508523,False,False
+FS11,Residual momentum,primary,"long-only alpha vs EW, EU",2.1250250369875467,0.03358452381689503,0.9421229553689652,False,False
+FS11,Residual momentum,primary,"L/S net mean, UK",0.5660791558564806,0.5713399722550467,0.14235510082652797,False,False
+FS11,Residual momentum,primary,"long-only alpha vs EW, UK",1.2967072713413428,0.19473192650949667,0.7464899830397654,False,False
+FS11,Residual momentum,primary,"L/S net mean, DK",1.6377833903167962,0.10146688763587575,0.45566418262424974,False,False
+FS11,Residual momentum,primary,"long-only alpha vs EW, DK",1.3522407796455824,0.17629830214329245,0.7577903998761508,False,False
+FS11,Residual momentum,primary,"L/S net mean, SCANDI",0.6469039247602532,0.5176941255559171,0.18205432313145972,False,False
+FS11,Residual momentum,primary,"long-only alpha vs EW, SCANDI",1.8070955807525402,0.07074737759096039,0.9403270582285626,False,False
+FS11,Residual momentum,primary,"L/S net mean, World",0.6750751301722888,0.4996280333732752,0.17520122361533802,False,False
+FS11,Residual momentum,primary,"long-only alpha vs EW, World",2.002574425255301,0.04522298722815865,0.8312840219862079,False,False
+FS11,Residual momentum,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",-0.5717571619014217,0.5674865026994601,,False,False
+FS11,Residual momentum,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",1.0976770585273192,0.27234553089382124,,False,False
+FS11,Residual momentum,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",0.8152713287579522,0.4149170165966807,,False,False
+FS12,Buy at the 52-week low,primary,"L/S net mean, US",-3.396079119380925,0.0006835859691742829,-0.8722951104213462,False,True
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, US",-2.758914290118641,0.005799374324351625,0.5206544927966568,False,True
+FS12,Buy at the 52-week low,primary,"L/S net mean, EU",-3.3684671010638154,0.0007558741734565722,-0.9647135258214701,False,True
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, EU",-4.775095325217421,1.7962214906575014e-06,0.16421747016825539,True,True
+FS12,Buy at the 52-week low,primary,"L/S net mean, UK",-2.703913754211306,0.006852807323991961,-0.6676711661437745,False,False
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, UK",-1.1380659218406899,0.2550929566673448,0.5282716384993883,False,False
+FS12,Buy at the 52-week low,primary,"L/S net mean, DK",-1.76472313059295,0.07761030916949907,-0.4283081677249681,False,False
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, DK",-1.13927200933908,0.2545897192376536,0.6003035852487103,False,False
+FS12,Buy at the 52-week low,primary,"L/S net mean, SCANDI",-1.487288570756384,0.13693861182795009,-0.3619080929018863,False,False
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, SCANDI",-2.0088092920851,0.04455736244249486,0.5760910114034538,False,False
+FS12,Buy at the 52-week low,primary,"L/S net mean, World",-3.5818287991971864,0.000341197367546453,-0.9147612163200057,False,True
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, World",-3.806782858101452,0.00014078625305868897,0.41934098841241296,True,True
+FS12,Buy at the 52-week low,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",1.9366393680502383,0.052789442111577684,,False,False
+FS12,Buy at the 52-week low,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",-0.47909137509791233,0.6318736252749451,,False,False
+FS12,Buy at the 52-week low,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",-0.08656939066620951,0.9310137972405519,,False,False
+FS13,Low MAX (1 day),battery,"L/S net, 6-market average",-1.7908381697450202,0.0733192680917365,-0.5061299571017004,False,False
+FS13,Low MAX (1 day),battery,"beta-neutral, financed, 6-market average",-0.23179872147172223,0.8166943501323516,-0.06403254128925724,False,False
+FS13,Low MAX (5 days),battery,"L/S net, 6-market average",-1.6123636150111724,0.10688283764250128,-0.4670837097302744,False,False
+FS13,Low MAX (5 days),battery,"beta-neutral, financed, 6-market average",0.14059566526341824,0.8881893728408916,0.04047342490013154,False,False
+FS13,Mild worst day (MIN),battery,"L/S net, 6-market average",-1.716093958423742,0.08614484684079327,-0.4580565079159501,False,False
+FS13,Mild worst day (MIN),battery,"beta-neutral, financed, 6-market average",-0.22292536272260652,0.82359359644614,-0.06122783398193266,False,False
+FS13,Mild worst 5 days,battery,"L/S net, 6-market average",-1.4393615012735308,0.15004812614261498,-0.380776516981411,False,False
+FS13,Mild worst 5 days,battery,"beta-neutral, financed, 6-market average",0.11770003271133979,0.9063053408615211,0.03197356101390354,False,False
+FS13,Narrow daily range,battery,"L/S net, 6-market average",-1.4287617414014095,0.15307272530321692,-0.37709809967969343,False,False
+FS13,Narrow daily range,battery,"beta-neutral, financed, 6-market average",0.24009224404893773,0.8102587467440463,0.06363268705555011,False,False
+FS13,Low net tail,battery,"L/S net, 6-market average",-1.9069049385571415,0.056532898554786604,-0.49892289984590654,False,False
+FS13,Low net tail,battery,"beta-neutral, financed, 6-market average",-2.136611007544736,0.03262964356941689,-0.5521395044755305,False,False
+FS13,Low skewness,battery,"L/S net, 6-market average",-2.383805188094369,0.01713467033100602,-0.795976091901913,False,False
+FS13,Low skewness,battery,"beta-neutral, financed, 6-market average",-2.8230659204590416,0.0047566790186506225,-0.7972099376419837,False,True
+FS13,Low idiosyncratic vol,battery,"L/S net, 6-market average",-0.7749562750967839,0.4383654971894051,-0.21279963053875858,False,False
+FS13,Low idiosyncratic vol,battery,"beta-neutral, financed, 6-market average",0.43958423184302187,0.6602382631633703,0.11889330741835485,False,False
+FS13,Low volatility (63d),battery,"L/S net, 6-market average",-1.1453703468212393,0.25205577652797473,-0.3030564016176506,False,False
+FS13,Low volatility (63d),battery,"beta-neutral, financed, 6-market average",0.9841423908992036,0.3250455065010269,0.2564210187395361,False,False
+FS13,Low volatility (252d),battery,"L/S net, 6-market average",-1.4221003684515277,0.15499711585458043,-0.3863551461894012,False,False
+FS13,Low volatility (252d),battery,"beta-neutral, financed, 6-market average",1.1209570962695687,0.2623061252983512,0.27277738900701215,False,False
+FS13,Low beta,battery,"L/S net, 6-market average",-1.4893536183234342,0.1363942753599272,-0.35125495859598355,False,False
+FS13,Low beta,battery,"beta-neutral, financed, 6-market average",2.403837294422187,0.01622399244525896,0.4858137057614716,False,False
+FS13,Short-term reversal,battery,"L/S net, 6-market average",-1.5921886209993512,0.11134232922807841,-0.4545657812685772,False,False
+FS13,Short-term reversal,battery,"beta-neutral, financed, 6-market average",-1.9422317011959258,0.05210905698069812,-0.6059905798526237,False,False
+FS13,Momentum 12-1,battery,"L/S net, 6-market average",1.4723351622833858,0.1409303925115224,0.3717063002978597,False,False
+FS13,Momentum 12-1,battery,"beta-neutral, financed, 6-market average",1.9959532458143696,0.04593901215205465,0.5174876967502645,False,False
+FS13,Residual momentum,battery,"L/S net, 6-market average",1.222086099814293,0.221675069045844,0.3391670617930116,False,False
+FS13,Residual momentum,battery,"beta-neutral, financed, 6-market average",1.2158676568434215,0.22403534056871632,0.3465315955824382,False,False
+FS13,Same-month seasonality,battery,"L/S net, 6-market average",-2.7008430989821126,0.006916395833811428,-0.767586620018287,False,False
+FS13,Same-month seasonality,battery,"beta-neutral, financed, 6-market average",-3.3911360346991444,0.0006960354385983081,-0.9360389956152902,False,True
+FS13,Near 52-week high,battery,"L/S net, 6-market average",-0.09379721136870439,0.9252702469255485,-0.023149694156390507,False,False
+FS13,Near 52-week high,battery,"beta-neutral, financed, 6-market average",0.7949163901785128,0.4266621394345802,0.209308682493799,False,False
+FS13,Far above 52-week low,battery,"L/S net, 6-market average",2.0072112507442994,0.044727174170542394,0.5445056782417997,False,False
+FS13,Far above 52-week low,battery,"beta-neutral, financed, 6-market average",0.5553804963761624,0.5786344300972888,0.15293312709283247,False,False
+FS13,Near 55-day high,battery,"L/S net, 6-market average",-0.8889148143453941,0.3740488630887069,-0.21099798796314392,False,False
+FS13,Near 55-day high,battery,"beta-neutral, financed, 6-market average",-0.07799696527063331,0.9378304670033479,-0.020764239706755748,False,False
+FS13,Small size,battery,"L/S net, 6-market average",0.29343762659301137,0.7691876687032309,0.0791602967936919,False,False
+FS13,Small size,battery,"beta-neutral, financed, 6-market average",0.3701848474882043,0.7112447658673484,0.11691136078764364,False,False

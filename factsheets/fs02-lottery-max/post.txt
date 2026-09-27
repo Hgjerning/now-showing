@@ -1,0 +1,15 @@
+Would you buy a lottery ticket? Many investors do, in stock form: they chase the stocks that just had one spectacular day.
+
+Bali, Cakici & Whitelaw (2011) showed that US stocks with the biggest one-day jump last month earned about 1% a month less afterwards. Investors overpay for the thrill.
+
+I tested it in six markets, 2013–2026, point-in-time members, after costs. Buying the calmest stocks and shorting the most lottery-like lost money in all six markets (-14% to -2% a year).
+
+The catch is beta. Lottery stocks carry a beta of about 1.3, calm stocks about 0.7. In a 13-year bull market that alone decides the race. Hedge the beta and the loss disappears, and so does the premium: -4.3% a year, t -1.3.
+
+The calm stocks on their own still did what low-risk investing promises: smaller drawdowns in every market and a better Sharpe than owning all the stocks in three of six.
+
+Where does it fit? Not a factor of its own, but a noisier member of the low-risk family.
+
+Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs02-lottery-max
+
+#investing #quant #factorinvesting #behavioralfinance

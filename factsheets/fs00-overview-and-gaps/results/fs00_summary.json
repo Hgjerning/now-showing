@@ -1,0 +1,414 @@
+{
+ "summary": [
+  [
+   "FS01 Turtle Traders",
+   "Breakout & trend",
+   "-15.7% to -3.9%",
+   "0 / 6",
+   "US\u2212, SCANDI\u2212, World\u2212",
+   "-13.8% to -2.4%",
+   "0 / 6",
+   "\u2014",
+   "T0 -0.74 \u2192 T3 0.64 (drop shorts, 4N stop)",
+   "yes",
+   "momentum (time series)"
+  ],
+  [
+   "FS02 Lottery (MAX)",
+   "Lottery & attention",
+   "-14.4% to -1.6%",
+   "0 / 6",
+   "\u2014",
+   "-5.5% to +4.7%",
+   "2 / 6",
+   "\u2014",
+   "L0 -0.57 \u2192 L1 -0.41 (beta-neutral legs)",
+   "yes",
+   "low risk"
+  ],
+  [
+   "FS03 Momentum",
+   "Momentum & trend",
+   "-2.8% to +9.7%",
+   "5 / 6",
+   "\u2014",
+   "+1.8% to +15.8%",
+   "5 / 6",
+   "UK, World",
+   "0.29 \u2192 0.55 (full ladder)",
+   "no",
+   "momentum"
+  ],
+  [
+   "FS04 Low volatility",
+   "Low risk",
+   "-15.3% to -1.6%",
+   "0 / 6",
+   "\u2014",
+   "-1.6% to +8.4%",
+   "5 / 6",
+   "UK",
+   "-0.27 \u2192 0.18 (full ladder)",
+   "no",
+   "low risk"
+  ],
+  [
+   "FS05 Monkey portfolios",
+   "Portfolio folklore",
+   "beat the index: 16\u201386% of monkeys",
+   "\u2014",
+   "\u2014",
+   "\u2014",
+   "\u2014",
+   "\u2014",
+   "no fix: a benchmark",
+   "\u2014",
+   "size (equal weight)"
+  ],
+  [
+   "FS06 Same-month seasonality",
+   "Calendar & seasonality",
+   "-12.7% to +3.1%",
+   "1 / 6",
+   "EU\u2212",
+   "-12.5% to +2.6%",
+   "1 / 6",
+   "\u2014",
+   "-0.62 \u2192 -0.56 (full ladder)",
+   "yes",
+   "momentum"
+  ],
+  [
+   "FS07 Size",
+   "Size",
+   "-3.0% to +4.9%",
+   "4 / 6",
+   "\u2014",
+   "-5.5% to +2.9%",
+   "1 / 6",
+   "UK",
+   "-0.44 \u2192 -0.45 (full ladder)",
+   "yes",
+   "momentum"
+  ],
+  [
+   "FS08 Short-term reversal",
+   "Reversal & bottom-fishing",
+   "-9.7% to +0.1%",
+   "1 / 6",
+   "\u2014",
+   "-13.1% to -1.0%",
+   "0 / 6",
+   "\u2014",
+   "-0.91 \u2192 -0.87 (full ladder)",
+   "no",
+   "momentum"
+  ],
+  [
+   "FS09 52-week high",
+   "Momentum & trend",
+   "-5.9% to +5.8%",
+   "2 / 6",
+   "\u2014",
+   "+5.3% to +15.2%",
+   "5 / 6",
+   "EU, DK",
+   "0.02 \u2192 0.59 (full ladder)",
+   "no",
+   "momentum"
+  ],
+  [
+   "FS10 Betting against beta",
+   "Low risk",
+   "+2.0% to +9.5%",
+   "6 / 6",
+   "UK+",
+   "-0.8% to +7.9%",
+   "5 / 6",
+   "UK",
+   "0.00 \u2192 0.07 (full ladder)",
+   "no",
+   "low risk"
+  ],
+  [
+   "FS11 Residual momentum",
+   "Momentum & trend",
+   "+1.9% to +7.9%",
+   "6 / 6",
+   "\u2014",
+   "+4.3% to +10.7%",
+   "6 / 6",
+   "\u2014",
+   "0.52 \u2192 0.57 (full ladder)",
+   "yes",
+   "momentum"
+  ],
+  [
+   "FS12 Buy at the 52-week low",
+   "Reversal & bottom-fishing",
+   "-17.0% to -5.2%",
+   "0 / 6",
+   "US\u2212, EU\u2212, World\u2212",
+   "-16.6% to -6.4%",
+   "0 / 6",
+   "\u2014",
+   "-0.96 \u2192 -0.78 (full ladder)",
+   "yes",
+   "momentum"
+  ]
+ ],
+ "gaps": [
+  [
+   "Data",
+   "Residual survivorship outside the US: 9\u201325% of index member-quarters have no price (mostly delisted names)",
+   "all non-US results; short legs penalised, long legs flattered",
+   "High",
+   "Medium",
+   "Buy delisted-inclusive history for Europe, or lengthen with the ART archive (1996\u20132013)",
+   "ART PIT database (Project1, to 2013); none for 2013\u201326"
+  ],
+  [
+   "Data",
+   "No company fundamentals outside the US",
+   "value, quality, investment, payout and earnings families missing in 5 of 6 universes",
+   "High",
+   "High",
+   "JKP factor-level returns for UK, DK, World now; a licensed global fundamentals feed later",
+   "JKP 153 factors per country (Project2 cache); Sharadar US fundamentals (staged, unused)"
+  ],
+  [
+   "Data",
+   "No shares outstanding outside the US",
+   "FS07 size and the FS05 index benchmark use traded value as a proxy",
+   "Medium",
+   "Medium",
+   "Shares-outstanding history or free-float index weights",
+   "none"
+  ],
+  [
+   "Data",
+   "Short history (from 2012)",
+   "FS06 seasonality averages 1\u201313 years (paper: 20); FS11 starts 2014; holdout only 6.7 years",
+   "Medium",
+   "Medium",
+   "Extend back with ART (1996\u20132013) for EU, UK, DK, US",
+   "ART PIT database"
+  ],
+  [
+   "Data",
+   "Oslo missing from SCANDI; DK has ~19 names",
+   "SCANDI and DK sorts use 3\u20135 groups of 6\u201312 stocks; noisy",
+   "Medium",
+   "Low",
+   "Add OBX history; report DK only as a robustness market",
+   "none"
+  ],
+  [
+   "Data",
+   "US prices without high/low or volume in our Sharadar extract",
+   "FS01 true-range N; US size-independent liquidity signals",
+   "Low",
+   "Low",
+   "Re-pull Sharadar SEP with OHLCV",
+   "Sharadar subscription"
+  ],
+  [
+   "Data",
+   "No FX conversion; World sums local-currency returns",
+   "World universe; factor attribution (JKP in USD vs local books)",
+   "Medium",
+   "Low",
+   "Convert with daily FX; run hedged and unhedged",
+   "Project2 pit_currency cache"
+  ],
+  [
+   "Data",
+   "Event and positioning data not used: earnings dates, analyst revisions, short interest, options, news",
+   "360\u00b0 gaps in FS02 (news vs no-news jumps, implied skew, borrow)",
+   "Medium",
+   "Medium\u2013High",
+   "Check coverage of the Project2 caches, start with the US",
+   "Project2 pit_short_positions, pit_options, pit_headlines, pit_13f; ART IBES (to 2013)"
+  ],
+  [
+   "Model",
+   "Sort-based tests only; no multivariate (Fama-MacBeth) regressions",
+   "overlapping signals (momentum family, low-risk family) are judged one at a time",
+   "High",
+   "Medium",
+   "Monthly cross-sectional regressions on all library signals, per universe",
+   "code/signals*.py library"
+  ],
+  [
+   "Model",
+   "Raw 252-day betas, no shrinkage",
+   "FS10 BAB, beta-neutral fixes, attribution",
+   "Medium",
+   "Low",
+   "Vasicek or Frazzini-Pedersen shrinkage",
+   "\u2014"
+  ],
+  [
+   "Model",
+   "Residual momentum on a market-only model, 24 months",
+   "FS11",
+   "Low",
+   "Low",
+   "Fama-French 3-factor residuals (US), 36 months when history allows",
+   "French factors (Project2 cache)"
+  ],
+  [
+   "Model",
+   "No factor model for Europe or SCANDI inside JKP; French Europe used, in USD",
+   "attribution alphas for EU and SCANDI",
+   "Medium",
+   "Low",
+   "Build local-currency factor returns from the library itself",
+   "library L/S returns"
+  ],
+  [
+   "Model",
+   "Equal weighting and one-month holding everywhere",
+   "turnover-heavy strategies (FS08, FS06); comparability with papers that value-weight or hold 6\u201312 months",
+   "Medium",
+   "Low",
+   "Add value-weighted (US) and overlapping 3/6/12-month holdings",
+   "\u2014"
+  ],
+  [
+   "Model",
+   "Programme-level multiple testing not yet consolidated",
+   "12 factsheets \u00d7 6 universes \u00d7 books \u00d7 fix steps",
+   "High",
+   "Low",
+   "One trial ledger for the factsheets; deflated Sharpe on the final battery selection",
+   "Project3 trial ledger format"
+  ],
+  [
+   "Implementation",
+   "Flat 10 bp per side; no size- or liquidity-dependent costs, no market impact",
+   "all net numbers; small names in DK/SCANDI understated",
+   "High",
+   "Medium",
+   "Spread and impact model by traded value (e.g. square-root impact)",
+   "Project1 art_cost_model, Saxo measured fees (Project2)"
+  ],
+  [
+   "Implementation",
+   "Short side: no borrow fees or availability in the sorts (50 bp flat in FS01 only)",
+   "every long/short book",
+   "High",
+   "Medium",
+   "Borrow-fee proxy by size and short interest; report long-only as the primary book",
+   "Project2 pit_short_positions"
+  ],
+  [
+   "Implementation",
+   "Leverage without financing: BAB (rf = 0, no spread), vol targeting up to 3\u00d7",
+   "FS10 passes the gate in UK and World partly for this reason",
+   "High",
+   "Low",
+   "Subtract rf and a financing spread; cap leverage",
+   "French RF (Project2 cache)"
+  ],
+  [
+   "Implementation",
+   "No taxes, dividend withholding or currency hedging costs",
+   "Danish and cross-border investors",
+   "Medium",
+   "Medium",
+   "Investor-specific net-of-tax layer",
+   "Project1 art_measured_taxes"
+  ],
+  [
+   "Implementation",
+   "Close-to-close execution, monthly rebalance at month-end",
+   "all strategies; month-end crowding",
+   "Low",
+   "Low",
+   "Next-day VWAP proxy; staggered rebalance days",
+   "\u2014"
+  ],
+  [
+   "Coverage",
+   "Missing factor families: value, quality, investment, earnings momentum, analyst revisions, payout, liquidity",
+   "the multifactor battery would be price-only",
+   "High",
+   "Medium (US) / High (non-US)",
+   "US stock-level from Sharadar now; JKP factor-level for UK, DK, World",
+   "Sharadar US fundamentals; JKP"
+  ],
+  [
+   "Validation",
+   "The six universes overlap and co-move: World contains US, UK and EU; EU contains the Danish, Swedish and Finnish blue chips",
+   "every 'positive in k of six' count; six markets are worth fewer than two independent tests",
+   "High",
+   "Low",
+   "Report the effective number of markets; judge on pooled evidence; treat World as a summary, not a seventh market; run EU ex-Nordics",
+   "the L/S series already on disk"
+  ],
+  [
+   "Validation",
+   "No replication check against published factor returns",
+   "credibility of the engine; a coding error would pass unnoticed",
+   "High",
+   "Low",
+   "Correlate our US momentum, size, low-vol and BAB books with French UMD/SMB and AQR BAB/JKP series; expect > 0.7",
+   "French and JKP factors (Project2 cache)"
+  ],
+  [
+   "Validation",
+   "No sector or industry neutrality",
+   "low volatility and BAB may be utilities/staples bets; momentum partly industry momentum",
+   "Medium",
+   "Medium",
+   "Sector-neutral sorts (US from Sharadar sectors; elsewhere ICB/GICS from index files)",
+   "Sharadar TICKERS sector field (US)"
+  ],
+  [
+   "Validation",
+   "No stress tests of named episodes (2015\u201316, COVID crash and rebound, 2022 rate shock) and no crash-risk analysis for momentum",
+   "FS03, FS09, FS11 (momentum crashes); FS04, FS10 (rate sensitivity)",
+   "Medium",
+   "Low",
+   "Episode table and Daniel\u2013Moskowitz bear-market/rebound regression",
+   "\u2014"
+  ],
+  [
+   "Validation",
+   "No capacity estimate",
+   "which books survive at realistic AUM, above all DK and SCANDI",
+   "Medium",
+   "Medium",
+   "Capacity at a participation cap (e.g. 5% of daily traded value) per book",
+   "traded-value panels (PIT)"
+  ],
+  [
+   "Validation",
+   "No unit tests of the engine (look-ahead, signal lags, cost accounting)",
+   "all factsheets",
+   "Medium",
+   "Low",
+   "Synthetic-data tests: random signals must give ~0 before costs; a shifted signal must not change results",
+   "\u2014"
+  ],
+  [
+   "Process",
+   "Factsheet trials outside the programme ledger",
+   "credibility of the later battery selection",
+   "Medium",
+   "Low",
+   "Register the battery filter and weighting rules before running them",
+   "PREREGISTRATION template (Articles)"
+  ],
+  [
+   "Process",
+   "Repo assembly script does not know the factsheets",
+   "publishing",
+   "Low",
+   "Low",
+   "Add factsheets to assemble_repo.py",
+   "\u2014"
+  ]
+ ]
+}

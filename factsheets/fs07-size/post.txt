@@ -1,0 +1,14 @@
+Small companies earn higher returns than large ones. Banz (1981) found it in US stocks 1936–1975; it became Fama & French's SMB factor, but has been weak since the early 1980s unless junk stocks are controlled for (Asness et al. 2018).
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (smallest names in the universe minus largest names): -3.0% to +4.9% a year, positive in 4 of six markets. Adjusted for market beta: -5.5% to +2.9%.
+Long-only (smallest names in the universe): a better Sharpe than owning all the stocks equally in 1 of six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.44 to -0.45.
+
+360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs07-size
+
+#investing #quant #factorinvesting #backtesting

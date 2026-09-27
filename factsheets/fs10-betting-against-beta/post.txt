@@ -1,0 +1,14 @@
+Low-beta stocks have higher risk-adjusted returns than high-beta stocks. A portfolio that is long leveraged low-beta stocks and short de-leveraged high-beta stocks, beta-neutral, earned a large positive return in the US 1926–2012 and in 19 other markets (Frazzini & Pedersen 2014).
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (low-beta stocks minus high-beta stocks): +2.0% to +9.5% a year, positive in all six markets. Adjusted for market beta: -0.8% to +7.9%.
+Long-only (low-beta stocks): a better Sharpe than owning all the stocks equally in 5 of six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.00 to 0.07.
+
+360° view: it keeps some information beyond its nearest neighbours.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs10-betting-against-beta
+
+#investing #quant #factorinvesting #backtesting

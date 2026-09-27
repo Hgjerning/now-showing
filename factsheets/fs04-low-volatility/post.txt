@@ -1,0 +1,14 @@
+Low-volatility stocks earn about the same or more than high-volatility stocks, so their risk-adjusted return is far higher, contradicting the CAPM. Blitz & van Vliet (2007) documented it globally for 1986–2006; Ang, Hodrick, Xing & Zhang (2006) for idiosyncratic volatility.
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (calmest stocks minus most volatile stocks): -15.3% to -1.6% a year, positive in none of the six markets. Adjusted for market beta: -1.6% to +8.4%.
+Long-only (calmest stocks): a better Sharpe than owning all the stocks equally in 5 of six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.27 to 0.18.
+
+360° view: it keeps some information beyond its nearest neighbours.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs04-low-volatility
+
+#investing #quant #factorinvesting #backtesting

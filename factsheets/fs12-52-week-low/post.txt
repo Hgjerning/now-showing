@@ -1,0 +1,14 @@
+Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A10 Free Fallin' found knives rebound only in market-wide crashes.
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (stocks closest to their 52-week low minus stocks furthest above it): -17.0% to -5.2% a year, positive in none of the six markets. Adjusted for market beta: -16.6% to -6.4%.
+Long-only (stocks closest to their 52-week low): a better Sharpe than owning all the stocks equally in none of the six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.96 to -0.78.
+
+360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs12-52-week-low
+
+#investing #quant #factorinvesting #backtesting

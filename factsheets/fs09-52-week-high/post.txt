@@ -1,0 +1,14 @@
+Stocks trading close to their 52-week high outperform those far below it, and this nearness explains much of momentum. George & Hwang (2004) found it for US stocks 1963–2001; investors anchor on the high and under-react to good news near it.
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (stocks closest to their 52-week high minus stocks furthest below it): -5.9% to +5.8% a year, positive in 2 of six markets. Adjusted for market beta: +5.3% to +15.2%.
+Long-only (stocks closest to their 52-week high): a better Sharpe than owning all the stocks equally in 5 of six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.02 to 0.59.
+
+360° view: it keeps some information beyond its nearest neighbours.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs09-52-week-high
+
+#investing #quant #factorinvesting #backtesting

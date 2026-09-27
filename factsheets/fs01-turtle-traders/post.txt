@@ -1,0 +1,16 @@
+In 1983 Richard Dennis bet that trading could be taught. He hired 23 novices, gave them one rulebook, and they reportedly made over $100 million trading futures.
+
+I ran the same rules on single stocks in six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+The long/short version lost money in all six markets (Sharpe -0.86 to -0.25).
+The long-only version made money, but had a lower Sharpe than simply owning all the stocks equally, in every market.
+
+Why? Four things: costs from oversized positions, shorting a bull market, a stop tighter than a normal day's noise, and at the root: single stocks do not trend at these horizons. A new 55-day high predicts nothing about the next 60 days.
+
+Fixing what can be fixed gives a half-beta equity book, not an edge (holdout Sharpe 0.64 vs 0.75 for owning all the stocks). The rules were built for futures. That is where they belong.
+
+This is the first strategy factsheet: rules, data, full P&L, trade records, drawdowns, factor attribution, what goes wrong, and where the strategy fits.
+
+Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs01-turtle-traders
+
+#investing #quant #trendfollowing #backtesting

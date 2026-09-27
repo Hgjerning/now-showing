@@ -1,0 +1,13 @@
+Burton Malkiel (1973): a blindfolded monkey throwing darts at the stock pages could do as well as the experts.
+
+I let 10,000 monkeys pick 10–30 stocks every January in six markets, 2013–2026, point-in-time index members, after costs.
+
+Share of monkeys that beat the index: US 16%, EU 71%, UK 85%, Denmark 85%, Scandinavia 86%, World 72%.
+
+The monkeys are not lucky or clever. A random portfolio is an equal-weight portfolio, and equal weight is a bet on small companies. They win in the years small beats big and lose when the mega-caps lead, as they did in the US.
+
+The lesson for any stock picker: compare yourself with the equal-weight universe as well as the index, or a size tilt will look like skill.
+
+Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs05-monkey-portfolios
+
+#investing #quant #indexing #behavioralfinance

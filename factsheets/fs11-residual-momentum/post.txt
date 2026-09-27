@@ -1,0 +1,14 @@
+Ranking stocks on the part of their past return that the market does not explain gives a momentum strategy with about half the volatility and far smaller crashes than plain momentum (Blitz, Huij & Martens 2011, US 1930–2009).
+
+I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+
+Long/short (stocks with the strongest stock-specific trend minus the weakest): +1.9% to +7.9% a year, positive in all six markets. Adjusted for market beta: +4.3% to +10.7%.
+Long-only (stocks with the strongest stock-specific trend): a better Sharpe than owning all the stocks equally in all six markets.
+
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.52 to 0.57.
+
+360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
+
+Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs11-residual-momentum
+
+#investing #quant #factorinvesting #backtesting
