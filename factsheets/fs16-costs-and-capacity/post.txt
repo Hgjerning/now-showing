@@ -1,0 +1,21 @@
+Most backtests charge a flat cost per trade. Real costs grow with the size of the trade.
+
+I re-costed the strategies from my factsheet series with a spread that depends on how liquid each stock is, plus the square-root market-impact law, at $1m, $10m, $100m, $1bn and $10bn.
+
+For the pair that held up best (low beta plus momentum, market-neutral), the net return reaches zero at about:
+→ US: $1.0bn
+→ World: $133m
+→ EU: $29m
+→ UK: $27m
+→ Denmark: $13m
+→ Scandinavia: no positive result even at $1m
+
+The best-looking markets at small size, the UK and EU, fill up first: their low-beta legs sit in thinly traded stocks. Fast signals like short-term reversal are negative already at $10m.
+
+The cheapest fix is patience. Holding a stock until it falls well out of the top group halves turnover and lifts capacity several times, with little loss at small size.
+
+Lesson: many factor results are small-fund results. Ask what size the backtest was run at.
+
+Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs16-costs-and-capacity
+
+#investing #quant #factorinvesting #tradingcosts #backtesting

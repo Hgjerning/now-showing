@@ -1,7 +1,7 @@
 {
- "n": 205,
- "z_bonf": 3.6685788865873517,
- "var_sr_month": 0.020851904511252236,
+ "n": 682,
+ "z_bonf": 3.965267173079086,
+ "var_sr_month": 0.01916238582637686,
  "by": [
   {
    "fs": "FS01",
@@ -15,13 +15,13 @@
    "trials": 16,
    "local_pass": 0,
    "bonf": 0,
-   "bh": 1
+   "bh": 0
   },
   {
    "fs": "FS03",
    "trials": 15,
    "local_pass": 2,
-   "bonf": 1,
+   "bonf": 0,
    "bh": 2
   },
   {
@@ -36,7 +36,7 @@
    "trials": 15,
    "local_pass": 1,
    "bonf": 0,
-   "bh": 3
+   "bh": 2
   },
   {
    "fs": "FS07",
@@ -56,7 +56,7 @@
    "fs": "FS09",
    "trials": 15,
    "local_pass": 3,
-   "bonf": 1,
+   "bonf": 0,
    "bh": 3
   },
   {
@@ -77,8 +77,8 @@
    "fs": "FS12",
    "trials": 15,
    "local_pass": 5,
-   "bonf": 2,
-   "bh": 6
+   "bonf": 1,
+   "bh": 5
   },
   {
    "fs": "FS13",
@@ -86,6 +86,55 @@
    "local_pass": 1,
    "bonf": 0,
    "bh": 2
+  },
+  {
+   "fs": "FS13b",
+   "trials": 60,
+   "local_pass": 1,
+   "bonf": 0,
+   "bh": 1
+  },
+  {
+   "fs": "FS13c",
+   "trials": 66,
+   "local_pass": 4,
+   "bonf": 0,
+   "bh": 4
+  },
+  {
+   "fs": "FS14",
+   "trials": 78,
+   "local_pass": 0,
+   "bonf": 0,
+   "bh": 0
+  },
+  {
+   "fs": "FS15",
+   "trials": 157,
+   "local_pass": 13,
+   "bonf": 4,
+   "bh": 13
+  },
+  {
+   "fs": "FS17",
+   "trials": 58,
+   "local_pass": 27,
+   "bonf": 18,
+   "bh": 28
+  },
+  {
+   "fs": "FS18",
+   "trials": 14,
+   "local_pass": 0,
+   "bonf": 0,
+   "bh": 0
+  },
+  {
+   "fs": "FS19",
+   "trials": 44,
+   "local_pass": 5,
+   "bonf": 0,
+   "bh": 5
   }
  ],
  "dsr": [
@@ -95,13 +144,13 @@
    "test": "long-only alpha vs EW, UK",
    "t": 4.137193995857702,
    "sr_ann": 0.9729470627768334,
-   "sr0_ann": 1.3874108387725768,
-   "dsr": 0.08484266579786076,
+   "sr0_ann": 1.5079540370377067,
+   "dsr": 0.038147219109361336,
    "T": 163,
    "skew": -0.5493774352023564,
    "kurt": 4.8275503179735475,
-   "sr0_null_ann": 0.7525552971667239,
-   "dsr_null": 0.767368949343884
+   "sr0_null_ann": 0.8532366697675866,
+   "dsr_null": 0.6541793132204462
   },
   {
    "fs": "FS09",
@@ -109,13 +158,13 @@
    "test": "long-only alpha vs EW, EU",
    "t": 3.8544223600770176,
    "sr_ann": 0.9882101550462828,
-   "sr0_ann": 1.3874108387725768,
-   "dsr": 0.08244677763631886,
+   "sr0_ann": 1.5079540370377067,
+   "dsr": 0.035290483567880455,
    "T": 163,
    "skew": -0.1921589315617472,
    "kurt": 3.9785462885617786,
-   "sr0_null_ann": 0.7525552971667239,
-   "dsr_null": 0.7938440478451888
+   "sr0_null_ann": 0.8532366697675866,
+   "dsr_null": 0.6806675443108213
   },
   {
    "fs": "FS03",
@@ -123,13 +172,13 @@
    "test": "long-only alpha vs EW, UK",
    "t": 3.678142370508116,
    "sr_ann": 0.9357317860844696,
-   "sr0_ann": 1.3874108387725768,
-   "dsr": 0.05883707614074479,
+   "sr0_ann": 1.5079540370377067,
+   "dsr": 0.023730040419764686,
    "T": 163,
    "skew": -0.2839141504356815,
    "kurt": 3.652295826798921,
-   "sr0_null_ann": 0.7525552971667239,
-   "dsr_null": 0.7371296405074067
+   "sr0_null_ann": 0.8532366697675866,
+   "dsr_null": 0.6124698397783057
   },
   {
    "fs": "FS03",
@@ -137,13 +186,27 @@
    "test": "long-only alpha vs EW, World",
    "t": 3.6639120358963555,
    "sr_ann": 0.8122689574683823,
-   "sr0_ann": 1.3874108387725768,
-   "dsr": 0.02391603941393977,
+   "sr0_ann": 1.5079540370377067,
+   "dsr": 0.008341892490374297,
    "T": 163,
    "skew": -0.2976842584284008,
    "kurt": 6.13568061689552,
-   "sr0_null_ann": 0.7525552971667239,
-   "dsr_null": 0.5813910184003929
+   "sr0_null_ann": 0.8532366697675866,
+   "dsr_null": 0.44395265590689004
+  },
+  {
+   "fs": "FS13b",
+   "strategy": "Profit growth (composite)",
+   "test": "long-only alpha vs EW, US",
+   "t": 3.4271250927380583,
+   "sr_ann": 0.8962242913948489,
+   "sr0_ann": 1.5079540370377067,
+   "dsr": 0.014244854552905297,
+   "T": 163,
+   "skew": -0.05949760175753988,
+   "kurt": 3.2397632708187043,
+   "sr0_null_ann": 0.8532366697675866,
+   "dsr_null": 0.5611674116829224
   },
   {
    "fs": "FS10",
@@ -151,32 +214,18 @@
    "test": "L/S net mean, UK",
    "t": 3.157800790779227,
    "sr_ann": 0.8065686561856319,
-   "sr0_ann": 1.3874108387725768,
-   "dsr": 0.0216898579406445,
+   "sr0_ann": 1.5079540370377067,
+   "dsr": 0.0073587508116831285,
    "T": 163,
    "skew": -0.29868667303622687,
    "kurt": 4.4404762807604365,
-   "sr0_null_ann": 0.7525552971667239,
-   "dsr_null": 0.5745013237929562
-  },
-  {
-   "fs": "FS09",
-   "strategy": "52-week high",
-   "test": "long-only alpha vs EW, DK",
-   "t": 3.0958600655967055,
-   "sr_ann": 0.7534161502125303,
-   "sr0_ann": 1.3874108387725768,
-   "dsr": 0.010476975887500378,
-   "T": 163,
-   "skew": 0.03224249880497957,
-   "kurt": 3.111055488575606,
-   "sr0_null_ann": 0.7525552971667239,
-   "dsr_null": 0.5012506665757621
+   "sr0_null_ann": 0.8532366697675866,
+   "dsr_null": 0.4355345679384661
   }
  ],
- "n_pos": 9,
- "n_neg": 17,
- "n_pos_bonf": 3,
+ "n_pos": 53,
+ "n_neg": 21,
+ "n_pos_bonf": 21,
  "pos_list": [
   "Momentum: long-only alpha vs EW, UK",
   "Momentum: long-only alpha vs EW, World",
@@ -186,7 +235,51 @@
   "52-week high: long-only alpha vs EW, DK",
   "52-week high: X3 + volatility targeting vs previous step, pooled holdout Sharpe",
   "Betting against beta: L/S net mean, UK",
-  "Betting against beta: long-only alpha vs EW, UK"
+  "Betting against beta: long-only alpha vs EW, UK",
+  "Profit growth (composite): long-only alpha vs EW, US",
+  "Debt issuance (fund.): multivariate slope, US",
+  "Momentum 12-1: multivariate slope, EU",
+  "Momentum 12-1: multivariate slope, World",
+  "Small size: Fama-MacBeth slope, US, 1999-2013",
+  "Low MAX (1 day): Fama-MacBeth slope, EU, 1999-2013",
+  "Same-month seasonality: Fama-MacBeth slope, UK, 1999-2013",
+  "Same-month seasonality: Fama-MacBeth slope, World, 1999-2013",
+  "Low MAX (1 day): Fama-MacBeth slope, market average, 1999-2013",
+  "Same-month seasonality: Fama-MacBeth slope, market average, 1999-2013",
+  "Small size: Fama-MacBeth slope, market average, 1999-2013",
+  "Issuance: alpha on the shortlist, UK, 2013-2025, JKP",
+  "Value: alpha on the shortlist, UK, 2013-2025, JKP",
+  "Issuance: alpha on the shortlist, Denmark, 2013-2025, JKP",
+  "Fundamental pair: alpha on the shortlist, EU (World ex US), 2013-2025, JKP",
+  "Fundamental pair (primary): alpha on the shortlist, non-US average, 2013-2025, JKP (pre-registered)",
+  "Issuance: alpha on the shortlist, non-US average, 2013-2025, JKP",
+  "Profit growth: alpha on the shortlist, Europe, 1999-2013, ART",
+  "Issuance: alpha on the shortlist, Europe, 1999-2013, ART",
+  "Value: alpha on the shortlist, Europe, 1999-2013, ART",
+  "Profitability: alpha on the shortlist, Europe, 1999-2013, ART",
+  "Fundamental pair: alpha on the shortlist, Europe, 1999-2013, ART",
+  "Shortlist + fundamental pair: minus shortlist, Europe, 1999-2013, ART",
+  "Profit growth: alpha on the shortlist, UK, 1999-2013, ART",
+  "Issuance: alpha on the shortlist, UK, 1999-2013, ART",
+  "Value: alpha on the shortlist, UK, 1999-2013, ART",
+  "Profitability: alpha on the shortlist, UK, 1999-2013, ART",
+  "Fundamental pair: alpha on the shortlist, UK, 1999-2013, ART",
+  "Profit growth: alpha on the shortlist, America, 1999-2013, ART",
+  "Issuance: alpha on the shortlist, America, 1999-2013, ART",
+  "Value: alpha on the shortlist, America, 1999-2013, ART",
+  "Profitability: alpha on the shortlist, America, 1999-2013, ART",
+  "Fundamental pair: alpha on the shortlist, America, 1999-2013, ART",
+  "Shortlist + fundamental pair: minus shortlist, America, 1999-2013, ART",
+  "Fundamental pair (primary): alpha on the shortlist, non-US average, 1999-2013, ART (pre-registered)",
+  "Profit growth: alpha on the shortlist, non-US average, 1999-2013, ART",
+  "Issuance: alpha on the shortlist, non-US average, 1999-2013, ART",
+  "Value: alpha on the shortlist, non-US average, 1999-2013, ART",
+  "Profitability: alpha on the shortlist, non-US average, 1999-2013, ART",
+  "shortlist (within sectors): net return, EU",
+  "low beta (within sectors): net return, UK",
+  "shortlist (within sectors): net return, UK",
+  "shortlist (within sectors): net return, WD",
+  "Shortlist within sectors (primary): net return, 5-market average (pre-registered)"
  ],
  "passes": [
   {
@@ -197,17 +290,6 @@
    "t": -3.5871774266960603,
    "p": 0.00033427687632991976,
    "sharpe": -0.8617913447097046,
-   "bonferroni": false,
-   "bh": true
-  },
-  {
-   "fs": "FS02",
-   "strategy": "Lottery (MAX)",
-   "kind": "primary",
-   "test": "L/S net mean, US",
-   "t": -2.7499541183380507,
-   "p": 0.0059603609782756806,
-   "sharpe": -0.8084919130680329,
    "bonferroni": false,
    "bh": true
   },
@@ -241,7 +323,7 @@
    "t": 3.678142370508116,
    "p": 0.00023493881626968083,
    "sharpe": 1.1519863618349404,
-   "bonferroni": true,
+   "bonferroni": false,
    "bh": true
   },
   {
@@ -289,17 +371,6 @@
    "bh": true
   },
   {
-   "fs": "FS06",
-   "strategy": "Same-month seasonality",
-   "kind": "primary",
-   "test": "L/S net mean, DK",
-   "t": -2.7355652480920414,
-   "p": 0.006227323922371797,
-   "sharpe": -0.8507339506852528,
-   "bonferroni": false,
-   "bh": true
-  },
-  {
    "fs": "FS07",
    "strategy": "Size",
    "kind": "primary",
@@ -340,7 +411,7 @@
    "t": 3.8544223600770176,
    "p": 0.00011600318771676221,
    "sharpe": 1.2092625883316066,
-   "bonferroni": true,
+   "bonferroni": false,
    "bh": true
   },
   {
@@ -402,17 +473,6 @@
    "fs": "FS12",
    "strategy": "Buy at the 52-week low",
    "kind": "primary",
-   "test": "long-only alpha vs EW, US",
-   "t": -2.758914290118641,
-   "p": 0.005799374324351625,
-   "sharpe": 0.5206544927966568,
-   "bonferroni": false,
-   "bh": true
-  },
-  {
-   "fs": "FS12",
-   "strategy": "Buy at the 52-week low",
-   "kind": "primary",
    "test": "L/S net mean, EU",
    "t": -3.3684671010638154,
    "p": 0.0007558741734565722,
@@ -450,7 +510,7 @@
    "t": -3.806782858101452,
    "p": 0.00014078625305868897,
    "sharpe": 0.41934098841241296,
-   "bonferroni": true,
+   "bonferroni": false,
    "bh": true
   },
   {
@@ -474,8 +534,569 @@
    "sharpe": -0.9360389956152902,
    "bonferroni": false,
    "bh": true
+  },
+  {
+   "fs": "FS13b",
+   "strategy": "Profit growth (composite)",
+   "kind": "battery",
+   "test": "long-only alpha vs EW, US",
+   "t": 3.4271250927380583,
+   "p": 0.0006100079896589339,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS13c",
+   "strategy": "Debt issuance (fund.)",
+   "kind": "fama-macbeth",
+   "test": "multivariate slope, US",
+   "t": 2.8969110906233437,
+   "p": 0.003768565407473723,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS13c",
+   "strategy": "Momentum 12-1",
+   "kind": "fama-macbeth",
+   "test": "multivariate slope, EU",
+   "t": 3.6520679983033304,
+   "p": 0.00026013697710558503,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS13c",
+   "strategy": "Low volatility (252d)",
+   "kind": "fama-macbeth",
+   "test": "multivariate slope, UK",
+   "t": -3.4997831378108937,
+   "p": 0.0004656368055091509,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS13c",
+   "strategy": "Momentum 12-1",
+   "kind": "fama-macbeth",
+   "test": "multivariate slope, World",
+   "t": 3.135113761370767,
+   "p": 0.0017178747914803338,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low net tail",
+   "kind": "history 1998-2013",
+   "test": "L/S net, 4-market average, 1999-2013",
+   "t": -2.9163520983735154,
+   "p": 0.0035415058742087613,
+   "sharpe": -0.8770717166977319,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low skewness",
+   "kind": "history 1998-2013",
+   "test": "L/S net, 4-market average, 1999-2013",
+   "t": -4.234175591031532,
+   "p": 2.2939166172797343e-05,
+   "sharpe": -1.3742038204255889,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low skewness",
+   "kind": "history 1998-2013",
+   "test": "beta-neutral, financed, 4-market average, 1999-2013",
+   "t": -5.104229960162184,
+   "p": 3.3214418482252483e-07,
+   "sharpe": -1.5021299905665815,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Small size",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, US, 1999-2013",
+   "t": 3.1907565857336992,
+   "p": 0.0014190077727573858,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low MAX (1 day)",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, EU, 1999-2013",
+   "t": 2.888982936630834,
+   "p": 0.0038649004589574876,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Same-month seasonality",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, UK, 1999-2013",
+   "t": 4.036828181954467,
+   "p": 5.417871771906668e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low skewness",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, UK, 1999-2013",
+   "t": -3.21902165790749,
+   "p": 0.001286287696466104,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Same-month seasonality",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, World, 1999-2013",
+   "t": 3.655930761966725,
+   "p": 0.0002562505168914875,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low skewness",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, World, 1999-2013",
+   "t": -3.141694022742868,
+   "p": 0.0016797347432695453,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low MAX (1 day)",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, market average, 1999-2013",
+   "t": 3.2202105092788083,
+   "p": 0.0012809649563945147,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Same-month seasonality",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, market average, 1999-2013",
+   "t": 4.329803832714929,
+   "p": 1.4924222781598218e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Low skewness",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, market average, 1999-2013",
+   "t": -3.751165884703005,
+   "p": 0.00017601419344148717,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS15",
+   "strategy": "Small size",
+   "kind": "history 1998-2013",
+   "test": "Fama-MacBeth slope, market average, 1999-2013",
+   "t": 3.399446322180953,
+   "p": 0.0006752243212770903,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 2013-2025, JKP",
+   "t": 4.339238571661976,
+   "p": 1.4297724104661569e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Value",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 2013-2025, JKP",
+   "t": 3.421524842376134,
+   "p": 0.000622710358580747,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, Denmark, 2013-2025, JKP",
+   "t": 3.4229541727631183,
+   "p": 0.0006194451968757342,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Fundamental pair",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, EU (World ex US), 2013-2025, JKP",
+   "t": 3.2647821500381444,
+   "p": 0.0010954829621656614,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Fundamental pair (primary)",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 2013-2025, JKP (pre-registered)",
+   "t": 4.731939705181917,
+   "p": 2.2238447636713232e-06,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 2013-2025, JKP",
+   "t": 6.03660845273989,
+   "p": 1.573869923277016e-09,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profit growth",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, Europe, 1999-2013, ART",
+   "t": 6.878557060012724,
+   "p": 6.0462745921086025e-12,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, Europe, 1999-2013, ART",
+   "t": 3.886307497349944,
+   "p": 0.0001017805675980199,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Value",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, Europe, 1999-2013, ART",
+   "t": 3.997202224803024,
+   "p": 6.409554237762904e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profitability",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, Europe, 1999-2013, ART",
+   "t": 4.341498316998057,
+   "p": 1.4151436290799069e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Fundamental pair",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, Europe, 1999-2013, ART",
+   "t": 7.079895221567328,
+   "p": 1.4426237981979284e-12,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Shortlist + fundamental pair",
+   "kind": "fundamentals outside the US",
+   "test": "minus shortlist, Europe, 1999-2013, ART",
+   "t": 4.6254037565253325,
+   "p": 3.738693818977623e-06,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profit growth",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 1999-2013, ART",
+   "t": 4.7025782796885265,
+   "p": 2.5689667755290913e-06,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 1999-2013, ART",
+   "t": 4.066681857422684,
+   "p": 4.7687274191687834e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Value",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 1999-2013, ART",
+   "t": 2.938262993504603,
+   "p": 0.0033005690879419625,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profitability",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 1999-2013, ART",
+   "t": 3.6425497047221693,
+   "p": 0.00026995083076175597,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Fundamental pair",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, UK, 1999-2013, ART",
+   "t": 6.404541669593471,
+   "p": 1.508217994938832e-10,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profit growth",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, America, 1999-2013, ART",
+   "t": 3.6637329836095898,
+   "p": 0.0002485659100668336,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, America, 1999-2013, ART",
+   "t": 3.292518631153507,
+   "p": 0.0009929431868211935,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Value",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, America, 1999-2013, ART",
+   "t": 4.191387737859442,
+   "p": 2.7725336699147007e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profitability",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, America, 1999-2013, ART",
+   "t": 2.8289036251972917,
+   "p": 0.004670776205848881,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Fundamental pair",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, America, 1999-2013, ART",
+   "t": 4.596959069648604,
+   "p": 4.287017942417037e-06,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Shortlist + fundamental pair",
+   "kind": "fundamentals outside the US",
+   "test": "minus shortlist, America, 1999-2013, ART",
+   "t": 3.0738071907168134,
+   "p": 0.0021134597543994715,
+   "sharpe": NaN,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Fundamental pair (primary)",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 1999-2013, ART (pre-registered)",
+   "t": 6.998056367648281,
+   "p": 2.595479386968691e-12,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profit growth",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 1999-2013, ART",
+   "t": 6.184618176221234,
+   "p": 6.22529583438336e-10,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Issuance",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 1999-2013, ART",
+   "t": 4.341847525991382,
+   "p": 1.4128957489090155e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Value",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 1999-2013, ART",
+   "t": 4.017768069563499,
+   "p": 5.8751980841709184e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS17",
+   "strategy": "Profitability",
+   "kind": "fundamentals outside the US",
+   "test": "alpha on the shortlist, non-US average, 1999-2013, ART",
+   "t": 4.231308954332379,
+   "p": 2.3233528344102083e-05,
+   "sharpe": NaN,
+   "bonferroni": true,
+   "bh": true
+  },
+  {
+   "fs": "FS19",
+   "strategy": "shortlist (within sectors)",
+   "kind": "robustness",
+   "test": "net return, EU",
+   "t": 3.2027419277007216,
+   "p": 0.001361259086478439,
+   "sharpe": 0.7339411969413911,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS19",
+   "strategy": "low beta (within sectors)",
+   "kind": "robustness",
+   "test": "net return, UK",
+   "t": 2.9490715781010923,
+   "p": 0.003187301462928227,
+   "sharpe": 0.9427453983234957,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS19",
+   "strategy": "shortlist (within sectors)",
+   "kind": "robustness",
+   "test": "net return, UK",
+   "t": 3.7351158731008964,
+   "p": 0.0001876287748583394,
+   "sharpe": 1.0768748359257936,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS19",
+   "strategy": "shortlist (within sectors)",
+   "kind": "robustness",
+   "test": "net return, WD",
+   "t": 3.305425656554186,
+   "p": 0.0009483225843098797,
+   "sharpe": 0.7228360346478151,
+   "bonferroni": false,
+   "bh": true
+  },
+  {
+   "fs": "FS19",
+   "strategy": "Shortlist within sectors (primary)",
+   "kind": "robustness",
+   "test": "net return, 5-market average (pre-registered)",
+   "t": 2.9617359433070303,
+   "p": 0.0030591001124689043,
+   "sharpe": 0.6755667950761755,
+   "bonferroni": false,
+   "bh": true
   }
  ],
- "n_own": 167,
- "n_battery": 38
+ "n_own": 584,
+ "n_battery": 98
 }

@@ -125,6 +125,11 @@ CLOSED = {
     "Short side: no borrow fees": "Every short leg pays a size-tiered borrow fee: 0.25% a year for the largest half of the universe, 0.75% for the next 30%, 2% for the smallest 20% (`code/borrow.py`); FS01 keeps its flat 0.5%.",
     "Leverage without financing": "Net long cash in beta-neutral and BAB books is charged at the USD risk-free rate + 0.5% (`borrow.financing`). Volatility targeting scales a dollar-neutral book and is not charged for cash; its margin cost is still missing.",
     "No replication check": "FS13: our US signals correlate 0.8 or more with the matching JKP factor for 8 of 12.",
+    "Flat 10 bp per side": "FS16: half-spread from traded value plus square-root market impact, at $1m to $10bn per book; the shortlist holds a positive Sharpe ratio to about $1bn in the US, $130m in World and $13–29m in the EU, UK and Denmark (`code/impact.py`).",
+    "No company fundamentals outside the US": "Partly closed. US stock level (FS13b); outside the US at factor level (FS17): the fundamental pair (profit growth + issuance) adds to low beta and momentum in the UK, Denmark and Europe in both 2013–25 (JKP) and 1999–2013 (ART). Stock-level non-US history still needs a data source.",
+    "No unit tests of the engine": "FS19: signals identical when rebuilt from truncated data (171 comparisons), iid-noise t-statistics behave as expected (4.2% beyond 1.96), a next-month cheat signal is caught (t > 180), cost arithmetic exact. Flag: 'beta-neutral' low beta keeps a realised beta of +0.3 to +0.6 in the US, UK, EU and World.",
+    "No stress tests of named episodes": "FS19: five episodes 2015–2022 for market, low beta, momentum and the FS18 overlay; the overlay stays within ±8% in every episode; low beta lost 24–29% in the US and World in the COVID crash and in 2022. Momentum-crash regression: sign as in Daniel & Moskowitz before 2013 (t −1.9), untestable after (too few bear months).",
+    "No sector or industry neutrality": "FS19 (pre-registered, passed): ranked within 11 sectors the shortlist keeps +5.3% a year (t 3.0), two thirds of its unrestricted return; UK sector coverage only 34%.",
     "Factsheet trials outside the programme ledger": "All factsheet trials are now in the factsheet trial ledger; FS14 will be pre-registered there.",
 }
 
@@ -171,7 +176,7 @@ def build():
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · data to 31 August 2026*
 
-> **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only {npos} of eleven long/short books ({posnames or "none"}) {"earns" if npos == 1 else "earn"} a **positive** return that passes the {GATE} gate in at least one market; {nneg} ({negnames or 'none'}) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, {sum(r['redundant'] for r in R)} of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (flat trading costs and no market impact). Borrow fees, financing of leverage, World in one currency, a replication check and a programme-wide trial ledger were added on 27 September 2026 (§3.0).
+> **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only {npos} of eleven long/short books ({posnames or "none"}) {"earns" if npos == 1 else "earn"} a **positive** return that passes the {GATE} gate in at least one market; {nneg} ({negnames or 'none'}) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, {sum(r['redundant'] for r in R)} of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (capacity outside the US). Borrow fees, financing of leverage, World in one currency, a replication check, a programme-wide trial ledger and a market-impact cost model were added on 27 September 2026 (§3.0).
 
 ## 1. All strategies in one table
 
@@ -210,13 +215,23 @@ def build():
     for c, gs in gaps_by.items():
         md += f"\n### 3.{list(gaps_by).index(c) + 2} {c}\n\n" + table(["Gap", "Where it bites", "Impact", "Effort", "Remedy", "Source we already have"], [[g[1], g[2], g[3], g[4], g[5], g[6]] for g in gs])
     md += f"""
-## 4. Recommended next steps
+## 4. Where the series ended up (FS13–FS18)
 
-1. **Close the remaining cheap gaps:** a size- and liquidity-dependent cost and impact model, engine unit tests on synthetic data, named-episode stress tests and sector-neutral variants of the low-risk and momentum books.
-2. **Add the missing families in the US at stock level** from the Sharadar fundamentals already on disk (value, quality/profitability, investment, payout, earnings momentum), and at factor level for UK, Denmark and World from JKP.
-3. **Run a multivariate test** (monthly Fama-MacBeth regressions of returns on all library signals, per universe) before the battery filter, so substitutes are recognised as such.
-4. **Then the multifactor battery** as planned: pre-registered filters on net return, Sharpe and turnover per segment; rolling 3-year correlations; dynamic weights over 12/36/60-month windows with equal, linear and exponential decay and volatility scaling; strict walk-forward; deflated Sharpe on the final pick.
-5. **Longer history** from the ART archive (1996–2013) for EU, UK, DK and US, to give every conclusion a genuine pre-2013 out-of-sample check.
+Steps 1–5 of the first edition's plan are done, including the remaining cheap gaps (FS16 costs, FS19 engine tests, stress episodes and sector neutrality). In short:
+
+| Step | Result | Factsheet |
+|---|---|---|
+| Signal battery across all six markets | Low beta (beta-neutral) is positive in 6 of 6 markets and 12-1 momentum in 5 of 6; no price signal survives the correction on its own | FS13 |
+| US fundamentals, stock level | Profit growth and debt issuance add alpha; value and investment do not | FS13b |
+| Multivariate test | Residual momentum and 52-week high are redundant next to 12-1 momentum | FS13c |
+| Pre-registered multifactor model | No selection rule beats equal weights (t 1.4) | FS14 |
+| ART history, 1999–2013 | The shortlist holds out of sample (Sharpe 0.8); selection rules fail again | FS15 |
+| Costs that grow with size | Positive to about $1bn in the US, tens of millions in Europe and the UK, never in the Nordics | FS16 |
+| Fundamentals outside the US | Profit growth + issuance add to the shortlist at factor level (t 4.7) | FS17 |
+| The portfolio I would run | Market + 5%-vol overlay: Sharpe +0.15–0.21 in the US, EU, UK and World at $50m per book; pooled t 1.85, not passed | FS18 |
+| Robustness | Engine clean; within-sector shortlist keeps two thirds (t 3.0); "beta-neutral" low beta is not market-neutral in crashes | FS19 |
+
+**Still open:** stock-level fundamentals outside the US (data request in `planning/DATA_REQUEST_LETTER.md`); realised-beta control for the low-beta book (shrunk betas, as in Frazzini & Pedersen); cost-model calibration to real spreads; UK sector labels for investment trusts.
 
 ## 5. Reproduce
 

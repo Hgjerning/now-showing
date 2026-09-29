@@ -45,7 +45,7 @@ def size_weighted(I):
     return pd.Series(out)
 
 
-def run(I, sig, long_high, construction="sort", beta_neutral=False, buffer=False, voltarget=False, borrow=True, finance=True):
+def run(I, sig, long_high, construction="sort", beta_neutral=False, buffer=False, voltarget=False, borrow=True, finance=True, record=None):
     S, fwd, B = I["S"][sig], I["fwd"], I["S"]["beta"]
     months = [t for t in S.index if START <= t <= END]
     q = nq(np.median([S.loc[t].notna().sum() for t in months])); keep = min(3 / q, 0.5)
@@ -84,6 +84,8 @@ def run(I, sig, long_high, construction="sort", beta_neutral=False, buffer=False
         g, bd = legs["good"], legs["bad"]
         ls = g["ret"] - bd["ret"]; cost = COST * 2 * (g["to"] + bd["to"])
         bf = BR.monthly_fee(I.get("R"), t, bd["w"]) if borrow else 0.0
+        if record is not None:
+            record.append((t, g["w"], bd["w"]))
         netcash = float(g["w"].sum() - bd["w"].sum()); fin = BR.financing(t, netcash) if finance else 0.0
         rows.append(dict(month=(t + 1).to_timestamp("M"), ls_gross=ls, ls_net=ls - cost - bf - fin, cost=cost, borrow=bf, fin=fin, netcash=netcash, good_net=g["unlev"] - COST * 2 * g["to"] * g["beta"],
                          good=g["unlev"], bad=bd["unlev"], to_good=g["to"], to_bad=bd["to"], n_good=g["n"], n_bad=bd["n"], ew=float(fwd.loc[t + 1, s.index].fillna(0).mean())))

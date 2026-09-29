@@ -78,10 +78,78 @@ def us_membership(px):
     return out
 
 
+ART_N = {"US_A": 500, "UK_A": 350, "EU_A": 240, "DK_A": 25}
+ART_REGIONS = ["US_A", "EU_A", "UK_A", "DK_A", "WD_A"]
+LEGACY_EUR = {"FRF": 6.55957, "ATS": 13.7603, "ESP": 166.386, "BEF": 40.3399, "DEM": 1.95583, "ITL": 1936.27, "NLG": 2.20371, "FIM": 5.94573, "PTE": 200.482, "IEP": 0.787564}
+
+
+def _art_fx_to_usd(idx):
+    """USD per unit, daily, for the ART currencies; EUR before 1999 back-filled with its first value."""
+    F = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "factors")
+    x = pd.read_csv(os.path.join(F, "fx_daily_datasets.csv"), parse_dates=["Date"])
+    name = {"EUR": "Euro", "GBP": "United Kingdom", "DKK": "Denmark", "SEK": "Sweden"}
+    out = {c: 1 / x[x.Country == n].set_index("Date")["Exchange rate"].astype(float).where(lambda s: s > 0) for c, n in name.items()}
+    L = pd.DataFrame(out).sort_index()
+    L = L.reindex(L.index.union(idx)).ffill().bfill().reindex(idx)
+    L["USD"] = 1.0
+    for k, v in LEGACY_EUR.items():
+        L[k] = L["EUR"] / v
+    return L
+
+
+def load_art(region):
+    """ART extract (Project2 reporting/art_cache), Jan 1998 - Mar 2013, including later-delisted stocks.
+    Universe: each month-end the top-N stocks by 63-day average traded value in USD (>= 60 days of history,
+    priced in the last 5 days); eligible in month m if in the universe at the end of m-1 (PREREG_FS15.md)."""
+    f = os.path.join(CACHE, f"{region}.pkl")
+    if os.path.exists(f):
+        return pd.read_pickle(f)
+    A = os.path.join(D, "art")
+    if region == "WD_A":
+        parts = [load_art(k) for k in ("US_A", "UK_A", "EU_A")]
+        idx = parts[0]["ret"].index.union(parts[1]["ret"].index).union(parts[2]["ret"].index)
+        ret = pd.concat([p["ret_usd"].reindex(idx) for p in parts], axis=1)
+        elig = pd.concat([p["elig"].reindex(idx).fillna(False) for p in parts], axis=1).astype(bool)
+        tv = pd.concat([p["tv_usd"].reindex(idx) for p in parts], axis=1)
+        ret = ret.loc[ret.notna().sum(axis=1) >= 0.2 * ret.notna().sum(axis=1).median()]
+        elig = elig.reindex(ret.index).fillna(False).astype(bool)
+        out = dict(ret=ret, ret_usd=ret, idx=(1 + ret.fillna(0)).cumprod().where(ret.notna().cumsum() > 0), elig=elig & ret.notna(), mcap=None, tv_usd=tv.reindex(ret.index))
+        pd.to_pickle(out, f); return out
+    k = region[:2]
+    P = pd.read_parquet(os.path.join(A, f"art_{k}_totret_daily.parquet")).sort_index(); P = P.where(P > 0)
+    T = pd.read_parquet(os.path.join(A, f"art_{k}_turnover_daily.parquet")).sort_index().reindex(index=P.index, columns=P.columns)
+    ccy = pd.read_csv(os.path.join(A, f"art_{k}_currency.csv")).set_index("StockId")["Currency"]
+    P.columns = [str(c) for c in P.columns]; T.columns = P.columns; ccy.index = [str(c) for c in ccy.index]
+    r = P.pct_change(fill_method=None).where(P.notna())
+    # bad-tick guard: +50% followed by a -33% reversal the next day (or the mirror) -> both days NaN
+    spike = ((r > 0.5) & (r.shift(-1) < -0.33)) | ((r < -0.33) & (r.shift(-1) > 0.5))
+    r = r.mask(spike | spike.shift(1, fill_value=False))
+    r = _clean(r, region, low=True)
+    r = r.loc[r.notna().sum(axis=1) >= max(5, 0.2 * r.notna().sum(axis=1).median())]
+    fx = _art_fx_to_usd(r.index)
+    cc = ccy.reindex(r.columns).fillna("USD" if k == "US" else {"UK": "GBP", "DK": "DKK", "EU": "EUR"}[k])
+    fxm = pd.DataFrame({c: fx[cc[c]] if cc[c] in fx else fx["EUR"] for c in r.columns}, index=r.index)
+    tv_usd = (T.reindex(r.index) * fxm).where(lambda x: x > 0)
+    ret_usd = ((1 + r) * (1 + fxm.pct_change(fill_method=None).fillna(0)) - 1).where(r.notna())
+    hist = r.notna().cumsum() >= 60
+    recent = r.notna().rolling(5, min_periods=1).sum() > 0
+    avg = tv_usd.rolling(63, min_periods=40).mean().where(hist & recent)
+    months = r.resample("ME").last().index
+    am = avg.resample("ME").last()
+    rk = am.rank(axis=1, ascending=False, method="first")
+    uni = (rk <= ART_N[region]) & am.notna()
+    elig = uni.shift(1).reindex(r.index, method="ffill").fillna(False).astype(bool)
+    out = dict(ret=r, ret_usd=ret_usd, idx=(1 + r.fillna(0)).cumprod().where(r.notna().cumsum() > 0), elig=elig & r.notna(), mcap=None, tv_usd=tv_usd)
+    pd.to_pickle(out, f)
+    return out
+
+
 def load(region, pit=True):
     """PIT (default): EU/UK/DK/SC from Wikipedia point-in-time index membership (Project2 cache, see
     _data_private/build_pit.py); WD = US Sharadar PIT + UK PIT + EU PIT. pit=False: the original survivor lists.
     Returns dict: ret (daily TR returns, local ccy), idx (TR index), elig (daily eligibility bool), mcap (US only)."""
+    if region.endswith("_A"):
+        return load_art(region)
     if pit and region != "US":
         return load_pit(region)
     f = os.path.join(CACHE, f"{region}.pkl")

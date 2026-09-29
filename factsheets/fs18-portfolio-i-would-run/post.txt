@@ -1,0 +1,23 @@
+18 factsheets later, here is the portfolio I would actually run.
+
+Hold the market. Next to it, run a small market-neutral overlay made only of what survived the series: low beta and 12-1 momentum everywhere, plus profit growth and debt issuance in the US. Size it to 5% volatility. Charge every cost: spread, market impact, borrow fees, financing.
+
+Result, 2014–2026, at $50m per book, change in Sharpe ratio vs the market alone:
+→ US: +0.19
+→ EU: +0.22
+→ UK: +0.15
+→ World: +0.16
+→ Denmark: +0.00
+→ Scandinavia: -0.05
+
+Pooled, the overlay adds 1.9% a year with t = 1.85. My pre-registered bar was t > 2. Not passed, narrowly.
+
+At $250m per book the gain halves or worse outside the US, and turns negative in the UK and the Nordics.
+
+So: a small, cheap overlay in large, liquid markets earns its place. It is not a strategy that scales, and the Nordics are not the place for it.
+
+That is the honest end of the series. Every test, including the ones that failed, is in the public trial ledger.
+
+Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs18-portfolio-i-would-run
+
+#investing #quant #factorinvesting #portfolioconstruction #backtesting

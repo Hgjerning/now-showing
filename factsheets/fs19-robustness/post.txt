@@ -1,0 +1,13 @@
+Before you trust a backtest, try to break it. I tried three ways.
+
+1. Is it a bug? I rebuilt every signal from data cut off in 2015, 2019 and 2023: identical values, so no peeking at the future. On random noise the strategies earn nothing, as they should. A deliberate cheat (next month's return as the signal) is caught instantly.
+
+2. Is it a sector bet? Ranked only within sectors, the low beta + momentum pair keeps 5.3% a year (t 3.0) of its 8.0%. About two thirds is stock picking, not sector timing.
+
+3. Is it a few lucky episodes? Here is the surprise. The "market-neutral" low-beta book lost 29% in the US in the COVID crash and 24% in 2022. Low betas drift up and high betas drift down, so a book that is neutral on paper still carries market risk. Momentum did the hedging, and the combined overlay stayed within ±8% in every episode.
+
+Lesson: "beta-neutral" in a backtest usually means neutral on estimated betas. Check the realised beta.
+
+Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs19-robustness
+
+#investing #quant #factorinvesting #backtesting #riskmanagement

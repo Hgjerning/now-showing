@@ -1,0 +1,17 @@
+I tested my conclusions on data they had never seen: 1998–2013, including the dot-com bust and 2008.
+
+Same 19 signals, same directions, same costs, same pre-registered multifactor rules. The history comes from an old research database of mine, with delisted stocks included, for the US, Europe, the UK and Denmark.
+
+→ Low beta is confirmed: positive in all four markets in both periods (t 2.2 before 2013).
+→ Momentum keeps its sign, and in a regression with all signals it again adds return (t 2.2).
+→ Low skewness loses in both periods (t -5.1). In large caps, lottery-like stocks kept earning more, not less.
+→ Seasonality flips: strong before 2013, failed after. Published and then faded.
+→ The dynamic multifactor selection fails its pre-registered test again (+0.6% a year, t 0.2).
+
+And the result I did not expect: the simple pair I picked from the later data, low beta plus momentum, beat owning every signal by +9.1% a year (t 2.6) in all four markets, with near-zero correlation to the market. Out of sample, by construction.
+
+It still does not clear the correction for all 566 tests I have run. But it is the closest thing to common ground this series has found.
+
+Full factsheet and pre-registration: https://hgjerning.github.io/now-showing/factsheets/fs15-earlier-history
+
+#investing #quant #factorinvesting #research #backtesting

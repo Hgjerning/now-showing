@@ -26,6 +26,9 @@ def _tv(R):
 
 
 def _size_raw(R, idx_m):
+    if R.endswith("_A"):
+        tv = data.load(R)["tv_usd"]; avg = tv.rolling(63, min_periods=40).mean()
+        return avg.groupby(avg.index.to_period("M")).last()
     if R == "US":
         mc = data.load("US", pit=False)["mcap"]; mc.index = mc.index.to_period("M")
         return mc
@@ -40,7 +43,7 @@ def build(R):
     if os.path.exists(f):
         return pd.read_pickle(f)
     base = SG.build(R); E = base["E"]; fwd = base["fwd"]
-    o = data.load(R); r = o["ret"].loc["2011":]
+    o = data.load(R); r = o["ret"].loc["1998":] if R.endswith("_A") else o["ret"].loc["2011":]
     per = r.index.to_period("M"); g = r.groupby(per); cnt = g.count()
     S = {}
     S["vol252"] = r.rolling(252, min_periods=200).std().groupby(per).last()
@@ -56,13 +59,14 @@ def build(R):
                 seas.loc[t] = mret.loc[tgt].mean()
     S["seas"] = seas
     # size
-    if R == "WD":
+    if R in ("WD", "WD_A"):
+        subs = ["US", "UK", "EU"] if R == "WD" else ["US_A", "UK_A", "EU_A"]
         parts = []
-        for sub in ["US", "UK", "EU"]:
+        for sub in subs:
             x = np.log(_size_raw(sub, None)); parts.append(x.rank(axis=1, pct=True))
         S["size"] = pd.concat(parts, axis=1).T.groupby(level=0).first().T
         caps = []
-        for sub in ["US", "UK", "EU"]:
+        for sub in subs:
             c = _size_raw(sub, None); caps.append(c.div(c.sum(axis=1), axis=0))   # region-normalised weights
         capw = pd.concat(caps, axis=1).T.groupby(level=0).first().T
     else:

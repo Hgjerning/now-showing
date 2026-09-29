@@ -10,6 +10,8 @@ import pandas as pd
 from scipy import stats as sst
 
 import specs
+from battery import DIRECTION
+DIRECTION_LAB = {k: v[2] for k, v in DIRECTION.items()}
 from jkp_battery import bh
 
 HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); PLAN = os.path.join(HERE, "..", "planning")
@@ -51,6 +53,76 @@ def rows():
     for s, v in O["price"].items():
         for k, lab in (("raw", "L/S net"), ("bn", "beta-neutral, financed")):
             R.append(dict(fs="FS13", strategy=v["label"], kind="battery", test=f"{lab}, 6-market average", t=v[k]["t"], sharpe=v[k]["sharpe"], months=None, pooled=(s, k)))
+    if os.path.exists(os.path.join(RES, "fund_battery.json")):
+        FB = json.load(open(os.path.join(RES, "fund_battery.json")))
+        for s, v in FB["stats"].items():
+            for k, lab in (("t", "L/S net, US"), ("bn_t", "beta-neutral, financed, US"), ("lo_t_alpha", "long-only alpha vs EW, US")):
+                R.append(dict(fs="FS13b", strategy=FB["labels"][s], kind="battery", test=lab, t=v[k], sharpe=None, months=None,
+                              fund=(s, {"t": "ls_net", "bn_t": "bn_net", "lo_t_alpha": "lo_active"}[k])))
+    if os.path.exists(os.path.join(RES, "fmb.json")):
+        FM = json.load(open(os.path.join(RES, "fmb.json")))
+        for u in U:
+            if FM[u]["multi"]:
+                for s, v in FM[u]["multi"].items():
+                    R.append(dict(fs="FS13c", strategy=FM["labels"][s], kind="fama-macbeth", test=f"multivariate slope, {UN[u]}", t=v["t"], sharpe=None, months=None))
+        for s, v in FM["pooled"].items():
+            R.append(dict(fs="FS13c", strategy=FM["labels"][s], kind="fama-macbeth", test="multivariate slope, market average", t=v["t"], sharpe=None, months=None))
+    if os.path.exists(os.path.join(RES, "fs14.json")):
+        F14 = json.load(open(os.path.join(RES, "fs14.json")))
+        for u in U:
+            for v in F14["variants"]:
+                R.append(dict(fs="FS14", strategy=f"Multifactor {v}", kind="multifactor", test=f"net return vs zero, {UN[u]}", t=F14[u][v]["t"], sharpe=F14[u][v]["sharpe"], months=F14[u][v]["months"]))
+        R.append(dict(fs="FS14", strategy="Multifactor RP (primary)", kind="multifactor", test="RP minus ALL-EQ, 5-market average (pre-registered primary test)", t=F14["primary"]["t"], sharpe=None, months=None))
+        for v, x in F14["vs_alleq"].items():
+            R.append(dict(fs="FS14", strategy=f"Multifactor {v}", kind="multifactor", test="minus ALL-EQ, 5-market average", t=x["t"], sharpe=None, months=None))
+    if os.path.exists(os.path.join(RES, "art_fs14.json")):
+        AB = json.load(open(os.path.join(RES, "art_battery.json")))["pooled"]; AF = json.load(open(os.path.join(RES, "art_fmb.json"))); AM = json.load(open(os.path.join(RES, "art_fs14.json")))
+        AN = {"US_A": "US", "EU_A": "EU", "UK_A": "UK", "DK_A": "DK", "WD_A": "World"}
+        for s, v in AB.items():
+            for k, lab in (("raw", "L/S net"), ("bn", "beta-neutral, financed")):
+                R.append(dict(fs="FS15", strategy=DIRECTION_LAB.get(s, s), kind="history 1998-2013", test=f"{lab}, 4-market average, 1999-2013", t=v[k]["t"], sharpe=v[k]["sharpe"], months=None))
+        for u in AN:
+            if AF[u]["multi"]:
+                for s, v in AF[u]["multi"].items():
+                    R.append(dict(fs="FS15", strategy=DIRECTION_LAB.get(s, s), kind="history 1998-2013", test=f"Fama-MacBeth slope, {AN[u]}, 1999-2013", t=v["t"], sharpe=None, months=None))
+        for s, v in AF["pooled"].items():
+            R.append(dict(fs="FS15", strategy=DIRECTION_LAB.get(s, s), kind="history 1998-2013", test="Fama-MacBeth slope, market average, 1999-2013", t=v["t"], sharpe=None, months=None))
+        for u in AN:
+            for v in AM["variants"]:
+                R.append(dict(fs="FS15", strategy=f"Multifactor {v}", kind="history 1998-2013", test=f"net return vs zero, {AN[u]}, 2002-2013", t=AM[u][v]["t"], sharpe=AM[u][v]["sharpe"], months=None))
+        R.append(dict(fs="FS15", strategy="Multifactor RP (primary)", kind="history 1998-2013", test="RP minus ALL-EQ, 4-market average, 2002-2013 (pre-registered)", t=AM["primary"]["t"], sharpe=None, months=None))
+        if "short_vs_alleq" in AM:
+            R.append(dict(fs="FS15", strategy="Fixed shortlist (low beta + momentum)", kind="history 1998-2013", test="SHORT minus ALL-EQ, 4-market average, 2002-2013", t=AM["short_vs_alleq"]["t"], sharpe=None, months=None))
+            R.append(dict(fs="FS15", strategy="Fixed shortlist (low beta + momentum)", kind="history 1998-2013", test="net return vs zero, 4-market average, 2002-2013", t=AM["pooled"]["SHORT"]["t"], sharpe=AM["pooled"]["SHORT"]["sharpe"], months=None))
+        for v, x in AM["vs_alleq"].items():
+            R.append(dict(fs="FS15", strategy=f"Multifactor {v}", kind="history 1998-2013", test="minus ALL-EQ, 4-market average, 2002-2013", t=x["t"], sharpe=None, months=None))
+    if os.path.exists(os.path.join(RES, "fs17.json")):
+        F7 = json.load(open(os.path.join(RES, "fs17.json")))
+        for per, lab in (("B", "2013-2025, JKP"), ("A", "1999-2013, ART")):
+            for mk, v in F7[per]["markets"].items():
+                for t, x in v["themes"].items():
+                    R.append(dict(fs="FS17", strategy=("Fundamental pair" if t == "pair" else t), kind="fundamentals outside the US", test=f"alpha on the shortlist, {F7['names'][mk]}, {lab}", t=x["t"], sharpe=None, months=None))
+                R.append(dict(fs="FS17", strategy="Shortlist + fundamental pair", kind="fundamentals outside the US", test=f"minus shortlist, {F7['names'][mk]}, {lab}", t=v["diff_t"], sharpe=None, months=None))
+            R.append(dict(fs="FS17", strategy="Fundamental pair (primary)", kind="fundamentals outside the US", test=f"alpha on the shortlist, non-US average, {lab} (pre-registered)", t=F7[per]["pooled"]["t"], sharpe=None, months=None))
+            for t, x in F7[per]["pooled_themes"].items():
+                R.append(dict(fs="FS17", strategy=t, kind="fundamentals outside the US", test=f"alpha on the shortlist, non-US average, {lab}", t=x["t"], sharpe=None, months=None))
+    if os.path.exists(os.path.join(RES, "fs18.json")):
+        F8 = json.load(open(os.path.join(RES, "fs18.json")))
+        for K, lab in (("5e+07", "$50m per book"), ("2e+08", "$250m per book")):
+            for mk, v in F8["markets"].items():
+                o = v[K]["overlay"]
+                R.append(dict(fs="FS18", strategy="Market + overlay", kind="portfolio", test=f"overlay return, {mk}, {lab}", t=o["t"], sharpe=o["sharpe"], months=v[K]["n"]))
+            R.append(dict(fs="FS18", strategy="Market + overlay" + (" (primary)" if K == "5e+07" else ""), kind="portfolio", test=f"overlay return, 5-market average, {lab}" + (" (pre-registered)" if K == "5e+07" else ""), t=F8[f"pooled_{K}"]["t"], sharpe=F8[f"pooled_{K}"]["sharpe"], months=None))
+    if os.path.exists(os.path.join(RES, "fs19.json")):
+        F9 = json.load(open(os.path.join(RES, "fs19.json")))
+        for mk, v in F9["C"]["markets"].items():
+            for b in ("low beta", "12-1 momentum", "shortlist"):
+                R.append(dict(fs="FS19", strategy=f"{b} (within sectors)", kind="robustness", test=f"net return, {mk}", t=v[f"{b} | sector-neutral"]["t"], sharpe=v[f"{b} | sector-neutral"]["sharpe"], months=None))
+                R.append(dict(fs="FS19", strategy=f"{b} (within sectors)", kind="robustness", test=f"minus unrestricted, {mk}", t=v[f"{b} | difference"]["t"], sharpe=None, months=None))
+        R.append(dict(fs="FS19", strategy="Shortlist within sectors (primary)", kind="robustness", test="net return, 5-market average (pre-registered)", t=F9["C"]["pooled | sector-neutral"]["t"], sharpe=F9["C"]["pooled | sector-neutral"]["sharpe"], months=None))
+        for k, v in F9["B"]["dm"].items():
+            if v["bear_months"] >= 12:
+                R.append(dict(fs="FS19", strategy="Momentum crash (bear x market)", kind="robustness", test=f"Daniel-Moskowitz, {k}", t=v["t_bear_mkt"], sharpe=None, months=v["n"]))
     D = pd.DataFrame(R)
     D["p"] = D.apply(lambda r: r["p"] if "p" in r and pd.notna(r.get("p")) else p2(r["t"]), axis=1)
     return D
@@ -73,6 +145,11 @@ def series_of(r):
             ew = P[u]["books"]["EW universe"].reindex(x.index)
             beta = float(np.cov(x, ew)[0, 1] / np.var(ew, ddof=1)); x = x - beta * ew
         return x
+    if isinstance(r.get("fund"), tuple):
+        s, col = r["fund"]; df = pd.read_pickle(os.path.join(RES, "fund_battery.pkl"))[s]
+        if col == "lo_active":
+            x = df.lo_net.dropna(); ew = df.ew.reindex(x.index); beta = float(np.cov(x, ew)[0, 1] / np.var(ew, ddof=1)); return x - beta * ew
+        return df[col].dropna()
     if isinstance(r.get("pooled"), tuple):
         s, k = r["pooled"]; B = pd.read_pickle(os.path.join(RES, "battery_price.pkl"))
         col = "ls_net" if k == "raw" else "bn_net"
@@ -88,7 +165,7 @@ def build():
     own = D[D.kind != "fix (holdout)"]
     # variance of per-period (monthly) Sharpe across trials, estimated as t / sqrt(T) with T = 163 months
     sr_m = own.t / np.sqrt(163); var_sr = float(sr_m.var())
-    cand = D[(D.t > 0) & D.apply(lambda r: isinstance(r.get("series"), tuple) or isinstance(r.get("pooled"), tuple), axis=1)].sort_values("t", ascending=False).head(6)
+    cand = D[(D.t > 0) & D.apply(lambda r: isinstance(r.get("series"), tuple) or isinstance(r.get("pooled"), tuple) or isinstance(r.get("fund"), tuple), axis=1)].sort_values("t", ascending=False).head(6)
     DS = []
     for _, r in cand.iterrows():
         x = series_of(r)
@@ -116,7 +193,7 @@ def md(D, O):
 
 Built {pd.Timestamp.today().date()} by `code/ledger.py` from the results files; re-run after every rebuild. This ledger is separate from the article programme's `TRIAL_LEDGER.md` files (which count pre-registered hypotheses); here every gated cell of every factsheet is a trial.
 
-**Trials: {O['n']}**: primary cells (6 markets × L/S and long-only per strategy), fix-ladder holdout tests, and the FS13 battery (19 signals × raw/beta-neutral). The 153 JKP factors in FS13 are published factors, tested there with their own correction, and not counted here.
+**Trials: {O['n']}**: primary cells (6 markets × L/S and long-only per strategy), fix-ladder holdout tests, the FS13 battery (19 signals × raw/beta-neutral) the FS13b US fundamental battery (20 signals × raw, beta-neutral and long-only) the FS13c Fama-MacBeth slopes (multivariate, per market and averaged) the pre-registered FS14 multifactor tests the FS15 re-run on 1998–2013 the FS17 factor-level tests of non-US fundamentals the FS18 portfolio overlay and the FS19 robustness tests. The 153 JKP factors in FS13 are published factors, tested there with their own correction, and not counted here.
 
 Programme-wide bars: Bonferroni at 5% over {O['n']} trials needs |t| > {O['z_bonf']:.2f}; Benjamini–Hochberg at 5% controls the false-discovery rate instead.
 

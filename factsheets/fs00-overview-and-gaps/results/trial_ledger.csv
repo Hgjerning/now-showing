@@ -1,7 +1,7 @@
 fs,strategy,kind,test,t,p,sharpe,bonferroni,bh
 FS01,Turtle Traders,primary,"L/S net mean, US",-3.5871774266960603,0.00033427687632991976,-0.8617913447097046,False,True
 FS01,Turtle Traders,primary,"long-only alpha vs EW, US",-1.5814753637407781,0.11376938763413147,0.27333683851407103,False,False
-FS02,Lottery (MAX),primary,"L/S net mean, US",-2.7499541183380507,0.0059603609782756806,-0.8084919130680329,False,True
+FS02,Lottery (MAX),primary,"L/S net mean, US",-2.7499541183380507,0.0059603609782756806,-0.8084919130680329,False,False
 FS02,Lottery (MAX),primary,"long-only alpha vs EW, US",-0.2940349976854566,0.7687311605140643,0.7964454677297262,False,False
 FS01,Turtle Traders,primary,"L/S net mean, EU",-2.151493452100807,0.031437272094381186,-0.47051457872262054,False,False
 FS01,Turtle Traders,primary,"long-only alpha vs EW, EU",-0.1903570830848679,0.8490293254585415,0.43511937464139167,False,False
@@ -38,7 +38,7 @@ FS03,Momentum,primary,"long-only alpha vs EW, US",2.3491928319562922,0.018814160
 FS03,Momentum,primary,"L/S net mean, EU",1.3075879114367726,0.1910131192947686,0.33710602137485607,False,False
 FS03,Momentum,primary,"long-only alpha vs EW, EU",1.7588106487753947,0.07860967547382436,0.9600090316436912,False,False
 FS03,Momentum,primary,"L/S net mean, UK",1.5905965390922179,0.11170040386639357,0.42905875340291627,False,False
-FS03,Momentum,primary,"long-only alpha vs EW, UK",3.678142370508116,0.00023493881626968083,1.1519863618349404,True,True
+FS03,Momentum,primary,"long-only alpha vs EW, UK",3.678142370508116,0.00023493881626968083,1.1519863618349404,False,True
 FS03,Momentum,primary,"L/S net mean, DK",1.1954716256756388,0.2319028157820695,0.3087789645740313,False,False
 FS03,Momentum,primary,"long-only alpha vs EW, DK",2.6630604810881513,0.007743349506374786,1.051195623046728,False,False
 FS03,Momentum,primary,"L/S net mean, SCANDI",-0.7062423809957473,0.480037418639506,-0.18677372828781477,False,False
@@ -69,7 +69,7 @@ FS06,Same-month seasonality,primary,"L/S net mean, EU",-3.600510119915231,0.0003
 FS06,Same-month seasonality,primary,"long-only alpha vs EW, EU",-2.504871927067125,0.012249574022886067,0.42053660093564993,False,False
 FS06,Same-month seasonality,primary,"L/S net mean, UK",0.6438287725055076,0.5196864738080276,0.2167331888310214,False,False
 FS06,Same-month seasonality,primary,"long-only alpha vs EW, UK",0.8133179788140509,0.4160357716648304,0.7844106339900727,False,False
-FS06,Same-month seasonality,primary,"L/S net mean, DK",-2.7355652480920414,0.006227323922371797,-0.8507339506852528,False,True
+FS06,Same-month seasonality,primary,"L/S net mean, DK",-2.7355652480920414,0.006227323922371797,-0.8507339506852528,False,False
 FS06,Same-month seasonality,primary,"long-only alpha vs EW, DK",-2.6160284829378866,0.008895913643946374,0.3858557201955695,False,False
 FS06,Same-month seasonality,primary,"L/S net mean, SCANDI",-2.1280846500799857,0.03333006575999842,-0.6039964997011164,False,False
 FS06,Same-month seasonality,primary,"long-only alpha vs EW, SCANDI",-0.9209638155639746,0.3570693189349474,0.6938701929808951,False,False
@@ -111,7 +111,7 @@ FS08,Short-term reversal,fix (holdout),"X3 + volatility targeting vs previous st
 FS09,52-week high,primary,"L/S net mean, US",-1.189985842055837,0.23405195674559365,-0.2754059726659003,False,False
 FS09,52-week high,primary,"long-only alpha vs EW, US",-0.07129122743342138,0.9431659769596916,0.7930663241027198,False,False
 FS09,52-week high,primary,"L/S net mean, EU",0.8443507210319006,0.398473450856625,0.19731167989627013,False,False
-FS09,52-week high,primary,"long-only alpha vs EW, EU",3.8544223600770176,0.00011600318771676221,1.2092625883316066,True,True
+FS09,52-week high,primary,"long-only alpha vs EW, EU",3.8544223600770176,0.00011600318771676221,1.2092625883316066,False,True
 FS09,52-week high,primary,"L/S net mean, UK",-0.12643741273543047,0.8993856886934821,-0.033236677046124756,False,False
 FS09,52-week high,primary,"long-only alpha vs EW, UK",1.8775852447482286,0.06043792581576213,0.9298544102462073,False,False
 FS09,52-week high,primary,"L/S net mean, DK",1.3927502236692044,0.1636953353368611,0.32668990578921375,False,False
@@ -152,7 +152,7 @@ FS11,Residual momentum,fix (holdout),"X1 beta-neutral legs vs previous step, poo
 FS11,Residual momentum,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",1.0976770585273192,0.27234553089382124,,False,False
 FS11,Residual momentum,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",0.8152713287579522,0.4149170165966807,,False,False
 FS12,Buy at the 52-week low,primary,"L/S net mean, US",-3.396079119380925,0.0006835859691742829,-0.8722951104213462,False,True
-FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, US",-2.758914290118641,0.005799374324351625,0.5206544927966568,False,True
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, US",-2.758914290118641,0.005799374324351625,0.5206544927966568,False,False
 FS12,Buy at the 52-week low,primary,"L/S net mean, EU",-3.3684671010638154,0.0007558741734565722,-0.9647135258214701,False,True
 FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, EU",-4.775095325217421,1.7962214906575014e-06,0.16421747016825539,True,True
 FS12,Buy at the 52-week low,primary,"L/S net mean, UK",-2.703913754211306,0.006852807323991961,-0.6676711661437745,False,False
@@ -162,7 +162,7 @@ FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, DK",-1.1392720093390
 FS12,Buy at the 52-week low,primary,"L/S net mean, SCANDI",-1.487288570756384,0.13693861182795009,-0.3619080929018863,False,False
 FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, SCANDI",-2.0088092920851,0.04455736244249486,0.5760910114034538,False,False
 FS12,Buy at the 52-week low,primary,"L/S net mean, World",-3.5818287991971864,0.000341197367546453,-0.9147612163200057,False,True
-FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, World",-3.806782858101452,0.00014078625305868897,0.41934098841241296,True,True
+FS12,Buy at the 52-week low,primary,"long-only alpha vs EW, World",-3.806782858101452,0.00014078625305868897,0.41934098841241296,False,True
 FS12,Buy at the 52-week low,fix (holdout),"X1 beta-neutral legs vs previous step, pooled holdout Sharpe",1.9366393680502383,0.052789442111577684,,False,False
 FS12,Buy at the 52-week low,fix (holdout),"X2 + turnover buffer vs previous step, pooled holdout Sharpe",-0.47909137509791233,0.6318736252749451,,False,False
 FS12,Buy at the 52-week low,fix (holdout),"X3 + volatility targeting vs previous step, pooled holdout Sharpe",-0.08656939066620951,0.9310137972405519,,False,False
@@ -204,3 +204,480 @@ FS13,Near 55-day high,battery,"L/S net, 6-market average",-0.8889148143453941,0.
 FS13,Near 55-day high,battery,"beta-neutral, financed, 6-market average",-0.07799696527063331,0.9378304670033479,-0.020764239706755748,False,False
 FS13,Small size,battery,"L/S net, 6-market average",0.29343762659301137,0.7691876687032309,0.0791602967936919,False,False
 FS13,Small size,battery,"beta-neutral, financed, 6-market average",0.3701848474882043,0.7112447658673484,0.11691136078764364,False,False
+FS13b,Debt growth,battery,"L/S net, US",-1.1918420365151718,0.23332318951369357,,False,False
+FS13b,Debt growth,battery,"beta-neutral, financed, US",-1.5506711622553093,0.1209805087556397,,False,False
+FS13b,Debt growth,battery,"long-only alpha vs EW, US",0.4258869222135919,0.6701902447942565,,False,False
+FS13b,Net operating assets,battery,"L/S net, US",1.6954120977247154,0.0899972725523881,,False,False
+FS13b,Net operating assets,battery,"beta-neutral, financed, US",0.9552414269166937,0.33945562048919675,,False,False
+FS13b,Net operating assets,battery,"long-only alpha vs EW, US",0.8912823297753119,0.37277772589453484,,False,False
+FS13b,Net financial asset growth,battery,"L/S net, US",-0.10982327478289468,0.9125495320863233,,False,False
+FS13b,Net financial asset growth,battery,"beta-neutral, financed, US",-0.6837022473450115,0.4941632040815205,,False,False
+FS13b,Net financial asset growth,battery,"long-only alpha vs EW, US",2.2276907733758797,0.025901142716161285,,False,False
+FS13b,Sales surprise,battery,"L/S net, US",0.12246522959410507,0.9025305814429385,,False,False
+FS13b,Sales surprise,battery,"beta-neutral, financed, US",0.5526234836435209,0.5805212580283212,,False,False
+FS13b,Sales surprise,battery,"long-only alpha vs EW, US",1.5749216306549205,0.11527453512048003,,False,False
+FS13b,Earnings change / equity,battery,"L/S net, US",1.7120060607872465,0.08689555154470696,,False,False
+FS13b,Earnings change / equity,battery,"beta-neutral, financed, US",1.8979682768086517,0.057700261081451654,,False,False
+FS13b,Earnings change / equity,battery,"long-only alpha vs EW, US",1.9902808896366218,0.04656000196135612,,False,False
+FS13b,Earnings change / assets,battery,"L/S net, US",2.0673050084835225,0.03870542261750054,,False,False
+FS13b,Earnings change / assets,battery,"beta-neutral, financed, US",2.1622184623256677,0.030601341124727455,,False,False
+FS13b,Earnings change / assets,battery,"long-only alpha vs EW, US",1.9339734171555525,0.05311639631984777,,False,False
+FS13b,Book-to-market,battery,"L/S net, US",-1.3522188818442298,0.17630530509775966,,False,False
+FS13b,Book-to-market,battery,"beta-neutral, financed, US",-2.3695852176111396,0.01780805072893954,,False,False
+FS13b,Book-to-market,battery,"long-only alpha vs EW, US",-2.5454800424519197,0.010912760173562797,,False,False
+FS13b,Earnings yield,battery,"L/S net, US",-1.4008887646160624,0.1612473390650231,,False,False
+FS13b,Earnings yield,battery,"beta-neutral, financed, US",-0.7791010790550413,0.435920174550813,,False,False
+FS13b,Earnings yield,battery,"long-only alpha vs EW, US",-2.239813900732143,0.025103007053710158,,False,False
+FS13b,Cash-flow yield,battery,"L/S net, US",-1.2186700527278853,0.22296944879296632,,False,False
+FS13b,Cash-flow yield,battery,"beta-neutral, financed, US",-1.3929925173490982,0.16362205342088876,,False,False
+FS13b,Cash-flow yield,battery,"long-only alpha vs EW, US",-1.9751239482592124,0.04825408373348927,,False,False
+FS13b,Gross profitability,battery,"L/S net, US",-0.12383476440758884,0.901446105639814,,False,False
+FS13b,Gross profitability,battery,"beta-neutral, financed, US",1.2395188964537143,0.21515339519535237,,False,False
+FS13b,Gross profitability,battery,"long-only alpha vs EW, US",0.6951157122285463,0.4869827888207485,,False,False
+FS13b,Operating profitability,battery,"L/S net, US",-1.0449516908087948,0.2960452975613381,,False,False
+FS13b,Operating profitability,battery,"beta-neutral, financed, US",0.01187617942475939,0.9905244025416393,,False,False
+FS13b,Operating profitability,battery,"long-only alpha vs EW, US",1.2877542067824446,0.1978315375276527,,False,False
+FS13b,Asset growth,battery,"L/S net, US",-1.1507481592039654,0.24983585759717464,,False,False
+FS13b,Asset growth,battery,"beta-neutral, financed, US",-1.5008197637097127,0.1334021854147618,,False,False
+FS13b,Asset growth,battery,"long-only alpha vs EW, US",-1.570953721482111,0.11619339875456047,,False,False
+FS13b,Capex growth,battery,"L/S net, US",-0.37362406724601027,0.7086840255810043,,False,False
+FS13b,Capex growth,battery,"beta-neutral, financed, US",-1.4178843423142233,0.15622453445624895,,False,False
+FS13b,Capex growth,battery,"long-only alpha vs EW, US",-0.43601241767687937,0.6628277200762762,,False,False
+FS13b,Accruals,battery,"L/S net, US",0.9827873589425496,0.3257121046453175,,False,False
+FS13b,Accruals,battery,"beta-neutral, financed, US",0.8203733840708949,0.4120032836870715,,False,False
+FS13b,Accruals,battery,"long-only alpha vs EW, US",0.3768719772932579,0.7062687474279912,,False,False
+FS13b,Debt issuance (composite),battery,"L/S net, US",1.872263223666994,0.061170196026742785,,False,False
+FS13b,Debt issuance (composite),battery,"beta-neutral, financed, US",0.7136058019403274,0.47547096887609586,,False,False
+FS13b,Debt issuance (composite),battery,"long-only alpha vs EW, US",2.4888272046940414,0.012816524049651834,,False,False
+FS13b,Profit growth (composite),battery,"L/S net, US",1.545323410657607,0.12226805558112486,,False,False
+FS13b,Profit growth (composite),battery,"beta-neutral, financed, US",2.218931485970628,0.02649138605905499,,False,False
+FS13b,Profit growth (composite),battery,"long-only alpha vs EW, US",3.4271250927380583,0.0006100079896589339,,False,True
+FS13b,Value (composite),battery,"L/S net, US",-1.8079332897641647,0.0706168838458412,,False,False
+FS13b,Value (composite),battery,"beta-neutral, financed, US",-1.9485490576392475,0.05134930082891964,,False,False
+FS13b,Value (composite),battery,"long-only alpha vs EW, US",-1.6943289664366183,0.09020278922130553,,False,False
+FS13b,Profitability (composite),battery,"L/S net, US",-0.17872152616220194,0.858156365883314,,False,False
+FS13b,Profitability (composite),battery,"beta-neutral, financed, US",1.114697702588732,0.2649799858606725,,False,False
+FS13b,Profitability (composite),battery,"long-only alpha vs EW, US",0.7176676114215887,0.47296225825752813,,False,False
+FS13b,Investment (composite),battery,"L/S net, US",-1.4159307701838764,0.1567957748543951,,False,False
+FS13b,Investment (composite),battery,"beta-neutral, financed, US",-2.196508605075246,0.02805555993316644,,False,False
+FS13b,Investment (composite),battery,"long-only alpha vs EW, US",-1.7746076436995895,0.07596269425817903,,False,False
+FS13b,Accruals (composite),battery,"L/S net, US",0.9822175933424193,0.32599266198888976,,False,False
+FS13b,Accruals (composite),battery,"beta-neutral, financed, US",0.8200170309147952,0.4122063983795501,,False,False
+FS13b,Accruals (composite),battery,"long-only alpha vs EW, US",0.3768719772932579,0.7062687474279912,,False,False
+FS13c,Low beta,fama-macbeth,"multivariate slope, US",-0.7575727397289551,0.4487068047392757,,False,False
+FS13c,Low volatility (252d),fama-macbeth,"multivariate slope, US",-0.0887937598657835,0.9292458170086995,,False,False
+FS13c,Low MAX (1 day),fama-macbeth,"multivariate slope, US",-1.1098586057479225,0.2670599603581545,,False,False
+FS13c,Momentum 12-1,fama-macbeth,"multivariate slope, US",2.5191624518006464,0.01176343694254145,,False,False
+FS13c,Residual momentum,fama-macbeth,"multivariate slope, US",-0.4125059004896337,0.679968656768577,,False,False
+FS13c,Near 52-week high,fama-macbeth,"multivariate slope, US",-0.7388889949253714,0.45997440545200985,,False,False
+FS13c,Short-term reversal,fama-macbeth,"multivariate slope, US",-0.06478154091749849,0.9483479387879838,,False,False
+FS13c,Same-month seasonality,fama-macbeth,"multivariate slope, US",-2.032892674352348,0.04206336731635396,,False,False
+FS13c,Low skewness,fama-macbeth,"multivariate slope, US",0.5185237083036655,0.6040929229758047,,False,False
+FS13c,Small size,fama-macbeth,"multivariate slope, US",-0.22270410406161775,0.8237658069988019,,False,False
+FS13c,Debt issuance (fund.),fama-macbeth,"multivariate slope, US",2.8969110906233437,0.003768565407473723,,False,True
+FS13c,Profit growth (fund.),fama-macbeth,"multivariate slope, US",0.8819343590423606,0.377812305237458,,False,False
+FS13c,Value (fund.),fama-macbeth,"multivariate slope, US",-0.6069089227666769,0.5439113562816331,,False,False
+FS13c,Profitability (fund.),fama-macbeth,"multivariate slope, US",0.581247757752283,0.5610734846383236,,False,False
+FS13c,Investment (fund.),fama-macbeth,"multivariate slope, US",-1.218752827206088,0.22293802077961455,,False,False
+FS13c,Accruals (fund.),fama-macbeth,"multivariate slope, US",1.5614342657868356,0.11842132227054014,,False,False
+FS13c,Low beta,fama-macbeth,"multivariate slope, EU",-0.9804766303317304,0.32685089982493243,,False,False
+FS13c,Low volatility (252d),fama-macbeth,"multivariate slope, EU",-0.07635051594772799,0.9391402371819493,,False,False
+FS13c,Low MAX (1 day),fama-macbeth,"multivariate slope, EU",-0.1458432490433318,0.8840451331020411,,False,False
+FS13c,Momentum 12-1,fama-macbeth,"multivariate slope, EU",3.6520679983033304,0.00026013697710558503,,False,True
+FS13c,Residual momentum,fama-macbeth,"multivariate slope, EU",-0.43438171758483557,0.6640112716669482,,False,False
+FS13c,Near 52-week high,fama-macbeth,"multivariate slope, EU",-0.040864575195581586,0.967403858742816,,False,False
+FS13c,Short-term reversal,fama-macbeth,"multivariate slope, EU",-0.7420217212366004,0.4580741752356017,,False,False
+FS13c,Same-month seasonality,fama-macbeth,"multivariate slope, EU",-2.089814833013724,0.03663443638826891,,False,False
+FS13c,Low skewness,fama-macbeth,"multivariate slope, EU",1.638901228671679,0.10123383180727807,,False,False
+FS13c,Small size,fama-macbeth,"multivariate slope, EU",-0.23597513844179552,0.8134519620943217,,False,False
+FS13c,Low beta,fama-macbeth,"multivariate slope, UK",0.8672766603562057,0.38579044162861487,,False,False
+FS13c,Low volatility (252d),fama-macbeth,"multivariate slope, UK",-3.4997831378108937,0.0004656368055091509,,False,True
+FS13c,Low MAX (1 day),fama-macbeth,"multivariate slope, UK",1.9689989037629454,0.04895321696667998,,False,False
+FS13c,Momentum 12-1,fama-macbeth,"multivariate slope, UK",1.8446381093363833,0.06509019945277261,,False,False
+FS13c,Residual momentum,fama-macbeth,"multivariate slope, UK",-0.4116777482320734,0.6805756367501334,,False,False
+FS13c,Near 52-week high,fama-macbeth,"multivariate slope, UK",-0.12312652541164683,0.9020069068499326,,False,False
+FS13c,Short-term reversal,fama-macbeth,"multivariate slope, UK",-0.32858442014052924,0.7424698256879094,,False,False
+FS13c,Same-month seasonality,fama-macbeth,"multivariate slope, UK",1.4486681882685923,0.1474302684696509,,False,False
+FS13c,Low skewness,fama-macbeth,"multivariate slope, UK",-1.5152264148869317,0.12971507585418918,,False,False
+FS13c,Small size,fama-macbeth,"multivariate slope, UK",1.9213656750677786,0.05468562274031985,,False,False
+FS13c,Low beta,fama-macbeth,"multivariate slope, SCANDI",-1.5865421292533999,0.11261638323673906,,False,False
+FS13c,Low volatility (252d),fama-macbeth,"multivariate slope, SCANDI",-0.8541420670996444,0.3930262778699183,,False,False
+FS13c,Low MAX (1 day),fama-macbeth,"multivariate slope, SCANDI",1.0806658279869015,0.27984578891713463,,False,False
+FS13c,Momentum 12-1,fama-macbeth,"multivariate slope, SCANDI",0.2287936119516376,0.8190293320384738,,False,False
+FS13c,Residual momentum,fama-macbeth,"multivariate slope, SCANDI",0.21126513710922362,0.8326803854932181,,False,False
+FS13c,Near 52-week high,fama-macbeth,"multivariate slope, SCANDI",1.1959623233248373,0.23171126225917593,,False,False
+FS13c,Short-term reversal,fama-macbeth,"multivariate slope, SCANDI",-0.06712161035712194,0.9464848901120346,,False,False
+FS13c,Same-month seasonality,fama-macbeth,"multivariate slope, SCANDI",-0.3122859546365404,0.7548232132675388,,False,False
+FS13c,Low skewness,fama-macbeth,"multivariate slope, SCANDI",0.9210319062235574,0.35703376929017683,,False,False
+FS13c,Small size,fama-macbeth,"multivariate slope, SCANDI",1.1721635639402996,0.24113139386242333,,False,False
+FS13c,Low beta,fama-macbeth,"multivariate slope, World",-0.8025265188003217,0.4222484547667178,,False,False
+FS13c,Low volatility (252d),fama-macbeth,"multivariate slope, World",-0.3211786863024096,0.7480749830683138,,False,False
+FS13c,Low MAX (1 day),fama-macbeth,"multivariate slope, World",-0.8000609798857528,0.42367546731300454,,False,False
+FS13c,Momentum 12-1,fama-macbeth,"multivariate slope, World",3.135113761370767,0.0017178747914803338,,False,True
+FS13c,Residual momentum,fama-macbeth,"multivariate slope, World",-0.6372285956176658,0.5239759538757474,,False,False
+FS13c,Near 52-week high,fama-macbeth,"multivariate slope, World",-0.8014950795683919,0.4228450914688291,,False,False
+FS13c,Short-term reversal,fama-macbeth,"multivariate slope, World",-0.5069091890379369,0.6122185378495404,,False,False
+FS13c,Same-month seasonality,fama-macbeth,"multivariate slope, World",0.5818763107518439,0.5606499980740427,,False,False
+FS13c,Low skewness,fama-macbeth,"multivariate slope, World",0.5791010127157112,0.562521016757785,,False,False
+FS13c,Small size,fama-macbeth,"multivariate slope, World",1.5298320344190746,0.12605831004812118,,False,False
+FS13c,Low beta,fama-macbeth,"multivariate slope, market average",-0.905960122690271,0.3649569596820852,,False,False
+FS13c,Low volatility (252d),fama-macbeth,"multivariate slope, market average",-1.211993574874071,0.22551484013111622,,False,False
+FS13c,Low MAX (1 day),fama-macbeth,"multivariate slope, market average",0.6878221235941724,0.49156480241719036,,False,False
+FS13c,Momentum 12-1,fama-macbeth,"multivariate slope, market average",2.6973133416997443,0.006990146105518846,,False,False
+FS13c,Residual momentum,fama-macbeth,"multivariate slope, market average",-0.35944337795011777,0.7192634290258619,,False,False
+FS13c,Near 52-week high,fama-macbeth,"multivariate slope, market average",0.18666685609125952,0.8519218442908914,,False,False
+FS13c,Short-term reversal,fama-macbeth,"multivariate slope, market average",-0.39694282073976145,0.6914096262920588,,False,False
+FS13c,Same-month seasonality,fama-macbeth,"multivariate slope, market average",-0.567589375528061,0.57031382305165,,False,False
+FS13c,Low skewness,fama-macbeth,"multivariate slope, market average",0.7463029683575995,0.45548441872634027,,False,False
+FS13c,Small size,fama-macbeth,"multivariate slope, market average",1.375083163338292,0.16910566350182066,,False,False
+FS14,Multifactor EQ,multifactor,"net return vs zero, US",-0.22425129623716453,0.8225617710552409,-0.0725134147817528,False,False
+FS14,Multifactor RP,multifactor,"net return vs zero, US",-0.25022341307944496,0.8024145800310842,-0.08119250600801702,False,False
+FS14,Multifactor W12-E,multifactor,"net return vs zero, US",-0.3561362060233919,0.7217385639360991,-0.11171364256838939,False,False
+FS14,Multifactor W12-L,multifactor,"net return vs zero, US",-0.5850695843429248,0.5585009292965291,-0.1720391772308546,False,False
+FS14,Multifactor W12-X,multifactor,"net return vs zero, US",-0.6306711266903074,0.528255581733825,-0.18456263623972882,False,False
+FS14,Multifactor W36-E,multifactor,"net return vs zero, US",-0.15394946903975226,0.87764957834719,-0.04933686054157105,False,False
+FS14,Multifactor W36-L,multifactor,"net return vs zero, US",-0.08975835312155903,0.9284792439429499,-0.028186180229269726,False,False
+FS14,Multifactor W36-X,multifactor,"net return vs zero, US",-0.17320895977962925,0.8624871812033201,-0.05404668494587378,False,False
+FS14,Multifactor W60-E,multifactor,"net return vs zero, US",-0.23876946943440497,0.811284345426253,-0.07589963467204963,False,False
+FS14,Multifactor W60-L,multifactor,"net return vs zero, US",-0.11536495156914048,0.9081558580351032,-0.03680331163301447,False,False
+FS14,Multifactor W60-X,multifactor,"net return vs zero, US",-0.13445757446772472,0.8930407570593688,-0.04259995314460897,False,False
+FS14,Multifactor EQ,multifactor,"net return vs zero, EU",1.5914107981914056,0.11151715576648447,0.45124550847170447,False,False
+FS14,Multifactor RP,multifactor,"net return vs zero, EU",1.4854486764940704,0.13742500940930458,0.42703986316184805,False,False
+FS14,Multifactor W12-E,multifactor,"net return vs zero, EU",1.128630686065312,0.2590536602484321,0.3193781429659809,False,False
+FS14,Multifactor W12-L,multifactor,"net return vs zero, EU",1.2857413729842977,0.19853333697708164,0.3777763060292603,False,False
+FS14,Multifactor W12-X,multifactor,"net return vs zero, EU",1.4128437191008103,0.1577016803380218,0.4182093696669106,False,False
+FS14,Multifactor W36-E,multifactor,"net return vs zero, EU",1.4999344029686241,0.13363139531327017,0.4308506299329087,False,False
+FS14,Multifactor W36-L,multifactor,"net return vs zero, EU",1.161721673411486,0.2453485390545178,0.3362282232004995,False,False
+FS14,Multifactor W36-X,multifactor,"net return vs zero, EU",1.248033852470149,0.21201866028118732,0.3612617560700047,False,False
+FS14,Multifactor W60-E,multifactor,"net return vs zero, EU",1.2363579159704723,0.2163255518882572,0.33454894340101005,False,False
+FS14,Multifactor W60-L,multifactor,"net return vs zero, EU",1.2368752309497721,0.21613340688511906,0.3498071551384231,False,False
+FS14,Multifactor W60-X,multifactor,"net return vs zero, EU",1.23187959568017,0.21799406449283198,0.3473626705590601,False,False
+FS14,Multifactor EQ,multifactor,"net return vs zero, UK",0.3770296324446239,0.7061515836517129,0.11833759979388134,False,False
+FS14,Multifactor RP,multifactor,"net return vs zero, UK",0.674680947916669,0.4998784915231238,0.2245778437225645,False,False
+FS14,Multifactor W12-E,multifactor,"net return vs zero, UK",1.5507482368471002,0.12096202980947157,0.531188017546992,False,False
+FS14,Multifactor W12-L,multifactor,"net return vs zero, UK",0.9707840618822909,0.33165582094181256,0.3508628276151343,False,False
+FS14,Multifactor W12-X,multifactor,"net return vs zero, UK",0.898815575878295,0.36875090219469,0.33449600564811105,False,False
+FS14,Multifactor W36-E,multifactor,"net return vs zero, UK",1.4600316585195474,0.14428137332447788,0.5264869393608209,False,False
+FS14,Multifactor W36-L,multifactor,"net return vs zero, UK",1.5037456482113143,0.13264687067289516,0.5376648851731779,False,False
+FS14,Multifactor W36-X,multifactor,"net return vs zero, UK",1.4811368347289182,0.13857011404096053,0.535388361984458,False,False
+FS14,Multifactor W60-E,multifactor,"net return vs zero, UK",1.4444875209369177,0.14860188750228964,0.512615531694443,False,False
+FS14,Multifactor W60-L,multifactor,"net return vs zero, UK",1.456059089136638,0.14537628567699623,0.5173514596602433,False,False
+FS14,Multifactor W60-X,multifactor,"net return vs zero, UK",1.4556057115108219,0.14550164824179723,0.5192122418860189,False,False
+FS14,Multifactor EQ,multifactor,"net return vs zero, DK",0.698492569041805,0.4848692034407702,0.18196759872365256,False,False
+FS14,Multifactor RP,multifactor,"net return vs zero, DK",0.7320564118992683,0.46413413681515747,0.19053282202083724,False,False
+FS14,Multifactor W12-E,multifactor,"net return vs zero, DK",0.9743497439148153,0.3298829135780599,0.2761501496628043,False,False
+FS14,Multifactor W12-L,multifactor,"net return vs zero, DK",1.2087720706874527,0.22675042439797632,0.3361741634753497,False,False
+FS14,Multifactor W12-X,multifactor,"net return vs zero, DK",1.0732106791305531,0.28317660029640823,0.3016626517645177,False,False
+FS14,Multifactor W36-E,multifactor,"net return vs zero, DK",0.7844730384144222,0.4327625961953263,0.2088322927763732,False,False
+FS14,Multifactor W36-L,multifactor,"net return vs zero, DK",1.021872787144807,0.3068411137156968,0.27972256284541924,False,False
+FS14,Multifactor W36-X,multifactor,"net return vs zero, DK",1.0071291517900165,0.31387271382616255,0.27263052932584214,False,False
+FS14,Multifactor W60-E,multifactor,"net return vs zero, DK",0.5314344168038242,0.5951177770671288,0.1387471281542185,False,False
+FS14,Multifactor W60-L,multifactor,"net return vs zero, DK",0.8501519286636156,0.3952406239550199,0.22663428927358592,False,False
+FS14,Multifactor W60-X,multifactor,"net return vs zero, DK",0.8850423764849723,0.37613377633635947,0.23372592323426256,False,False
+FS14,Multifactor EQ,multifactor,"net return vs zero, SCANDI",1.061851723369563,0.2883030043631991,0.3581060005447403,False,False
+FS14,Multifactor RP,multifactor,"net return vs zero, SCANDI",1.0735762773991733,0.2830126346434909,0.35343654889355514,False,False
+FS14,Multifactor W12-E,multifactor,"net return vs zero, SCANDI",1.1962005826534725,0.23161829355485253,0.4101329761696675,False,False
+FS14,Multifactor W12-L,multifactor,"net return vs zero, SCANDI",1.1549183079288408,0.24812388143413044,0.3936892876300583,False,False
+FS14,Multifactor W12-X,multifactor,"net return vs zero, SCANDI",1.172400508889795,0.24103629529597148,0.3979961028633968,False,False
+FS14,Multifactor W36-E,multifactor,"net return vs zero, SCANDI",0.949026235731884,0.342607268729588,0.30362056130524084,False,False
+FS14,Multifactor W36-L,multifactor,"net return vs zero, SCANDI",1.0110582974663387,0.311988528379624,0.3285175906593524,False,False
+FS14,Multifactor W36-X,multifactor,"net return vs zero, SCANDI",0.9826213164303398,0.32579384915052056,0.3225989668270485,False,False
+FS14,Multifactor W60-E,multifactor,"net return vs zero, SCANDI",1.104907943968355,0.26919947987764203,0.33348729381861314,False,False
+FS14,Multifactor W60-L,multifactor,"net return vs zero, SCANDI",0.9794584587267227,0.32735350463986634,0.3115412773773365,False,False
+FS14,Multifactor W60-X,multifactor,"net return vs zero, SCANDI",0.9945960580201434,0.3199327655123352,0.317322995713688,False,False
+FS14,Multifactor EQ,multifactor,"net return vs zero, World",0.38403392600521025,0.7009533025763415,0.11051518554069407,False,False
+FS14,Multifactor RP,multifactor,"net return vs zero, World",0.44962279243914155,0.6529824506469619,0.13044120606920295,False,False
+FS14,Multifactor W12-E,multifactor,"net return vs zero, World",0.5894919555210276,0.5555313069756802,0.16633641472144808,False,False
+FS14,Multifactor W12-L,multifactor,"net return vs zero, World",0.34344406344417344,0.7312644152592558,0.09825123340540974,False,False
+FS14,Multifactor W12-X,multifactor,"net return vs zero, World",0.34287231539667995,0.7316945197933926,0.09858175909267156,False,False
+FS14,Multifactor W36-E,multifactor,"net return vs zero, World",0.4402858137504106,0.6597301140820175,0.12645127388492575,False,False
+FS14,Multifactor W36-L,multifactor,"net return vs zero, World",0.40267761316387807,0.6871854049476807,0.11409412465015238,False,False
+FS14,Multifactor W36-X,multifactor,"net return vs zero, World",0.3950767538626181,0.6927862440500929,0.11211135262595841,False,False
+FS14,Multifactor W60-E,multifactor,"net return vs zero, World",0.45099773051331676,0.6519911846699276,0.12658952784558183,False,False
+FS14,Multifactor W60-L,multifactor,"net return vs zero, World",0.3837205630818384,0.7011855700921739,0.10860365046861661,False,False
+FS14,Multifactor W60-X,multifactor,"net return vs zero, World",0.4208295331052006,0.6738795643611586,0.11909241683011933,False,False
+FS14,Multifactor RP (primary),multifactor,"RP minus ALL-EQ, 5-market average (pre-registered primary test)",1.4318209944136058,0.1521950572873565,,False,False
+FS14,Multifactor EQ,multifactor,"minus ALL-EQ, 5-market average",1.3720400401998454,0.17005097345620213,,False,False
+FS14,Multifactor RP,multifactor,"minus ALL-EQ, 5-market average",1.4318209944136058,0.1521950572873565,,False,False
+FS14,Multifactor W12-E,multifactor,"minus ALL-EQ, 5-market average",1.8327717840903273,0.06683651689596237,,False,False
+FS14,Multifactor W12-L,multifactor,"minus ALL-EQ, 5-market average",1.6023446787634468,0.10907941086739714,,False,False
+FS14,Multifactor W12-X,multifactor,"minus ALL-EQ, 5-market average",1.573350251608661,0.11563773950008538,,False,False
+FS14,Multifactor W36-E,multifactor,"minus ALL-EQ, 5-market average",1.8140299228102708,0.06967311909844254,,False,False
+FS14,Multifactor W36-L,multifactor,"minus ALL-EQ, 5-market average",1.8588857951571631,0.06304332796643553,,False,False
+FS14,Multifactor W36-X,multifactor,"minus ALL-EQ, 5-market average",1.8356305090040603,0.06641232179233048,,False,False
+FS14,Multifactor W60-E,multifactor,"minus ALL-EQ, 5-market average",1.7257392700976997,0.0843943297675478,,False,False
+FS14,Multifactor W60-L,multifactor,"minus ALL-EQ, 5-market average",1.7909324313793542,0.07330413857134377,,False,False
+FS14,Multifactor W60-X,multifactor,"minus ALL-EQ, 5-market average",1.8152207480682547,0.06948999243402909,,False,False
+FS15,Low MAX (1 day),history 1998-2013,"L/S net, 4-market average, 1999-2013",0.42380790608206315,0.6717059117929385,0.12504452235581553,False,False
+FS15,Low MAX (1 day),history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.1330849460613759,0.2571785825109869,0.34408400933598066,False,False
+FS15,Low MAX (5 days),history 1998-2013,"L/S net, 4-market average, 1999-2013",0.7687393364991267,0.44204806792369267,0.2348805368803973,False,False
+FS15,Low MAX (5 days),history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.618891122563139,0.1054706912836838,0.5047188577331665,False,False
+FS15,Mild worst day (MIN),history 1998-2013,"L/S net, 4-market average, 1999-2013",0.7021584798051391,0.4825803357219043,0.210907103069636,False,False
+FS15,Mild worst day (MIN),history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",0.7227198156560231,0.46985203884900373,0.21890766963884745,False,False
+FS15,Mild worst 5 days,history 1998-2013,"L/S net, 4-market average, 1999-2013",1.0390329783827112,0.29878939903528856,0.3145892283488071,False,False
+FS15,Mild worst 5 days,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.2406337752610053,0.2147410689058158,0.38773890675259454,False,False
+FS15,Narrow daily range,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.6084630340792634,0.5428804159399974,0.18709694949446767,False,False
+FS15,Narrow daily range,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",0.9769278220313669,0.3286048867833191,0.29519773841592717,False,False
+FS15,Low net tail,history 1998-2013,"L/S net, 4-market average, 1999-2013",-2.9163520983735154,0.0035415058742087613,-0.8770717166977319,False,True
+FS15,Low net tail,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",-2.655809454550532,0.007911830526940111,-0.7904205387293346,False,False
+FS15,Low skewness,history 1998-2013,"L/S net, 4-market average, 1999-2013",-4.234175591031532,2.2939166172797343e-05,-1.3742038204255889,True,True
+FS15,Low skewness,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",-5.104229960162184,3.3214418482252483e-07,-1.5021299905665815,True,True
+FS15,Low idiosyncratic vol,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.9200587789497496,0.3575420437905197,0.285442568485213,False,False
+FS15,Low idiosyncratic vol,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.1917386537600223,0.23336373663165255,0.37519087213278995,False,False
+FS15,Low volatility (63d),history 1998-2013,"L/S net, 4-market average, 1999-2013",0.7063874704805485,0.47994721056432166,0.20661874653844736,False,False
+FS15,Low volatility (63d),history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.5591360013147795,0.11896419431890015,0.4749803936649984,False,False
+FS15,Low volatility (252d),history 1998-2013,"L/S net, 4-market average, 1999-2013",0.9083882680507543,0.3636731219334397,0.2719121454978533,False,False
+FS15,Low volatility (252d),history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",2.295341857225456,0.021713540607137816,0.7254303210409787,False,False
+FS15,Low beta,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.8644863345778737,0.38732078408458004,0.2519340516815902,False,False
+FS15,Low beta,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",2.203911327119608,0.027530580794778103,0.7246135382912895,False,False
+FS15,Short-term reversal,history 1998-2013,"L/S net, 4-market average, 1999-2013",-2.596779693648709,0.009410225800941197,-0.6984454267253004,False,False
+FS15,Short-term reversal,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",-1.4510764776935736,0.14675856564665368,-0.4667339645052067,False,False
+FS15,Momentum 12-1,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.982956148382919,0.3256290214691593,0.27004613718848025,False,False
+FS15,Momentum 12-1,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",0.9756720500133144,0.3292270072050083,0.2861924960785458,False,False
+FS15,Residual momentum,history 1998-2013,"L/S net, 4-market average, 1999-2013",1.456389866987886,0.14528487513663935,0.5213158529136648,False,False
+FS15,Residual momentum,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.3805068493730994,0.16743064221597925,0.4484421179249009,False,False
+FS15,Same-month seasonality,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.40578339907565286,0.6849017574254475,0.12024403170081396,False,False
+FS15,Same-month seasonality,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",0.3911195154031421,0.6957088961201512,0.1181713834059755,False,False
+FS15,Near 52-week high,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.7950797924911076,0.4265670884906636,0.22565579967822813,False,False
+FS15,Near 52-week high,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",0.5348312538678119,0.592766549133755,0.15681316565025225,False,False
+FS15,Far above 52-week low,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.07958937982293365,0.9365638420942339,0.02132325296112694,False,False
+FS15,Far above 52-week low,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",-1.403288401484381,0.16053085544797874,-0.4242247377185526,False,False
+FS15,Near 55-day high,history 1998-2013,"L/S net, 4-market average, 1999-2013",0.31425348849970863,0.7533285208347695,0.0825146478700781,False,False
+FS15,Near 55-day high,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",-0.5262688093567607,0.598701451085083,-0.15359813900392036,False,False
+FS15,Small size,history 1998-2013,"L/S net, 4-market average, 1999-2013",1.6323100227447453,0.10261419289617035,0.5241095304929196,False,False
+FS15,Small size,history 1998-2013,"beta-neutral, financed, 4-market average, 1999-2013",1.6295093522940687,0.10320523668036041,0.5746040785099966,False,False
+FS15,Low beta,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",0.6399364286385084,0.5222139295278567,,False,False
+FS15,Low volatility (252d),history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",0.13746593825985573,0.8906625144442071,,False,False
+FS15,Low MAX (1 day),history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",2.140261352766961,0.03233365139792821,,False,False
+FS15,Momentum 12-1,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",2.2613553473980073,0.023737261464630288,,False,False
+FS15,Residual momentum,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",0.18269949702864657,0.8550338104310902,,False,False
+FS15,Near 52-week high,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",-1.7383433111640547,0.08215033904947,,False,False
+FS15,Short-term reversal,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",0.17940767521334353,0.8576176052153219,,False,False
+FS15,Same-month seasonality,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",2.6281633338456745,0.00858472850055092,,False,False
+FS15,Low skewness,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",-2.0077165790494558,0.044673417846211594,,False,False
+FS15,Small size,history 1998-2013,"Fama-MacBeth slope, US, 1999-2013",3.1907565857336992,0.0014190077727573858,,False,True
+FS15,Low beta,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",-0.29307169853352066,0.769467348747013,,False,False
+FS15,Low volatility (252d),history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",1.6351954631365109,0.10200807893086639,,False,False
+FS15,Low MAX (1 day),history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",2.888982936630834,0.0038649004589574876,,False,True
+FS15,Momentum 12-1,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",2.1589192249093854,0.030856434098499808,,False,False
+FS15,Residual momentum,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",-0.31987541026417204,0.7490627790621216,,False,False
+FS15,Near 52-week high,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",-1.5376298871246,0.12413913554897049,,False,False
+FS15,Short-term reversal,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",0.5055685941439207,0.6131595334170499,,False,False
+FS15,Same-month seasonality,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",1.1343090417458939,0.2566649377696302,,False,False
+FS15,Low skewness,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",-1.6788801289237514,0.09317540797442603,,False,False
+FS15,Small size,history 1998-2013,"Fama-MacBeth slope, EU, 1999-2013",1.8974947250401788,0.05776267432473903,,False,False
+FS15,Low beta,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",-0.2873999106540723,0.773806129601037,,False,False
+FS15,Low volatility (252d),history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",0.5832034845582814,0.55975632570054,,False,False
+FS15,Low MAX (1 day),history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",1.7644563361618184,0.07765518048021902,,False,False
+FS15,Momentum 12-1,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",0.9702032758389207,0.3319451781962208,,False,False
+FS15,Residual momentum,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",1.169538324568814,0.24218680972105067,,False,False
+FS15,Near 52-week high,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",0.07065421691869546,0.9436729593292583,,False,False
+FS15,Short-term reversal,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",1.998988788028523,0.04560956699246277,,False,False
+FS15,Same-month seasonality,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",4.036828181954467,5.417871771906668e-05,,True,True
+FS15,Low skewness,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",-3.21902165790749,0.001286287696466104,,False,True
+FS15,Small size,history 1998-2013,"Fama-MacBeth slope, UK, 1999-2013",1.7769567152631376,0.07557536178899404,,False,False
+FS15,Low beta,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",0.2509693730908052,0.8018377882456766,,False,False
+FS15,Low volatility (252d),history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",0.7455841768656448,0.4559186442545702,,False,False
+FS15,Low MAX (1 day),history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",2.412460047291229,0.01584527394882196,,False,False
+FS15,Momentum 12-1,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",1.7482598695054228,0.08041903881883505,,False,False
+FS15,Residual momentum,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",0.8351800389623425,0.40361634678833425,,False,False
+FS15,Near 52-week high,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",-1.4163482261614995,0.15667357446766972,,False,False
+FS15,Short-term reversal,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",1.1264972071701518,0.2599551220615086,,False,False
+FS15,Same-month seasonality,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",3.655930761966725,0.0002562505168914875,,False,True
+FS15,Low skewness,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",-3.141694022742868,0.0016797347432695453,,False,True
+FS15,Small size,history 1998-2013,"Fama-MacBeth slope, World, 1999-2013",1.8386265361879683,0.06597013546452613,,False,False
+FS15,Low beta,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",0.17073904963114686,0.8644289564774348,,False,False
+FS15,Low volatility (252d),history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",1.221868038395672,0.22175753383709473,,False,False
+FS15,Low MAX (1 day),history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",3.2202105092788083,0.0012809649563945147,,False,True
+FS15,Momentum 12-1,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",2.232826831759364,0.025560366138547508,,False,False
+FS15,Residual momentum,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",0.3654803002231365,0.7147529094120988,,False,False
+FS15,Near 52-week high,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",-1.70593810637984,0.08801960392319441,,False,False
+FS15,Short-term reversal,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",1.228832322897966,0.2191346799297751,,False,False
+FS15,Same-month seasonality,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",4.329803832714929,1.4924222781598218e-05,,True,True
+FS15,Low skewness,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",-3.751165884703005,0.00017601419344148717,,False,True
+FS15,Small size,history 1998-2013,"Fama-MacBeth slope, market average, 1999-2013",3.399446322180953,0.0006752243212770903,,False,True
+FS15,Multifactor EQ,history 1998-2013,"net return vs zero, US, 2002-2013",0.08430468593499832,0.9328141868305957,0.026008399132247808,False,False
+FS15,Multifactor RP,history 1998-2013,"net return vs zero, US, 2002-2013",-0.04345366635855489,0.9653398985012733,-0.013415761459355718,False,False
+FS15,Multifactor W12-E,history 1998-2013,"net return vs zero, US, 2002-2013",0.642234308928445,0.5207210596235619,0.19734428065839654,False,False
+FS15,Multifactor W12-L,history 1998-2013,"net return vs zero, US, 2002-2013",0.5734842481238903,0.5663168614797165,0.18800222766561514,False,False
+FS15,Multifactor W12-X,history 1998-2013,"net return vs zero, US, 2002-2013",0.6147780142038378,0.5387013306894852,0.20157699339770693,False,False
+FS15,Multifactor W36-E,history 1998-2013,"net return vs zero, US, 2002-2013",0.1546807126700971,0.8770730360304606,0.04738084334264429,False,False
+FS15,Multifactor W36-L,history 1998-2013,"net return vs zero, US, 2002-2013",0.5269997973741419,0.5981937291864456,0.16318162041348527,False,False
+FS15,Multifactor W36-X,history 1998-2013,"net return vs zero, US, 2002-2013",0.5402287825834191,0.5890392654720855,0.1686868180103761,False,False
+FS15,Multifactor W60-E,history 1998-2013,"net return vs zero, US, 2002-2013",0.24959813043035922,0.8028981445373395,0.07339353988634635,False,False
+FS15,Multifactor W60-L,history 1998-2013,"net return vs zero, US, 2002-2013",0.36286523738634197,0.7167055558966793,0.10867794515523699,False,False
+FS15,Multifactor W60-X,history 1998-2013,"net return vs zero, US, 2002-2013",0.38746521691034236,0.69841183065089,0.11572809530935622,False,False
+FS15,Multifactor EQ,history 1998-2013,"net return vs zero, EU, 2002-2013",1.0792500827286275,0.2804762588233878,0.2398969837449964,False,False
+FS15,Multifactor RP,history 1998-2013,"net return vs zero, EU, 2002-2013",0.9959941690527518,0.31925297831290256,0.2244355860293294,False,False
+FS15,Multifactor W12-E,history 1998-2013,"net return vs zero, EU, 2002-2013",0.6667104431803542,0.5049571068620016,0.1604847116343407,False,False
+FS15,Multifactor W12-L,history 1998-2013,"net return vs zero, EU, 2002-2013",0.8277913992178907,0.40778864638464274,0.19474246488951197,False,False
+FS15,Multifactor W12-X,history 1998-2013,"net return vs zero, EU, 2002-2013",1.0304715149790962,0.3027887172137833,0.24516827631531607,False,False
+FS15,Multifactor W36-E,history 1998-2013,"net return vs zero, EU, 2002-2013",0.8386636998864823,0.4016580538994856,0.18992713800231234,False,False
+FS15,Multifactor W36-L,history 1998-2013,"net return vs zero, EU, 2002-2013",0.9347191876534737,0.3499330358120005,0.2179194633036988,False,False
+FS15,Multifactor W36-X,history 1998-2013,"net return vs zero, EU, 2002-2013",0.8678031853002158,0.3855020859846634,0.20068471921739744,False,False
+FS15,Multifactor W60-E,history 1998-2013,"net return vs zero, EU, 2002-2013",0.4069021087698962,0.6840798870993812,0.10683409267317907,False,False
+FS15,Multifactor W60-L,history 1998-2013,"net return vs zero, EU, 2002-2013",0.8854777464451773,0.3758990167132412,0.2081852295458371,False,False
+FS15,Multifactor W60-X,history 1998-2013,"net return vs zero, EU, 2002-2013",0.735797489319319,0.4618539493889413,0.17388911596481563,False,False
+FS15,Multifactor EQ,history 1998-2013,"net return vs zero, UK, 2002-2013",2.099513274834731,0.035771678858971034,0.7487845097216791,False,False
+FS15,Multifactor RP,history 1998-2013,"net return vs zero, UK, 2002-2013",1.9566037871529753,0.05039406942116975,0.6719640822148738,False,False
+FS15,Multifactor W12-E,history 1998-2013,"net return vs zero, UK, 2002-2013",2.356503850012437,0.018447876414314335,0.8666304327236005,False,False
+FS15,Multifactor W12-L,history 1998-2013,"net return vs zero, UK, 2002-2013",2.5030311470676057,0.012313470703594787,0.9196686069425271,False,False
+FS15,Multifactor W12-X,history 1998-2013,"net return vs zero, UK, 2002-2013",2.5240745683885097,0.011600331923112828,0.9312576475398772,False,False
+FS15,Multifactor W36-E,history 1998-2013,"net return vs zero, UK, 2002-2013",2.207925772565745,0.02724944792171624,0.7738014876884035,False,False
+FS15,Multifactor W36-L,history 1998-2013,"net return vs zero, UK, 2002-2013",2.2798155979984824,0.022618627506066247,0.8207435571889803,False,False
+FS15,Multifactor W36-X,history 1998-2013,"net return vs zero, UK, 2002-2013",2.341207096796377,0.0192215016354218,0.8392081483184907,False,False
+FS15,Multifactor W60-E,history 1998-2013,"net return vs zero, UK, 2002-2013",2.1189656791439844,0.03409336755079462,0.7428327861376182,False,False
+FS15,Multifactor W60-L,history 1998-2013,"net return vs zero, UK, 2002-2013",2.2251864357246602,0.026068725057299513,0.8039323018236362,False,False
+FS15,Multifactor W60-X,history 1998-2013,"net return vs zero, UK, 2002-2013",2.2357145084005365,0.02537047805813475,0.7962625882510335,False,False
+FS15,Multifactor EQ,history 1998-2013,"net return vs zero, DK, 2002-2013",1.0880958207709832,0.27655280851068365,0.36637495888826005,False,False
+FS15,Multifactor RP,history 1998-2013,"net return vs zero, DK, 2002-2013",0.9632628571090615,0.33541562800532976,0.3215967587997541,False,False
+FS15,Multifactor W12-E,history 1998-2013,"net return vs zero, DK, 2002-2013",1.9754109252077217,0.048221533978944686,0.6340578425718707,False,False
+FS15,Multifactor W12-L,history 1998-2013,"net return vs zero, DK, 2002-2013",2.2409113960261866,0.025031814921617546,0.7127813217301041,False,False
+FS15,Multifactor W12-X,history 1998-2013,"net return vs zero, DK, 2002-2013",2.2435417975764134,0.024861897672781685,0.7060356318306259,False,False
+FS15,Multifactor W36-E,history 1998-2013,"net return vs zero, DK, 2002-2013",1.177695899398246,0.23891786226740175,0.40455632169639777,False,False
+FS15,Multifactor W36-L,history 1998-2013,"net return vs zero, DK, 2002-2013",1.4748533180920123,0.14025198303376052,0.4963763000166711,False,False
+FS15,Multifactor W36-X,history 1998-2013,"net return vs zero, DK, 2002-2013",1.5416457141506419,0.12315971033923279,0.5153118036220878,False,False
+FS15,Multifactor W60-E,history 1998-2013,"net return vs zero, DK, 2002-2013",1.1443566289271063,0.2524757671540898,0.3849467071321518,False,False
+FS15,Multifactor W60-L,history 1998-2013,"net return vs zero, DK, 2002-2013",1.2695122880392784,0.20425841070165873,0.42838395766165205,False,False
+FS15,Multifactor W60-X,history 1998-2013,"net return vs zero, DK, 2002-2013",1.334761297100424,0.1819544843460139,0.45012119266888273,False,False
+FS15,Multifactor EQ,history 1998-2013,"net return vs zero, World, 2002-2013",0.8298650085162385,0.40661511062694133,0.2872373742475797,False,False
+FS15,Multifactor RP,history 1998-2013,"net return vs zero, World, 2002-2013",0.5254655932755791,0.5992595656424919,0.17400832963010798,False,False
+FS15,Multifactor W12-E,history 1998-2013,"net return vs zero, World, 2002-2013",0.9386067841338868,0.3479326683576689,0.3160116804298563,False,False
+FS15,Multifactor W12-L,history 1998-2013,"net return vs zero, World, 2002-2013",1.228850030419336,0.2191280395257147,0.43511644230480206,False,False
+FS15,Multifactor W12-X,history 1998-2013,"net return vs zero, World, 2002-2013",1.1753025487592845,0.23987369519038504,0.41725785092740697,False,False
+FS15,Multifactor W36-E,history 1998-2013,"net return vs zero, World, 2002-2013",0.6462464219933064,0.5181197800122646,0.21078092945600363,False,False
+FS15,Multifactor W36-L,history 1998-2013,"net return vs zero, World, 2002-2013",0.6999911973477753,0.4839328017886455,0.231826544084767,False,False
+FS15,Multifactor W36-X,history 1998-2013,"net return vs zero, World, 2002-2013",0.7721545282365431,0.44002290966660595,0.2569076848264479,False,False
+FS15,Multifactor W60-E,history 1998-2013,"net return vs zero, World, 2002-2013",-0.0352287579920525,0.9718973308970744,-0.011257326129935507,False,False
+FS15,Multifactor W60-L,history 1998-2013,"net return vs zero, World, 2002-2013",0.5451722128405807,0.5856350807065738,0.1772195562127596,False,False
+FS15,Multifactor W60-X,history 1998-2013,"net return vs zero, World, 2002-2013",0.5327651111161403,0.5941961878042084,0.17406190147050565,False,False
+FS15,Multifactor RP (primary),history 1998-2013,"RP minus ALL-EQ, 4-market average, 2002-2013 (pre-registered)",0.2492352436979491,0.8031788188742783,,False,False
+FS15,Fixed shortlist (low beta + momentum),history 1998-2013,"SHORT minus ALL-EQ, 4-market average, 2002-2013",2.624742558624858,0.008671450401752434,,False,False
+FS15,Fixed shortlist (low beta + momentum),history 1998-2013,"net return vs zero, 4-market average, 2002-2013",2.3268318782386483,0.01997421502277108,0.806222658452446,False,False
+FS15,Multifactor EQ,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",0.6538741185073044,0.5131929096514414,,False,False
+FS15,Multifactor RP,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",0.2492352436979491,0.8031788188742783,,False,False
+FS15,Multifactor W12-E,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",1.4930041255089612,0.13543610699901065,,False,False
+FS15,Multifactor W12-L,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",1.575012783523222,0.11525349385011263,,False,False
+FS15,Multifactor W12-X,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",1.675219415382676,0.0938911895470318,,False,False
+FS15,Multifactor W36-E,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",0.7170168405316626,0.4733637055904001,,False,False
+FS15,Multifactor W36-L,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",1.1599494458323898,0.24606938947037404,,False,False
+FS15,Multifactor W36-X,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",1.176116486483979,0.2395483306941446,,False,False
+FS15,Multifactor W60-E,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",0.6568311080947662,0.5112895194072684,,False,False
+FS15,Multifactor W60-L,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",0.9919309284369046,0.32123122056983444,,False,False
+FS15,Multifactor W60-X,history 1998-2013,"minus ALL-EQ, 4-market average, 2002-2013",0.9661539166918106,0.3339671685313865,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, UK, 2013-2025, JKP",0.8235852851213165,0.4101752397943612,,False,False
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, UK, 2013-2025, JKP",4.339238571661976,1.4297724104661569e-05,,True,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, UK, 2013-2025, JKP",3.421524842376134,0.000622710358580747,,False,True
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, UK, 2013-2025, JKP",0.9979438171395688,0.3183066030002695,,False,False
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, UK, 2013-2025, JKP",2.587507627841828,0.009667305522534475,,False,False
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, UK, 2013-2025, JKP",0.10917834211669145,0.9130610380960631,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, Denmark, 2013-2025, JKP",0.8442985757374184,0.3985025817878487,,False,False
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, Denmark, 2013-2025, JKP",3.4229541727631183,0.0006194451968757342,,False,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, Denmark, 2013-2025, JKP",0.047410479812464386,0.9621860767314312,,False,False
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, Denmark, 2013-2025, JKP",-0.8565292160998256,0.39170511961107857,,False,False
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, Denmark, 2013-2025, JKP",2.622376827694116,0.008731882452291728,,False,False
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, Denmark, 2013-2025, JKP",2.0062053786484197,0.044834340257558836,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, EU (World ex US), 2013-2025, JKP",2.244126211191456,0.0248242819484894,,False,False
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, EU (World ex US), 2013-2025, JKP",2.656958472742436,0.007884915514616342,,False,False
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, EU (World ex US), 2013-2025, JKP",2.050094198696247,0.04035523940983965,,False,False
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, EU (World ex US), 2013-2025, JKP",1.73120486476942,0.08341523201526746,,False,False
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, EU (World ex US), 2013-2025, JKP",3.2647821500381444,0.0010954829621656614,,False,True
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, EU (World ex US), 2013-2025, JKP",-1.1285450008646567,0.25908982314042905,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, World, 2013-2025, JKP",1.0260009563349057,0.30489113328611284,,False,False
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, World, 2013-2025, JKP",2.6674483543147476,0.0076429634900114785,,False,False
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, World, 2013-2025, JKP",1.852106756737342,0.06401049445887352,,False,False
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, World, 2013-2025, JKP",0.9852803297096674,0.3244863920145551,,False,False
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, World, 2013-2025, JKP",1.9442228072577472,0.0518685886022332,,False,False
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, World, 2013-2025, JKP",-0.8274683186585595,0.40797167175079707,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, US, 2013-2025, JKP",0.48395409755734037,0.6284184462376081,,False,False
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, US, 2013-2025, JKP",1.4187788476248817,0.15596350134445602,,False,False
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, US, 2013-2025, JKP",0.5332886120147645,0.5938338095496158,,False,False
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, US, 2013-2025, JKP",0.7384961627545534,0.46021299811425354,,False,False
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, US, 2013-2025, JKP",1.0631982516488423,0.287692055112291,,False,False
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, US, 2013-2025, JKP",-0.21355425292792068,0.8308946772039498,,False,False
+FS17,Fundamental pair (primary),fundamentals outside the US,"alpha on the shortlist, non-US average, 2013-2025, JKP (pre-registered)",4.731939705181917,2.2238447636713232e-06,,True,True
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, non-US average, 2013-2025, JKP",1.5163933858752767,0.1294199105165561,,False,False
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, non-US average, 2013-2025, JKP",6.03660845273989,1.573869923277016e-09,,True,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, non-US average, 2013-2025, JKP",2.3971378633136284,0.016523705381638276,,False,False
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, non-US average, 2013-2025, JKP",0.31453287558174603,0.7531163513696617,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, Europe, 1999-2013, ART",6.878557060012724,6.0462745921086025e-12,,True,True
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, Europe, 1999-2013, ART",3.886307497349944,0.0001017805675980199,,False,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, Europe, 1999-2013, ART",3.997202224803024,6.409554237762904e-05,,True,True
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, Europe, 1999-2013, ART",4.341498316998057,1.4151436290799069e-05,,True,True
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, Europe, 1999-2013, ART",7.079895221567328,1.4426237981979284e-12,,True,True
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, Europe, 1999-2013, ART",4.6254037565253325,3.738693818977623e-06,,True,True
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, UK, 1999-2013, ART",4.7025782796885265,2.5689667755290913e-06,,True,True
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, UK, 1999-2013, ART",4.066681857422684,4.7687274191687834e-05,,True,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, UK, 1999-2013, ART",2.938262993504603,0.0033005690879419625,,False,True
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, UK, 1999-2013, ART",3.6425497047221693,0.00026995083076175597,,False,True
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, UK, 1999-2013, ART",6.404541669593471,1.508217994938832e-10,,True,True
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, UK, 1999-2013, ART",2.3143086625755624,0.020650796963909812,,False,False
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, America, 1999-2013, ART",3.6637329836095898,0.0002485659100668336,,False,True
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, America, 1999-2013, ART",3.292518631153507,0.0009929431868211935,,False,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, America, 1999-2013, ART",4.191387737859442,2.7725336699147007e-05,,True,True
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, America, 1999-2013, ART",2.8289036251972917,0.004670776205848881,,False,True
+FS17,Fundamental pair,fundamentals outside the US,"alpha on the shortlist, America, 1999-2013, ART",4.596959069648604,4.287017942417037e-06,,True,True
+FS17,Shortlist + fundamental pair,fundamentals outside the US,"minus shortlist, America, 1999-2013, ART",3.0738071907168134,0.0021134597543994715,,False,True
+FS17,Fundamental pair (primary),fundamentals outside the US,"alpha on the shortlist, non-US average, 1999-2013, ART (pre-registered)",6.998056367648281,2.595479386968691e-12,,True,True
+FS17,Profit growth,fundamentals outside the US,"alpha on the shortlist, non-US average, 1999-2013, ART",6.184618176221234,6.22529583438336e-10,,True,True
+FS17,Issuance,fundamentals outside the US,"alpha on the shortlist, non-US average, 1999-2013, ART",4.341847525991382,1.4128957489090155e-05,,True,True
+FS17,Value,fundamentals outside the US,"alpha on the shortlist, non-US average, 1999-2013, ART",4.017768069563499,5.8751980841709184e-05,,True,True
+FS17,Profitability,fundamentals outside the US,"alpha on the shortlist, non-US average, 1999-2013, ART",4.231308954332379,2.3233528344102083e-05,,True,True
+FS18,Market + overlay,portfolio,"overlay return, US, $50m per book",2.5756277496955784,0.010005830347145528,0.5534637078880801,False,False
+FS18,Market + overlay,portfolio,"overlay return, EU, $50m per book",2.5165044299053547,0.011852541018381624,0.6036549728193434,False,False
+FS18,Market + overlay,portfolio,"overlay return, UK, $50m per book",1.8290439005246357,0.06739303193174506,0.4591038190102638,False,False
+FS18,Market + overlay,portfolio,"overlay return, DK, $50m per book",0.29711126498729223,0.7663815642836602,0.08190620133617045,False,False
+FS18,Market + overlay,portfolio,"overlay return, SC, $50m per book",-0.26990357647861535,0.7872344356261374,-0.07795251263783666,False,False
+FS18,Market + overlay,portfolio,"overlay return, WD, $50m per book",2.412391965979641,0.01584823342350017,0.5685656536917096,False,False
+FS18,Market + overlay (primary),portfolio,"overlay return, 5-market average, $50m per book (pre-registered)",1.8547312739566657,0.06363461046656371,0.45694942626650853,False,False
+FS18,Market + overlay,portfolio,"overlay return, US, $250m per book",2.299221003880021,0.021492392904111757,0.4911754764282055,False,False
+FS18,Market + overlay,portfolio,"overlay return, EU, $250m per book",1.2215777340282392,0.2218673530131572,0.2849652339328996,False,False
+FS18,Market + overlay,portfolio,"overlay return, UK, $250m per book",-0.49387376281534356,0.6213953351943233,-0.11956619953464107,False,False
+FS18,Market + overlay,portfolio,"overlay return, DK, $250m per book",-0.7255947143314216,0.4680872623698882,-0.20831175438084684,False,False
+FS18,Market + overlay,portfolio,"overlay return, SC, $250m per book",-1.0348667177535584,0.3007311596793234,-0.29887405081361446,False,False
+FS18,Market + overlay,portfolio,"overlay return, WD, $250m per book",1.825327551822475,0.06795161485797485,0.4273639745726324,False,False
+FS18,Market + overlay,portfolio,"overlay return, 5-market average, $250m per book",0.18955618264359186,0.8496569257634636,0.04575513222116623,False,False
+FS19,low beta (within sectors),robustness,"net return, US",0.7205266833287591,0.4712007767979465,0.14303785086861026,False,False
+FS19,low beta (within sectors),robustness,"minus unrestricted, US",-0.4159343018182944,0.6774580783728901,,False,False
+FS19,12-1 momentum (within sectors),robustness,"net return, US",1.1689024201899911,0.2424429483246362,0.3141401045631015,False,False
+FS19,12-1 momentum (within sectors),robustness,"minus unrestricted, US",-0.4576447467436313,0.647207690108152,,False,False
+FS19,shortlist (within sectors),robustness,"net return, US",1.362158460439746,0.17314788208171317,0.29172745953693635,False,False
+FS19,shortlist (within sectors),robustness,"minus unrestricted, US",-0.5625408762387036,0.5737475617082621,,False,False
+FS19,low beta (within sectors),robustness,"net return, EU",2.5833274932552284,0.009785238859929324,0.6615070149074768,False,False
+FS19,low beta (within sectors),robustness,"minus unrestricted, EU",-1.2596337341935864,0.2078015203115453,,False,False
+FS19,12-1 momentum (within sectors),robustness,"net return, EU",1.6898636802554656,0.09105403746742069,0.4131393861283188,False,False
+FS19,12-1 momentum (within sectors),robustness,"minus unrestricted, EU",-1.6821452741827427,0.09254067301941538,,False,False
+FS19,shortlist (within sectors),robustness,"net return, EU",3.2027419277007216,0.001361259086478439,0.7339411969413911,False,True
+FS19,shortlist (within sectors),robustness,"minus unrestricted, EU",-1.8127835492089115,0.06986521222630016,,False,False
+FS19,low beta (within sectors),robustness,"net return, UK",2.9490715781010923,0.003187301462928227,0.9427453983234957,False,True
+FS19,low beta (within sectors),robustness,"minus unrestricted, UK",-2.365436949474663,0.018008809449844065,,False,False
+FS19,12-1 momentum (within sectors),robustness,"net return, UK",2.756550600174217,0.005841457384090365,0.7593522796968778,False,False
+FS19,12-1 momentum (within sectors),robustness,"minus unrestricted, UK",0.11850035508144911,0.905671213764853,,False,False
+FS19,shortlist (within sectors),robustness,"net return, UK",3.7351158731008964,0.0001876287748583394,1.0768748359257936,False,True
+FS19,shortlist (within sectors),robustness,"minus unrestricted, UK",-2.131703638221397,0.03303121754827565,,False,False
+FS19,low beta (within sectors),robustness,"net return, DK",0.2641015317882824,0.7917016835899942,0.06972776329242165,False,False
+FS19,low beta (within sectors),robustness,"minus unrestricted, DK",-0.08103598649065313,0.9354133335214245,,False,False
+FS19,12-1 momentum (within sectors),robustness,"net return, DK",-1.2472685431994892,0.21229904760109952,-0.2921569632416209,False,False
+FS19,12-1 momentum (within sectors),robustness,"minus unrestricted, DK",-2.1034128459435943,0.03542969649487793,,False,False
+FS19,shortlist (within sectors),robustness,"net return, DK",-0.807843240382672,0.41918082942654156,-0.19018870180364628,False,False
+FS19,shortlist (within sectors),robustness,"minus unrestricted, DK",-1.931800872441084,0.05338408837372266,,False,False
+FS19,low beta (within sectors),robustness,"net return, SC",0.4549352462677749,0.6491558249360874,0.10785098268993859,False,False
+FS19,low beta (within sectors),robustness,"minus unrestricted, SC",-0.11328437957890876,0.9098051008062245,,False,False
+FS19,12-1 momentum (within sectors),robustness,"net return, SC",0.25156538916534,0.8013770138133331,0.06613501353768156,False,False
+FS19,12-1 momentum (within sectors),robustness,"minus unrestricted, SC",0.8730128230400908,0.38265608840839116,,False,False
+FS19,shortlist (within sectors),robustness,"net return, SC",0.4953106761154713,0.6203808359636742,0.12335598300262837,False,False
+FS19,shortlist (within sectors),robustness,"minus unrestricted, SC",0.5271194119989926,0.5981106671422576,,False,False
+FS19,low beta (within sectors),robustness,"net return, WD",2.470663564980173,0.013486262924985448,0.5066280272920379,False,False
+FS19,low beta (within sectors),robustness,"minus unrestricted, WD",-0.07048144797791256,0.943810466193278,,False,False
+FS19,12-1 momentum (within sectors),robustness,"net return, WD",2.3078794383506587,0.02100584298915309,0.5893032719507716,False,False
+FS19,12-1 momentum (within sectors),robustness,"minus unrestricted, WD",-0.80897050391555,0.41853211271856106,,False,False
+FS19,shortlist (within sectors),robustness,"net return, WD",3.305425656554186,0.0009483225843098797,0.7228360346478151,False,True
+FS19,shortlist (within sectors),robustness,"minus unrestricted, WD",-0.3888335342333165,0.6973992923313335,,False,False
+FS19,Shortlist within sectors (primary),robustness,"net return, 5-market average (pre-registered)",2.9617359433070303,0.0030591001124689043,0.6755667950761755,False,True
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, UK",-0.3458083165874144,0.7294867745994129,,False,False
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, DK",-0.6665645591487611,0.5050503134000355,,False,False
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, US_A",-1.567675226330307,0.11695694610807572,,False,False
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, EU_A",-1.5705811602726223,0.1162799688834677,,False,False
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, UK_A",0.4247531240118983,0.6710166527611605,,False,False
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, DK_A",-1.326511976830461,0.18467017066139535,,False,False
+FS19,Momentum crash (bear x market),robustness,"Daniel-Moskowitz, ART pooled",-1.8642316089252458,0.06228918629556013,,False,False

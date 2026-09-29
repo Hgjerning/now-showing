@@ -4,7 +4,7 @@
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · data to 31 August 2026*
 
-> **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only 1 of eleven long/short books (FS10) earns a **positive** return that passes the 2.87 gate in at least one market; 3 (FS01, FS06, FS12) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, 6 of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (flat trading costs and no market impact). Borrow fees, financing of leverage, World in one currency, a replication check and a programme-wide trial ledger were added on 27 September 2026 (§3.0).
+> **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only 1 of eleven long/short books (FS10) earns a **positive** return that passes the 2.87 gate in at least one market; 3 (FS01, FS06, FS12) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, 6 of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (capacity outside the US). Borrow fees, financing of leverage, World in one currency, a replication check, a programme-wide trial ledger and a market-impact cost model were added on 27 September 2026 (§3.0).
 
 ## 1. All strategies in one table
 
@@ -48,7 +48,7 @@
 | FS12 Buy at the 52-week low | 0.45 | 0.85 | 0.62 | 1.9 |
 
 
-7. **Across the whole programme, few winners survive.** The factsheet trial ledger holds 205 gated tests. Under a programme-wide Benjamini–Hochberg correction 9 positive results survive (3 also Bonferroni, |t| > 3.67) against 17 reliable losers; the best positive candidates have a deflated Sharpe ratio of 0.79 at most even on the lenient bound, below the usual 0.95 (`planning/FACTSHEET_TRIAL_LEDGER.md`).
+7. **Across the whole programme, few winners survive.** The factsheet trial ledger holds 682 gated tests. Under a programme-wide Benjamini–Hochberg correction 53 positive results survive (21 also Bonferroni, |t| > 3.97) against 21 reliable losers; the best positive candidates have a deflated Sharpe ratio of 0.68 at most even on the lenient bound, below the usual 0.95 (`planning/FACTSHEET_TRIAL_LEDGER.md`).
 
 ## 3. Gap analysis
 
@@ -58,11 +58,16 @@
 
 | Category | Gap | What was done |
 |---|---|---|
+| Data | No company fundamentals outside the US | Partly closed. US stock level (FS13b); outside the US at factor level (FS17): the fundamental pair (profit growth + issuance) adds to low beta and momentum in the UK, Denmark and Europe in both 2013–25 (JKP) and 1999–2013 (ART). Stock-level non-US history still needs a data source. |
 | Data | No FX conversion; World sums local-currency returns | World converted to USD, unhedged, with Fed H.10 daily rates (EUR, GBP, DKK, SEK) and Yahoo PLN from 2015; the 21 Polish names stay in PLN before 2015 (`data.to_usd`). |
 | Model | Programme-level multiple testing not yet consolidated | One ledger of every gated test in FS01–FS13 with programme-wide Bonferroni, Benjamini–Hochberg and deflated Sharpe (`code/ledger.py`, `planning/FACTSHEET_TRIAL_LEDGER.md`). |
+| Implementation | Flat 10 bp per side; no size- or liquidity-dependent costs, no market impact | FS16: half-spread from traded value plus square-root market impact, at $1m to $10bn per book; the shortlist holds a positive Sharpe ratio to about $1bn in the US, $130m in World and $13–29m in the EU, UK and Denmark (`code/impact.py`). |
 | Implementation | Short side: no borrow fees or availability in the sorts (50 bp flat in FS01 only) | Every short leg pays a size-tiered borrow fee: 0.25% a year for the largest half of the universe, 0.75% for the next 30%, 2% for the smallest 20% (`code/borrow.py`); FS01 keeps its flat 0.5%. |
 | Implementation | Leverage without financing: BAB (rf = 0, no spread), vol targeting up to 3× | Net long cash in beta-neutral and BAB books is charged at the USD risk-free rate + 0.5% (`borrow.financing`). Volatility targeting scales a dollar-neutral book and is not charged for cash; its margin cost is still missing. |
 | Validation | No replication check against published factor returns | FS13: our US signals correlate 0.8 or more with the matching JKP factor for 8 of 12. |
+| Validation | No sector or industry neutrality | FS19 (pre-registered, passed): ranked within 11 sectors the shortlist keeps +5.3% a year (t 3.0), two thirds of its unrestricted return; UK sector coverage only 34%. |
+| Validation | No stress tests of named episodes (2015–16, COVID crash and rebound, 2022 rate shock) and no crash-risk analysis for momentum | FS19: five episodes 2015–2022 for market, low beta, momentum and the FS18 overlay; the overlay stays within ±8% in every episode; low beta lost 24–29% in the US and World in the COVID crash and in 2022. Momentum-crash regression: sign as in Daniel & Moskowitz before 2013 (t −1.9), untestable after (too few bear months). |
+| Validation | No unit tests of the engine (look-ahead, signal lags, cost accounting) | FS19: signals identical when rebuilt from truncated data (171 comparisons), iid-noise t-statistics behave as expected (4.2% beyond 1.96), a next-month cheat signal is caught (t > 180), cost arithmetic exact. Flag: 'beta-neutral' low beta keeps a realised beta of +0.3 to +0.6 in the US, UK, EU and World. |
 | Process | Factsheet trials outside the programme ledger | All factsheet trials are now in the factsheet trial ledger; FS14 will be pre-registered there. |
 
 
@@ -73,11 +78,11 @@
 | Validation | The six universes overlap and co-move: World contains US, UK and EU; EU contains the Danish, Swedish and Finnish blue chips | High | Low | Report the effective number of markets; judge on pooled evidence; treat World as a summary, not a seventh market; run EU ex-Nordics |
 | Data | Residual survivorship outside the US: 9–25% of index member-quarters have no price (mostly delisted names) | High | Medium | Buy delisted-inclusive history for Europe, or lengthen with the ART archive (1996–2013) |
 | Model | Sort-based tests only; no multivariate (Fama-MacBeth) regressions | High | Medium | Monthly cross-sectional regressions on all library signals, per universe |
-| Implementation | Flat 10 bp per side; no size- or liquidity-dependent costs, no market impact | High | Medium | Spread and impact model by traded value (e.g. square-root impact) |
 | Coverage | Missing factor families: value, quality, investment, earnings momentum, analyst revisions, payout, liquidity | High | Medium (US) / High (non-US) | US stock-level from Sharadar now; JKP factor-level for UK, DK, World |
-| Data | No company fundamentals outside the US | High | High | JKP factor-level returns for UK, DK, World now; a licensed global fundamentals feed later |
 | Data | Oslo missing from SCANDI; DK has ~19 names | Medium | Low | Add OBX history; report DK only as a robustness market |
 | Model | Raw 252-day betas, no shrinkage | Medium | Low | Vasicek or Frazzini-Pedersen shrinkage |
+| Model | No factor model for Europe or SCANDI inside JKP; French Europe used, in USD | Medium | Low | Build local-currency factor returns from the library itself |
+| Model | Equal weighting and one-month holding everywhere | Medium | Low | Add value-weighted (US) and overlapping 3/6/12-month holdings |
 
 
 ### 3.2 Data
@@ -85,7 +90,6 @@
 | Gap | Where it bites | Impact | Effort | Remedy | Source we already have |
 |---|---|---|---|---|---|
 | Residual survivorship outside the US: 9–25% of index member-quarters have no price (mostly delisted names) | all non-US results; short legs penalised, long legs flattered | High | Medium | Buy delisted-inclusive history for Europe, or lengthen with the ART archive (1996–2013) | ART PIT database (Project1, to 2013); none for 2013–26 |
-| No company fundamentals outside the US | value, quality, investment, payout and earnings families missing in 5 of 6 universes | High | High | JKP factor-level returns for UK, DK, World now; a licensed global fundamentals feed later | JKP 153 factors per country (Project2 cache); Sharadar US fundamentals (staged, unused) |
 | No shares outstanding outside the US | FS07 size and the FS05 index benchmark use traded value as a proxy | Medium | Medium | Shares-outstanding history or free-float index weights | none |
 | Short history (from 2012) | FS06 seasonality averages 1–13 years (paper: 20); FS11 starts 2014; holdout only 6.7 years | Medium | Medium | Extend back with ART (1996–2013) for EU, UK, DK, US | ART PIT database |
 | Oslo missing from SCANDI; DK has ~19 names | SCANDI and DK sorts use 3–5 groups of 6–12 stocks; noisy | Medium | Low | Add OBX history; report DK only as a robustness market | none |
@@ -106,7 +110,6 @@
 
 | Gap | Where it bites | Impact | Effort | Remedy | Source we already have |
 |---|---|---|---|---|---|
-| Flat 10 bp per side; no size- or liquidity-dependent costs, no market impact | all net numbers; small names in DK/SCANDI understated | High | Medium | Spread and impact model by traded value (e.g. square-root impact) | Project1 art_cost_model, Saxo measured fees (Project2) |
 | No taxes, dividend withholding or currency hedging costs | Danish and cross-border investors | Medium | Medium | Investor-specific net-of-tax layer | Project1 art_measured_taxes |
 | Close-to-close execution, monthly rebalance at month-end | all strategies; month-end crowding | Low | Low | Next-day VWAP proxy; staggered rebalance days | — |
 
@@ -121,10 +124,7 @@
 | Gap | Where it bites | Impact | Effort | Remedy | Source we already have |
 |---|---|---|---|---|---|
 | The six universes overlap and co-move: World contains US, UK and EU; EU contains the Danish, Swedish and Finnish blue chips | every 'positive in k of six' count; six markets are worth fewer than two independent tests | High | Low | Report the effective number of markets; judge on pooled evidence; treat World as a summary, not a seventh market; run EU ex-Nordics | the L/S series already on disk |
-| No sector or industry neutrality | low volatility and BAB may be utilities/staples bets; momentum partly industry momentum | Medium | Medium | Sector-neutral sorts (US from Sharadar sectors; elsewhere ICB/GICS from index files) | Sharadar TICKERS sector field (US) |
-| No stress tests of named episodes (2015–16, COVID crash and rebound, 2022 rate shock) and no crash-risk analysis for momentum | FS03, FS09, FS11 (momentum crashes); FS04, FS10 (rate sensitivity) | Medium | Low | Episode table and Daniel–Moskowitz bear-market/rebound regression | — |
 | No capacity estimate | which books survive at realistic AUM, above all DK and SCANDI | Medium | Medium | Capacity at a participation cap (e.g. 5% of daily traded value) per book | traded-value panels (PIT) |
-| No unit tests of the engine (look-ahead, signal lags, cost accounting) | all factsheets | Medium | Low | Synthetic-data tests: random signals must give ~0 before costs; a shifted signal must not change results | — |
 
 ### 3.7 Process
 
@@ -132,13 +132,23 @@
 |---|---|---|---|---|---|
 | Repo assembly script does not know the factsheets | publishing | Low | Low | Add factsheets to assemble_repo.py | — |
 
-## 4. Recommended next steps
+## 4. Where the series ended up (FS13–FS18)
 
-1. **Close the remaining cheap gaps:** a size- and liquidity-dependent cost and impact model, engine unit tests on synthetic data, named-episode stress tests and sector-neutral variants of the low-risk and momentum books.
-2. **Add the missing families in the US at stock level** from the Sharadar fundamentals already on disk (value, quality/profitability, investment, payout, earnings momentum), and at factor level for UK, Denmark and World from JKP.
-3. **Run a multivariate test** (monthly Fama-MacBeth regressions of returns on all library signals, per universe) before the battery filter, so substitutes are recognised as such.
-4. **Then the multifactor battery** as planned: pre-registered filters on net return, Sharpe and turnover per segment; rolling 3-year correlations; dynamic weights over 12/36/60-month windows with equal, linear and exponential decay and volatility scaling; strict walk-forward; deflated Sharpe on the final pick.
-5. **Longer history** from the ART archive (1996–2013) for EU, UK, DK and US, to give every conclusion a genuine pre-2013 out-of-sample check.
+Steps 1–5 of the first edition's plan are done, including the remaining cheap gaps (FS16 costs, FS19 engine tests, stress episodes and sector neutrality). In short:
+
+| Step | Result | Factsheet |
+|---|---|---|
+| Signal battery across all six markets | Low beta (beta-neutral) is positive in 6 of 6 markets and 12-1 momentum in 5 of 6; no price signal survives the correction on its own | FS13 |
+| US fundamentals, stock level | Profit growth and debt issuance add alpha; value and investment do not | FS13b |
+| Multivariate test | Residual momentum and 52-week high are redundant next to 12-1 momentum | FS13c |
+| Pre-registered multifactor model | No selection rule beats equal weights (t 1.4) | FS14 |
+| ART history, 1999–2013 | The shortlist holds out of sample (Sharpe 0.8); selection rules fail again | FS15 |
+| Costs that grow with size | Positive to about $1bn in the US, tens of millions in Europe and the UK, never in the Nordics | FS16 |
+| Fundamentals outside the US | Profit growth + issuance add to the shortlist at factor level (t 4.7) | FS17 |
+| The portfolio I would run | Market + 5%-vol overlay: Sharpe +0.15–0.21 in the US, EU, UK and World at $50m per book; pooled t 1.85, not passed | FS18 |
+| Robustness | Engine clean; within-sector shortlist keeps two thirds (t 3.0); "beta-neutral" low beta is not market-neutral in crashes | FS19 |
+
+**Still open:** stock-level fundamentals outside the US (data request in `planning/DATA_REQUEST_LETTER.md`); realised-beta control for the low-beta book (shrunk betas, as in Frazzini & Pedersen); cost-model calibration to real spreads; UK sector labels for investment trusts.
 
 ## 5. Reproduce
 
