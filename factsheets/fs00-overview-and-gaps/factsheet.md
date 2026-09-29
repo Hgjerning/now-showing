@@ -132,7 +132,7 @@
 |---|---|---|---|---|---|
 | Repo assembly script does not know the factsheets | publishing | Low | Low | Add factsheets to assemble_repo.py | — |
 
-## 4. Where the series ended up (FS13–FS18)
+## 4. Where the series ended up (FS13–FS19)
 
 Steps 1–5 of the first edition's plan are done, including the remaining cheap gaps (FS16 costs, FS19 engine tests, stress episodes and sector neutrality). In short:
 
