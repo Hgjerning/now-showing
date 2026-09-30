@@ -9,6 +9,8 @@ _private_data/
 */results/scores_panel.csv
 */results/gsy_events100.csv
 FACTSHEET_*.md
+*turtle_trades*.csv
+*turtle_open*.csv
 __pycache__/
 .cache/
 
