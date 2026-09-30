@@ -49,7 +49,7 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 </tbody>
 </table></div>
 <blockquote>
-<p><strong>In one paragraph.</strong> <strong>The engine is clean and the result is not a sector bet, but "beta-neutral" low beta is not market-neutral.</strong> The signals are identical when rebuilt from truncated data, they earn nothing on random noise, and the cost arithmetic adds up to the last decimal. Ranked within sectors, the shortlist keeps <strong>+5.3% a year (t 2.96)</strong> of its unrestricted +8.0%, so the primary test is <strong>passed</strong>. The warning is in the crash tests. The low-beta book, scaled to beta-neutral with estimated betas, still carries a realised market beta of about +0.3 to +0.6 in the US, UK, EU and World, because low betas drift up and high betas drift down. It lost 29% in the US in the COVID crash and 24% in 2022. Momentum did the hedging. The FS18 overlay as a whole stayed within a few per cent in every episode.</p>
+<p><strong>In one paragraph.</strong> <strong>The engine is clean and the result is not a sector bet, but "beta-neutral" low beta is not market-neutral.</strong> The signals are identical when rebuilt from truncated data, they earn nothing on random noise, and the cost arithmetic adds up to the last decimal. Ranked within sectors, the shortlist keeps <strong>+5.3% a year (t 2.96)</strong> of its unrestricted +8.0%, so the primary test is <strong>passed</strong>. The warning is in the crash tests. The low-beta book, scaled to beta-neutral with estimated betas, still carries a realised market beta of about +0.3 to +0.6 in the US, UK, EU and World, because low betas drift up and high betas drift down. It lost 29% in the US in the COVID crash and 24% in 2022. Momentum did the hedging. The FS18 overlay as a whole stayed within ±8% in every episode.</p>
 </blockquote>
 <h2>A. Engine tests</h2>
 <div class="tw"><table>
@@ -71,14 +71,14 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 <tr>
 <td>2. Noise</td>
 <td>19 signals on iid noise, 5 seeds × US, EU: 190 gross L/S t-statistics</td>
-<td>4.2% have</td>
-<td>t</td>
+<td>4.2% have &#124;t&#124; &gt; 1.96 (expected 5%); max &#124;t&#124; 2.65</td>
+<td><strong>pass</strong></td>
 </tr>
 <tr>
 <td>3. Cheat (timing)</td>
 <td>next month's return as the signal vs this month's return</td>
-<td>next month: t ≥ 189; this month:</td>
-<td>t</td>
+<td>next month: t ≥ 189; this month: &#124;t&#124; ≤ 1.9</td>
+<td><strong>pass</strong></td>
 </tr>
 <tr>
 <td>4. Cost accounting</td>
@@ -89,8 +89,8 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 <tr>
 <td>5. Beta neutrality</td>
 <td>realised beta of the 'beta-neutral' books on the equal-weight universe</td>
-<td>flagged if</td>
-<td>beta</td>
+<td>flagged if &#124;beta&#124; &gt; 0.3: US low beta (+0.48), EU 12-1 momentum (-0.33), UK low beta (+0.35), World low beta (+0.58)</td>
+<td><strong>flag</strong></td>
 </tr>
 </tbody>
 </table></div>
@@ -576,6 +576,16 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 <td>+0.9%</td>
 </tr>
 <tr>
+<td><strong>Pooled, 5 markets (primary test)</strong></td>
+<td>—</td>
+<td><strong>+8.0%</strong></td>
+<td><strong>+5.3% (t +2.96)</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
 <td>World</td>
 <td>76%</td>
 <td>+8.7%</td>
@@ -587,14 +597,15 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 </tr>
 </tbody>
 </table></div>
-<p><em>Net of 10 bp per side, borrow and financing; beta-neutral legs, no buffer. Coverage: share of stocks with a sector label; the rest form one "unclassified" group. UK coverage is low because many FTSE 250 members are investment trusts missing from the sector caches. Sector component: book sorted on the sector-average signal.</em></p>
-<p>Across the five markets, about two thirds of the shortlist's return comes from picking stocks within sectors, and the sector bets add the rest. The within-sector book is highly correlated with the unrestricted one. The exception is Denmark, where 19 stocks spread over 11 sectors leave nothing to rank within a sector.</p>
+<p><em>Net of 10 bp per side, borrow and financing; beta-neutral legs, no buffer. Coverage: share of stocks with a sector label; the rest form one "unclassified" group. UK coverage is low because many FTSE 250 members are investment trusts missing from the sector caches. Sector component: book sorted on the sector-average signal. Pooled = US, EU, UK, Denmark and SCANDI, the pre-registered primary test; World is left out because it overlaps. The within-sector return is 66% of the unrestricted return, above the pre-registered half.</em></p>
+<p>Across the five markets, about two thirds of the shortlist's return comes from picking stocks within sectors, and the sector bets add the rest. The within-sector book is highly correlated with the unrestricted one. The exception is Denmark, where 19 stocks spread over 11 sectors leave nothing to rank within a sector. This is in line with Asness, Frazzini &amp; Pedersen (2014), who find that low-risk returns survive industry neutralisation, and it answers the concern of Moskowitz &amp; Grinblatt (1999) that momentum is largely an industry effect: here most of it is not.</p>
 <h2>Caveats</h2>
 <ul>
 <li>Sector labels are today's, applied to all years.</li>
+<li>UK sector coverage is only 34%, so two thirds of UK stocks sit in one "unclassified" group; the UK within-sector result is the least sector-neutral of the five and should be read with that in mind.</li>
 <li>The truncation test covers the price library, not the US fundamental composites (their point-in-time logic is the filing-date lag in FS13b).</li>
 <li>The noise test checks the engine's timing and statistics, not the economic content of any signal.</li>
-<li>FS19 adds 44 trials to the ledger (now 682).</li>
+<li>FS19 adds 44 trials to the ledger (now 682). The more trials a programme runs, the higher the bar for any single t-statistic (Bailey et al. 2014).</li>
 </ul>
 <h2>References</h2>
 <ul>

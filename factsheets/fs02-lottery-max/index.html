@@ -1194,23 +1194,145 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 <h2>8. Risk and factor attribution</h2>
 <p>Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk, quality, short-term reversal) for US, UK, DK and World; French Europe 5 factors + WML for EU and SCANDI. Newey-West t, 6 lags. JKP's own <code>rmax1_21d</code> factor (the MAX factor itself) sits inside the low-risk theme.</p>
 <p><strong>L/S low − high MAX</strong></p>
-<p>| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
-|---|---|---|---|---|---|---|
-| US | JKP USA 7 themes | 155 | -11.2% | -6.84 | 0.83 | size +0.29 (+2.3), value -0.27 (-3.9), low_risk +1.47 (+14.6), short_term_reversal +0.87 (+4.9) |
-| EU | French Europe 5F + WML | 162 | -3.4% | -0.93 | 0.40 | Mkt-RF -0.33 (-4.3), RMW +0.83 (+2.4), WML +0.32 (+2.4) |
-| UK | JKP GBR 7 themes | 155 | -3.1% | -0.85 | 0.57 | low_risk +1.39 (+5.9), short_term_reversal +0.51 (+2.7) |
-| DK | JKP DNK 7 themes | 155 | -1.5% | -0.49 | 0.52 | size -0.24 (-2.1), value +0.22 (+2.8), low_risk +1.11 (+6.8), short_term_reversal +0.66 (+5.4) |
-| SCANDI | French Europe 5F + WML | 162 | -2.3% | -0.64 | 0.19 | Mkt-RF -0.28 (-4.3) |
-| World | JKP World 7 themes | 155 | -10.5% | -4.42 | 0.63 | momentum +0.41 (+3.1), low_risk +1.11 (+8.1) |</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Universe</th>
+<th>Factor model</th>
+<th>Months</th>
+<th>Alpha / yr</th>
+<th>t(alpha)</th>
+<th>R²</th>
+<th>Loadings with &#124;t&#124; ≥ 2 (t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US</td>
+<td>JKP USA 7 themes</td>
+<td>155</td>
+<td>-11.2%</td>
+<td>-6.84</td>
+<td>0.83</td>
+<td>size +0.29 (+2.3), value -0.27 (-3.9), low_risk +1.47 (+14.6), short_term_reversal +0.87 (+4.9)</td>
+</tr>
+<tr>
+<td>EU</td>
+<td>French Europe 5F + WML</td>
+<td>162</td>
+<td>-3.4%</td>
+<td>-0.93</td>
+<td>0.40</td>
+<td>Mkt-RF -0.33 (-4.3), RMW +0.83 (+2.4), WML +0.32 (+2.4)</td>
+</tr>
+<tr>
+<td>UK</td>
+<td>JKP GBR 7 themes</td>
+<td>155</td>
+<td>-3.1%</td>
+<td>-0.85</td>
+<td>0.57</td>
+<td>low_risk +1.39 (+5.9), short_term_reversal +0.51 (+2.7)</td>
+</tr>
+<tr>
+<td>DK</td>
+<td>JKP DNK 7 themes</td>
+<td>155</td>
+<td>-1.5%</td>
+<td>-0.49</td>
+<td>0.52</td>
+<td>size -0.24 (-2.1), value +0.22 (+2.8), low_risk +1.11 (+6.8), short_term_reversal +0.66 (+5.4)</td>
+</tr>
+<tr>
+<td>SCANDI</td>
+<td>French Europe 5F + WML</td>
+<td>162</td>
+<td>-2.3%</td>
+<td>-0.64</td>
+<td>0.19</td>
+<td>Mkt-RF -0.28 (-4.3)</td>
+</tr>
+<tr>
+<td>World</td>
+<td>JKP World 7 themes</td>
+<td>155</td>
+<td>-10.5%</td>
+<td>-4.42</td>
+<td>0.63</td>
+<td>momentum +0.41 (+3.1), low_risk +1.11 (+8.1)</td>
+</tr>
+</tbody>
+</table></div>
 <p><strong>Low-MAX long-only</strong></p>
-<p>| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
-|---|---|---|---|---|---|---|
-| US | JKP USA 7 themes | 155 | +0.0% | 0.05 | 0.90 | mkt +0.92 (+35.2), size -0.17 (-3.0), momentum +0.16 (+3.0), low_risk +0.58 (+6.7), short_term_reversal +0.47 (+5.1) |
-| EU | French Europe 5F + WML | 162 | +4.3% | 1.88 | 0.58 | Mkt-RF +0.54 (+8.5), RMW +0.46 (+2.7) |
-| UK | JKP GBR 7 themes | 155 | +6.0% | 3.04 | 0.60 | mkt +0.41 (+8.8), quality +0.37 (+2.6), short_term_reversal +0.36 (+3.1) |
-| DK | JKP DNK 7 themes | 155 | +2.9% | 1.12 | 0.65 | mkt +0.71 (+14.0), value +0.18 (+3.0), short_term_reversal +0.38 (+3.2) |
-| SCANDI | French Europe 5F + WML | 162 | +5.0% | 1.89 | 0.49 | Mkt-RF +0.53 (+9.1), RMW +0.42 (+2.3) |
-| World | JKP World 7 themes | 155 | +2.0% | 1.15 | 0.78 | mkt +0.68 (+16.6), momentum +0.20 (+3.1), low_risk +0.45 (+4.8) |</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Universe</th>
+<th>Factor model</th>
+<th>Months</th>
+<th>Alpha / yr</th>
+<th>t(alpha)</th>
+<th>R²</th>
+<th>Loadings with &#124;t&#124; ≥ 2 (t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US</td>
+<td>JKP USA 7 themes</td>
+<td>155</td>
+<td>+0.0%</td>
+<td>0.05</td>
+<td>0.90</td>
+<td>mkt +0.92 (+35.2), size -0.17 (-3.0), momentum +0.16 (+3.0), low_risk +0.58 (+6.7), short_term_reversal +0.47 (+5.1)</td>
+</tr>
+<tr>
+<td>EU</td>
+<td>French Europe 5F + WML</td>
+<td>162</td>
+<td>+4.3%</td>
+<td>1.88</td>
+<td>0.58</td>
+<td>Mkt-RF +0.54 (+8.5), RMW +0.46 (+2.7)</td>
+</tr>
+<tr>
+<td>UK</td>
+<td>JKP GBR 7 themes</td>
+<td>155</td>
+<td>+6.0%</td>
+<td>3.04</td>
+<td>0.60</td>
+<td>mkt +0.41 (+8.8), quality +0.37 (+2.6), short_term_reversal +0.36 (+3.1)</td>
+</tr>
+<tr>
+<td>DK</td>
+<td>JKP DNK 7 themes</td>
+<td>155</td>
+<td>+2.9%</td>
+<td>1.12</td>
+<td>0.65</td>
+<td>mkt +0.71 (+14.0), value +0.18 (+3.0), short_term_reversal +0.38 (+3.2)</td>
+</tr>
+<tr>
+<td>SCANDI</td>
+<td>French Europe 5F + WML</td>
+<td>162</td>
+<td>+5.0%</td>
+<td>1.89</td>
+<td>0.49</td>
+<td>Mkt-RF +0.53 (+9.1), RMW +0.42 (+2.3)</td>
+</tr>
+<tr>
+<td>World</td>
+<td>JKP World 7 themes</td>
+<td>155</td>
+<td>+2.0%</td>
+<td>1.15</td>
+<td>0.78</td>
+<td>mkt +0.68 (+16.6), momentum +0.20 (+3.1), low_risk +0.45 (+4.8)</td>
+</tr>
+</tbody>
+</table></div>
 <p><strong>Reading it.</strong> Once beta is removed, most of the L/S loss disappears (CAPM alpha t between -1.3 and 1.5). The L/S is, above all, a low-risk position: its loading on JKP's low-risk theme is 1.11 to 1.47 with t up to 15. Where the JKP alpha is negative (US, UK, DK, World), the L/S earned less than that low-risk exposure would predict: net-of-cost, equal-weighted large-cap sorts are a costly way to hold low risk.</p>
 <p><strong>The low-MAX long-only alphas need a warning.</strong> Against the factor models it shows +2.0% to +6.0% a year outside the US (largest t 3.04, UK, which formally clears the gate). Against its own equal-weight universe, in the same currency, the alphas are smaller (-1.4% to +3.2%). The factor returns are in USD (JKP) or USD-based (French) while the book is in local currency, so I read the universe-relative alpha as the honest number.</p>
 <h2>9. Statistical verdict</h2>
@@ -1687,14 +1809,61 @@ td:not(:first-child){font-variant-numeric:tabular-nums}code,pre{font:13px Menlo,
 <li><strong>The direction of the tails is not priced.</strong> Net tail and skewness have alphas of -5.3% to +4.2% and -5.4% to +4.5% (universes with |t| ≥ 2: net tail 0, skewness 1). The genuinely "lottery" part of MAX, a big up-day that is <em>not</em> matched by a big down-day, earns nothing in these large-cap universes.</li>
 <li><strong>Spanning.</strong> Regressing the MAX long/short on MIN, idiosyncratic volatility, volatility, beta, skewness, last month's return and the market explains 0.71 to 0.95 of its variance and leaves an alpha of -2.5% to +1.2% (|t| ≤ 1.4). <strong>MAX is redundant.</strong> The MIN long/short against MAX and the same neighbours leaves -1.5% to +3.4% (largest t 2.2).</li>
 </ul>
-<p>| Universe | MAX alpha after neighbours / yr | t | R² | Neighbours with |t| ≥ 2 (loading, t) |
-|---|---|---|---|---|
-| US | +0.9% | 0.66 | 0.92 | MIN -0.32 (-3.3), Idiosyncratic volatility +0.27 (+4.5), Volatility +0.27 (+4.6), Skewness +0.37 (+5.6), Last month's return +0.22 (+6.9) |
-| EU | -2.5% | -1.39 | 0.80 | MIN -0.20 (-2.9), Idiosyncratic volatility +0.20 (+4.4), Volatility +0.33 (+4.2), Skewness +0.24 (+3.0), Last month's return +0.22 (+5.4) |
-| UK | +0.7% | 0.46 | 0.88 | MIN -0.30 (-4.1), Idiosyncratic volatility +0.38 (+4.6), Volatility +0.12 (+2.1), Beta +0.08 (+2.2), Skewness +0.35 (+4.2), Last month's return +0.22 (+6.9) |
-| DK | +0.5% | 0.22 | 0.71 | MIN -0.24 (-3.1), Idiosyncratic volatility +0.33 (+4.2), Beta +0.14 (+2.6), Skewness +0.36 (+5.9), Last month's return +0.17 (+3.8) |
-| SCANDI | +1.2% | 0.63 | 0.75 | MIN -0.25 (-2.7), Idiosyncratic volatility +0.37 (+4.6), Volatility +0.19 (+3.4), Beta +0.12 (+2.6), Skewness +0.50 (+7.3), Last month's return +0.18 (+3.4) |
-| World | +0.5% | 0.54 | 0.95 | MIN -0.40 (-5.8), Idiosyncratic volatility +0.15 (+2.5), Volatility +0.32 (+5.3), Skewness +0.37 (+8.7), Last month's return +0.29 (+14.3) |</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Universe</th>
+<th>MAX alpha after neighbours / yr</th>
+<th>t</th>
+<th>R²</th>
+<th>Neighbours with &#124;t&#124; ≥ 2 (loading, t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US</td>
+<td>+0.9%</td>
+<td>0.66</td>
+<td>0.92</td>
+<td>MIN -0.32 (-3.3), Idiosyncratic volatility +0.27 (+4.5), Volatility +0.27 (+4.6), Skewness +0.37 (+5.6), Last month's return +0.22 (+6.9)</td>
+</tr>
+<tr>
+<td>EU</td>
+<td>-2.5%</td>
+<td>-1.39</td>
+<td>0.80</td>
+<td>MIN -0.20 (-2.9), Idiosyncratic volatility +0.20 (+4.4), Volatility +0.33 (+4.2), Skewness +0.24 (+3.0), Last month's return +0.22 (+5.4)</td>
+</tr>
+<tr>
+<td>UK</td>
+<td>+0.7%</td>
+<td>0.46</td>
+<td>0.88</td>
+<td>MIN -0.30 (-4.1), Idiosyncratic volatility +0.38 (+4.6), Volatility +0.12 (+2.1), Beta +0.08 (+2.2), Skewness +0.35 (+4.2), Last month's return +0.22 (+6.9)</td>
+</tr>
+<tr>
+<td>DK</td>
+<td>+0.5%</td>
+<td>0.22</td>
+<td>0.71</td>
+<td>MIN -0.24 (-3.1), Idiosyncratic volatility +0.33 (+4.2), Beta +0.14 (+2.6), Skewness +0.36 (+5.9), Last month's return +0.17 (+3.8)</td>
+</tr>
+<tr>
+<td>SCANDI</td>
+<td>+1.2%</td>
+<td>0.63</td>
+<td>0.75</td>
+<td>MIN -0.25 (-2.7), Idiosyncratic volatility +0.37 (+4.6), Volatility +0.19 (+3.4), Beta +0.12 (+2.6), Skewness +0.50 (+7.3), Last month's return +0.18 (+3.4)</td>
+</tr>
+<tr>
+<td>World</td>
+<td>+0.5%</td>
+<td>0.54</td>
+<td>0.95</td>
+<td>MIN -0.40 (-5.8), Idiosyncratic volatility +0.15 (+2.5), Volatility +0.32 (+5.3), Skewness +0.37 (+8.7), Last month's return +0.29 (+14.3)</td>
+</tr>
+</tbody>
+</table></div>
 <ul>
 <li><strong>Persistence.</strong> The MAX spread is about as large 2, 3, 4 and 6 months after formation as in the first month (US: t+1 +10%, t+2 +12%, t+3 +8%, t+4 +13%, t+6 +11%). A mispricing that gets corrected would fade; a stable characteristic such as volatility does not. That fits MAX measuring a lasting trait of the stock rather than a passing overreaction.</li>
 </ul>

@@ -211,7 +211,7 @@ Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk,
 
 **L/S low − high MAX**
 
-| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|---|
 | US | JKP USA 7 themes | 155 | -11.2% | -6.84 | 0.83 | size +0.29 (+2.3), value -0.27 (-3.9), low_risk +1.47 (+14.6), short_term_reversal +0.87 (+4.9) |
 | EU | French Europe 5F + WML | 162 | -3.4% | -0.93 | 0.40 | Mkt-RF -0.33 (-4.3), RMW +0.83 (+2.4), WML +0.32 (+2.4) |
@@ -222,7 +222,7 @@ Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk,
 
 **Low-MAX long-only**
 
-| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|---|
 | US | JKP USA 7 themes | 155 | +0.0% | 0.05 | 0.90 | mkt +0.92 (+35.2), size -0.17 (-3.0), momentum +0.16 (+3.0), low_risk +0.58 (+6.7), short_term_reversal +0.47 (+5.1) |
 | EU | French Europe 5F + WML | 162 | +4.3% | 1.88 | 0.58 | Mkt-RF +0.54 (+8.5), RMW +0.46 (+2.7) |
@@ -386,7 +386,7 @@ Holding the worst day fixed (down a column), the best day adds little: the sprea
 - **The direction of the tails is not priced.** Net tail and skewness have alphas of -5.3% to +4.2% and -5.4% to +4.5% (universes with |t| ≥ 2: net tail 0, skewness 1). The genuinely "lottery" part of MAX, a big up-day that is *not* matched by a big down-day, earns nothing in these large-cap universes.
 - **Spanning.** Regressing the MAX long/short on MIN, idiosyncratic volatility, volatility, beta, skewness, last month's return and the market explains 0.71 to 0.95 of its variance and leaves an alpha of -2.5% to +1.2% (|t| ≤ 1.4). **MAX is redundant.** The MIN long/short against MAX and the same neighbours leaves -1.5% to +3.4% (largest t 2.2).
 
-| Universe | MAX alpha after neighbours / yr | t | R² | Neighbours with |t| ≥ 2 (loading, t) |
+| Universe | MAX alpha after neighbours / yr | t | R² | Neighbours with &#124;t&#124; ≥ 2 (loading, t) |
 |---|---|---|---|---|
 | US | +0.9% | 0.66 | 0.92 | MIN -0.32 (-3.3), Idiosyncratic volatility +0.27 (+4.5), Volatility +0.27 (+4.6), Skewness +0.37 (+5.6), Last month's return +0.22 (+6.9) |
 | EU | -2.5% | -1.39 | 0.80 | MIN -0.20 (-2.9), Idiosyncratic volatility +0.20 (+4.4), Volatility +0.33 (+4.2), Skewness +0.24 (+3.0), Last month's return +0.22 (+5.4) |

@@ -206,18 +206,18 @@ JKP 7 themes (US, UK, DK, World) or French Europe 5F + WML (EU, SCANDI); Newey-W
 
 **Long/short**
 
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|
 | US | JKP USA 7 themes | -5.3% | -1.44 | 0.56 | short_term_reversal +2.84 (+11.1) |
 | EU | French Europe 5F + WML | -5.7% | -1.44 | 0.15 | Mkt-RF +0.20 (+2.0), SMB +0.52 (+2.8), WML -0.33 (-2.4) |
 | UK | JKP GBR 7 themes | -2.8% | -0.72 | 0.50 | mkt +0.18 (+3.0), short_term_reversal +1.99 (+6.2) |
 | DK | JKP DNK 7 themes | -0.6% | -0.16 | 0.33 | momentum -0.35 (-2.5), short_term_reversal +0.88 (+7.4) |
-| SCANDI | French Europe 5F + WML | +2.2% | 0.61 | 0.06 | none |t| ≥ 2 |
+| SCANDI | French Europe 5F + WML | +2.2% | 0.61 | 0.06 | none &#124;t&#124; ≥ 2 |
 | World | JKP World 7 themes | -11.8% | -2.59 | 0.45 | mkt +0.23 (+3.1), quality -0.41 (-2.2), short_term_reversal +1.85 (+6.2) |
 
 **Long-only**
 
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|
 | US | JKP USA 7 themes | +1.4% | 0.69 | 0.90 | mkt +0.97 (+17.3), size -0.23 (-2.6), low_risk -0.65 (-3.4), short_term_reversal +1.53 (+7.4) |
 | EU | French Europe 5F + WML | +5.3% | 1.73 | 0.67 | Mkt-RF +0.86 (+10.1), WML -0.39 (-4.5) |
@@ -322,7 +322,7 @@ The signal among the 19 price signals of the shared library (`code/library.py`),
 
 **Spanning.** Regressing the L/S on its five closest library neighbours (by return correlation) and the market:
 
-| Universe | Alpha after neighbours / yr | t | R² | Neighbours with |t| ≥ 2 |
+| Universe | Alpha after neighbours / yr | t | R² | Neighbours with &#124;t&#124; ≥ 2 |
 |---|---|---|---|---|
 | US | +1.6% | 0.64 | 0.80 | 55-day breakout +0.74 (+7.7), Net tail +0.85 (+8.9) |
 | EU | +5.7% | 2.05 | 0.67 | 55-day breakout +0.39 (+3.6), Net tail +0.62 (+6.6), MIN5 +0.46 (+3.9), MIN -0.27 (-2.2) |

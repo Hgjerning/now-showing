@@ -207,7 +207,7 @@ JKP 7 themes (US, UK, DK, World) or French Europe 5F + WML (EU, SCANDI); Newey-W
 
 **Long/short**
 
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|
 | US | JKP USA 7 themes | -9.9% | -5.58 | 0.84 | size +0.25 (+2.2), value -0.41 (-2.4), momentum +1.04 (+5.7), low_risk +1.28 (+6.3), quality +0.48 (+2.1), short_term_reversal -1.14 (-6.5) |
 | EU | French Europe 5F + WML | -5.3% | -1.54 | 0.64 | Mkt-RF -0.42 (-4.6), RMW +0.58 (+2.4), WML +1.21 (+6.8) |
@@ -218,7 +218,7 @@ JKP 7 themes (US, UK, DK, World) or French Europe 5F + WML (EU, SCANDI); Newey-W
 
 **Long-only**
 
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|
 | US | JKP USA 7 themes | -1.3% | -0.97 | 0.86 | mkt +0.94 (+30.0), momentum +0.34 (+3.5), low_risk +0.39 (+4.5), quality +0.25 (+2.4), short_term_reversal -0.36 (-3.7) |
 | EU | French Europe 5F + WML | +5.7% | 2.61 | 0.56 | Mkt-RF +0.53 (+11.4), HML +0.29 (+2.5), WML +0.23 (+4.0) |
@@ -323,7 +323,7 @@ The signal among the 19 price signals of the shared library (`code/library.py`),
 
 **Spanning.** Regressing the L/S on its five closest library neighbours (by return correlation) and the market:
 
-| Universe | Alpha after neighbours / yr | t | R² | Neighbours with |t| ≥ 2 |
+| Universe | Alpha after neighbours / yr | t | R² | Neighbours with &#124;t&#124; ≥ 2 |
 |---|---|---|---|---|
 | US | -1.6% | -1.22 | 0.94 | 55-day breakout +0.54 (+10.6), Momentum 12-1 +0.43 (+18.7), Volatility -0.24 (-6.2) |
 | EU | +3.6% | 2.61 | 0.95 | MIN5 +0.26 (+4.3), 55-day breakout +0.33 (+9.0), Momentum 12-1 +0.43 (+14.2), Volatility -0.22 (-3.2) |

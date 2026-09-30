@@ -12,17 +12,17 @@
 | C. Sector neutrality | low beta and 12-1 momentum ranked within 11 sectors (static Morningstar/Yahoo map); **primary test** of FS19 |
 | Primary test | pooled sector-neutral shortlist (US, EU, UK, Denmark, SCANDI): NW t > 2 and at least half the unrestricted return |
 
-> **In one paragraph.** **The engine is clean and the result is not a sector bet, but "beta-neutral" low beta is not market-neutral.** The signals are identical when rebuilt from truncated data, they earn nothing on random noise, and the cost arithmetic adds up to the last decimal. Ranked within sectors, the shortlist keeps **+5.3% a year (t 2.96)** of its unrestricted +8.0%, so the primary test is **passed**. The warning is in the crash tests. The low-beta book, scaled to beta-neutral with estimated betas, still carries a realised market beta of about +0.3 to +0.6 in the US, UK, EU and World, because low betas drift up and high betas drift down. It lost 29% in the US in the COVID crash and 24% in 2022. Momentum did the hedging. The FS18 overlay as a whole stayed within a few per cent in every episode.
+> **In one paragraph.** **The engine is clean and the result is not a sector bet, but "beta-neutral" low beta is not market-neutral.** The signals are identical when rebuilt from truncated data, they earn nothing on random noise, and the cost arithmetic adds up to the last decimal. Ranked within sectors, the shortlist keeps **+5.3% a year (t 2.96)** of its unrestricted +8.0%, so the primary test is **passed**. The warning is in the crash tests. The low-beta book, scaled to beta-neutral with estimated betas, still carries a realised market beta of about +0.3 to +0.6 in the US, UK, EU and World, because low betas drift up and high betas drift down. It lost 29% in the US in the COVID crash and 24% in 2022. Momentum did the hedging. The FS18 overlay as a whole stayed within ±8% in every episode.
 
 ## A. Engine tests
 
 | Test | What | Result | Verdict |
 |---|---|---|---|
 | 1. Truncation (look-ahead) | 19 signals rebuilt from data cut at Dec 2015, 2019, 2023 (US, EU, UK): 171 comparisons | identical signal values and name counts | **pass** |
-| 2. Noise | 19 signals on iid noise, 5 seeds × US, EU: 190 gross L/S t-statistics | 4.2% have |t| > 1.96 (expected 5%); max |t| 2.65 | **pass** |
-| 3. Cheat (timing) | next month's return as the signal vs this month's return | next month: t ≥ 189; this month: |t| ≤ 1.9 | **pass** |
+| 2. Noise | 19 signals on iid noise, 5 seeds × US, EU: 190 gross L/S t-statistics | 4.2% have &#124;t&#124; > 1.96 (expected 5%); max &#124;t&#124; 2.65 | **pass** |
+| 3. Cheat (timing) | next month's return as the signal vs this month's return | next month: t ≥ 189; this month: &#124;t&#124; ≤ 1.9 | **pass** |
 | 4. Cost accounting | gross − net = cost + borrow + financing; cost = 10 bp × 2 × turnover | largest error 3e-17 | **pass** |
-| 5. Beta neutrality | realised beta of the 'beta-neutral' books on the equal-weight universe | flagged if |beta| > 0.3: US low beta (+0.48), EU 12-1 momentum (-0.33), UK low beta (+0.35), World low beta (+0.58) | **flag** |
+| 5. Beta neutrality | realised beta of the 'beta-neutral' books on the equal-weight universe | flagged if &#124;beta&#124; > 0.3: US low beta (+0.48), EU 12-1 momentum (-0.33), UK low beta (+0.35), World low beta (+0.58) | **flag** |
 
 
 | Market | Low beta (beta-neutral): realised beta | 12-1 momentum (beta-neutral): realised beta |
@@ -111,19 +111,21 @@
 | UK | 34% | +19.5% | +15.5% (t +3.7) | +1.1% | 0.89 | +18.4% | +12.5% |
 | Denmark | 82% | +2.9% | -1.8% (t -0.8) | +0.2% | 0.70 | +1.0% | -4.5% |
 | SCANDI | 84% | +0.1% | +1.1% (t +0.5) | +2.2% | 0.69 | +1.2% | +0.9% |
+| **Pooled, 5 markets (primary test)** | — | **+8.0%** | **+5.3% (t +2.96)** | — | — | — | — |
 | World | 76% | +8.7% | +8.2% (t +3.3) | -1.0% | 0.93 | +9.1% | +7.3% |
 
 
-*Net of 10 bp per side, borrow and financing; beta-neutral legs, no buffer. Coverage: share of stocks with a sector label; the rest form one "unclassified" group. UK coverage is low because many FTSE 250 members are investment trusts missing from the sector caches. Sector component: book sorted on the sector-average signal.*
+*Net of 10 bp per side, borrow and financing; beta-neutral legs, no buffer. Coverage: share of stocks with a sector label; the rest form one "unclassified" group. UK coverage is low because many FTSE 250 members are investment trusts missing from the sector caches. Sector component: book sorted on the sector-average signal. Pooled = US, EU, UK, Denmark and SCANDI, the pre-registered primary test; World is left out because it overlaps. The within-sector return is 66% of the unrestricted return, above the pre-registered half.*
 
-Across the five markets, about two thirds of the shortlist's return comes from picking stocks within sectors, and the sector bets add the rest. The within-sector book is highly correlated with the unrestricted one. The exception is Denmark, where 19 stocks spread over 11 sectors leave nothing to rank within a sector.
+Across the five markets, about two thirds of the shortlist's return comes from picking stocks within sectors, and the sector bets add the rest. The within-sector book is highly correlated with the unrestricted one. The exception is Denmark, where 19 stocks spread over 11 sectors leave nothing to rank within a sector. This is in line with Asness, Frazzini & Pedersen (2014), who find that low-risk returns survive industry neutralisation, and it answers the concern of Moskowitz & Grinblatt (1999) that momentum is largely an industry effect: here most of it is not.
 
 ## Caveats
 
 - Sector labels are today's, applied to all years.
+- UK sector coverage is only 34%, so two thirds of UK stocks sit in one "unclassified" group; the UK within-sector result is the least sector-neutral of the five and should be read with that in mind.
 - The truncation test covers the price library, not the US fundamental composites (their point-in-time logic is the filing-date lag in FS13b).
 - The noise test checks the engine's timing and statistics, not the economic content of any signal.
-- FS19 adds 44 trials to the ledger (now 682).
+- FS19 adds 44 trials to the ledger (now 682). The more trials a programme runs, the higher the bar for any single t-statistic (Bailey et al. 2014).
 
 ## References
 

@@ -16,9 +16,9 @@ p = lambda x, d=1: f"{x * 100:+.{d}f}%"
 
 
 def table(head, rows):
-    s = "| " + " | ".join(head) + " |\n|" + "|".join(["---"] * len(head)) + "|\n"
+    s = "| " + " | ".join(str(x).replace("|", "&#124;") for x in head) + " |\n|" + "|".join(["---"] * len(head)) + "|\n"
     for r in rows:
-        s += "| " + " | ".join(str(x) for x in r) + " |\n"
+        s += "| " + " | ".join(str(x).replace("|", "&#124;") for x in r) + " |\n"
     return s
 
 

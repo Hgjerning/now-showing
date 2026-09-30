@@ -8,7 +8,7 @@
 
 ## 1. All strategies in one table
 
-| Strategy | Family | L/S net return / yr (range over 6) | L/S positive | L/S passes |t| > 2.87 | L/S CAPM alpha range | Long-only beats EW Sharpe | Long-only alpha passes | Fixes: holdout Sharpe | Redundant in 360° view | Library cluster |
+| Strategy | Family | L/S net return / yr (range over 6) | L/S positive | L/S passes &#124;t&#124; > 2.87 | L/S CAPM alpha range | Long-only beats EW Sharpe | Long-only alpha passes | Fixes: holdout Sharpe | Redundant in 360° view | Library cluster |
 |---|---|---|---|---|---|---|---|---|---|---|
 | FS01 Turtle Traders | Breakout & trend | -15.7% to -3.9% | 0 / 6 | US−, SCANDI−, World− | -13.8% to -2.4% | 0 / 6 | — | T0 -0.74 → T3 0.64 (drop shorts, 4N stop) | yes | momentum (time series) |
 | FS02 Lottery (MAX) | Lottery & attention | -14.4% to -1.6% | 0 / 6 | — | -5.5% to +4.7% | 2 / 6 | — | L0 -0.57 → L1 -0.41 (beta-neutral legs) | yes | low risk |

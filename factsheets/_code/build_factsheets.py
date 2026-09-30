@@ -38,9 +38,9 @@ def rng_(v, pct=False):
 
 
 def table(head, rows):
-    s = "| " + " | ".join(head) + " |\n|" + "|".join(["---"] * len(head)) + "|\n"
+    s = "| " + " | ".join(str(x).replace("|", "&#124;") for x in head) + " |\n|" + "|".join(["---"] * len(head)) + "|\n"
     for r in rows:
-        s += "| " + " | ".join(str(x) for x in r) + " |\n"
+        s += "| " + " | ".join(str(x).replace("|", "&#124;") for x in r) + " |\n"
     return s
 
 
@@ -86,7 +86,15 @@ def embed(html):
     return html
 
 
+def fix_abs_pipes(md):
+    """Escape |x| (absolute-value bars) inside markdown table rows so they do not split cells."""
+    import re
+    rx = re.compile(r"(?<!\\)\|([^\s|\-\\][^|\n]{0,8}?[^\s|\\]|[^\s|\-\\])\|")
+    return "\n".join(rx.sub(lambda m: "&#124;" + m.group(1) + "&#124;", L) if L.lstrip().startswith("|") and not re.fullmatch(r"\s*\|[\s:|\-]+\|?\s*", L) else L for L in md.split("\n"))
+
+
 def write(stem, md, title):
+    md = fix_abs_pipes(md)
     open(os.path.join(OUT, f"{stem}.md"), "w").write(md)
     body = markdown.markdown(md, extensions=["tables", "fenced_code", "md_in_html"]).replace("<table>", '<div class="tw"><table>').replace("</table>", "</table></div>")
     html = f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{title}</title><style>{CSS}</style></head><body>{body}</body></html>"

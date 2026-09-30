@@ -245,7 +245,7 @@ Monthly returns regressed on seven factor themes: JKP (Jensen, Kelly & Pedersen 
 
 **Turtle long/short**
 
-| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|---|
 | US | JKP USA 7 themes | 156 | -18.4% | -4.76 | 0.19 | momentum +0.40 (+2.5), short_term_reversal -1.21 (-4.0) |
 | EU | French Europe 5F + WML | 163 | -9.1% | -2.65 | 0.19 | Mkt-RF -0.39 (-3.8) |
@@ -256,7 +256,7 @@ Monthly returns regressed on seven factor themes: JKP (Jensen, Kelly & Pedersen 
 
 **Turtle long-only**
 
-| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|---|
 | US | JKP USA 7 themes | 156 | -7.0% | -2.35 | 0.52 | mkt +0.78 (+11.3), size -0.38 (-2.2), momentum +0.50 (+3.7), short_term_reversal -0.52 (-2.1) |
 | EU | French Europe 5F + WML | 163 | +0.8% | 0.20 | 0.24 | Mkt-RF +0.40 (+5.9) |
@@ -399,7 +399,7 @@ The Turtle book trades each stock's own channel over time. Its cross-sectional t
 
 **Spanning.** Against momentum, the 52-week high, last month's return, volatility, MAX and the market, the breakout sort keeps an alpha of -3.0% to +4.8% (|t| ≤ 1.5), with R² 0.64 to 0.93. **The breakout is redundant given the 52-week high and one-month return.**
 
-| Universe | Breakout alpha after neighbours / yr | t | R² | Neighbours with |t| ≥ 2 (loading, t) |
+| Universe | Breakout alpha after neighbours / yr | t | R² | Neighbours with &#124;t&#124; ≥ 2 (loading, t) |
 |---|---|---|---|---|
 | US | -0.0% | -0.02 | 0.91 | Momentum 12-1 -0.16 (-3.6), Price / 52-week high +0.61 (+8.2), Last month's return +0.41 (+11.5) |
 | EU | -3.0% | -1.20 | 0.82 | Momentum 12-1 -0.14 (-3.0), Price / 52-week high +0.63 (+7.1), Last month's return +0.32 (+5.8) |

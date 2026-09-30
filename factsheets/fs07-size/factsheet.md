@@ -208,18 +208,18 @@ JKP 7 themes (US, UK, DK, World) or French Europe 5F + WML (EU, SCANDI); Newey-W
 
 **Long/short**
 
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|
 | US | JKP USA 7 themes | -1.6% | -0.78 | 0.59 | mkt +0.25 (+3.6), size +0.43 (+3.2), value +0.44 (+4.3), short_term_reversal +0.44 (+2.2) |
 | EU | French Europe 5F + WML | -2.0% | -0.64 | 0.21 | SMB +0.49 (+3.7), HML +0.36 (+2.2) |
 | UK | JKP GBR 7 themes | +6.4% | 2.07 | 0.39 | size +0.94 (+6.9), value -0.53 (-3.1), momentum -0.23 (-2.0), quality +0.41 (+2.1) |
 | DK | JKP DNK 7 themes | -5.4% | -1.35 | 0.15 | size +0.49 (+3.0), low_risk +0.32 (+2.1) |
-| SCANDI | French Europe 5F + WML | +1.7% | 0.70 | 0.06 | none |t| ≥ 2 |
+| SCANDI | French Europe 5F + WML | +1.7% | 0.70 | 0.06 | none &#124;t&#124; ≥ 2 |
 | World | JKP World 7 themes | -4.1% | -2.06 | 0.44 | mkt +0.15 (+4.2), size +0.52 (+4.3), value +0.27 (+3.0), short_term_reversal +0.26 (+2.2) |
 
 **Long-only**
 
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with |t| ≥ 2 (t) |
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
 |---|---|---|---|---|---|
 | US | JKP USA 7 themes | +3.3% | 2.47 | 0.93 | mkt +1.10 (+23.6), value +0.38 (+4.1), quality +0.24 (+2.1), short_term_reversal +0.47 (+2.8) |
 | EU | French Europe 5F + WML | +4.4% | 1.73 | 0.64 | Mkt-RF +0.71 (+10.5), HML +0.39 (+2.3) |
@@ -324,7 +324,7 @@ The signal among the 19 price signals of the shared library (`code/library.py`),
 
 **Spanning.** Regressing the L/S on its five closest library neighbours (by return correlation) and the market:
 
-| Universe | Alpha after neighbours / yr | t | R² | Neighbours with |t| ≥ 2 |
+| Universe | Alpha after neighbours / yr | t | R² | Neighbours with &#124;t&#124; ≥ 2 |
 |---|---|---|---|---|
 | US | +0.8% | 0.32 | 0.53 | Momentum 12-1 +0.23 (+3.6) |
 | EU | -1.5% | -0.47 | 0.15 |  |
