@@ -1,0 +1,246 @@
+{
+  "waterfall": [
+    {
+      "step": 1,
+      "date": "2026-09-01",
+      "label": "In-sample (price basis)",
+      "alpha_ann": 0.0511,
+      "t_stat": 2.9,
+      "t_type": "block bootstrap",
+      "sharpe_book": 0.945,
+      "sharpe_bench": 0.695,
+      "what_changed": "First regression alpha vs MSCI World ETF; non-US legs and benchmark on price-only closes",
+      "source": "Project2 BENCHMARK_HURDLE.md l.414-424"
+    },
+    {
+      "step": 2,
+      "date": "2026-09-08",
+      "label": "Total-return re-basing",
+      "alpha_ann": 0.0434,
+      "t_stat": 2.21,
+      "t_type": "block bootstrap",
+      "sharpe_book": 0.932,
+      "sharpe_bench": 0.819,
+      "what_changed": "All legs and the benchmark moved to total return (dividends)",
+      "source": "Project2 BENCHMARK_HURDLE.md l.414-424"
+    },
+    {
+      "step": 3,
+      "date": "2026-09-11",
+      "label": "Stated in USD",
+      "alpha_ann": 0.0339,
+      "t_stat": 1.36,
+      "t_type": "OLS",
+      "sharpe_book": 0.874,
+      "sharpe_bench": 0.819,
+      "what_changed": "EU legs had been summed in local currencies; restated in the benchmark's currency (measured on the step-2 book)",
+      "source": "Project2 FINDINGS_2026-09-11.md l.17-21"
+    },
+    {
+      "step": 4,
+      "date": "2026-09-11",
+      "label": "Holding-lock bug fixed (number of record)",
+      "alpha_ann": 0.0106470772654711,
+      "t_stat": 0.3494931953967223,
+      "t_type": "block bootstrap",
+      "sharpe_book": 0.663,
+      "sharpe_bench": 0.819,
+      "what_changed": "A holding bonus had frozen the book into ~40 names held for years; reverted on mechanics",
+      "source": "Project2 alpha_vs_urth.csv; NUMBERS_OF_RECORD.md"
+    },
+    {
+      "step": 5,
+      "date": "2026-09-12",
+      "label": "Factor-adjusted (13 JKP themes)",
+      "alpha_ann": -0.0169,
+      "t_stat": -0.54,
+      "t_type": "OLS",
+      "sharpe_book": NaN,
+      "sharpe_bench": NaN,
+      "what_changed": "Momentum loading +0.51 (t 5.8) explains the rest",
+      "source": "Project2 README.md l.6140-6152"
+    }
+  ],
+  "record": {
+    "alpha": 0.0106470772654711,
+    "t_block": 0.3494931953967223,
+    "t_ols": 0.3334342800588903,
+    "ci": [
+      -0.0478561263402302,
+      0.0706236119156893
+    ],
+    "beta": 0.8472885286561562,
+    "trials": 33,
+    "bonferroni_t": 3.1717657833516224,
+    "n": 764
+  },
+  "insample_rederived": {
+    "n": 764,
+    "alpha_ann": 0.010647077265471134,
+    "t_ols": 0.33343428005889103,
+    "beta": 0.8472885286561562,
+    "sharpe_book": 0.6632633464303489,
+    "sharpe_urth": 0.8185959114123651,
+    "mdd_book": -0.3761153416125683,
+    "mdd_urth": -0.3266285855253731,
+    "cagr_book": 0.10853887677801066,
+    "cagr_urth": 0.12288821021018737,
+    "start": "2012-01-20",
+    "end": "2026-09-04"
+  },
+  "oos": {
+    "record_alpha": 0.0115423275038772,
+    "record_t": 0.239489078060146,
+    "record_ci": [
+      -0.080971616305015,
+      0.1063373300961056
+    ],
+    "record_mdd": -0.7905405236621015,
+    "record_bench_mdd": -0.5606507726575447,
+    "record_sharpe": 0.4754032896731016,
+    "record_bench_sharpe": 0.5397985838632351,
+    "record_beta": 1.1770912776687674,
+    "n": 885,
+    "rederived_alpha_ols": 0.011542327503877362,
+    "rederived_t_ols": 0.2931834012955316,
+    "rederived_beta": 1.1770912776687679,
+    "mdd": -0.7905405236621013,
+    "bench_mdd": -0.5606507726575449,
+    "cagr": 0.0963856757631496,
+    "bench_cagr": 0.08574581887057953,
+    "start": "1995-01-13",
+    "end": "2011-12-23",
+    "per_region": {
+      "Europe (top 600 by PIT cap)": {
+        "alpha": 0.003078629597994,
+        "t": 0.0520087705483393
+      },
+      "America (top 500 by PIT cap)": {
+        "alpha": 0.0230005675246543,
+        "t": 0.3443256534311875
+      }
+    }
+  },
+  "multiple_testing": {
+    "t_first": 2.9,
+    "p_first": 0.003731626600768075,
+    "t_needed": {
+      "1": 1.9599639845400545,
+      "5": 2.575829303548901,
+      "13": 2.8905115606917384,
+      "24": 3.078088072842176,
+      "33": 3.171765783351613,
+      "100": 3.480756404346212,
+      "235": 3.7033560215587213
+    },
+    "hlz_24": {
+      "t_adj": 1.6977283819230824,
+      "haircut": 0.4145764200265233
+    },
+    "hlz_33": {
+      "t_adj": 1.5417116575451972,
+      "haircut": 0.46837529050165616
+    }
+  },
+  "haircuts": {
+    "alpha_first_to_record": 0.7916423235719942,
+    "alpha_first_to_oos": 0.7741227494348885,
+    "sharpe_first_to_record": 0.2981340249414297
+  },
+  "survivorship": [
+    {
+      "region": "US (S&P 500)",
+      "biased": 1.267,
+      "pit": 0.794,
+      "note": "today's members vs point-in-time members, Sharadar",
+      "overstatement": 0.5957178841309823,
+      "haircut": 0.37332280978689814
+    },
+    {
+      "region": "Europe (STOXX 600)",
+      "biased": 0.7583775611819185,
+      "pit": 0.5290838692453081,
+      "note": "same panel, point-in-time mask off vs on",
+      "overstatement": 0.43337872361082885,
+      "haircut": 0.3023476743948753
+    },
+    {
+      "region": "UK",
+      "biased": 0.8649764642573047,
+      "pit": 0.6938491053837095,
+      "note": "current members vs point-in-time",
+      "overstatement": 0.24663483392251262,
+      "haircut": 0.19784047999563825
+    },
+    {
+      "region": "Denmark",
+      "biased": 0.9732457416009386,
+      "pit": 0.6825120242417443,
+      "note": "current members vs point-in-time; small, noisy",
+      "overstatement": 0.42597596384062686,
+      "haircut": 0.2987259074783646
+    }
+  ],
+  "placebo": {
+    "z_live": 4.92,
+    "z_pit": 1.34,
+    "pct_pit": 90.9
+  },
+  "random_books": {
+    "n": 2000,
+    "mean_t": 1.8416844905884828,
+    "sd_t": 0.4644009417772083,
+    "share_t_gt_2": 0.355,
+    "share_t_gt_frozen": 0.0005,
+    "frozen_t": 3.85,
+    "mean_alpha": 0.039187918539384914
+  },
+  "band": {
+    "book_diff": 0.1598607621813884,
+    "ci": [
+      0.1371274854230944,
+      0.1857862503207381
+    ],
+    "sharpe0": 0.4979960061859466,
+    "sharpe200": 0.657856768367335,
+    "regions": [
+      {
+        "region": "EU",
+        "diff": 0.2087596281911381,
+        "ci_lo": 0.1806598510547551,
+        "ci_hi": 0.2416750289071918
+      },
+      {
+        "region": "UK",
+        "diff": 0.3439314399494451,
+        "ci_lo": 0.2895209723998309,
+        "ci_hi": 0.404916318378558
+      },
+      {
+        "region": "WD",
+        "diff": 0.0955099798328555,
+        "ci_lo": 0.0733714461426576,
+        "ci_hi": 0.1207073538317207
+      },
+      {
+        "region": "DK",
+        "diff": 0.1415480750616439,
+        "ci_lo": 0.1208855729734192,
+        "ci_hi": 0.165257863868548
+      },
+      {
+        "region": "US",
+        "diff": 0.0714327157873468,
+        "ci_lo": 0.0535879480462007,
+        "ci_hi": 0.0913456859255013
+      }
+    ]
+  },
+  "rolling": {
+    "last": -0.0498299977109369,
+    "last_date": "2026-01-02",
+    "first_neg": "2018-10-26",
+    "share_neg_since_2019": 0.9918032786885246
+  },
+  "dsr_best_of_24": 0.9359
+}

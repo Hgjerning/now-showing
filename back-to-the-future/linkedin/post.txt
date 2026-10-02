@@ -1,0 +1,27 @@
+BACK TO THE FUTURE: my strategy beat the market by 5% a year. In the past.
+
+Then I tested it properly.
+
+In early September I had what every quant hopes for: a momentum strategy with +5.1% a year of alpha against the MSCI World ETF, t-stat 2.90.
+
+Then I checked it, one correction at a time:
+→ Include dividends everywhere: +4.3%
+→ Measure every leg in the same currency: +3.4%
+→ Fix a bug that had quietly frozen the portfolio: +1.1%, t 0.35
+→ Adjust for known factors: -1.7%
+
+Then the test I wrote down in advance: sixteen years of data it had never seen. Result: +1.2% a year, t 0.24, and a -79% drawdown against the market's -56%.
+
+Two lessons cost the most.
+Survivorship: backtesting on today's index members flattered the Sharpe ratio by 20–37% in every region I measured.
+The wrong null: 36% of random 10-stock portfolios from the same universe also "beat" the market with t > 2.
+
+I tried 33 things along the way, so the honest bar was t = 3.17. Nothing cleared it.
+
+One thing survived: skipping small trades added +0.16 to the Sharpe ratio, significant in every region. The only edge I found was trading less.
+
+The total haircut, 79%, is ordinary. Published anomalies lose 58% after publication; bank strategies lose a median 73% once live.
+
+Full article, tables and code: hgjerning.github.io/now-showing/back-to-the-future
+
+#quant #backtesting #investing #statistics

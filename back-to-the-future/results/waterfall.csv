@@ -1,0 +1,6 @@
+step,date,label,alpha_ann,t_stat,t_type,sharpe_book,sharpe_bench,what_changed,source
+1,2026-09-01,In-sample (price basis),0.0511,2.9,block bootstrap,0.945,0.695,First regression alpha vs MSCI World ETF; non-US legs and benchmark on price-only closes,Project2 BENCHMARK_HURDLE.md l.414-424
+2,2026-09-08,Total-return re-basing,0.0434,2.21,block bootstrap,0.932,0.819,All legs and the benchmark moved to total return (dividends),Project2 BENCHMARK_HURDLE.md l.414-424
+3,2026-09-11,Stated in USD,0.0339,1.36,OLS,0.874,0.819,EU legs had been summed in local currencies; restated in the benchmark's currency (measured on the step-2 book),Project2 FINDINGS_2026-09-11.md l.17-21
+4,2026-09-11,Holding-lock bug fixed (number of record),0.0106470772654711,0.3494931953967223,block bootstrap,0.663,0.819,A holding bonus had frozen the book into ~40 names held for years; reverted on mechanics,Project2 alpha_vs_urth.csv; NUMBERS_OF_RECORD.md
+5,2026-09-12,Factor-adjusted (13 JKP themes),-0.0169,-0.54,OLS,,,Momentum loading +0.51 (t 5.8) explains the rest,Project2 README.md l.6140-6152
