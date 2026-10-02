@@ -19,6 +19,8 @@
 
 
 
+
+
 | Key facts | |
 |---|---|
 | Price battery | 19 price signals × 6 point-in-time universes (US, EU, UK, DK, SCANDI, World), monthly, 2013–2026, our engine, net of 10 bp per side and a size-tiered borrow fee on the short leg |

@@ -18,6 +18,8 @@
 
 
 
+
+
 | Key facts | |
 |---|---|
 | Method | Fama-MacBeth: every month, next-month stock returns regressed on all signals at once; slopes averaged over time, Newey–West t (6 lags) |

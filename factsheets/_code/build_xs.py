@@ -296,6 +296,10 @@ The full library, with the CAPM alpha of every signal in every universe:
 
 `code/data.py` → `signals.py`, `signals2.py`, `library.py` → `xs.py` + `analyse_xs.py {code}` → `build_xs.py {code}`. Metrics use Project1 `InvestmentLibrary`. Licensed and cached prices are not included.
 """
+    # 2026-10-02 layout v2 (Factsheet Content Review): verdict/scorecard, Sharpe anatomy, fit, appendix. Same numbers.
+    import factsheet_v2 as V2
+    V2.panel(code)
+    md = V2.reorganise(md, code, per, rng([per[R]["attribution"][LS]["coef"]["alpha"] for R in U]), rng([st(R, LS)["alpha"] for R in U]))
     BF.write(sp["stem"], md, f"{code} {sp['title']}: factsheet")
     return md
 

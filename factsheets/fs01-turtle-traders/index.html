@@ -32,7 +32,7 @@ Comparison and method: <code>FACTSHEETS_RERUN_2026-10-02.md</code>.</blockquote>
 <div><b>Backtest</b>Jan 2013 – Sep 2026, daily, net of costs</div>
 <div><b>Books</b>Long/short (headline) and long-only</div>
 <div><b>Rebalance</b>Event driven, next-day close fills</div>
-<div><b>Status</b>Descriptive factsheet, not a registered trial</div>
+<div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
 <blockquote>
@@ -2123,7 +2123,7 @@ Comparison and method: <code>FACTSHEETS_RERUN_2026-10-02.md</code>.</blockquote>
 3. <strong>Close-to-close N</strong> ignores intraday highs and lows, so it understates the true range and makes units somewhat larger than the original rule.
 4. <strong>Currency.</strong> Local currency; World sums local-currency returns without converting them.
 5. <strong>Sizing is an adaptation.</strong> The 0.1% unit and the gross cap are my choices, set once on mechanics (leverage), never tuned on returns. Other choices would change the level of returns, not the sign of the short side.
-6. <strong>Not a registered trial.</strong> This factsheet is descriptive and is not added to the programme's trial ledger. The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7). The <em>Trading Places</em> article (Season 2) will pre-register a single test.</p>
+6. <strong>Trials.</strong> Every gated cell is in the factsheet trial ledger (<code>TRIAL_LEDGER.md</code>, 772 trials). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7). The <em>Trading Places</em> article (Season 2) will pre-register a single test.</p>
 <h2>14. Academic references</h2>
 <ul>
 <li>Faith, C. (2003). <em>The Original Turtle Trading Rules</em>. OriginalTurtles.org (free PDF).</li>

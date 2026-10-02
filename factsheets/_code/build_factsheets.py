@@ -160,7 +160,7 @@ def fs01():
 <div><b>Backtest</b>Jan 2013 – Sep 2026, daily, net of costs</div>
 <div><b>Books</b>Long/short (headline) and long-only</div>
 <div><b>Rebalance</b>Event driven, next-day close fills</div>
-<div><b>Status</b>Descriptive factsheet, not a registered trial</div>
+<div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
 > **Verdict in one paragraph.** Dennis's students reportedly made more than $100 million with these rules on 1980s futures (Covel 2007). On single stocks, 2013–2026, the long/short version **lost money in all six universes** (Sharpe {min(J[R]['stats'][M]['sharpe'] for R in U):.2f} to {max(J[R]['stats'][M]['sharpe'] for R in U):.2f}). Nearly all of the loss is the short side: stocks that break to a new low tend to bounce, and a rising market punishes every short. The long-only version made money everywhere, but **had a lower Sharpe than simply owning the equal-weight universe in {n6(sum(J[R]['stats'][LO]['sharpe'] < J[R]['stats'][B]['sharpe'] for R in U))}**; its alpha against the universe is between {p(min(J[R]['stats'][LO]['alpha'] for R in U))} and {p(max(J[R]['stats'][LO]['alpha'] for R in U))} a year, and none reaches the {GATE} gate. The trade profile is textbook trend following, about {win * 100:.0f}% winners with winners {payoff:.1f}× the size of losers. On stocks, that is not enough to pay for the whipsaws. **What goes wrong (§10):** costs from oversized units, a short book in a bull market, a 2N stop tighter than daily noise and, at the root, no trend in single stocks to follow. Fixing what can be fixed gives a long-only, half-beta book that still trails the equal-weight universe's Sharpe in the 2020–26 holdout ({FX['avg_holdout']['T3 + 4N stop']['sharpe']:.2f} vs {FX['avg_holdout']['EW universe']['sharpe']:.2f}). **Classification (§11):** a futures trend strategy mis-applied to stocks. **360° view (§12):** the cross-sectional breakout does carry beta-adjusted information, but it is a noisy subset of the 52-week-high and momentum effects.
@@ -297,7 +297,7 @@ The equal-weight universes lose 2–5 percentage points a year once survivors ar
 3. **Close-to-close N** ignores intraday highs and lows, so it understates the true range and makes units somewhat larger than the original rule.
 4. **Currency.** Local currency; World sums local-currency returns without converting them.
 5. **Sizing is an adaptation.** The 0.1% unit and the gross cap are my choices, set once on mechanics (leverage), never tuned on returns. Other choices would change the level of returns, not the sign of the short side.
-6. **Not a registered trial.** This factsheet is descriptive and is not added to the programme's trial ledger. The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7). The *Trading Places* article (Season 2) will pre-register a single test.
+6. **Trials.** Every gated cell is in the factsheet trial ledger (`TRIAL_LEDGER.md`, 772 trials). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7). The *Trading Places* article (Season 2) will pre-register a single test.
 
 ## 14. Academic references
 
@@ -359,7 +359,7 @@ def fs02():
 <div><b>Backtest</b>Feb 2013 – Aug 2026, 163 months, net of costs</div>
 <div><b>Books</b>Long/short (headline) and low-MAX long-only</div>
 <div><b>Rebalance</b>Monthly, equal-weighted</div>
-<div><b>Status</b>Descriptive factsheet, not a registered trial</div>
+<div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
 > **Verdict in one paragraph.** Bali, Cakici & Whitelaw found that US stocks with the largest one-day jump last month earned about 1% a month *less* the next month, in 1962–2005. Investors pay up for lottery tickets. In 2013–2026 the effect is gone: **after costs the long/short lost money in {n6(neg)} universes** ({p(min(J[R]['stats'][LS]['ann_mean'] for R in U))} to {p(max(J[R]['stats'][LS]['ann_mean'] for R in U))} a year); before costs it was slightly positive only in {', '.join(UN[R] for R in U if gross[R] > 0) or 'none'}, and clearly negative in the US and World, where the lottery stocks won. The reason is beta. The high-MAX group has a beta of {min(J[R]['quantile_beta'][f'Q{J[R]["q"]}'] for R in U):.2f}–{max(J[R]['quantile_beta'][f'Q{J[R]["q"]}'] for R in U):.2f} against the universe, the low-MAX group {min(J[R]['quantile_beta']['Q1'] for R in U):.2f}–{max(J[R]['quantile_beta']['Q1'] for R in U):.2f}, and markets rose strongly. Adjusted for that one number, the CAPM alpha of the long/short is between {p(min(J[R]['stats'][LS]['alpha'] for R in U))} and {p(max(J[R]['stats'][LS]['alpha'] for R in U))} a year and passes the gate in {len(capm_pass)} of 6. The low-MAX long-only book delivered what low-risk investing promises: a beta of {min(J[R]['stats'][LO]['beta'] for R in U):.2f}–{max(J[R]['stats'][LO]['beta'] for R in U):.2f}, a shallower drawdown than the universe in {sum(J[R]['stats'][LO]['maxdd'] > J[R]['stats'][B]['maxdd'] for R in U)} of 6, a higher Sharpe in {sum(J[R]['stats'][LO]['sharpe'] > J[R]['stats'][B]['sharpe'] for R in U)} of 6 ({', '.join(UN[R] for R in U if J[R]['stats'][LO]['sharpe'] > J[R]['stats'][B]['sharpe'])}), and alphas of {p(min(J[R]['stats'][LO]['alpha'] for R in U))} to {p(max(J[R]['stats'][LO]['alpha'] for R in U))} that do not pass the gate. **What goes wrong (§10):** an unhedged beta bet plus a signal that, in large caps, mostly measures volatility. Beta-neutral legs remove most of the loss in both the design and the 2020–26 holdout window, and what remains is a premium of about zero. **Classification (§11):** a member of the low-risk family, not a factor of its own. **360° view (§12):** lottery and falling knife are the two tails of the same volatility, mirrors in their returns but not in the stocks they pick; neither tail is priced on its own once volatility and beta are in the model, and MAX is fully spanned by its neighbours.
@@ -476,7 +476,7 @@ The non-US L/S numbers moved towards zero and the low-MAX book improved relative
 2. **Large caps only.** The effect is strongest in small, retail-held stocks; these universes are blue chips. DK (3 groups of ~6) and SCANDI (5 groups of ~12) are thin and noisy.
 3. **Equal-weighting** (except the US value-weighted robustness book). The original paper's headline is value-weighted.
 4. **Currency:** local; World mixes currencies.
-5. **Not a registered trial.** A15 carries the registered tests (A15-1, A15-2); this factsheet extends them descriptively to five more universes. The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
+5. **Trials.** A15 carries the registered article tests (A15-1, A15-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
 
 ## 14. Academic references
 

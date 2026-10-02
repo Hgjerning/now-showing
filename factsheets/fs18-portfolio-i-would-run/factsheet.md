@@ -18,6 +18,8 @@
 
 
 
+
+
 | Key facts | |
 |---|---|
 | Pre-registration | `planning/PREREG_FS18.md`, saved to the Factsheets folder before any FS18 number was computed; no deviations |

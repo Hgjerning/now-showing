@@ -20,6 +20,8 @@
 
 
 
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Buy low-MAX, sell high-MAX stocks</div>
 <div><b>Origin</b>Bali, Cakici & Whitelaw (2011), JFE</div>
@@ -28,7 +30,7 @@
 <div><b>Backtest</b>Feb 2013 – Aug 2026, 163 months, net of costs</div>
 <div><b>Books</b>Long/short (headline) and low-MAX long-only</div>
 <div><b>Rebalance</b>Monthly, equal-weighted</div>
-<div><b>Status</b>Descriptive factsheet, not a registered trial</div>
+<div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
 > **Verdict in one paragraph.** Bali, Cakici & Whitelaw found that US stocks with the largest one-day jump last month earned about 1% a month *less* the next month, in 1962–2005. Investors pay up for lottery tickets. In 2013–2026 the effect is gone: **after costs the long/short lost money in 5 of the six universes** (-10.6% to +1.9% a year); before costs it was slightly positive only in EU, SCANDI, and clearly negative in the US and World, where the lottery stocks won. The reason is beta. The high-MAX group has a beta of 1.16–1.32 against the universe, the low-MAX group 0.62–0.84, and markets rose strongly. Adjusted for that one number, the CAPM alpha of the long/short is between -2.5% and +8.5% a year and passes the gate in 0 of 6. The low-MAX long-only book delivered what low-risk investing promises: a beta of 0.62–0.84, a shallower drawdown than the universe in 6 of 6, a higher Sharpe in 2 of 6 (EU, UK), and alphas of -0.7% to +2.8% that do not pass the gate. **What goes wrong (§10):** an unhedged beta bet plus a signal that, in large caps, mostly measures volatility. Beta-neutral legs remove most of the loss in both the design and the 2020–26 holdout window, and what remains is a premium of about zero. **Classification (§11):** a member of the low-risk family, not a factor of its own. **360° view (§12):** lottery and falling knife are the two tails of the same volatility, mirrors in their returns but not in the stocks they pick; neither tail is priced on its own once volatility and beta are in the model, and MAX is fully spanned by its neighbours.
@@ -455,7 +457,7 @@ The non-US L/S numbers moved towards zero and the low-MAX book improved relative
 2. **Large caps only.** The effect is strongest in small, retail-held stocks; these universes are blue chips. DK (3 groups of ~6) and SCANDI (5 groups of ~12) are thin and noisy.
 3. **Equal-weighting** (except the US value-weighted robustness book). The original paper's headline is value-weighted.
 4. **Currency:** local; World mixes currencies.
-5. **Not a registered trial.** A15 carries the registered tests (A15-1, A15-2); this factsheet extends them descriptively to five more universes. The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
+5. **Trials.** A15 carries the registered article tests (A15-1, A15-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
 
 ## 14. Academic references
 

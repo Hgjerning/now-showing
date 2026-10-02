@@ -18,8 +18,6 @@
 > The one positive long-only result that holds in both periods. Registered verdicts are unchanged. Pre-registration,
 > method and every result: `PREREG_US_1999_2012.md`.
 
-
-
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Defensive / low-risk anomaly</div>
 <div><b>Origin</b>Haugen & Heins (1975); Blitz & van Vliet (2007)</div>
@@ -28,12 +26,29 @@
 <div><b>Backtest</b>Feb 2013 – Aug 2026, monthly, net of costs</div>
 <div><b>Books</b>Long/short and long-only (calmest stocks)</div>
 <div><b>Rebalance</b>Monthly</div>
-<div><b>Status</b>Descriptive factsheet, not a registered trial</div>
+<div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
-> **The claim.** Low-volatility stocks earn about the same or more than high-volatility stocks, so their risk-adjusted return is far higher, contradicting the CAPM. Blitz & van Vliet (2007) documented it globally for 1986–2006; Ang, Hodrick, Xing & Zhang (2006) for idiosyncratic volatility. **What we find, 2013–2026, point-in-time universes, after costs:** the long/short earned -8.7% to +1.6% a year and was positive in 1 of the six; no universe passes the 2.87 gate. The long-only book (calmest stocks) had a higher Sharpe than the equal-weight universe in all six, with alphas of +2.7% to +5.0%, none past the gate. **What goes wrong (§10):** the main drags are a market bet (average beta -0.79, worth -10.0% a year in 2013–19). None of the pre-declared fixes passes the gate in both windows. **Classification (§11):** Low risk; its returns sit closest to the low risk cluster of the signal library. **360° view (§12):** nearest neighbours Volatility, Range (MAX−MIN); after its closest neighbours and the market it keeps an alpha of -3.0% to +5.4% (largest |t| 2.5), so it carries some information of its own.
+> **The claim.** Low-volatility stocks earn about the same or more than high-volatility stocks, so their risk-adjusted return is far higher, contradicting the CAPM. Blitz & van Vliet (2007) documented it globally for 1986–2006; Ang, Hodrick, Xing & Zhang (2006) for idiosyncratic volatility. **What we find, 2013–2026, point-in-time universes, after costs:** the long/short earned -8.7% to +1.6% a year and was positive in 1 of the six; no universe passes the 2.87 gate. The long-only book (calmest stocks) had a higher Sharpe than the equal-weight universe in all six, with alphas of +2.7% to +5.0%, none past the gate. **What goes wrong (§9):** the main drags are a market bet (average beta -0.79, worth -10.0% a year in 2013–19). None of the pre-declared fixes passes the gate in both windows. **Classification (appendix C):** Low risk; its returns sit closest to the low risk cluster of the signal library. **360° view (appendix D):** nearest neighbours Volatility, Range (MAX−MIN); after its closest neighbours and the market it keeps an alpha of -3.0% to +5.4% (largest |t| 2.5), so it carries some information of its own.
 
-## 1. Headline performance
+*Layout revised 2 October 2026 (verdict and scorecard, Sharpe anatomy, fit with the other strategies; detail moved to the appendix). No number changed.*
+
+## 1. Verdict and scorecard
+
+> **Verdict.** Of the 12 registered cells (two books × six universes), **0 pass** the |t| > 2.87 gate. Programme-wide (772 trials, |t| > 3.99): nothing survives. US 1999–2012, a period the factsheet was not built on: L/S t -0.09, long-only alpha t +2.08.
+
+| Universe | L/S t | L/S Sharpe | Long-only alpha t | Long-only Sharpe vs equal-weight | Long-only max DD |
+|---|---|---|---|---|---|
+| US | -1.36 | -0.34 | +1.73 | 0.89 vs 0.85 | -21% |
+| EU | +0.28 | 0.08 | +2.63 | 1.07 vs 0.75 | -21% |
+| UK | -0.96 | -0.28 | +2.82 | 0.93 vs 0.68 | -20% |
+| DK | -0.21 | -0.06 | +2.38 | 1.07 vs 0.83 | -19% |
+| SCANDI | -0.63 | -0.19 | +2.56 | 1.13 vs 0.89 | -15% |
+| World | -1.05 | -0.27 | +2.10 | 0.85 vs 0.71 | -21% |
+| US 1999–2012 | -0.09 | -0.02 | +2.08 | 0.73 vs 0.49 | – |
+*✔ passes the 2.87 gate (Bonferroni over 12 cells); ✖ significantly negative. 2013–2026 unless stated.*
+
+## 2. Headline performance
 
 | Universe | Names / groups | L/S return / yr | L/S t | L/S CAPM alpha (t) | L/S beta | Long-only CAGR | Long-only Sharpe | Long-only max DD | EW CAGR | EW Sharpe | Size-weighted CAGR |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -48,7 +63,45 @@
 
 ![Growth](../figures/xs_FS04_growth.png)
 
-## 2. Strategy description
+**Read with care.** A long/short book with a negative beta shows a large CAPM alpha in a rising market. The factor-model alpha in section 7, after momentum, value and the other themes, is the better guide: here the L/S CAPM alpha ranges +2.8% to +10.9% and the factor alpha -11.5% to +0.4%.
+
+## 3. Where the Sharpe comes from
+
+Sharpe = annual return ÷ annual volatility. The return splits into the part the market explains (beta × market return) and the rest (alpha, net of costs); the volatility into the market's share and the strategy's own. The last column is the Sharpe the book would have with its market exposure hedged out (before hedging costs).
+
+| Universe | Book | Return / yr | = market part | + alpha | Costs / yr (inside the return) | Volatility | of which market | Sharpe | Sharpe, market hedged |
+|---|---|---|---|---|---|---|---|---|---|
+| US | L/S | -8.7% | -13.3% | +4.6% | -1.6% | 25.9% | 15.7% | -0.34 | 0.22 |
+| US | Long-only | +10.6% | +7.5% | +3.2% | – | 12.0% | 8.8% | 0.89 | 0.39 |
+| EU | L/S | +1.6% | -9.3% | +10.9% | -1.4% | 19.9% | 12.4% | 0.08 | 0.70 |
+| EU | Long-only | +11.0% | +6.0% | +5.0% | – | 10.3% | 8.0% | 1.07 | 0.79 |
+| UK | L/S | -6.0% | -8.9% | +2.8% | -1.2% | 21.5% | 13.1% | -0.28 | 0.17 |
+| UK | Long-only | +8.4% | +5.5% | +2.9% | – | 9.1% | 8.1% | 0.93 | 0.72 |
+| DK | L/S | -1.1% | -8.3% | +7.2% | -1.0% | 18.1% | 10.0% | -0.06 | 0.48 |
+| DK | Long-only | +13.3% | +8.5% | +4.8% | – | 12.4% | 10.3% | 1.07 | 0.68 |
+| SCANDI | L/S | -3.1% | -9.3% | +6.1% | -1.3% | 16.9% | 10.4% | -0.19 | 0.46 |
+| SCANDI | Long-only | +12.2% | +8.3% | +3.9% | – | 10.8% | 9.3% | 1.13 | 0.73 |
+| World | L/S | -5.7% | -10.0% | +4.3% | -1.4% | 20.8% | 14.2% | -0.27 | 0.28 |
+| World | Long-only | +9.4% | +6.8% | +2.7% | – | 11.0% | 9.6% | 0.85 | 0.48 |
+*Monthly, 2013–2026, market = equal-weight universe. Interactive version: the Strategy Cockpit.*
+
+![Growth, drawdown and rolling Sharpe](../figures/xs_FS04_panel.png)
+
+## 4. How it fits next to the market and the other strategies
+
+A long/short book improves a market portfolio when its own Sharpe beats the hurdle: its correlation with the market × the market's Sharpe. A negative correlation makes the hurdle negative, so even a book with a small positive Sharpe diversifies; the size of the gain still depends on that Sharpe.
+
+| Universe | Corr. with market | Avg corr. with the other strategies | Most similar strategy | Market Sharpe | Hurdle Sharpe | This L/S Sharpe | Verdict | L/S in the worst 10% of market months | Market in those months |
+|---|---|---|---|---|---|---|---|---|---|
+| US | -0.61 | +0.25 | Lottery (MAX) (+0.90) | 0.85 | -0.51 | -0.34 | adds | +5.8% | -7.3% |
+| EU | -0.62 | +0.28 | 52-week high (+0.81) | 0.75 | -0.46 | 0.08 | adds | +4.4% | -6.5% |
+| UK | -0.61 | +0.27 | 52-week high (+0.85) | 0.68 | -0.41 | -0.28 | adds | +4.4% | -6.6% |
+| DK | -0.55 | +0.25 | Betting against beta (+0.66) | 0.83 | -0.46 | -0.06 | adds | +4.8% | -7.2% |
+| SCANDI | -0.62 | +0.19 | Lottery (MAX) (+0.68) | 0.89 | -0.55 | -0.19 | adds | +4.5% | -6.9% |
+| World | -0.68 | +0.25 | Lottery (MAX) (+0.90) | 0.71 | -0.48 | -0.27 | adds | +4.8% | -7.5% |
+*Long/short (net), monthly, 2013–2026; market = equal-weight universe; other strategies = the long/short books of FS01–FS12. The Strategy Cockpit lets you build books of several strategies.*
+
+## 5. Strategy description
 
 Low-volatility stocks earn about the same or more than high-volatility stocks, so their risk-adjusted return is far higher, contradicting the CAPM. Blitz & van Vliet (2007) documented it globally for 1986–2006; Ang, Hodrick, Xing & Zhang (2006) for idiosyncratic volatility.
 
@@ -60,7 +113,9 @@ Low-volatility stocks earn about the same or more than high-volatility stocks, s
 | Portfolio | Decile or quintile; often long-only low-vol | Extreme quantile L/S and the low-vol leg long-only, monthly |
 | Weighting | Equal or value weighted | Equal weighted |
 
-## 3. Data load
+## 6. Method: data, signal and portfolio
+
+### Data load
 
 | Universe | Prices | Membership | Names eligible (median) | Currency |
 |---|---|---|---|---|
@@ -74,18 +129,122 @@ Low-volatility stocks earn about the same or more than high-volatility stocks, s
 *Membership comes from Project2's cache of dated Wikipedia index pages (the same parsing as `run_wiki_pit.py` / `run_eu_pit.py`), with a short list of verified ticker renames (e.g. NZYM-B → NSIS-B, WDH → DEMANT, DAI → MBG). A name is eligible from the day after the snapshot that lists it, once it has 60 days of prices. Member-quarters without a price are mostly delisted names that Yahoo no longer serves, so some survivorship remains; see §13.*
 
 
-## 4. Signal creation
+### Signal creation
 
 VOL<sub>i,t</sub> = standard deviation of daily returns over the 252 trading days to month-end t (at least 200 days). Signals use only information up to month-end t and are traded in month t+1. Eligibility: in the point-in-time universe on any of the last five trading days of month t.
 
-## 5. Model build
+### Model build
 
 - Sort eligible stocks into equal-count groups (deciles ≥ 100 names, quintiles 50–99, terciles < 50; fixed per universe).
 - **Long/short** = calmest stocks (lowest 252-day volatility) minus most volatile stocks; **long-only** = calmest stocks (lowest 252-day volatility); benchmarks: equal-weight universe and size-weighted universe.
 - Equal weights within each leg, rebalanced monthly.
 - Costs: 10 bp per side on the one-way turnover of each leg; short-leg borrow fee 0.25% / 0.75% / 2% a year by size tier (largest 50% / next 30% / smallest 20% of the universe, `code/borrow.py`); net long cash financed at the USD risk-free rate + 0.5%. Code: `code/xs.py` (engine), `code/analyse_xs.py`, `code/build_xs.py`.
 
-## 6. Performance in detail
+## 7. Risk and factor attribution
+
+JKP 7 themes (US, UK, DK, World) or French Europe 5F + WML (EU, SCANDI); Newey-West t, 6 lags.
+
+**Long/short**
+
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
+|---|---|---|---|---|---|
+| US | JKP USA 7 themes | -6.8% | -3.06 | 0.86 | value -0.98 (-11.0), low_risk +2.39 (+16.0), short_term_reversal -0.53 (-2.6) |
+| EU | French Europe 5F + WML | -1.4% | -0.29 | 0.53 | Mkt-RF -0.51 (-5.7), RMW +1.32 (+4.4), WML +0.47 (+2.9) |
+| UK | JKP GBR 7 themes | -11.5% | -2.51 | 0.70 | value +0.45 (+2.0), momentum +0.37 (+2.4), low_risk +2.13 (+8.6), quality +0.81 (+2.9) |
+| DK | JKP DNK 7 themes | +0.4% | 0.12 | 0.63 | momentum +0.22 (+2.1), low_risk +1.38 (+9.8) |
+| SCANDI | French Europe 5F + WML | -5.3% | -1.57 | 0.34 | Mkt-RF -0.41 (-4.8), SMB -0.60 (-3.5), HML +0.37 (+2.1), WML +0.43 (+3.7) |
+| World | JKP World 7 themes | -5.3% | -1.52 | 0.74 | value -0.45 (-2.7), low_risk +1.66 (+9.9), short_term_reversal -0.72 (-2.6) |
+
+**Long-only**
+
+| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
+|---|---|---|---|---|---|
+| US | JKP USA 7 themes | +1.9% | 1.39 | 0.82 | mkt +0.92 (+24.6), size -0.26 (-3.3), value -0.22 (-3.2), low_risk +0.95 (+9.6) |
+| EU | French Europe 5F + WML | +4.4% | 1.57 | 0.55 | Mkt-RF +0.52 (+11.0), RMW +0.54 (+2.6), WML +0.15 (+2.6) |
+| UK | JKP GBR 7 themes | +3.5% | 2.03 | 0.62 | mkt +0.40 (+9.5), momentum +0.17 (+2.6), quality +0.23 (+2.4) |
+| DK | JKP DNK 7 themes | +7.3% | 2.80 | 0.59 | mkt +0.63 (+13.7), low_risk +0.23 (+2.9), quality +0.18 (+2.4) |
+| SCANDI | French Europe 5F + WML | +7.7% | 2.97 | 0.50 | Mkt-RF +0.51 (+11.2) |
+| World | JKP World 7 themes | +4.0% | 2.15 | 0.74 | mkt +0.68 (+13.8), low_risk +0.61 (+5.9) |
+
+## 8. Statistical detail
+
+- **Gate:** |t| > 2.87 (2 books × 6 universes, Bonferroni 0.05/12, two-sided).
+- **L/S mean:** positive in 1 of the six; passes in 0 of 6.
+- **L/S CAPM alpha:** +2.8% to +10.9%, |t| past the gate in 0 of 6.
+- **Long-only:** Sharpe above the equal-weight universe in all six; alpha +2.7% to +5.0%, passing in 0 of 6.
+- **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): US 0.10, EU 0.62, UK 0.14, DK 0.41, SCANDI 0.25, World 0.15.
+- **Publication decay:** gross L/S -8.2% to +2.0% a year in 2013–19 against -15.8% to +5.1% in 2020–26.
+
+## 9. What goes wrong, and how to fix it
+
+**Method.** Diagnose on the design window (2013–2019); apply the same pre-declared fix ladder used for every sort strategy in FS03–FS12; judge on the holdout (Jan 2020 – Aug 2026) with a pooled six-universe paired bootstrap of the Sharpe difference against the previous step. 25 fix trials across FS03–FS12, gate p < 0.0020.
+
+### 9.1 Diagnosis (design window 2013–2019)
+
+| Universe | L/S gross / yr | Beta | Beta drag / yr | CAPM alpha (gross) | Costs / yr | Long leg vs EW / yr | EW vs short leg / yr | Turnover / month | Worst months |
+|---|---|---|---|---|---|---|---|---|---|
+| US | +1.3% | -0.94 | -12.3% | +13.6% | -0.5% | +0.4% | +1.0% | 20% | 2013-05 -13%, 2016-04 -12%, 2015-04 -9% |
+| EU | +2.0% | -1.00 | -10.7% | +12.7% | -0.5% | +1.5% | +0.5% | 19% | 2015-02 -13%, 2016-03 -12%, 2016-10 -11% |
+| UK | -7.9% | -0.74 | -8.6% | +0.7% | -0.4% | -1.3% | -6.5% | 16% | 2016-04 -18%, 2016-02 -17%, 2016-06 -11% |
+| DK | -4.9% | -0.53 | -8.1% | +3.2% | -0.4% | -0.5% | -4.4% | 18% | 2013-05 -10%, 2013-02 -9%, 2016-04 -8% |
+| SCANDI | -8.2% | -0.70 | -10.7% | +2.4% | -0.4% | -1.6% | -6.6% | 18% | 2019-06 -10%, 2016-06 -10%, 2016-11 -9% |
+| World | -2.5% | -0.86 | -9.3% | +6.8% | -0.4% | -0.6% | -2.0% | 18% | 2016-04 -13%, 2016-03 -9%, 2015-02 -8% |
+
+On average across the six universes the gross spread was -3.4% a year, of which the market exposure (beta -0.79) contributed -10.0%; the beta-adjusted spread (CAPM alpha) was +6.6%. Costs took 0.4% a year at 18% monthly turnover across both legs. The long leg beat the universe by -0.4% and the short leg lagged it by -3.0% a year, so most of the spread comes from the long side. Holding longer does not change the picture much: the gross spread 2, 3 and 6 months after formation averages +2.7%, +4.1%, +4.1% a year.
+
+### 9.2 The fix ladder
+
+X0 baseline → X1 **beta-neutral legs** (each leg scaled by 1/its ex-ante beta) → X2 **+ turnover buffer** (enter the extreme 1/q, keep a name until it leaves the extreme 3/q) → X3 **+ volatility targeting** (scale the L/S to 10% a year using its trailing 6-month volatility, lagged; Barroso & Santa-Clara 2015; Moreira & Muir 2017).
+
+| Step | Design Sharpe (avg) | Δ design (p) | Holdout Sharpe (book) | Δ holdout (p) | Universes improved | Holdout return / yr | Holdout max DD | Holdout alpha vs EW (t) | Costs / yr |
+|---|---|---|---|---|---|---|---|---|---|
+| X0 baseline | -0.29 | – | -0.14 | – | – | -2.9% | -49% | +6.3% (1.7) | 0.4% |
+| X1 beta-neutral legs | 0.48 | +1.04 (p 0.000) | 0.24 | +0.38 (p 0.071) | 6 of 6 | +3.6% | -29% | +2.9% (0.7) | 0.6% |
+| X2 + turnover buffer | 0.50 | +0.01 (p 0.495) | 0.08 | -0.15 (p 0.979) | 0 of 6 | +1.1% | -29% | +0.9% (0.3) | 0.3% |
+| X3 + volatility targeting | 0.59 | +0.14 (p 0.384) | 0.21 | +0.12 (p 0.206) | 4 of 6 | +2.0% | -22% | +1.9% (0.6) | 0.2% |
+
+*✔ = passes the gate in the holdout. Design Sharpe = average across universes; tests and holdout columns use the six-universe equal-weighted book.*
+
+![Ladder](../figures/xs_FS04_ladder.png)
+
+- **X1 beta-neutral legs:** +1.04 design, +0.38 holdout; helps in both windows but does not pass the gate.
+- **X2 + turnover buffer:** +0.01 design, -0.15 holdout; helps in one window and hurts in the other: not reliable.
+- **X3 + volatility targeting:** +0.14 design, +0.12 holdout; helps in both windows but does not pass the gate.
+
+**Where it ends:** holdout Sharpe -0.14 → 0.21, return -2.9% → +2.0% a year (six-universe book).
+
+## 10. Caveats
+
+1. **Residual survivorship.** Point-in-time membership everywhere, but 9–25% of member-quarters outside the US have no price (mostly delisted names); long books are flattered and short books penalised by an unknown amount.
+2. **Currency.** Local currency; World sums local-currency returns without conversion.
+3. **Equal weighting and flat trading costs.** 10 bp per side for every stock and a size-tiered borrow fee, but no market impact; blue-chip universes only.
+4. **Trials.** Every gated cell is in the factsheet trial ledger; the fix ladder is counted inside FS03–FS12 (25 trials).
+
+## 11. Academic references
+
+- Haugen, R. & Heins, A. J. (1975). Risk and the rate of return on financial assets: Some old wine in new bottles. *Journal of Financial and Quantitative Analysis*, 10(5), 775–784.
+- Ang, A., Hodrick, R., Xing, Y. & Zhang, X. (2006). The cross-section of volatility and expected returns. *Journal of Finance*, 61(1), 259–299.
+- Blitz, D. & van Vliet, P. (2007). The volatility effect. *Journal of Portfolio Management*, 34(1), 102–113.
+- Baker, M., Bradley, B. & Wurgler, J. (2011). Benchmarks as limits to arbitrage: Understanding the low-volatility anomaly. *Financial Analysts Journal*, 67(1), 40–54.
+- Frazzini, A. & Pedersen, L. H. (2014). Betting against beta. *Journal of Financial Economics*, 111(1), 1–25.
+- Newey, W. & West, K. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. *Econometrica*, 55(3), 703–708.
+- Politis, D. & Romano, J. (1994). The stationary bootstrap. *Journal of the American Statistical Association*, 89(428), 1303–1313.
+- Bailey, D. & López de Prado, M. (2012). The Sharpe ratio efficient frontier. *Journal of Risk*, 15(2), 3–44.
+- Jensen, T. I., Kelly, B. & Pedersen, L. H. (2023). Is there a replication crisis in finance? *Journal of Finance*, 78(5), 2465–2518.
+- Fama, E. & French, K. (2015). A five-factor asset pricing model. *Journal of Financial Economics*, 116(1), 1–22.
+- McLean, R. D. & Pontiff, J. (2016). Does academic research destroy stock return predictability? *Journal of Finance*, 71(1), 5–32.
+- Novy-Marx, R. & Velikov, M. (2016). A taxonomy of anomalies and their trading costs. *Review of Financial Studies*, 29(1), 104–147.
+- Barroso, P. & Santa-Clara, P. (2015). Momentum has its moments. *Journal of Financial Economics*, 116(1), 111–120.
+- Moreira, A. & Muir, T. (2017). Volatility-managed portfolios. *Journal of Finance*, 72(4), 1611–1644.
+- Treynor, J. & Mazuy, K. (1966). Can mutual funds outguess the market? *Harvard Business Review*, 44(4), 131–136.
+
+## 12. Reproduce
+
+`code/data.py` → `signals.py`, `signals2.py`, `library.py` → `xs.py` + `analyse_xs.py FS04` → `build_xs.py FS04`. Metrics use Project1 `InvestmentLibrary`. Licensed and cached prices are not included.
+
+## Appendix
+
+### A. Performance in detail
 
 **US (S&P 500 members, point-in-time)**, median 502 names, 10 groups
 
@@ -193,7 +352,7 @@ VOL<sub>i,t</sub> = standard deviation of daily returns over the 252 trading day
 | 2025 | +5.9% | +19.2% | +16.5% | +25.7% | +23.2% | +19.6% |
 | 2026 | +4.9% | +18.5% | +12.6% | +8.7% | +16.4% | +11.3% |
 
-## 7. Trading record
+### B. Trading record and current book
 
 The rebalance log per universe is in `results/xs_FS04_record_<universe>.csv` (names per leg, turnover, leg returns, gross and net L/S).
 
@@ -216,80 +375,7 @@ The rebalance log per universe is in `results/xs_FS04_record_<universe>.csv` (na
 | DK | TRYG.CO, JYSK.CO, NDA-DK.CO, DANSKE.CO, ISS.CO, CARL-B.CO, NSIS-B.CO, COLO-B.CO | ZEAL.CO, ORSTED.CO, NOVO-B.CO, GN.CO, VWS.CO, PNDORA.CO, MAERSK-B.CO, AMBU-B.CO |
 | SCANDI | TRYG.CO, SAMPO.HE, SHB-A.ST, INVE-B.ST, SWED-A.ST, NDA-SE.ST, SEB-A.ST, KESKOB.HE | ZEAL.CO, ORSTED.CO, NOKIA.HE, QTCOM.HE, NOVO-B.CO, GN.CO, BOL.ST, VWS.CO |
 
-## 8. Risk and factor attribution
-
-JKP 7 themes (US, UK, DK, World) or French Europe 5F + WML (EU, SCANDI); Newey-West t, 6 lags.
-
-**Long/short**
-
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
-|---|---|---|---|---|---|
-| US | JKP USA 7 themes | -6.8% | -3.06 | 0.86 | value -0.98 (-11.0), low_risk +2.39 (+16.0), short_term_reversal -0.53 (-2.6) |
-| EU | French Europe 5F + WML | -1.4% | -0.29 | 0.53 | Mkt-RF -0.51 (-5.7), RMW +1.32 (+4.4), WML +0.47 (+2.9) |
-| UK | JKP GBR 7 themes | -11.5% | -2.51 | 0.70 | value +0.45 (+2.0), momentum +0.37 (+2.4), low_risk +2.13 (+8.6), quality +0.81 (+2.9) |
-| DK | JKP DNK 7 themes | +0.4% | 0.12 | 0.63 | momentum +0.22 (+2.1), low_risk +1.38 (+9.8) |
-| SCANDI | French Europe 5F + WML | -5.3% | -1.57 | 0.34 | Mkt-RF -0.41 (-4.8), SMB -0.60 (-3.5), HML +0.37 (+2.1), WML +0.43 (+3.7) |
-| World | JKP World 7 themes | -5.3% | -1.52 | 0.74 | value -0.45 (-2.7), low_risk +1.66 (+9.9), short_term_reversal -0.72 (-2.6) |
-
-**Long-only**
-
-| Universe | Factor model | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
-|---|---|---|---|---|---|
-| US | JKP USA 7 themes | +1.9% | 1.39 | 0.82 | mkt +0.92 (+24.6), size -0.26 (-3.3), value -0.22 (-3.2), low_risk +0.95 (+9.6) |
-| EU | French Europe 5F + WML | +4.4% | 1.57 | 0.55 | Mkt-RF +0.52 (+11.0), RMW +0.54 (+2.6), WML +0.15 (+2.6) |
-| UK | JKP GBR 7 themes | +3.5% | 2.03 | 0.62 | mkt +0.40 (+9.5), momentum +0.17 (+2.6), quality +0.23 (+2.4) |
-| DK | JKP DNK 7 themes | +7.3% | 2.80 | 0.59 | mkt +0.63 (+13.7), low_risk +0.23 (+2.9), quality +0.18 (+2.4) |
-| SCANDI | French Europe 5F + WML | +7.7% | 2.97 | 0.50 | Mkt-RF +0.51 (+11.2) |
-| World | JKP World 7 themes | +4.0% | 2.15 | 0.74 | mkt +0.68 (+13.8), low_risk +0.61 (+5.9) |
-
-## 9. Statistical verdict
-
-- **Gate:** |t| > 2.87 (2 books × 6 universes, Bonferroni 0.05/12, two-sided).
-- **L/S mean:** positive in 1 of the six; passes in 0 of 6.
-- **L/S CAPM alpha:** +2.8% to +10.9%, |t| past the gate in 0 of 6.
-- **Long-only:** Sharpe above the equal-weight universe in all six; alpha +2.7% to +5.0%, passing in 0 of 6.
-- **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): US 0.10, EU 0.62, UK 0.14, DK 0.41, SCANDI 0.25, World 0.15.
-- **Publication decay:** gross L/S -8.2% to +2.0% a year in 2013–19 against -15.8% to +5.1% in 2020–26.
-
-## 10. What goes wrong, and how to fix it
-
-**Method.** Diagnose on the design window (2013–2019); apply the same pre-declared fix ladder used for every sort strategy in FS03–FS12; judge on the holdout (Jan 2020 – Aug 2026) with a pooled six-universe paired bootstrap of the Sharpe difference against the previous step. 25 fix trials across FS03–FS12, gate p < 0.0020.
-
-### 10.1 Diagnosis (design window 2013–2019)
-
-| Universe | L/S gross / yr | Beta | Beta drag / yr | CAPM alpha (gross) | Costs / yr | Long leg vs EW / yr | EW vs short leg / yr | Turnover / month | Worst months |
-|---|---|---|---|---|---|---|---|---|---|
-| US | +1.3% | -0.94 | -12.3% | +13.6% | -0.5% | +0.4% | +1.0% | 20% | 2013-05 -13%, 2016-04 -12%, 2015-04 -9% |
-| EU | +2.0% | -1.00 | -10.7% | +12.7% | -0.5% | +1.5% | +0.5% | 19% | 2015-02 -13%, 2016-03 -12%, 2016-10 -11% |
-| UK | -7.9% | -0.74 | -8.6% | +0.7% | -0.4% | -1.3% | -6.5% | 16% | 2016-04 -18%, 2016-02 -17%, 2016-06 -11% |
-| DK | -4.9% | -0.53 | -8.1% | +3.2% | -0.4% | -0.5% | -4.4% | 18% | 2013-05 -10%, 2013-02 -9%, 2016-04 -8% |
-| SCANDI | -8.2% | -0.70 | -10.7% | +2.4% | -0.4% | -1.6% | -6.6% | 18% | 2019-06 -10%, 2016-06 -10%, 2016-11 -9% |
-| World | -2.5% | -0.86 | -9.3% | +6.8% | -0.4% | -0.6% | -2.0% | 18% | 2016-04 -13%, 2016-03 -9%, 2015-02 -8% |
-
-On average across the six universes the gross spread was -3.4% a year, of which the market exposure (beta -0.79) contributed -10.0%; the beta-adjusted spread (CAPM alpha) was +6.6%. Costs took 0.4% a year at 18% monthly turnover across both legs. The long leg beat the universe by -0.4% and the short leg lagged it by -3.0% a year, so most of the spread comes from the long side. Holding longer does not change the picture much: the gross spread 2, 3 and 6 months after formation averages +2.7%, +4.1%, +4.1% a year.
-
-### 10.2 The fix ladder
-
-X0 baseline → X1 **beta-neutral legs** (each leg scaled by 1/its ex-ante beta) → X2 **+ turnover buffer** (enter the extreme 1/q, keep a name until it leaves the extreme 3/q) → X3 **+ volatility targeting** (scale the L/S to 10% a year using its trailing 6-month volatility, lagged; Barroso & Santa-Clara 2015; Moreira & Muir 2017).
-
-| Step | Design Sharpe (avg) | Δ design (p) | Holdout Sharpe (book) | Δ holdout (p) | Universes improved | Holdout return / yr | Holdout max DD | Holdout alpha vs EW (t) | Costs / yr |
-|---|---|---|---|---|---|---|---|---|---|
-| X0 baseline | -0.29 | – | -0.14 | – | – | -2.9% | -49% | +6.3% (1.7) | 0.4% |
-| X1 beta-neutral legs | 0.48 | +1.04 (p 0.000) | 0.24 | +0.38 (p 0.071) | 6 of 6 | +3.6% | -29% | +2.9% (0.7) | 0.6% |
-| X2 + turnover buffer | 0.50 | +0.01 (p 0.495) | 0.08 | -0.15 (p 0.979) | 0 of 6 | +1.1% | -29% | +0.9% (0.3) | 0.3% |
-| X3 + volatility targeting | 0.59 | +0.14 (p 0.384) | 0.21 | +0.12 (p 0.206) | 4 of 6 | +2.0% | -22% | +1.9% (0.6) | 0.2% |
-
-*✔ = passes the gate in the holdout. Design Sharpe = average across universes; tests and holdout columns use the six-universe equal-weighted book.*
-
-![Ladder](../figures/xs_FS04_ladder.png)
-
-- **X1 beta-neutral legs:** +1.04 design, +0.38 holdout; helps in both windows but does not pass the gate.
-- **X2 + turnover buffer:** +0.01 design, -0.15 holdout; helps in one window and hurts in the other: not reliable.
-- **X3 + volatility targeting:** +0.14 design, +0.12 holdout; helps in both windows but does not pass the gate.
-
-**Where it ends:** holdout Sharpe -0.14 → 0.21, return -2.9% → +2.0% a year (six-universe book).
-
-## 11. Classification: where does it fit?
+### C. Classification: where does it fit?
 
 | Dimension | Low volatility |
 |---|---|
@@ -308,7 +394,7 @@ X0 baseline → X1 **beta-neutral legs** (each leg scaled by 1/its ex-ante beta)
 
 ![Classification map](../figures/battery_map.png)
 
-## 12. 360° view
+### D. 360° view
 
 The signal among the 19 price signals of the shared library (`code/library.py`), on the same universes and months (equal-weighted top minus bottom quantile, gross). Its natural mirror here is **MAX**.
 
@@ -356,31 +442,3 @@ The full library, with the CAPM alpha of every signal in every universe:
 
 ![Library alpha grid](../figures/lib_alpha.png)
 
-## 13. Caveats
-
-1. **Residual survivorship.** Point-in-time membership everywhere, but 9–25% of member-quarters outside the US have no price (mostly delisted names); long books are flattered and short books penalised by an unknown amount.
-2. **Currency.** Local currency; World sums local-currency returns without conversion.
-3. **Equal weighting and flat trading costs.** 10 bp per side for every stock and a size-tiered borrow fee, but no market impact; blue-chip universes only.
-4. **Not a registered trial.** Descriptive; the fix ladder is counted inside FS03–FS12 (25 trials).
-
-## 14. Academic references
-
-- Haugen, R. & Heins, A. J. (1975). Risk and the rate of return on financial assets: Some old wine in new bottles. *Journal of Financial and Quantitative Analysis*, 10(5), 775–784.
-- Ang, A., Hodrick, R., Xing, Y. & Zhang, X. (2006). The cross-section of volatility and expected returns. *Journal of Finance*, 61(1), 259–299.
-- Blitz, D. & van Vliet, P. (2007). The volatility effect. *Journal of Portfolio Management*, 34(1), 102–113.
-- Baker, M., Bradley, B. & Wurgler, J. (2011). Benchmarks as limits to arbitrage: Understanding the low-volatility anomaly. *Financial Analysts Journal*, 67(1), 40–54.
-- Frazzini, A. & Pedersen, L. H. (2014). Betting against beta. *Journal of Financial Economics*, 111(1), 1–25.
-- Newey, W. & West, K. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. *Econometrica*, 55(3), 703–708.
-- Politis, D. & Romano, J. (1994). The stationary bootstrap. *Journal of the American Statistical Association*, 89(428), 1303–1313.
-- Bailey, D. & López de Prado, M. (2012). The Sharpe ratio efficient frontier. *Journal of Risk*, 15(2), 3–44.
-- Jensen, T. I., Kelly, B. & Pedersen, L. H. (2023). Is there a replication crisis in finance? *Journal of Finance*, 78(5), 2465–2518.
-- Fama, E. & French, K. (2015). A five-factor asset pricing model. *Journal of Financial Economics*, 116(1), 1–22.
-- McLean, R. D. & Pontiff, J. (2016). Does academic research destroy stock return predictability? *Journal of Finance*, 71(1), 5–32.
-- Novy-Marx, R. & Velikov, M. (2016). A taxonomy of anomalies and their trading costs. *Review of Financial Studies*, 29(1), 104–147.
-- Barroso, P. & Santa-Clara, P. (2015). Momentum has its moments. *Journal of Financial Economics*, 116(1), 111–120.
-- Moreira, A. & Muir, T. (2017). Volatility-managed portfolios. *Journal of Finance*, 72(4), 1611–1644.
-- Treynor, J. & Mazuy, K. (1966). Can mutual funds outguess the market? *Harvard Business Review*, 44(4), 131–136.
-
-## 15. Reproduce
-
-`code/data.py` → `signals.py`, `signals2.py`, `library.py` → `xs.py` + `analyse_xs.py FS04` → `build_xs.py FS04`. Metrics use Project1 `InvestmentLibrary`. Licensed and cached prices are not included.

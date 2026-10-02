@@ -21,6 +21,8 @@
 
 
 
+
+
 > **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only 0 of eleven long/short books (none) earn a **positive** return that passes the 2.87 gate in at least one market; 4 (FS01, FS06, FS08, FS12) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, 4 of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (capacity outside the US). Borrow fees, financing of leverage, World in one currency, a replication check, a programme-wide trial ledger and a market-impact cost model were added on 27 September 2026 (§3.0).
 
 ## 1. All strategies in one table

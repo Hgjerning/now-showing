@@ -20,6 +20,8 @@
 
 
 
+
+
 | Key facts | |
 |---|---|
 | Universe | US, point-in-time S&P 500 members (Sharadar), monthly, Feb 2013 – Aug 2026 |

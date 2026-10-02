@@ -20,6 +20,8 @@
 
 
 
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Donchian channel breakout, pyramiding, 2N stops</div>
 <div><b>Origin</b>Dennis & Eckhardt, 1983; rules published by Faith (2003)</div>
@@ -28,7 +30,7 @@
 <div><b>Backtest</b>Jan 2013 – Sep 2026, daily, net of costs</div>
 <div><b>Books</b>Long/short (headline) and long-only</div>
 <div><b>Rebalance</b>Event driven, next-day close fills</div>
-<div><b>Status</b>Descriptive factsheet, not a registered trial</div>
+<div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
 > **Verdict in one paragraph.** Dennis's students reportedly made more than $100 million with these rules on 1980s futures (Covel 2007). On single stocks, 2013–2026, the long/short version **lost money in all six universes** (Sharpe -0.91 to -0.17). Nearly all of the loss is the short side: stocks that break to a new low tend to bounce, and a rising market punishes every short. The long-only version made money everywhere, but **had a lower Sharpe than simply owning the equal-weight universe in all six**; its alpha against the universe is between -5.3% and +3.4% a year, and none reaches the 2.87 gate. The trade profile is textbook trend following, about 23% winners with winners 2.8× the size of losers. On stocks, that is not enough to pay for the whipsaws. **What goes wrong (§10):** costs from oversized units, a short book in a bull market, a 2N stop tighter than daily noise and, at the root, no trend in single stocks to follow. Fixing what can be fixed gives a long-only, half-beta book that still trails the equal-weight universe's Sharpe in the 2020–26 holdout (0.50 vs 0.70). **Classification (§11):** a futures trend strategy mis-applied to stocks. **360° view (§12):** the cross-sectional breakout does carry beta-adjusted information, but it is a noisy subset of the 52-week-high and momentum effects.
@@ -447,7 +449,7 @@ The equal-weight universes lose 2–5 percentage points a year once survivors ar
 3. **Close-to-close N** ignores intraday highs and lows, so it understates the true range and makes units somewhat larger than the original rule.
 4. **Currency.** Local currency; World sums local-currency returns without converting them.
 5. **Sizing is an adaptation.** The 0.1% unit and the gross cap are my choices, set once on mechanics (leverage), never tuned on returns. Other choices would change the level of returns, not the sign of the short side.
-6. **Not a registered trial.** This factsheet is descriptive and is not added to the programme's trial ledger. The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7). The *Trading Places* article (Season 2) will pre-register a single test.
+6. **Trials.** Every gated cell is in the factsheet trial ledger (`TRIAL_LEDGER.md`, 772 trials). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7). The *Trading Places* article (Season 2) will pre-register a single test.
 
 ## 14. Academic references
 
