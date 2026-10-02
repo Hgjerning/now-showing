@@ -24,6 +24,12 @@ and tested with placebo, bootstrap and multiple-testing corrections. One article
 | 14 | 19 Jan 2027 | [Stormy Weather](https://hgjerning.github.io/now-showing/stormy-weather) | Song | Does cutting risk after volatile months pay? | [`stormy-weather/`](stormy-weather/) |
 | 15 | 26 Jan 2027 | [Free Fallin'](https://hgjerning.github.io/now-showing/free-fallin) | Song | Should you catch a falling knife? | [`free-fallin/`](free-fallin/) |
 | 16 | 2 Feb 2027 | [The Good, the Bad and the Ugly](https://hgjerning.github.io/now-showing/good-bad-ugly) | Film | What did 15 theses teach us? | [`good-bad-ugly/`](good-bad-ugly/) |
+| 17 | 23 Feb 2027 | [Trading Places](https://hgjerning.github.io/now-showing/trading-places) | Film | Would the Turtle rules still work? | [`trading-places/`](trading-places/) |
+| 18 | 2 Mar 2027 | [Moneyball](https://hgjerning.github.io/now-showing/moneyball) | Film | Haugen's inefficient market, after the book | [`moneyball/`](moneyball/) |
+| 19 | 9 Mar 2027 | [Dirty Dancing](https://hgjerning.github.io/now-showing/dirty-dancing) | Film | Would Darvas's box still work? | [`dirty-dancing/`](dirty-dancing/) |
+| 21 | 23 Mar 2027 | [The Dirty Dozen](https://hgjerning.github.io/now-showing/the-dirty-dozen) | Film | Twelve odd strategies, seven markets | [`the-dirty-dozen/`](the-dirty-dozen/) |
+| 22 | 30 Mar 2027 | [The Da Vinci Code](https://hgjerning.github.io/now-showing/da-vinci-code) | Film | Do chart patterns hide a message? | [`da-vinci-code/`](da-vinci-code/) |
+| 23 | 6 Apr 2027 | [Déjà Vu](https://hgjerning.github.io/now-showing/deja-vu) | Film | Do backtests repeat when you go back in time? | [`deja-vu/`](deja-vu/) |
 
 A folder appears here on the Monday before its post. Groundhog Day's sequel (pre-registered trial C31-3) runs on 16 March 2027.
 
