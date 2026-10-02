@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json, os
 import build_teasers_xs as BT
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 r = json.load(open(os.path.join(RES, "fs19.json"))); C = r["C"]["markets"]; B = r["B"]["episodes"]
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 rows = [(BT.LAB[R], [(C[R]["shortlist | raw"]["ann"] * 100, BT.GREY, "D"), (C[R]["shortlist | sector-neutral"]["ann"] * 100, BT.BLUE, "o")]) for R in U]

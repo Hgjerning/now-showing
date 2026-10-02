@@ -14,7 +14,7 @@ from battery import DIRECTION
 DIRECTION_LAB = {k: v[2] for k, v in DIRECTION.items()}
 from jkp_battery import bh
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); PLAN = os.path.join(HERE, "..", "planning")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); PLAN = os.path.join(HERE, "..", "planning")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 p2 = lambda t: float(2 * (1 - sst.norm.cdf(abs(t))))
 
@@ -123,6 +123,17 @@ def rows():
         for k, v in F9["B"]["dm"].items():
             if v["bear_months"] >= 12:
                 R.append(dict(fs="FS19", strategy="Momentum crash (bear x market)", kind="robustness", test=f"Daniel-Moskowitz, {k}", t=v["t_bear_mkt"], sharpe=None, months=v["n"]))
+    if os.path.exists(os.path.join(RES, "fs20.json")):
+        F20 = json.load(open(os.path.join(RES, "fs20.json")))
+        for k, v in F20["variants"].items():
+            prim = k == F20["primary"]
+            R.append(dict(fs="FS20", strategy="Checklist proxy" + (" (primary)" if prim else ""), kind="fundamental", test=f"CAPM alpha, US, {v['N']} stocks, {v['freq']}, {v['rank']}" + (" (pre-registered)" if prim else ""), t=v["capm"]["t"], sharpe=v["sharpe_ex"], months=v["capm"]["n"]))
+    if os.path.exists(os.path.join(RES, "fs21.json")):
+        F21 = json.load(open(os.path.join(RES, "fs21.json")))
+        from scipy import stats as _st
+        for k, lab in (("T1", "HRP minus equal weight"), ("T2", "HRP minus inverse variance")):
+            v = F21[k]; tt = float(_st.norm.ppf(1 - v["p_gt"])) if 0 < v["p_gt"] < 1 else 0.0
+            R.append(dict(fs="FS21", strategy="Hierarchical risk parity (primary)", kind="portfolio", test=f"{lab}, pooled Sharpe, 5 markets (pre-registered)", t=tt, sharpe=None, months=v["months"]))
     D = pd.DataFrame(R)
     D["p"] = D.apply(lambda r: r["p"] if "p" in r and pd.notna(r.get("p")) else p2(r["t"]), axis=1)
     return D
@@ -193,7 +204,7 @@ def md(D, O):
 
 Built {pd.Timestamp.today().date()} by `code/ledger.py` from the results files; re-run after every rebuild. This ledger is separate from the article programme's `TRIAL_LEDGER.md` files (which count pre-registered hypotheses); here every gated cell of every factsheet is a trial.
 
-**Trials: {O['n']}**: primary cells (6 markets × L/S and long-only per strategy), fix-ladder holdout tests, the FS13 battery (19 signals × raw/beta-neutral) the FS13b US fundamental battery (20 signals × raw, beta-neutral and long-only) the FS13c Fama-MacBeth slopes (multivariate, per market and averaged) the pre-registered FS14 multifactor tests the FS15 re-run on 1998–2013 the FS17 factor-level tests of non-US fundamentals the FS18 portfolio overlay and the FS19 robustness tests. The 153 JKP factors in FS13 are published factors, tested there with their own correction, and not counted here.
+**Trials: {O['n']}**: primary cells (6 markets × L/S and long-only per strategy), fix-ladder holdout tests, the FS13 battery (19 signals × raw/beta-neutral) the FS13b US fundamental battery (20 signals × raw, beta-neutral and long-only) the FS13c Fama-MacBeth slopes (multivariate, per market and averaged) the pre-registered FS14 multifactor tests the FS15 re-run on 1998–2013 the FS17 factor-level tests of non-US fundamentals the FS18 portfolio overlay, the FS19 robustness tests the FS20 checklist proxy and the FS21 portfolio-construction tests. The 153 JKP factors in FS13 are published factors, tested there with their own correction, and not counted here.
 
 Programme-wide bars: Bonferroni at 5% over {O['n']} trials needs |t| > {O['z_bonf']:.2f}; Benjamini–Hochberg at 5% controls the false-discovery rate instead.
 

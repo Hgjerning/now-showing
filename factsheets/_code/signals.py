@@ -26,7 +26,7 @@ import pandas as pd
 
 import data
 
-CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "cache")
+CACHE = data.CACHE   # 2026-10-01: follows data.py (data folder and US universe rule)
 SIGNALS = ["max1", "max5", "min1", "min5", "range", "asym", "skew", "ivol", "vol", "beta", "r1", "mom", "hi52", "lo52", "brk55"]
 
 

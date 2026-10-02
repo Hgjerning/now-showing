@@ -4,6 +4,14 @@
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · price data to 31 August 2026, JKP to December 2025*
 
+> **What changed on 2 October 2026.** Two corrections, both to the universe of stocks, and every number below is re-run on them.
+> (1) **US:** the universe is now the actual S&P 500 members at each month-end. Until now it was the 500 largest of every
+> company that was *ever* in the index 2012–2026, which includes later winners before they joined.
+> (2) **UK and EU:** the price panels now include the index members that stopped trading (UK coverage of members 71% → 92%,
+> EU 81% → 89%); before, most of them had no prices. SCANDI stays as registered (OMXC25 + OMXS30 + OMXH25).
+> Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
+> Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
+
 | Key facts | |
 |---|---|
 | Price battery | 19 price signals × 6 point-in-time universes (US, EU, UK, DK, SCANDI, World), monthly, 2013–2026, our engine, net of 10 bp per side and a size-tiered borrow fee on the short leg |
@@ -13,7 +21,7 @@
 | Pooled test | equal-weight average of the markets; its t-statistic includes the co-movement between markets |
 | Multiple testing | Benjamini–Hochberg at 5% over 38 price tests (19 signals × raw/beta-neutral) and over 153 JKP factors; Harvey–Liu–Zhu t > 3 as a second bar |
 
-> **In one paragraph.** **No price signal earns a positive return that survives the multiple-testing correction** once short legs pay borrow fees and the beta-neutral books pay for the leverage they use; thirteen years of large caps are too short for more. What does survive is a loser: Same-month seasonality (beta-neutral) reliably loses money. The common ground is in the *direction*. **Low beta** is positive in 6 of 6 of our markets after all costs (t 2.4) but flat in JKP's value-weighted factors. **Momentum** is positive in 5 of 6 of our markets (12-1 momentum 5 of 6, residual momentum 6 of 6) and in all 4 JKP segments (t 4.4); in our large caps it is not significant on its own (t 1.4). Among the fundamental themes we cannot yet build ourselves, **debt issuance** (t 6.2) and **profit growth** (t 2.5) worked in every JKP segment since 2013. **Same-month seasonality** and **tail direction** are reliably negative in our large caps. The 19 price signals hold only a handful of independent bets: one low-risk block of nine and one momentum block of four, the same structure in the US, EU and World (adjusted Rand index 0.87–0.97). SCANDI and UK agree least with the other markets on which signals work. The engine reproduces the published US factors (correlation ≥ 0.8 for 8 of 12 matched signals).
+> **In one paragraph.** **No price signal earns a positive return that survives the multiple-testing correction** once short legs pay borrow fees and the beta-neutral books pay for the leverage they use; thirteen years of large caps are too short for more. What does survive is a loser: Same-month seasonality (beta-neutral) reliably loses money. The common ground is in the *direction*. **Low beta** is positive in 6 of 6 of our markets after all costs (t 2.4) but flat in JKP's value-weighted factors. **Momentum** is positive in 6 of 6 of our markets (12-1 momentum 5 of 6, residual momentum 6 of 6) and in all 4 JKP segments (t 4.4); in our large caps it is not significant on its own (t 1.5). Among the fundamental themes we cannot yet build ourselves, **debt issuance** (t 6.2) and **profit growth** (t 2.5) worked in every JKP segment since 2013. **Same-month seasonality** and **tail direction** are reliably negative in our large caps. The 19 price signals hold only a handful of independent bets: one low-risk block of nine and one momentum block of four, the same structure in the US, EU and World (adjusted Rand index 0.87–1.00). SCANDI and UK agree least with the other markets on which signals work. The engine reproduces the published US factors (correlation ≥ 0.8 for 7 of 12 matched signals).
 
 ![Common ground map](../figures/fs13_common_map.png)
 
@@ -56,34 +64,34 @@ Two batteries, one question: which signals work across segments, and which only 
 
 | Signal | Family | L/S net, 6-market average | L/S > 0 | Beta-neutral, net of costs and financing (✓ = BH) | Beta-neutral > 0 | Long-only beats EW Sharpe | Effective markets | Cost / yr | Beta-neutral Sharpe 2013–19 / 2020–26 |
 |---|---|---|---|---|---|---|---|---|---|
-| Low beta | Low risk | -6.8% (t -1.5) | 1 / 6 | +10.0% (t +2.4) | 6 / 6 | 4 / 6 | 1.7 | +0.5% | +1.21 / +0.10 |
-| Momentum 12-1 | Momentum | +5.6% (t +1.5) | 5 / 6 | +6.2% (t +2.0) | 5 / 6 | 5 / 6 | 1.8 | +1.2% | +0.66 / +0.40 |
-| Residual momentum | Momentum | +3.3% (t +1.2) | 6 / 6 | +3.0% (t +1.2) | 6 / 6 | 6 / 6 | 2.1 | +2.0% | +0.12 / +0.50 |
-| Low volatility (252d) | Low risk | -6.4% (t -1.4) | 0 / 6 | +3.5% (t +1.1) | 5 / 6 | 5 / 6 | 1.8 | +0.5% | +0.52 / +0.11 |
-| Low volatility (63d) | Low risk | -5.0% (t -1.1) | 0 / 6 | +3.1% (t +1.0) | 5 / 6 | 6 / 6 | 1.8 | +1.2% | +0.63 / +0.02 |
-| Near 52-week high | Momentum | -0.4% (t -0.1) | 2 / 6 | +2.7% (t +0.8) | 4 / 6 | 5 / 6 | 1.6 | +2.0% | +0.30 / +0.15 |
-| Far above 52-week low | Momentum | +6.4% (t +2.0) | 6 / 6 | +1.8% (t +0.6) | 5 / 6 | 5 / 6 | 1.8 | +1.6% | +0.17 / +0.15 |
-| Low idiosyncratic vol | Low risk | -2.3% (t -0.8) | 3 / 6 | +1.0% (t +0.4) | 4 / 6 | 4 / 6 | 2.2 | +2.9% | +0.11 / +0.13 |
-| Small size | Size | +0.5% (t +0.3) | 4 / 6 | +0.8% (t +0.4) | 2 / 6 | 1 / 6 | 2.9 | +0.4% | +1.43 / -0.66 |
-| Narrow daily range | Lottery & tails | -5.1% (t -1.4) | 0 / 6 | +0.6% (t +0.2) | 4 / 6 | 3 / 6 | 2.0 | +3.1% | +0.20 / -0.03 |
-| Low MAX (5 days) | Lottery & tails | -6.1% (t -1.6) | 1 / 6 | +0.4% (t +0.1) | 4 / 6 | 2 / 6 | 2.0 | +3.1% | +0.68 / -0.42 |
-| Mild worst 5 days | Lottery & tails | -5.9% (t -1.4) | 0 / 6 | +0.4% (t +0.1) | 3 / 6 | 3 / 6 | 1.8 | +3.0% | -0.17 / +0.18 |
-| Near 55-day high | Momentum | -3.0% (t -0.9) | 1 / 6 | -0.2% (t -0.1) | 3 / 6 | 3 / 6 | 1.7 | +2.9% | -0.24 / +0.14 |
-| Mild worst day (MIN) | Lottery & tails | -5.7% (t -1.7) | 0 / 6 | -0.6% (t -0.2) | 3 / 6 | 2 / 6 | 2.0 | +3.4% | -0.24 / +0.07 |
-| Low MAX (1 day) | Lottery & tails | -5.9% (t -1.8) | 0 / 6 | -0.6% (t -0.2) | 2 / 6 | 2 / 6 | 2.1 | +3.4% | +0.35 / -0.38 |
-| Short-term reversal | Reversal | -5.5% (t -1.6) | 1 / 6 | -5.9% (t -1.9) | 1 / 6 | 0 / 6 | 2.0 | +3.9% | +0.06 / -1.15 |
-| Low net tail | Lottery & tails | -3.6% (t -1.9) | 1 / 6 | -3.8% (t -2.1) | 1 / 6 | 0 / 6 | 2.4 | +4.0% | -0.07 / -1.03 |
-| Low skewness | Lottery & tails | -4.6% (t -2.4) | 1 / 6 | -4.8% (t -2.8) | 1 / 6 | 0 / 6 | 2.7 | +4.0% | -0.55 / -1.02 |
-| Same-month seasonality | Seasonality | -6.5% (t -2.7) | 1 / 6 | -7.3% (t -3.4) ✓ | 1 / 6 | 1 / 6 | 2.3 | +3.9% | -1.09 / -0.85 |
+| Low beta | Low risk | -6.0% (t -1.2) | 0 / 6 | +10.0% (t +2.4) | 6 / 6 | 5 / 6 | 1.6 | +0.5% | +1.13 / +0.13 |
+| Momentum 12-1 | Momentum | +5.1% (t +1.3) | 5 / 6 | +6.5% (t +2.2) | 5 / 6 | 5 / 6 | 1.8 | +1.2% | +0.77 / +0.37 |
+| Low volatility (252d) | Low risk | -3.8% (t -0.8) | 1 / 6 | +5.4% (t +1.7) | 6 / 6 | 6 / 6 | 1.7 | +0.4% | +0.67 / +0.24 |
+| Low volatility (63d) | Low risk | -3.1% (t -0.7) | 1 / 6 | +4.1% (t +1.3) | 6 / 6 | 6 / 6 | 1.8 | +1.2% | +0.68 / +0.12 |
+| Residual momentum | Momentum | +3.5% (t +1.3) | 6 / 6 | +3.1% (t +1.2) | 6 / 6 | 6 / 6 | 1.9 | +2.0% | +0.20 / +0.46 |
+| Low idiosyncratic vol | Low risk | -0.1% (t -0.0) | 3 / 6 | +2.7% (t +1.2) | 5 / 6 | 5 / 6 | 2.0 | +2.9% | +0.39 / +0.26 |
+| Near 52-week high | Momentum | +0.8% (t +0.2) | 2 / 6 | +3.8% (t +1.1) | 5 / 6 | 5 / 6 | 1.6 | +2.0% | +0.46 / +0.18 |
+| Narrow daily range | Lottery & tails | -3.5% (t -1.0) | 1 / 6 | +1.8% (t +0.6) | 4 / 6 | 3 / 6 | 1.9 | +3.1% | +0.32 / +0.06 |
+| Low MAX (5 days) | Lottery & tails | -4.5% (t -1.2) | 0 / 6 | +1.5% (t +0.6) | 3 / 6 | 3 / 6 | 2.0 | +3.0% | +0.75 / -0.25 |
+| Far above 52-week low | Momentum | +5.1% (t +1.7) | 6 / 6 | +1.0% (t +0.3) | 4 / 6 | 5 / 6 | 1.7 | +1.6% | +0.24 / -0.03 |
+| Low MAX (1 day) | Lottery & tails | -4.2% (t -1.3) | 1 / 6 | +0.6% (t +0.2) | 3 / 6 | 2 / 6 | 2.0 | +3.3% | +0.40 / -0.18 |
+| Mild worst 5 days | Lottery & tails | -4.8% (t -1.1) | 0 / 6 | +0.7% (t +0.2) | 4 / 6 | 3 / 6 | 1.7 | +3.0% | -0.05 / +0.16 |
+| Near 55-day high | Momentum | -2.3% (t -0.7) | 2 / 6 | +0.3% (t +0.1) | 3 / 6 | 3 / 6 | 1.7 | +2.9% | -0.18 / +0.18 |
+| Mild worst day (MIN) | Lottery & tails | -4.8% (t -1.4) | 0 / 6 | -0.0% (t -0.0) | 3 / 6 | 3 / 6 | 1.9 | +3.4% | -0.08 / +0.06 |
+| Small size | Size | -0.7% (t -0.4) | 1 / 6 | -1.1% (t -0.5) | 2 / 6 | 1 / 6 | 2.9 | +0.3% | +0.59 / -0.64 |
+| Low net tail | Lottery & tails | -3.8% (t -2.0) | 1 / 6 | -4.1% (t -2.4) | 1 / 6 | 0 / 6 | 2.4 | +4.0% | -0.27 / -0.94 |
+| Short-term reversal | Reversal | -6.3% (t -2.0) | 1 / 6 | -6.8% (t -2.4) | 1 / 6 | 0 / 6 | 2.0 | +3.9% | -0.20 / -1.15 |
+| Low skewness | Lottery & tails | -4.4% (t -2.5) | 1 / 6 | -4.7% (t -2.9) | 1 / 6 | 0 / 6 | 2.8 | +4.0% | -0.66 / -0.94 |
+| Same-month seasonality | Seasonality | -6.6% (t -2.8) | 1 / 6 | -6.9% (t -3.4) ✓ | 1 / 6 | 1 / 6 | 2.3 | +3.9% | -0.71 / -1.07 |
 
 
 *Averages are the equal-weight mean of the six market series; t is Newey–West on that mean. Effective markets = 36 / sum of the 6×6 correlation matrix. ✓ = discovery under Benjamini–Hochberg at 5% over 38 tests.*
 
 **Reading it.**
 
-1. **The raw long/short numbers are mostly a beta story.** 9 of the 9 low-risk and tail-size signals have a negative raw average and 7 of 9 turn positive once the legs are beta-neutral and financed. Their raw books are short the market in a market that rose.
-2. **Beta-neutral low-risk books need a lot of leverage.** To bring the low-beta leg up to a beta of one, the low-beta book borrows on average 0.8–2.9 units of cash per unit of capital (US 2.2, EU 2.3, UK 2.9, DK 0.8, SCANDI 1.1, World 2.4). Charged at the USD risk-free rate plus 50 bp, low beta still earns +10.0% a year (Sharpe 0.49, t 2.4, positive in 6 of 6), the strongest positive price signal, but it no longer clears the correction. The charge is conservative for EU and Denmark, where short rates were negative for 2015–21.
-3. **After the correction: 1 discovery out of 38**: Same-month seasonality (beta-neutral) (t -3.4). The strongest positive candidates are low beta (t +2.4) and 12-1 momentum (t +2.0); neither clears the bar.
+1. **The raw long/short numbers are mostly a beta story.** 9 of the 9 low-risk and tail-size signals have a negative raw average and 8 of 9 turn positive once the legs are beta-neutral and financed. Their raw books are short the market in a market that rose.
+2. **Beta-neutral low-risk books need a lot of leverage.** To bring the low-beta leg up to a beta of one, the low-beta book borrows on average 0.8–2.9 units of cash per unit of capital (US 2.2, EU 2.4, UK 2.9, DK 0.8, SCANDI 1.2, World 2.4). Charged at the USD risk-free rate plus 50 bp, low beta still earns +10.0% a year (Sharpe 0.48, t 2.4, positive in 6 of 6), the strongest positive price signal, but it no longer clears the correction. The charge is conservative for EU and Denmark, where short rates were negative for 2015–21.
+3. **After the correction: 1 discovery out of 38**: Same-month seasonality (beta-neutral) (t -3.4). The strongest positive candidates are low beta (t +2.4) and 12-1 momentum (t +2.2); neither clears the bar.
 4. **Momentum holds in most markets in both books**: 12-1 momentum is positive raw in 5 and beta-neutral in 5 of six markets, residual momentum in 6 and 6. Positive raw in all six: Residual momentum, Far above 52-week low.
 5. **Tail direction is not priced the way the lottery literature expects** in our large caps: low skewness and low net tail lose in most markets, raw and beta-neutral.
 6. **Costs sort the families**: the within-month signals (MAX, MIN, skewness, reversal, seasonality) cost 3–4% a year; volatility, beta, momentum and size cost 0–2%.
@@ -107,7 +115,7 @@ Clustering the beta-neutral long/short returns (average correlation over the six
 
 **The nineteen signals hold far fewer independent bets.** Everything that measures the *size* of price moves — MAX, MIN, the daily range, idiosyncratic volatility, volatility and beta — is one block. Momentum, 52-week high, 52-week low distance and the breakout are a second block. Residual momentum, reversal, seasonality, tail direction and size stand alone.
 
-**Is the structure the same in every market?** Adjusted Rand index between each market's own clustering and the pooled one: US 0.88, EU 0.87, UK 0.47, DK 0.70, SCANDI 0.46, World 0.97 (1 = identical, 0 = random). The two-block structure is almost identical in the US, EU and World and looser in the UK and Scandinavia, where small groups and fewer names make correlations noisier.
+**Is the structure the same in every market?** Adjusted Rand index between each market's own clustering and the pooled one: US 1.00, EU 0.87, UK 0.53, DK 0.68, SCANDI 0.76, World 0.91 (1 = identical, 0 = random). The two-block structure is almost identical in the US, EU and World and looser in the UK and Scandinavia, where small groups and fewer names make correlations noisier.
 
 ## 4. Common ground among segments: do markets agree on what works?
 
@@ -115,12 +123,12 @@ Spearman rank correlation between markets of the 19 beta-neutral Sharpe ratios (
 
 | Market | Average agreement with the other markets |
 |---|---|
-| US | 0.58 |
-| EU | 0.55 |
-| UK | 0.40 |
-| DK | 0.41 |
-| SCANDI | 0.07 |
-| World | 0.60 |
+| US | 0.61 |
+| EU | 0.60 |
+| UK | 0.45 |
+| DK | 0.47 |
+| SCANDI | 0.29 |
+| World | 0.69 |
 
 
 The same test on the 153 JKP factors (2013–2025 Sharpe ratios):
@@ -134,7 +142,7 @@ The same test on the 153 JKP factors (2013–2025 Sharpe ratios):
 | World | 0.69 |
 
 
-**SCANDI is the odd one out.** In the price battery SCANDI (0.07) and UK (0.40) agree least; in JKP it is Denmark (0.24). With ~19 stocks in OMXC25, ~62 in SCANDI and a JKP Danish universe dominated by a few large names, factor returns there are driven by single companies. The US, EU/World ex US and World agree most, partly because they overlap. The median correlation of the same JKP factor across segments: US–World ex US 0.56, US–UK 0.43, US–Denmark 0.18; factor returns are mostly local, so a signal that works in several segments is genuine breadth, not one bet counted twice.
+**SCANDI is the odd one out.** In the price battery SCANDI (0.29) and UK (0.45) agree least; in JKP it is Denmark (0.24). With ~19 stocks in OMXC25, ~62 in SCANDI and a JKP Danish universe dominated by a few large names, factor returns there are driven by single companies. The US, EU/World ex US and World agree most, partly because they overlap. The median correlation of the same JKP factor across segments: US–World ex US 0.56, US–UK 0.43, US–Denmark 0.18; factor returns are mostly local, so a signal that works in several segments is genuine breadth, not one bet counted twice.
 
 ## 5. The published factors: 153 JKP factors since 2013
 
@@ -166,34 +174,34 @@ Pooled over the four disjoint segments (US, UK, Denmark, World ex US), **19 of 1
 
 | Our signal | JKP factor | US | EU (proxy) | UK | DK | SCANDI (proxy) | World |
 |---|---|---|---|---|---|---|---|
-| Momentum 12-1 | ret_12_1 | 0.92 | 0.65 | 0.82 | 0.80 | 0.43 | 0.88 |
-| Residual momentum | resff3_12_1 | 0.70 | 0.36 | 0.52 | 0.59 | 0.27 | 0.66 |
-| Short-term reversal | ret_1_0 | 0.88 | 0.54 | 0.79 | 0.75 | 0.42 | 0.83 |
-| Small size | market_equity | 0.49 | 0.09 | 0.48 | 0.36 | -0.09 | 0.44 |
-| Low volatility (63d) | rvol_21d | 0.89 | 0.64 | 0.82 | 0.71 | 0.57 | 0.82 |
-| Low idiosyncratic vol | ivol_capm_21d | 0.86 | 0.47 | 0.74 | 0.68 | 0.31 | 0.76 |
-| Low beta | beta_60m | 0.91 | 0.73 | 0.83 | 0.58 | 0.68 | 0.86 |
-| Low MAX (1 day) | rmax1_21d | 0.88 | 0.58 | 0.76 | 0.70 | 0.43 | 0.80 |
-| Low MAX (5 days) | rmax5_21d | 0.89 | 0.56 | 0.76 | 0.73 | 0.45 | 0.80 |
-| Low skewness | rskew_21d | 0.65 | 0.31 | 0.39 | 0.62 | 0.21 | 0.59 |
-| Near 52-week high | prc_highprc_252d | 0.92 | 0.72 | 0.89 | 0.71 | 0.59 | 0.89 |
-| Same-month seasonality | seas_1_1an | 0.34 | 0.22 | 0.53 | 0.29 | 0.22 | 0.32 |
+| Momentum 12-1 | ret_12_1 | 0.90 | 0.63 | 0.84 | 0.82 | 0.41 | 0.85 |
+| Residual momentum | resff3_12_1 | 0.72 | 0.37 | 0.51 | 0.55 | 0.25 | 0.65 |
+| Short-term reversal | ret_1_0 | 0.83 | 0.55 | 0.79 | 0.74 | 0.44 | 0.81 |
+| Small size | market_equity | 0.59 | 0.13 | 0.55 | 0.34 | 0.03 | 0.55 |
+| Low volatility (63d) | rvol_21d | 0.80 | 0.64 | 0.83 | 0.72 | 0.58 | 0.74 |
+| Low idiosyncratic vol | ivol_capm_21d | 0.77 | 0.47 | 0.76 | 0.67 | 0.33 | 0.65 |
+| Low beta | beta_60m | 0.92 | 0.73 | 0.84 | 0.59 | 0.70 | 0.86 |
+| Low MAX (1 day) | rmax1_21d | 0.81 | 0.58 | 0.76 | 0.71 | 0.47 | 0.71 |
+| Low MAX (5 days) | rmax5_21d | 0.82 | 0.56 | 0.76 | 0.74 | 0.48 | 0.72 |
+| Low skewness | rskew_21d | 0.67 | 0.29 | 0.45 | 0.62 | 0.22 | 0.57 |
+| Near 52-week high | prc_highprc_252d | 0.90 | 0.73 | 0.89 | 0.73 | 0.57 | 0.88 |
+| Same-month seasonality | seas_1_1an | 0.41 | 0.22 | 0.50 | 0.31 | 0.17 | 0.39 |
 
 
-In the US, where the universes are closest (our top 500 vs JKP's capped value-weighted full market), **8 of 12 matched signals correlate 0.8 or more** with the published factor (Momentum 12-1, Short-term reversal, Low volatility (63d), Low idiosyncratic vol, Low beta, Low MAX (1 day), Low MAX (5 days), Near 52-week high). This closes the replication gap raised in FS00: the engine produces the known factors. The weaker matches have known reasons: our seasonality averages up to 13 years of same-month returns while JKP's `seas_1_1an` uses only last year's; our size sort is within the 500 largest (JKP spans micro caps). EU and Scandinavia are compared with World ex US, so their lower numbers measure the proxy, not the engine.
+In the US, where the universes are closest (our S&P 500 members vs JKP's capped value-weighted full market), **7 of 12 matched signals correlate 0.8 or more** with the published factor (Momentum 12-1, Short-term reversal, Low volatility (63d), Low beta, Low MAX (1 day), Low MAX (5 days), Near 52-week high). This closes the replication gap raised in FS00: the engine produces the known factors. The weaker matches have known reasons: our seasonality averages up to 13 years of same-month returns while JKP's `seas_1_1an` uses only last year's; our size sort is within the 500 largest (JKP spans micro caps). EU and Scandinavia are compared with World ex US, so their lower numbers measure the proxy, not the engine.
 
 ## 7. Where is the common ground?
 
 | Theme | Our price data: t (markets > 0) | JKP: t (segments > 0) | JKP US Sharpe before 2013 → since | JKP factors that are BH discoveries | Verdict |
 |---|---|---|---|---|---|
-| Momentum | +1.4 (5/6) | +4.4 (4/4) | +0.28 → +0.42 | 6 / 8 | Positive almost everywhere, not significant |
-| Low risk | +1.6 (5/6) | +0.2 (3/4) | +0.07 → +0.07 | 0 / 18 | No common ground |
-| Lottery & tails (size of tails) | +0.0 (3/6) | — | — | — | No common ground |
-| Tail direction (skewness) | -2.7 (1/6) | — | — | — | Reliably negative |
-| Short-term reversal | -1.9 (1/6) | -0.5 (2/4) | +0.67 → +0.10 | 0 / 6 | No common ground · faded in the US |
+| Momentum | +1.5 (6/6) | +4.4 (4/4) | +0.28 → +0.42 | 6 / 8 | Common ground (positive everywhere, significant in JKP) |
+| Low risk | +2.0 (6/6) | +0.2 (3/4) | +0.07 → +0.07 | 0 / 18 | Positive almost everywhere, not significant |
+| Lottery & tails (size of tails) | +0.4 (3/6) | — | — | — | No common ground |
+| Tail direction (skewness) | -2.8 (1/6) | — | — | — | Reliably negative |
+| Short-term reversal | -2.4 (1/6) | -0.5 (2/4) | +0.67 → +0.10 | 0 / 6 | Reliably negative · faded in the US |
 | Seasonality | -3.4 (1/6) | -0.5 (1/4) | +0.38 → -0.08 | 1 / 12 | Reliably negative · faded in the US |
-| Size | +0.4 (2/6) | +1.1 (3/4) | +0.27 → -0.15 | 1 / 5 | No common ground |
-| Breakout | -0.1 (3/6) | — | — | — | No common ground |
+| Size | -0.5 (2/6) | +1.1 (3/4) | +0.27 → -0.15 | 1 / 5 | No common ground |
+| Breakout | +0.1 (3/6) | — | — | — | No common ground |
 | Value | — | +1.0 (4/4) | +0.29 → +0.15 | 1 / 18 | Positive almost everywhere, not significant |
 | Quality | — | +1.2 (3/4) | +0.19 → +0.46 | 0 / 17 | Positive almost everywhere, not significant |
 | Profitability | — | +0.9 (3/4) | +0.29 → +0.31 | 0 / 11 | Positive almost everywhere, not significant |
@@ -206,9 +214,9 @@ In the US, where the universes are closest (our top 500 vs JKP's capped value-we
 
 *Price t: beta-neutral composite of the theme's signals, average of 6 markets. JKP t: equal-weight theme portfolio, average of 4 disjoint segments, 2013–2025. "Common ground" = positive in every segment of every source that covers the theme, and pooled t > 2 in at least one source. "Faded in the US" = JKP US Sharpe above 0.3 before 2013 and below 0.15 since.*
 
-**Common ground:** Profit growth, Debt issuance. **Positive almost everywhere, not significant:** Momentum, Value, Quality, Profitability, Investment. **Works pooled, not everywhere:** none. **Reliably negative:** Tail direction (skewness), Seasonality. **Faded in the US:** Short-term reversal, Seasonality, Investment, Accruals.
+**Common ground:** Momentum, Profit growth, Debt issuance. **Positive almost everywhere, not significant:** Low risk, Value, Quality, Profitability, Investment. **Works pooled, not everywhere:** none. **Reliably negative:** Tail direction (skewness), Short-term reversal, Seasonality. **Faded in the US:** Short-term reversal, Seasonality, Investment, Accruals.
 
-**Momentum is the strongest theme across both sources**: positive in 5 of six of our markets and all 4 JKP segments; significant in JKP (t +4.4) but not in our large caps once short legs pay borrow fees (t +1.4); it misses the common-ground label because SCANDI is negative. **Low risk** is positive in 5 of six of our markets after financing (t 1.6) but only 3 of 4 JKP segments (t 0.2); JKP's low-risk factors are value-weighted and not beta-neutral, so they carry the short-market drag that our beta-neutral books remove. **Debt issuance** (t 6.2) and **profit growth** (t 2.5) are the only themes positive in every segment with a significant pooled return, and both are fundamental themes to add first. Value, quality, profitability and investment were positive in most JKP segments but not significant since 2013.
+**Momentum is the strongest theme across both sources**: positive in 6 of six of our markets and all 4 JKP segments; significant in JKP (t +4.4) but not in our large caps once short legs pay borrow fees (t +1.5). **Low risk** is positive in 6 of six of our markets after financing (t 2.0) but only 3 of 4 JKP segments (t 0.2); JKP's low-risk factors are value-weighted and not beta-neutral, so they carry the short-market drag that our beta-neutral books remove. **Debt issuance** (t 6.2) and **profit growth** (t 2.5) are the only themes positive in every segment with a significant pooled return, and both are fundamental themes to add first. Value, quality, profitability and investment were positive in most JKP segments but not significant since 2013.
 
 ## 8. What this means for the multifactor model
 

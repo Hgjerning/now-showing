@@ -29,7 +29,7 @@ import pandas as pd
 
 import data
 
-HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.join(HERE, "..", "data"); CACHE = os.path.join(D, "cache")
+HERE = os.path.dirname(os.path.abspath(__file__)); D = data.D; CACHE = data.CACHE   # 2026-10-01: follows data.py
 FUND = {  # signal: (theme, long_high, label, JKP match)
     "dbt_gr": ("Debt issuance", False, "Debt growth", "debt_gr3"),
     "noa_at": ("Debt issuance", False, "Net operating assets", "noa_at"),
@@ -53,7 +53,7 @@ COLS = ["ticker", "calendardate", "date", "revenue", "netinccmn", "gp", "opinc",
 
 
 def filings():
-    f = pd.read_csv(os.path.join(D, "us_fundamentals.csv"), usecols=COLS, parse_dates=["calendardate", "date"])
+    f = pd.read_csv(data._us("us_fundamentals.csv"), usecols=COLS, parse_dates=["calendardate", "date"])
     f = f.sort_values(["ticker", "calendardate", "date"]).drop_duplicates(["ticker", "calendardate"], keep="first")
     g = f.groupby("ticker", group_keys=False)
     ttm = lambda c: g[c].transform(lambda s: s.rolling(4, min_periods=4).sum())

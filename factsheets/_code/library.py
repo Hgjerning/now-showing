@@ -12,8 +12,8 @@ import data
 import perf
 import xs
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
-CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "cache")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+CACHE = data.CACHE   # 2026-10-01: follows data.py
 LIB = ["max1", "max5", "min1", "min5", "range", "asym", "skew", "ivol", "vol", "vol252", "beta", "r1", "mom", "resmom", "seas", "hi52", "lo52", "brk55", "size"]
 START, END = xs.START, xs.END
 

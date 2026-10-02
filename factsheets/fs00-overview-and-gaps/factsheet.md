@@ -4,24 +4,32 @@
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · data to 31 August 2026*
 
-> **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only 1 of eleven long/short books (FS10) earns a **positive** return that passes the 2.87 gate in at least one market; 3 (FS01, FS06, FS12) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, 6 of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (capacity outside the US). Borrow fees, financing of leverage, World in one currency, a replication check, a programme-wide trial ledger and a market-impact cost model were added on 27 September 2026 (§3.0).
+> **What changed on 2 October 2026.** Two corrections, both to the universe of stocks, and every number below is re-run on them.
+> (1) **US:** the universe is now the actual S&P 500 members at each month-end. Until now it was the 500 largest of every
+> company that was *ever* in the index 2012–2026, which includes later winners before they joined.
+> (2) **UK and EU:** the price panels now include the index members that stopped trading (UK coverage of members 71% → 92%,
+> EU 81% → 89%); before, most of them had no prices. SCANDI stays as registered (OMXC25 + OMXS30 + OMXH25).
+> Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
+> Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
+
+> **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only 0 of eleven long/short books (none) earn a **positive** return that passes the 2.87 gate in at least one market; 4 (FS01, FS06, FS08, FS12) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, 4 of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (capacity outside the US). Borrow fees, financing of leverage, World in one currency, a replication check, a programme-wide trial ledger and a market-impact cost model were added on 27 September 2026 (§3.0).
 
 ## 1. All strategies in one table
 
 | Strategy | Family | L/S net return / yr (range over 6) | L/S positive | L/S passes &#124;t&#124; > 2.87 | L/S CAPM alpha range | Long-only beats EW Sharpe | Long-only alpha passes | Fixes: holdout Sharpe | Redundant in 360° view | Library cluster |
 |---|---|---|---|---|---|---|---|---|---|---|
-| FS01 Turtle Traders | Breakout & trend | -15.7% to -3.9% | 0 / 6 | US−, SCANDI−, World− | -13.8% to -2.4% | 0 / 6 | — | T0 -0.74 → T3 0.64 (drop shorts, 4N stop) | yes | momentum (time series) |
-| FS02 Lottery (MAX) | Lottery & attention | -14.4% to -1.6% | 0 / 6 | — | -5.5% to +4.7% | 2 / 6 | — | L0 -0.57 → L1 -0.41 (beta-neutral legs) | yes | low risk |
-| FS03 Momentum | Momentum & trend | -2.8% to +9.7% | 5 / 6 | — | +1.8% to +15.8% | 5 / 6 | UK, World | 0.29 → 0.55 (full ladder) | no | momentum |
-| FS04 Low volatility | Low risk | -15.3% to -1.6% | 0 / 6 | — | -1.6% to +8.4% | 5 / 6 | UK | -0.27 → 0.18 (full ladder) | no | low risk |
-| FS05 Monkey portfolios | Portfolio folklore | beat the index: 16–86% of monkeys | — | — | — | — | — | no fix: a benchmark | — | size (equal weight) |
-| FS06 Same-month seasonality | Calendar & seasonality | -12.7% to +3.1% | 1 / 6 | EU− | -12.5% to +2.6% | 1 / 6 | — | -0.62 → -0.56 (full ladder) | yes | momentum |
-| FS07 Size | Size | -3.0% to +4.9% | 4 / 6 | — | -5.5% to +2.9% | 1 / 6 | UK | -0.44 → -0.45 (full ladder) | yes | momentum |
-| FS08 Short-term reversal | Reversal & bottom-fishing | -9.7% to +0.1% | 1 / 6 | — | -13.1% to -1.0% | 0 / 6 | — | -0.91 → -0.87 (full ladder) | no | momentum |
-| FS09 52-week high | Momentum & trend | -5.9% to +5.8% | 2 / 6 | — | +5.3% to +15.2% | 5 / 6 | EU, DK | 0.02 → 0.59 (full ladder) | no | momentum |
-| FS10 Betting against beta | Low risk | +2.0% to +9.5% | 6 / 6 | UK+ | -0.8% to +7.9% | 5 / 6 | UK | 0.00 → 0.07 (full ladder) | no | low risk |
-| FS11 Residual momentum | Momentum & trend | +1.9% to +7.9% | 6 / 6 | — | +4.3% to +10.7% | 6 / 6 | — | 0.52 → 0.57 (full ladder) | yes | momentum |
-| FS12 Buy at the 52-week low | Reversal & bottom-fishing | -17.0% to -5.2% | 0 / 6 | US−, EU−, World− | -16.6% to -6.4% | 0 / 6 | — | -0.96 → -0.78 (full ladder) | yes | momentum |
+| FS01 Turtle Traders | Breakout & trend | -16.2% to -3.5% | 0 / 6 | US−, SCANDI−, World− | -12.3% to +2.7% | 0 / 6 | — | T0 -0.62 → T3 0.50 (drop shorts, 4N stop) | yes | momentum (time series) |
+| FS02 Lottery (MAX) | Lottery & attention | -10.6% to +1.9% | 1 / 6 | — | -2.5% to +8.5% | 2 / 6 | — | L0 -0.41 → L1 -0.21 (beta-neutral legs) | yes | low risk |
+| FS03 Momentum | Momentum & trend | -2.1% to +9.8% | 5 / 6 | — | +2.1% to +16.7% | 5 / 6 | UK, World | 0.18 → 0.56 (full ladder) | no | momentum |
+| FS04 Low volatility | Low risk | -8.7% to +1.6% | 1 / 6 | — | +2.8% to +10.9% | 6 / 6 | — | -0.14 → 0.21 (full ladder) | no | low risk |
+| FS05 Monkey portfolios | Portfolio folklore | beat the index: 3–83% of monkeys | — | — | — | — | — | no fix: a benchmark | — | size (equal weight) |
+| FS06 Same-month seasonality | Calendar & seasonality | -14.0% to +3.4% | 1 / 6 | EU−, DK− | -13.5% to +2.0% | 1 / 6 | — | -0.89 → -0.68 (full ladder) | no | momentum |
+| FS07 Size | Size | -4.3% to +4.3% | 1 / 6 | — | -10.4% to +3.1% | 1 / 6 | UK | -0.34 → -0.37 (full ladder) | yes | low risk |
+| FS08 Short-term reversal | Reversal & bottom-fishing | -12.4% to +0.7% | 1 / 6 | EU− | -15.7% to -0.7% | 0 / 6 | — | -0.87 → -0.98 (full ladder) | no | momentum |
+| FS09 52-week high | Momentum & trend | -5.8% to +8.8% | 2 / 6 | — | +6.3% to +18.6% | 5 / 6 | EU, DK | 0.04 → 0.52 (full ladder) | no | momentum |
+| FS10 Betting against beta | Low risk | +1.7% to +9.1% | 6 / 6 | — | +1.1% to +7.7% | 6 / 6 | UK | 0.01 → 0.06 (full ladder) | no | low risk |
+| FS11 Residual momentum | Momentum & trend | +2.2% to +6.9% | 6 / 6 | — | +4.7% to +9.8% | 6 / 6 | — | 0.50 → 0.58 (full ladder) | no | momentum |
+| FS12 Buy at the 52-week low | Reversal & bottom-fishing | -14.7% to -5.8% | 0 / 6 | US−, EU−, World− | -15.8% to -7.3% | 0 / 6 | — | -0.78 → -0.57 (full ladder) | yes | momentum |
 
 *Net of costs, local currency, Feb 2013 – Aug 2026 (FS01 daily from Jan 2013). In the gate column + marks a significantly positive return, − a significantly negative one. The gate is Bonferroni over 12 cells per factsheet; fix ladders are judged on the 2020–26 holdout. Redundant = alpha |t| < 2 in every universe after the signal's closest library neighbours and the market.*
 
@@ -32,20 +40,20 @@
 ## 2. What the twelve factsheets say together
 
 1. **Two roots carry almost everything.** The momentum family (FS03, FS09, FS11, and the breakout inside FS01) and the low-risk family (FS02, FS04, FS10) are where the beta-adjusted alphas are. Within each family the signals are close substitutes.
-2. **Raw long/short numbers mislead in a bull market.** The long/short books of FS03, FS04, FS09 carry market betas of -1.00 to -0.29 against the equal-weight universe; in a rising market that short beta alone cost 4–14% a year (beta × universe return). Beta-neutral legs remove most of this drag, but the neutralised books rarely pass the gate.
-3. **Costs matter most for the fast signals.** Trading costs take 3.9–4.9% a year from short-term reversal (FS08) and 4.0–5.0% from seasonality (FS06), against 1.7–2.4% for 12-1 momentum and 1.0–1.4% for low volatility; both fast signals are negative after costs in most markets.
+2. **Raw long/short numbers mislead in a bull market.** The long/short books of FS03, FS04, FS09 carry market betas of -1.09 to -0.28 against the equal-weight universe; in a rising market that short beta alone cost 3–13% a year (beta × universe return). Beta-neutral legs remove most of this drag, but the neutralised books rarely pass the gate.
+3. **Costs matter most for the fast signals.** Trading costs take 3.9–4.9% a year from short-term reversal (FS08) and 4.0–5.0% from seasonality (FS06), against 1.7–2.5% for 12-1 momentum and 1.0–1.6% for low volatility; both fast signals are negative after costs in most markets.
 4. **Folklore fails where it contradicts momentum.** Buying at the 52-week low (FS12) and buying breakouts with tight stops on single stocks (FS01) both lose; the monkeys (FS05) only reflect whether small beat big.
 5. **Survivorship was worth 2–5 percentage points a year** on the equal-weight universes outside the US; moving to point-in-time membership changed several conclusions (FS02).
-6. **Six markets are not six tests.** The long/short books co-move strongly across universes (World contains the US; EU contains the Nordic blue chips), so the six markets are worth only 1.5–1.9 independent tests (effective number = 36 / sum of the 6×6 correlation matrix). "Positive in all six" is weaker evidence than it sounds.
+6. **Six markets are not six tests.** The long/short books co-move strongly across universes (World contains the US; EU contains the Nordic blue chips), so the six markets are worth only 1.4–1.8 independent tests (effective number = 36 / sum of the 6×6 correlation matrix). "Positive in all six" is weaker evidence than it sounds.
 
 | Strategy (L/S net) | Mean pairwise correlation | US–World | EU–SCANDI | Effective number of markets |
 |---|---|---|---|---|
-| FS03 Momentum | 0.53 | 0.85 | 0.58 | 1.6 |
-| FS04 Low volatility | 0.60 | 0.91 | 0.62 | 1.5 |
-| FS09 52-week high | 0.62 | 0.89 | 0.60 | 1.5 |
-| FS10 Betting against beta | 0.57 | 0.90 | 0.71 | 1.6 |
-| FS11 Residual momentum | 0.44 | 0.84 | 0.50 | 1.9 |
-| FS12 Buy at the 52-week low | 0.45 | 0.85 | 0.62 | 1.9 |
+| FS03 Momentum | 0.55 | 0.89 | 0.59 | 1.6 |
+| FS04 Low volatility | 0.61 | 0.92 | 0.61 | 1.5 |
+| FS09 52-week high | 0.63 | 0.92 | 0.61 | 1.4 |
+| FS10 Betting against beta | 0.59 | 0.90 | 0.72 | 1.5 |
+| FS11 Residual momentum | 0.47 | 0.84 | 0.52 | 1.8 |
+| FS12 Buy at the 52-week low | 0.48 | 0.85 | 0.63 | 1.8 |
 
 
 7. **Across the whole programme, few winners survive.** The factsheet trial ledger holds 682 gated tests. Under a programme-wide Benjamini–Hochberg correction 53 positive results survive (21 also Bonferroni, |t| > 3.97) against 21 reliable losers; the best positive candidates have a deflated Sharpe ratio of 0.68 at most even on the lenient bound, below the usual 0.95 (`planning/FACTSHEET_TRIAL_LEDGER.md`).

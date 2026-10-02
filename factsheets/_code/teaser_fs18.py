@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json, os
 import build_teasers_xs as BT
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 r = json.load(open(os.path.join(RES, "fs18.json"))); M = r["markets"]; P = r["pooled_5e+07"]
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 rows = [(BT.LAB[R], [(M[R]["5e+07"]["market"]["sharpe"], BT.GREY, "D"), (M[R]["5e+07"]["portfolio"]["sharpe"], BT.BLUE, "o"), (M[R]["2e+08"]["portfolio"]["sharpe"], BT.ORANGE, "s")]) for R in U]

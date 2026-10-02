@@ -2,7 +2,7 @@
 """LinkedIn card + post for FS14 (numbers from results/fs14.json)."""
 import json, os
 import build_teasers_xs as BT
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; LAB = BT.LAB
 r = json.load(open(os.path.join(RES, "fs14.json"))); pr = r["primary"]; po = r["pooled"]
 L = json.load(open(os.path.join(RES, "trial_ledger.json")))

@@ -14,7 +14,7 @@ import impact as IM
 import perf
 import xs
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 POOL = ["US", "EU", "UK", "DK", "SC"]
 KS = [5e7, 2.5e8]

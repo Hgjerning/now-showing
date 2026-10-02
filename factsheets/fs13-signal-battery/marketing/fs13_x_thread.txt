@@ -2,10 +2,10 @@
 
 2/ After correcting for 38 tests, no price signal earns a positive return that survives on its own. 13 years of large caps can't prove one signal alone.
 
-3/ The direction is more consistent. Momentum: positive in 5/6 markets and 4/4 published segments (t 4.4). Low beta: 6/6 after removing beta, borrow fees and leverage costs.
+3/ The direction is more consistent. Momentum: positive in 6/6 markets and 4/4 published segments (t 4.4). Low beta: 6/6 after removing beta, borrow fees and leverage costs.
 
 4/ 19 signals ≈ 2 bets. MAX, MIN, range, idio vol, vol and beta are one low-risk block; momentum, 52w high, 52w low distance and the breakout are another.
 
 5/ Fundamentals that worked everywhere since 2013: debt issuance (t 6.2) and profit growth (t 2.5). Faded in the US: short-term reversal, seasonality, investment, accruals.
 
-6/ Scandinavia's ranking of what works has ~0.07 correlation with other markets. Small markets are single-stock stories. Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery
+6/ Scandinavia's ranking of what works has ~0.29 correlation with other markets. Small markets are single-stock stories. Full factsheet: https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery

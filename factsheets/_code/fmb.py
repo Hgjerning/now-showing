@@ -17,7 +17,7 @@ import perf
 import xs
 from battery import DIRECTION
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 # one representative per FS13 cluster (and the within-block candidates the multifactor model may use)
 PRICE = ["beta", "vol252", "max1", "mom", "resmom", "hi52", "r1", "seas", "skew", "size"]

@@ -2,10 +2,10 @@ Low-volatility stocks earn about the same or more than high-volatility stocks, s
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (calmest stocks minus most volatile stocks): -15.3% to -1.6% a year, positive in none of the six markets. Adjusted for market beta: -1.6% to +8.4%.
-Long-only (calmest stocks): a better Sharpe than owning all the stocks equally in 5 of six markets.
+Long/short (calmest stocks minus most volatile stocks): -8.7% to +1.6% a year, positive in 1 of six markets. Adjusted for market beta: +2.8% to +10.9%.
+Long-only (calmest stocks): a better Sharpe than owning all the stocks equally in all six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.27 to 0.18.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.14 to 0.21.
 
 360° view: it keeps some information beyond its nearest neighbours.
 

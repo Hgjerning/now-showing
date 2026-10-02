@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json, os
 import build_teasers_xs as BT
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 r = json.load(open(os.path.join(RES, "impact.json"))); rb = json.load(open(os.path.join(RES, "impact_buffer.json")))
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 rows = [(BT.LAB[R], [(r[R]["shortlist"]["Y07"]["sharpe"][0], BT.BLUE, "o"), (r[R]["shortlist"]["Y07"]["sharpe"][2], BT.ORANGE, "s"), (r[R]["shortlist"]["Y07"]["sharpe"][3], BT.GREY, "D")]) for R in U]

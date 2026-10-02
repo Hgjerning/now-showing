@@ -14,7 +14,7 @@ import fs14 as F14
 import perf
 import xs
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 UA = ["US_A", "EU_A", "UK_A", "DK_A", "WD_A"]; M4 = ["US_A", "EU_A", "UK_A", "DK_A"]
 xs.START, xs.END = pd.Period("1999-01"), pd.Period("2013-02")
 FM.START, FM.END = pd.Period("1999-01"), pd.Period("2013-01")

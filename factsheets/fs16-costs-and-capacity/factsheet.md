@@ -4,6 +4,14 @@
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · data to 31 August 2026*
 
+> **What changed on 2 October 2026.** Two corrections, both to the universe of stocks, and every number below is re-run on them.
+> (1) **US:** the universe is now the actual S&P 500 members at each month-end. Until now it was the 500 largest of every
+> company that was *ever* in the index 2012–2026, which includes later winners before they joined.
+> (2) **UK and EU:** the price panels now include the index members that stopped trading (UK coverage of members 71% → 92%,
+> EU 81% → 89%); before, most of them had no prices. SCANDI stays as registered (OMXC25 + OMXS30 + OMXH25).
+> Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
+> Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
+
 | Key facts | |
 |---|---|
 | Rules | `planning/PREREG_FS16.md`, written in the build environment before the run (10:13) and copied to the Factsheets folder right after it (the run finished 10:16); no changes |
@@ -13,7 +21,7 @@
 | Books | the shortlist (low beta + 12-1 momentum, beta-neutral) and four raw long/short books, six markets, 2013–2026; borrow fees and financing as before |
 | Replaces | the flat 10 bp per side used in FS01–FS15 |
 
-> **In one paragraph.** Capacity is the binding constraint for these books, far more than the flat-cost results suggested. The shortlist keeps a positive Sharpe ratio up to about **$1.0bn in the US** and **$133m across World**, but only **$29m in the EU, $27m in the UK and $13m in Denmark**, and nothing in Scandinavia. The UK and EU books look best at small size because their low-beta legs sit in thinly traded stocks, which is also why they fill up first. The fast signals are uninvestable: short-term reversal has a Sharpe ratio of -1.76 to -0.32 already at $10m. Two exploratory fixes help: a turnover buffer (hold a stock until it leaves the top 30%) halves turnover and raises the size at which the Sharpe ratio halves 3–7 times with little loss at small size; a liquidity screen raises capacity in the EU and World but removes most of the UK result.
+> **In one paragraph.** Capacity is the binding constraint for these books, far more than the flat-cost results suggested. The shortlist keeps a positive Sharpe ratio up to about **$1.0bn in the US** and **$33m across World**, but only **$26m in the EU, $3m in the UK and $16m in Denmark**, and nothing in Scandinavia. The UK and EU books look best at small size because their low-beta legs sit in thinly traded stocks, which is also why they fill up first. The fast signals are uninvestable: short-term reversal has a Sharpe ratio of -2.27 to -0.29 already at $10m. Two exploratory fixes help: a turnover buffer (hold a stock until it leaves the top 30%) halves turnover and raises the size at which the Sharpe ratio halves 1–16 times with little loss at small size; a liquidity screen raises capacity in the EU and World but removes most of the UK result.
 
 ![Capacity](../figures/fs16_capacity.png)
 
@@ -21,12 +29,12 @@
 
 | Market | $1m | $10m | $100m | $1bn | $10bn | Sharpe halves at | Net return reaches zero at |
 |---|---|---|---|---|---|---|---|
-| US | +0.28 | +0.26 | +0.20 | +0.01 | -0.57 | $208m | $1.0bn |
-| EU | +0.63 | +0.37 | -0.42 | -1.93 | -2.89 | $12m | $29m |
-| UK | +0.88 | +0.48 | -0.64 | -2.05 | -2.55 | $11m | $27m |
-| DK | +0.18 | +0.04 | -0.39 | -1.63 | -3.97 | $5m | $13m |
-| SCANDI | -0.02 | -0.16 | -0.57 | -1.84 | -4.74 | — | — |
-| World | +0.50 | +0.41 | +0.11 | -0.80 | -2.66 | $34m | $133m |
+| US | +0.26 | +0.24 | +0.18 | +0.01 | -0.53 | $207m | $1.0bn |
+| EU | +0.69 | +0.38 | -0.54 | -2.03 | -2.72 | $11m | $26m |
+| UK | +0.45 | -0.44 | -1.23 | -1.46 | -1.51 | $2m | $3m |
+| DK | +0.23 | +0.09 | -0.35 | -1.66 | -4.13 | $7m | $16m |
+| SCANDI | +0.17 | +0.03 | -0.40 | -1.74 | -4.68 | $4m | $12m |
+| World | +0.43 | +0.27 | -0.25 | -1.54 | -2.56 | $13m | $33m |
 
 
 *Sharpe ratio, net of spread, impact (Y = 0.7), borrow fees and financing, 2013–2026. Capital per book; the combined shortlist puts half in each leg.*
@@ -35,42 +43,42 @@
 
 | Book | Market | Flat 10 bp | $1m | $100m | $1bn | $100m, Y = 1.0 | Spread cost / yr | All-in cost / yr at $100m | Monthly turnover | Net return reaches zero at |
 |---|---|---|---|---|---|---|---|---|---|---|
-| low beta (beta-neutral) | US | +0.13 | +0.15 | +0.11 | +0.01 | +0.09 | 0.3% | 1.9% | 0.42 | $1.1bn |
-|  | EU | +0.56 | +0.47 | -0.30 | -1.36 | -0.60 | 0.9% | 27.5% | 0.45 | $30m |
-|  | UK | +0.98 | +0.84 | -0.39 | -1.49 | -0.79 | 1.4% | 40.1% | 0.50 | $38m |
-|  | DK | +0.08 | +0.06 | -0.22 | -0.85 | -0.35 | 0.3% | 5.7% | 0.20 | $7m |
-|  | SCANDI | +0.09 | +0.08 | -0.18 | -0.77 | -0.30 | 0.4% | 5.2% | 0.27 | $12m |
-|  | World | +0.31 | +0.30 | +0.02 | -0.62 | -0.11 | 0.7% | 9.9% | 0.48 | $107m |
-| 12-1 momentum (beta-neutral) | US | +0.29 | +0.33 | +0.23 | -0.00 | +0.19 | 0.5% | 2.3% | 0.57 | $975m |
-|  | EU | +0.55 | +0.48 | -0.36 | -1.90 | -0.73 | 1.0% | 16.3% | 0.57 | $27m |
-|  | UK | +0.70 | +0.54 | -0.74 | -2.23 | -1.20 | 1.3% | 28.8% | 0.55 | $16m |
-|  | DK | +0.26 | +0.22 | -0.37 | -1.68 | -0.64 | 0.7% | 11.7% | 0.43 | $15m |
-|  | SCANDI | -0.10 | -0.14 | -0.75 | -2.14 | -1.04 | 0.8% | 10.2% | 0.54 | — |
-|  | World | +0.55 | +0.55 | +0.22 | -0.56 | +0.06 | 0.8% | 6.3% | 0.56 | $189m |
-| 12-1 momentum (L/S) | US | +0.32 | +0.36 | +0.27 | +0.05 | +0.22 | 0.5% | 2.5% | 0.58 | $1.2bn |
-|  | EU | +0.34 | +0.28 | -0.42 | -1.72 | -0.73 | 0.9% | 17.0% | 0.53 | $16m |
-|  | UK | +0.43 | +0.30 | -0.74 | -2.17 | -1.14 | 1.3% | 29.1% | 0.53 | $11m |
-|  | DK | +0.31 | +0.27 | -0.26 | -1.43 | -0.50 | 0.6% | 11.3% | 0.38 | $22m |
-|  | SCANDI | -0.19 | -0.22 | -0.75 | -1.98 | -1.00 | 0.7% | 9.8% | 0.48 | — |
-|  | World | +0.41 | +0.41 | +0.11 | -0.58 | -0.03 | 0.8% | 6.9% | 0.56 | $145m |
-| low volatility (L/S) | US | -0.60 | -0.59 | -0.61 | -0.67 | -0.63 | 0.2% | 0.9% | 0.22 | — |
-|  | EU | -0.08 | -0.09 | -0.28 | -0.71 | -0.37 | 0.3% | 4.6% | 0.20 | — |
-|  | UK | -0.30 | -0.35 | -0.74 | -1.26 | -0.89 | 0.5% | 10.9% | 0.18 | — |
-|  | DK | -0.08 | -0.10 | -0.32 | -0.82 | -0.42 | 0.3% | 5.0% | 0.16 | — |
-|  | SCANDI | -0.26 | -0.27 | -0.45 | -0.86 | -0.53 | 0.3% | 3.5% | 0.18 | — |
-|  | World | -0.48 | -0.48 | -0.58 | -0.81 | -0.63 | 0.3% | 2.5% | 0.20 | — |
-| short-term reversal (L/S) | US | -0.36 | -0.24 | -0.57 | -1.35 | -0.72 | 1.4% | 7.9% | 1.74 | — |
-|  | EU | -0.61 | -0.83 | -3.18 | -5.74 | -3.98 | 2.8% | 53.0% | 1.72 | — |
-|  | UK | -0.17 | -0.67 | -4.46 | -6.51 | -5.39 | 4.1% | 91.4% | 1.71 | — |
-|  | DK | -0.38 | -0.58 | -2.98 | -6.98 | -4.00 | 2.1% | 46.0% | 1.34 | — |
-|  | SCANDI | +0.01 | -0.14 | -2.38 | -6.72 | -3.37 | 2.4% | 36.6% | 1.58 | — |
-|  | World | -0.49 | -0.51 | -1.64 | -4.20 | -2.18 | 2.4% | 21.9% | 1.73 | — |
-| low MAX (L/S) | US | -0.81 | -0.71 | -0.95 | -1.52 | -1.06 | 1.2% | 6.1% | 1.51 | — |
-|  | EU | -0.09 | -0.27 | -2.42 | -5.47 | -3.28 | 2.5% | 40.1% | 1.51 | — |
-|  | UK | -0.20 | -0.70 | -3.12 | -3.96 | -3.50 | 3.7% | 81.2% | 1.40 | — |
-|  | DK | -0.26 | -0.41 | -2.12 | -5.41 | -2.87 | 1.7% | 35.0% | 1.09 | — |
-|  | SCANDI | -0.17 | -0.28 | -2.04 | -5.76 | -2.84 | 2.1% | 28.8% | 1.38 | — |
-|  | World | -0.69 | -0.70 | -1.66 | -3.68 | -2.10 | 2.2% | 18.1% | 1.50 | — |
+| low beta (beta-neutral) | US | +0.19 | +0.21 | +0.17 | +0.08 | +0.15 | 0.3% | 1.8% | 0.41 | $1.8bn |
+|  | EU | +0.56 | +0.47 | -0.35 | -1.40 | -0.66 | 0.9% | 29.2% | 0.45 | $27m |
+|  | UK | +0.80 | +0.34 | -0.94 | -1.09 | -1.01 | 1.5% | 119.1% | 0.51 | $3m |
+|  | DK | +0.08 | +0.06 | -0.22 | -0.87 | -0.36 | 0.3% | 5.6% | 0.20 | $7m |
+|  | SCANDI | +0.29 | +0.28 | +0.01 | -0.64 | -0.12 | 0.4% | 5.7% | 0.28 | $103m |
+|  | World | +0.30 | +0.26 | -0.22 | -1.13 | -0.44 | 0.8% | 16.7% | 0.48 | $25m |
+| 12-1 momentum (beta-neutral) | US | +0.15 | +0.19 | +0.10 | -0.14 | +0.05 | 0.5% | 2.3% | 0.57 | $262m |
+|  | EU | +0.72 | +0.61 | -0.48 | -1.46 | -0.83 | 1.0% | 21.5% | 0.56 | $26m |
+|  | UK | +0.73 | +0.41 | -1.43 | -2.16 | -1.75 | 1.3% | 53.6% | 0.55 | $4m |
+|  | DK | +0.33 | +0.28 | -0.30 | -1.63 | -0.58 | 0.7% | 11.1% | 0.41 | $21m |
+|  | SCANDI | -0.03 | -0.07 | -0.70 | -2.15 | -1.00 | 0.8% | 10.5% | 0.54 | — |
+|  | World | +0.53 | +0.50 | -0.14 | -1.35 | -0.43 | 0.8% | 11.2% | 0.55 | $51m |
+| 12-1 momentum (L/S) | US | +0.08 | +0.11 | +0.02 | -0.17 | -0.02 | 0.5% | 2.5% | 0.55 | $132m |
+|  | EU | +0.49 | +0.40 | -0.54 | -1.48 | -0.86 | 0.9% | 23.0% | 0.53 | $17m |
+|  | UK | +0.41 | +0.16 | -1.32 | -1.98 | -1.60 | 1.3% | 56.4% | 0.53 | $2m |
+|  | DK | +0.34 | +0.30 | -0.23 | -1.41 | -0.47 | 0.6% | 10.8% | 0.36 | $27m |
+|  | SCANDI | -0.14 | -0.18 | -0.73 | -2.01 | -0.99 | 0.8% | 10.1% | 0.49 | — |
+|  | World | +0.31 | +0.28 | -0.24 | -1.27 | -0.48 | 0.8% | 12.2% | 0.54 | $24m |
+| low volatility (L/S) | US | -0.34 | -0.33 | -0.35 | -0.41 | -0.36 | 0.2% | 0.9% | 0.19 | — |
+|  | EU | +0.08 | +0.06 | -0.17 | -0.69 | -0.28 | 0.3% | 5.6% | 0.20 | $11m |
+|  | UK | -0.28 | -0.34 | -0.76 | -1.18 | -0.90 | 0.5% | 13.3% | 0.17 | — |
+|  | DK | -0.06 | -0.08 | -0.31 | -0.85 | -0.42 | 0.3% | 5.0% | 0.17 | — |
+|  | SCANDI | -0.19 | -0.20 | -0.37 | -0.79 | -0.46 | 0.3% | 3.7% | 0.18 | — |
+|  | World | -0.27 | -0.28 | -0.40 | -0.68 | -0.46 | 0.3% | 3.2% | 0.19 | — |
+| short-term reversal (L/S) | US | -0.31 | -0.21 | -0.56 | -1.42 | -0.73 | 1.4% | 8.8% | 1.74 | — |
+|  | EU | -0.79 | -1.12 | -3.64 | -4.81 | -4.16 | 3.0% | 67.3% | 1.72 | — |
+|  | UK | -0.32 | -1.32 | -2.58 | -2.59 | -2.59 | 4.1% | 209.3% | 1.70 | — |
+|  | DK | -0.42 | -0.63 | -3.09 | -7.37 | -4.15 | 2.1% | 44.7% | 1.34 | — |
+|  | SCANDI | +0.05 | -0.11 | -2.44 | -6.92 | -3.49 | 2.5% | 37.8% | 1.60 | — |
+|  | World | -0.50 | -0.66 | -2.56 | -3.85 | -3.08 | 2.6% | 43.8% | 1.72 | — |
+| low MAX (L/S) | US | -0.58 | -0.47 | -0.73 | -1.36 | -0.86 | 1.2% | 6.4% | 1.50 | — |
+|  | EU | +0.13 | -0.12 | -2.26 | -3.63 | -2.80 | 2.6% | 50.0% | 1.48 | — |
+|  | UK | -0.29 | -1.27 | -2.65 | -2.68 | -2.67 | 3.7% | 166.5% | 1.38 | — |
+|  | DK | -0.23 | -0.38 | -2.16 | -5.51 | -2.93 | 1.7% | 34.9% | 1.11 | — |
+|  | SCANDI | -0.16 | -0.28 | -2.09 | -5.98 | -2.93 | 2.1% | 29.1% | 1.39 | — |
+|  | World | -0.44 | -0.58 | -2.21 | -3.59 | -2.70 | 2.3% | 35.1% | 1.48 | — |
 
 
 **Reading it.**
@@ -118,7 +126,7 @@
 ## 6. Caveats
 
 - One cost model with textbook parameters; real costs depend on execution skill, venue and timing. Y = 1.0 is shown as the harsher case.
-- US volume data are missing for about a third of the stocks ever in the top 500 (mostly delisted names); their ADV comes from market cap, a proxy.
+- US volume data are missing for about a third of the stocks ever in the US universe (mostly delisted names); their ADV comes from market cap, a proxy.
 - Trades are costed as if done in one day; spreading large trades over several days lowers impact but adds tracking error.
 - The exploratory sections were decided after seeing the pre-registered results and are not tests.
 

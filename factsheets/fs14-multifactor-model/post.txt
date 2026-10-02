@@ -7,13 +7,13 @@ FS14 is the last step of the factsheet series: take 25 market-neutral factor boo
 
 The bar, set in advance: beat owning all 25 books equally with t > 2, and in both 2016–19 and 2020–26.
 
-Result: +2.2% a year better (t 1.4), positive in both periods, in 4 of 5 markets. Not enough. The claim fails its own test.
+Result: +1.3% a year better (t 1.0), positive in both periods, in 4 of 5 markets. Not enough. The claim fails its own test.
 
 Two more honest findings:
 → A fixed shortlist of low beta and momentum (plus profit growth and debt issuance in the US) did better, but I picked it after seeing the data.
 → None of these market-neutral books came close to simply owning the market over the same years.
 
-After 409 tests across 14 factsheets, that is the lesson: discipline protects you from fooling yourself more than it finds alpha.
+After 682 tests across 14 factsheets, that is the lesson: discipline protects you from fooling yourself more than it finds alpha.
 
 Full factsheet, pre-registration and trial ledger: https://hgjerning.github.io/now-showing/factsheets/fs14-multifactor-model
 

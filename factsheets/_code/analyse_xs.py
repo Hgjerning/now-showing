@@ -16,7 +16,7 @@ import perf
 import specs
 import xs
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 U = data.REGIONS
 DES, HOL = ("2013-01-01", "2019-12-31"), ("2020-01-01", "2026-08-31")
 END_M = "2026-08-31"

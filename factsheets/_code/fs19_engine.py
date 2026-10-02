@@ -14,7 +14,7 @@ import signals as SG
 import signals2 as SG2
 import xs
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 SIGS = ["max1", "min1", "max5", "min5", "range", "asym", "skew", "ivol", "vol", "beta", "r1", "mom", "hi52", "lo52", "brk55", "vol252", "seas", "size", "resmom"]
 _load = data.load
 

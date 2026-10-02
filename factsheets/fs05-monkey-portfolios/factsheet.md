@@ -4,6 +4,14 @@
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · data to 31 August 2026*
 
+> **What changed on 2 October 2026.** Two corrections, both to the universe of stocks, and every number below is re-run on them.
+> (1) **US:** the universe is now the actual S&P 500 members at each month-end. Until now it was the 500 largest of every
+> company that was *ever* in the index 2012–2026, which includes later winners before they joined.
+> (2) **UK and EU:** the price panels now include the index members that stopped trading (UK coverage of members 71% → 92%,
+> EU 81% → 89%); before, most of them had no prices. SCANDI stays as registered (OMXC25 + OMXS30 + OMXH25).
+> Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
+> Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Random stock picks, equal weight, rebalanced yearly</div>
 <div><b>Origin</b>Malkiel (1973), <i>A Random Walk Down Wall Street</i></div>
@@ -15,18 +23,18 @@
 <div><b>Status</b>Descriptive factsheet, not a registered trial</div>
 </div>
 
-> **The claim.** Burton Malkiel (1973): a blindfolded monkey throwing darts at the stock pages could pick a portfolio that does as well as the experts. Arnott, Hsu, Kalesnik & Tindall (2013) found that random, and even 'upside-down', portfolios beat the cap-weighted US index over 1964–2012. **What we find:** the share of 10,000 monkeys that beat the index ranged from 16% to 86% across the six markets: US 16%, EU 71%, UK 85%, DK 85%, SCANDI 86%, World 72%. Measured by Sharpe ratio, the same or fewer monkeys win (US 3%, EU 64%, UK 64%, DK 85%, SCANDI 77%, World 57% beat the index's Sharpe). **What decides it (§10):** whether small beats big that year. The yearly share of winning monkeys moves with the gap between the equal-weight universe and the index (correlation 0.56 to 0.94). The average monkey *is* the equal-weight universe; the typical (median) monkey lags it by the cost of holding only 30 names. **Classification (§11):** a benchmark lesson, not a strategy: a random portfolio is an equal-weight portfolio, and equal weight is a size tilt.
+> **The claim.** Burton Malkiel (1973): a blindfolded monkey throwing darts at the stock pages could pick a portfolio that does as well as the experts. Arnott, Hsu, Kalesnik & Tindall (2013) found that random, and even 'upside-down', portfolios beat the cap-weighted US index over 1964–2012. **What we find:** the share of 10,000 monkeys that beat the index ranged from 3% to 83% across the six markets: US 3%, EU 57%, UK 76%, DK 83%, SCANDI 77%, World 48%. Measured by Sharpe ratio, the same or fewer monkeys win (US 0%, EU 44%, UK 59%, DK 86%, SCANDI 58%, World 30% beat the index's Sharpe). **What decides it (§10):** whether small beats big that year. The yearly share of winning monkeys moves with the gap between the equal-weight universe and the index (correlation 0.65 to 0.94). The average monkey *is* the equal-weight universe; the typical (median) monkey lags it by the cost of holding only 30 names. **Classification (§11):** a benchmark lesson, not a strategy: a random portfolio is an equal-weight portfolio, and equal weight is a size tilt.
 
 ## 1. Headline performance
 
 | Universe | Stocks per monkey | Median monkey CAGR | 5th–95th percentile | Average monkey CAGR | Index CAGR | EW universe CAGR | Monkeys beating the index (return) | Beating on Sharpe | Median Sharpe monkey / index | Max DD median monkey / index |
 |---|---|---|---|---|---|---|---|---|---|---|
-| US | 30 | +13.7% | +11.2% to +16.5% | +13.8% | +15.3% | +14.7% | 16% | 3% | 0.90 / 1.07 | -25% / -24% |
-| EU | 30 | +10.9% | +8.6% to +13.5% | +11.0% | +10.1% | +11.6% | 71% | 64% | 0.78 / 0.75 | -27% / -26% |
-| UK | 30 | +10.1% | +7.7% to +12.6% | +10.2% | +8.5% | +10.4% | 85% | 64% | 0.74 / 0.71 | -30% / -27% |
-| DK | 10 | +12.4% | +9.0% to +15.8% | +12.6% | +10.3% | +12.9% | 85% | 85% | 0.79 / 0.68 | -33% / -40% |
-| SCANDI | 20 | +12.3% | +9.9% to +14.6% | +12.4% | +10.7% | +13.3% | 86% | 77% | 0.87 / 0.80 | -29% / -27% |
-| World | 30 | +11.7% | +9.2% to +14.5% | +11.9% | +10.8% | +13.9% | 72% | 57% | 0.78 / 0.76 | -30% / -28% |
+| US | 30 | +12.1% | +9.8% to +14.4% | +12.2% | +14.9% | +13.0% | 3% | 0% | 0.81 / 1.05 | -27% / -24% |
+| EU | 30 | +10.4% | +8.0% to +13.0% | +10.6% | +10.2% | +11.0% | 57% | 44% | 0.76 / 0.77 | -27% / -25% |
+| UK | 30 | +8.9% | +6.3% to +11.8% | +9.1% | +7.8% | +9.4% | 76% | 59% | 0.67 / 0.65 | -31% / -28% |
+| DK | 10 | +12.2% | +8.8% to +15.7% | +12.4% | +10.2% | +12.6% | 83% | 86% | 0.81 / 0.68 | -32% / -40% |
+| SCANDI | 20 | +12.0% | +9.7% to +14.6% | +12.2% | +11.0% | +13.0% | 77% | 58% | 0.86 / 0.84 | -27% / -26% |
+| World | 30 | +10.2% | +7.7% to +13.0% | +10.4% | +10.3% | +12.3% | 48% | 30% | 0.69 / 0.74 | -31% / -28% |
 
 *Index = size-weighted universe: market-cap weights in the US (Sharadar), traded-value weights elsewhere (a proxy; no shares outstanding outside the US). 10 bp in and out each January.*
 
@@ -47,7 +55,7 @@ Malkiel's line in *A Random Walk Down Wall Street* (1973) became a test. The Wal
 
 | Universe | Prices | Membership | Names eligible (median) | Currency |
 |---|---|---|---|---|
-| US | Sharadar SEP `closeadj` (total return), 805 tickers incl. delisted | **Point-in-time**: top 500 by market cap each month-end (Sharadar filings × price, A06 method) | ~499 | USD |
+| US | Sharadar SEP `closeadj` (total return), 805 tickers incl. delisted | **Point-in-time**: the S&P 500 members at each month-end (Sharadar add/remove history; corrected 2 Oct 2026) | ~503 | USD |
 | EU | Project1 yfinance cache, Adj Close (TR) | **Point-in-time**: union of 11 national blue-chip indices (CAC 40, DAX, AEX, IBEX 35, FTSE MIB, OMXS30, OMXC25, OMXH25, BEL 20, PSI-20, WIG20), quarterly Wikipedia snapshots 2012–2026; 83% of member-quarters priced | ~238 | local (EUR, SEK, DKK, PLN) |
 | UK | Project1 cache, Close + pence dividends (Yahoo under-adjusts LSE ~100×) | **Point-in-time**: FTSE 100 + FTSE 250, quarterly snapshots; 75% priced | ~242 | GBP |
 | DK | Project1 cache, Adj Close | **Point-in-time**: OMX Copenhagen 25, quarterly snapshots; 91% priced | ~19 | DKK |
@@ -72,26 +80,26 @@ Equal weight at formation, buy and hold for the calendar year; a name that stops
 
 | Year | US | EU | UK | DK | SCANDI | World |
 |---|---|---|---|---|---|---|
-| 2013 | 59% (+2%) | 75% (+4%) | 99% (+12%) | 63% (+11%) | 79% (+6%) | 88% (+10%) |
-| 2014 | 62% (+2%) | 19% (-2%) | 96% (+8%) | 7% (-2%) | 35% (+3%) | 92% (+8%) |
-| 2015 | 32% (-2%) | 65% (+2%) | 100% (+16%) | 8% (-14%) | 55% (+0%) | 80% (+5%) |
-| 2016 | 63% (+2%) | 52% (-5%) | 45% (-4%) | 97% (+9%) | 83% (-3%) | 59% (+1%) |
-| 2017 | 30% (-1%) | 60% (+1%) | 96% (+10%) | 71% (+3%) | 77% (+3%) | 55% (+3%) |
-| 2018 | 26% (-2%) | 65% (+2%) | 58% (+2%) | 83% (+4%) | 81% (+4%) | 64% (+2%) |
-| 2019 | 37% (+1%) | 24% (-2%) | 83% (+6%) | 12% (-6%) | 71% (+4%) | 58% (+4%) |
-| 2020 | 17% (-1%) | 15% (-1%) | 85% (+10%) | 55% (+2%) | 64% (+4%) | 40% (+6%) |
-| 2021 | 51% (+2%) | 45% (+2%) | 36% (-1%) | 63% (+2%) | 32% (+1%) | 63% (+7%) |
-| 2022 | 92% (+7%) | 74% (+5%) | 0% (-17%) | 4% (-9%) | 22% (-1%) | 48% (+1%) |
-| 2023 | 11% (-10%) | 42% (+0%) | 60% (+0%) | 11% (-7%) | 7% (-3%) | 31% (-1%) |
-| 2024 | 12% (-9%) | 68% (+2%) | 12% (-4%) | 96% (+7%) | 67% (-0%) | 37% (-1%) |
-| 2025 | 20% (-4%) | 91% (+10%) | 12% (-11%) | 100% (+25%) | 97% (+13%) | 28% (-4%) |
-| 2026 | 57% (+3%) | 30% (+1%) | 33% (-0%) | 70% (+5%) | 31% (+3%) | 43% (+2%) |
+| 2013 | 71% (+2%) | 86% (+5%) | 97% (+10%) | 51% (+7%) | 92% (+8%) | 91% (+10%) |
+| 2014 | 50% (+1%) | 11% (-6%) | 95% (+7%) | 14% (-2%) | 19% (+0%) | 81% (+6%) |
+| 2015 | 22% (-4%) | 44% (-0%) | 100% (+14%) | 11% (-13%) | 51% (-0%) | 67% (+2%) |
+| 2016 | 65% (+4%) | 48% (-3%) | 43% (-4%) | 96% (+9%) | 90% (-1%) | 54% (+1%) |
+| 2017 | 23% (-4%) | 63% (+1%) | 92% (+10%) | 77% (+4%) | 78% (+3%) | 57% (+3%) |
+| 2018 | 24% (-3%) | 47% (-0%) | 50% (+2%) | 84% (+4%) | 61% (+1%) | 51% (+1%) |
+| 2019 | 26% (-1%) | 18% (-4%) | 73% (+5%) | 13% (-7%) | 50% (+1%) | 47% (+2%) |
+| 2020 | 3% (-5%) | 18% (-2%) | 78% (+9%) | 48% (-2%) | 50% (+2%) | 23% (+2%) |
+| 2021 | 50% (+2%) | 41% (+1%) | 39% (-0%) | 54% (-0%) | 24% (-0%) | 59% (+6%) |
+| 2022 | 94% (+7%) | 71% (+5%) | 0% (-16%) | 6% (-8%) | 23% (-2%) | 46% (+0%) |
+| 2023 | 2% (-13%) | 42% (+1%) | 54% (-0%) | 19% (-4%) | 9% (-2%) | 20% (-3%) |
+| 2024 | 1% (-12%) | 68% (+3%) | 19% (-3%) | 95% (+7%) | 70% (-0%) | 27% (-2%) |
+| 2025 | 15% (-6%) | 92% (+10%) | 13% (-10%) | 100% (+26%) | 97% (+14%) | 27% (-5%) |
+| 2026 | 55% (+3%) | 29% (+1%) | 30% (-0%) | 69% (+5%) | 26% (+2%) | 39% (+1%) |
 
 ![Years](../figures/fs05_years.png)
 
 ## 7. Trading record
 
-Each monkey trades once a year. The average of all monkeys equals the equal-weight universe held from January (differences come from mid-year index changes and costs). The median monkey lags the average (US -0.2%, EU -0.1%, UK -0.1%, DK -0.2%, SCANDI -0.1%, World -0.2% a year) because a concentrated portfolio compounds below its average return: the more volatile the stocks, the larger the gap.
+Each monkey trades once a year. The average of all monkeys equals the equal-weight universe held from January (differences come from mid-year index changes and costs). The median monkey lags the average (US -0.1%, EU -0.2%, UK -0.2%, DK -0.2%, SCANDI -0.1%, World -0.2% a year) because a concentrated portfolio compounds below its average return: the more volatile the stocks, the larger the gap.
 
 ## 8. Risk and attribution
 
@@ -99,19 +107,19 @@ Median monkey minus index, regressed on the equal-weight universe minus index (m
 
 | Universe | Slope on EW − index | Alpha / yr | t | Correlation of EW − index with the small-minus-big size sort |
 |---|---|---|---|---|
-| US | 0.94 | -1.2% | -3.49 | +0.69 |
-| EU | 0.80 | -0.7% | -1.24 | +0.71 |
-| UK | 0.92 | -0.4% | -0.96 | +0.80 |
-| DK | 1.00 | +0.1% | 0.19 | +0.61 |
-| SCANDI | 0.70 | -0.4% | -0.43 | +0.57 |
-| World | 0.74 | -1.5% | -3.56 | +0.52 |
+| US | 0.93 | -1.0% | -3.01 | +0.79 |
+| EU | 0.82 | -0.7% | -1.59 | +0.66 |
+| UK | 0.88 | -0.6% | -1.45 | +0.80 |
+| DK | 0.99 | -0.5% | -0.88 | +0.58 |
+| SCANDI | 0.77 | -0.6% | -0.71 | +0.58 |
+| World | 0.71 | -1.6% | -3.73 | +0.68 |
 
 The slope near 1 says the monkey is the equal-weight universe; what is left (the alpha) is mostly the concentration drag from holding few names.
 
 ## 9. Statistical verdict
 
 - No hypothesis test is needed for the headline: the monkeys' expected return equals the equal-weight universe by construction. The question is only how equal weight compares with size weight in each market, and that is the size effect (FS07).
-- The share beating the index is above 50% in 5 of 6 markets, which are the markets where the equal-weight universe beat the index over the period.
+- The share beating the index is above 50% in 4 of 6 markets, which are the markets where the equal-weight universe beat the index over the period.
 
 ## 10. What goes wrong, and how to fix it
 
@@ -131,7 +139,7 @@ Nothing goes wrong: the monkey does exactly what equal weighting does. It wins w
 
 ## 12. 360° view
 
-The monkey's neighbourhood is the equal-weight universe (identical in expectation) and the size sort: the equal-weight-minus-index spread correlates US +0.69, EU +0.71, UK +0.80, DK +0.61, SCANDI +0.57, World +0.52 with the small-minus-big size sort of the signal library. Everything the monkey "knows" is size.
+The monkey's neighbourhood is the equal-weight universe (identical in expectation) and the size sort: the equal-weight-minus-index spread correlates US +0.79, EU +0.66, UK +0.80, DK +0.58, SCANDI +0.58, World +0.68 with the small-minus-big size sort of the signal library. Everything the monkey "knows" is size.
 
 ## 13. Caveats
 

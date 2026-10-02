@@ -4,10 +4,10 @@ I re-costed the strategies from my factsheet series with a spread that depends o
 
 For the pair that held up best (low beta plus momentum, market-neutral), the net return reaches zero at about:
 → US: $1.0bn
-→ World: $133m
-→ EU: $29m
-→ UK: $27m
-→ Denmark: $13m
+→ World: $33m
+→ EU: $26m
+→ UK: $3m
+→ Denmark: $16m
 → Scandinavia: no positive result even at $1m
 
 The best-looking markets at small size, the UK and EU, fill up first: their low-beta legs sit in thinly traded stocks. Fast signals like short-term reversal are negative already at $10m.

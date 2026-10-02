@@ -11,7 +11,7 @@ import build_factsheets as BF
 import library
 import perf
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = BF.UN; UNL = BF.UNL; table = BF.table
 SURF, INK, INK2, BLUE, ORANGE, GREY = "#fcfcfb", "#0b0b0b", "#52514e", "#2a78d6", "#eb6834", "#8a8984"
 p = lambda x, d=1: f"{x * 100:+.{d}f}%"; pu = lambda x, d=0: f"{x * 100:.{d}f}%"

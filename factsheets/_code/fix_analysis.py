@@ -9,7 +9,7 @@ import pandas as pd
 import data
 import perf
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FAC = os.path.join(HERE, "..", "factors")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FAC = os.path.join(HERE, "..", "factors")
 U = data.REGIONS
 DES, HOL = ("2013-01-01", "2019-12-31"), ("2020-01-01", "2026-08-31")
 N_TRIALS = 7            # 4 Turtle steps + 3 lottery steps, judged pooled across universes

@@ -7,7 +7,7 @@ import os
 import numpy as np
 import pandas as pd
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 LABEL = {"max1": "MAX (best day)", "max5": "MAX5 (5 best days)", "min1": "MIN (worst day)", "min5": "MIN5 (5 worst days)", "range": "Range (MAX − MIN)",
          "asym": "Net tail (MAX + MIN)", "skew": "Skewness", "ivol": "Idiosyncratic volatility", "vol": "Volatility (63 days)", "beta": "Beta (252 days)",

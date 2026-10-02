@@ -14,7 +14,7 @@ import perf
 import xs
 from battery import stats
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FAC = os.path.join(HERE, "..", "factors")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FAC = os.path.join(HERE, "..", "factors")
 SIGS = list(FU.FUND) + [FU.COMP[t] for t in FU.THEMES]
 LH = {**{k: v[1] for k, v in FU.FUND.items()}, **{FU.COMP[t]: True for t in FU.THEMES}}
 LAB = {**{k: v[2] for k, v in FU.FUND.items()}, **{FU.COMP[t]: t + " (composite)" for t in FU.THEMES}}

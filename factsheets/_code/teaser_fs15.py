@@ -2,7 +2,7 @@
 import json, os
 import build_teasers_xs as BT
 from battery import DIRECTION
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 A = json.load(open(os.path.join(RES, "art_battery.json")))["pooled"]; CG = json.load(open(os.path.join(RES, "common_ground.json")))["price"]
 MF = json.load(open(os.path.join(RES, "art_fs14.json"))); F = json.load(open(os.path.join(RES, "art_fmb.json")))["pooled"]
 L = json.load(open(os.path.join(RES, "trial_ledger.json")))

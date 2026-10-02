@@ -1,3 +1,4 @@
+import os
 import data, turtle, numpy as np, pandas as pd, json
 out={}
 for R in ["US","EU","WD","DK"]:
@@ -9,4 +10,4 @@ for R in ["US","EU","WD","DK"]:
         res["net" if c else "gross"]=float(x.mean()*252)
     out[R]=res; print(R,res)
 turtle.COST, turtle.BORROW = 0.001,0.005
-json.dump(out,open("../results/turtle_cost_check.json","w"))
+json.dump(out,open(os.path.join(os.environ.get("FS_RESULTS") or "../results","turtle_cost_check.json"),"w"))

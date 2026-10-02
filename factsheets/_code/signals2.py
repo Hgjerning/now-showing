@@ -17,12 +17,12 @@ import pandas as pd
 import data
 import signals as SG
 
-D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
-CACHE = os.path.join(D, "cache")
+D = data.D            # 2026-10-01: follows data.py (data folder and US universe rule)
+CACHE = data.CACHE
 
 
 def _tv(R):
-    return pd.read_parquet(os.path.join(D, "pit", f"{R}_pit_tradedvalue.parquet")).sort_index()
+    return pd.read_parquet(os.path.join(data.PITD, f"{R}_pit_tradedvalue.parquet")).sort_index()
 
 
 def _size_raw(R, idx_m):

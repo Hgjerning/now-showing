@@ -2,10 +2,10 @@ Stocks with the worst returns last month outperform those with the best returns 
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (last month's losers minus last month's winners): -9.7% to +0.1% a year, positive in 1 of six markets. Adjusted for market beta: -13.1% to -1.0%.
+Long/short (last month's losers minus last month's winners): -12.4% to +0.7% a year, positive in 1 of six markets. Adjusted for market beta: -15.7% to -0.7%.
 Long-only (last month's losers): a better Sharpe than owning all the stocks equally in none of the six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.91 to -0.87.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.87 to -0.98.
 
 360° view: it keeps some information beyond its nearest neighbours.
 

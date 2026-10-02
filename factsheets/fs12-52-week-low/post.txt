@@ -2,10 +2,10 @@ Folklore says stocks at their yearly low are bargains: 'buy low'. The academic e
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (stocks closest to their 52-week low minus stocks furthest above it): -17.0% to -5.2% a year, positive in none of the six markets. Adjusted for market beta: -16.6% to -6.4%.
+Long/short (stocks closest to their 52-week low minus stocks furthest above it): -14.7% to -5.8% a year, positive in none of the six markets. Adjusted for market beta: -15.8% to -7.3%.
 Long-only (stocks closest to their 52-week low): a better Sharpe than owning all the stocks equally in none of the six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.96 to -0.78.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.78 to -0.57.
 
 360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
 

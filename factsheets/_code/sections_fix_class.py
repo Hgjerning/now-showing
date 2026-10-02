@@ -6,7 +6,7 @@ import os
 
 import numpy as np
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 JKPU = ["US", "UK", "DK", "WD"]

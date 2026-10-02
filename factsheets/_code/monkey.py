@@ -15,7 +15,7 @@ import data
 import perf
 import xs
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 U = data.REGIONS
 NM = 10000
 

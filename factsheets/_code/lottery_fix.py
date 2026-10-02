@@ -20,9 +20,9 @@ import pandas as pd
 
 import data
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 COST = 0.0010
-CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "cache")
+CACHE = data.CACHE   # 2026-10-01: follows data.py
 
 
 def monthly_inputs(R):

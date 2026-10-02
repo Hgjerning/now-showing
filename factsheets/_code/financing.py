@@ -11,7 +11,7 @@ import perf
 import xs
 from battery import DIRECTION, SIGS
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; SPREAD = 0.005
 
 

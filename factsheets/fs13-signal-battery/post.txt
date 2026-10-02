@@ -5,14 +5,14 @@ I put every signal in every corner.
 The question: what works everywhere, and not just in one market?
 
 → After correcting for 38 tests, no price signal earns a positive return that survives on its own. Thirteen years of large caps is too short to prove a single signal.
-→ The direction is more consistent than the significance. Momentum is positive in 5 of 6 of my markets and all 4 published segments (t 4.4 there, 1.4 in my large caps after borrow fees).
+→ The direction is more consistent than the significance. Momentum is positive in 6 of 6 of my markets and all 4 published segments (t 4.4 there, 1.5 in my large caps after borrow fees).
 → Low beta is positive in 6 of 6, once you remove the market bet and pay for the leverage it needs (2.2× borrowed in the US).
 → 19 signals are really two bets: a low-risk block of nine and a momentum block of four.
 → In the fundamentals, debt issuance (t 6.2) and profit growth (t 2.5) worked in every segment. Short-term reversal, seasonality, investment and accruals faded in the US.
 → Seasonality and skewness lose reliably in large caps (seasonality is the one signal that survives the correction, as a loser).
-→ Scandinavia marches to its own drum: its ranking of what works has a 0.07 correlation with the other markets.
+→ Scandinavia marches to its own drum: its ranking of what works has a 0.29 correlation with the other markets.
 
-Engine check: my US signals correlate 0.8 or more with the published factors for 8 of 12.
+Engine check: my US signals correlate 0.8 or more with the published factors for 7 of 12.
 
 Full factsheet with every number, the test design and what goes into the multifactor model next: https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery
 

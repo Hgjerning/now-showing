@@ -17,7 +17,7 @@ from battery import DIRECTION, SIGS
 from jkp_battery import bh, SEG
 from nbh_figs import DIV
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 SURF, INK, INK2, BLUE, ORANGE, GREY = "#fcfcfb", "#0b0b0b", "#52514e", "#2a78d6", "#eb6834", "#8a8984"
 LAB = {s: DIRECTION[s][2] for s in SIGS}

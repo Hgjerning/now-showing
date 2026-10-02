@@ -12,7 +12,7 @@ import build_factsheets as BF
 import specs
 from build_xs import LBL, CLUSTER, GATE, GATE_P, n6
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = BF.UN; table = BF.table
 p = lambda x, d=1: f"{x * 100:+.{d}f}%"; f2 = lambda x: f"{x:.2f}"
 SURF, INK, INK2 = "#fcfcfb", "#0b0b0b", "#52514e"

@@ -22,7 +22,7 @@ import data
 import perf
 import signals as SG
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 U = data.REGIONS
 START, END = pd.Period("2013-01"), pd.Period("2026-07")     # formation months -> holding Feb 2013 .. Aug 2026
 

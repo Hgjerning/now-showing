@@ -2,10 +2,10 @@ Stocks trading close to their 52-week high outperform those far below it, and th
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (stocks closest to their 52-week high minus stocks furthest below it): -5.9% to +5.8% a year, positive in 2 of six markets. Adjusted for market beta: +5.3% to +15.2%.
+Long/short (stocks closest to their 52-week high minus stocks furthest below it): -5.8% to +8.8% a year, positive in 2 of six markets. Adjusted for market beta: +6.3% to +18.6%.
 Long-only (stocks closest to their 52-week high): a better Sharpe than owning all the stocks equally in 5 of six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.02 to 0.59.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.04 to 0.52.
 
 360° view: it keeps some information beyond its nearest neighbours.
 

@@ -2,10 +2,10 @@ Stocks that did best over the past year keep outperforming the worst over the ne
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (winners minus losers): -2.8% to +9.7% a year, positive in 5 of six markets. Adjusted for market beta: +1.8% to +15.8%.
+Long/short (winners minus losers): -2.1% to +9.8% a year, positive in 5 of six markets. Adjusted for market beta: +2.1% to +16.7%.
 Long-only (winners): a better Sharpe than owning all the stocks equally in 5 of six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.29 to 0.55.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.18 to 0.56.
 
 360° view: it keeps some information beyond its nearest neighbours.
 

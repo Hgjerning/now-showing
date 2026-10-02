@@ -10,7 +10,7 @@ from battery import DIRECTION, SIGS
 from common_ground import U, UN, LAB, REPL, JMAP, THEMES
 from jkp_battery import SEG
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 table = BF.table
 p = lambda x, d=1: f"{x * 100:+.{d}f}%"; f2 = lambda x: f"{x:+.2f}"
 
@@ -144,7 +144,7 @@ Pooled over the four disjoint segments (US, UK, Denmark, World ex US), **{JS['bh
 
 {table(["Our signal", "JKP factor"] + [UN[R] + (" (proxy)" if R in ("EU", "SC") else "") for R in U], rp_rows)}
 
-In the US, where the universes are closest (our top 500 vs JKP's capped value-weighted full market), **{len(strong)} of {len(RP)} matched signals correlate 0.8 or more** with the published factor ({', '.join(LAB[k] for k in strong)}). This closes the replication gap raised in FS00: the engine produces the known factors. The weaker matches have known reasons: our seasonality averages up to 13 years of same-month returns while JKP's `seas_1_1an` uses only last year's; our size sort is within the 500 largest (JKP spans micro caps). EU and Scandinavia are compared with World ex US, so their lower numbers measure the proxy, not the engine.
+In the US, where the universes are closest (our S&P 500 members vs JKP's capped value-weighted full market), **{len(strong)} of {len(RP)} matched signals correlate 0.8 or more** with the published factor ({', '.join(LAB[k] for k in strong)}). This closes the replication gap raised in FS00: the engine produces the known factors. The weaker matches have known reasons: our seasonality averages up to 13 years of same-month returns while JKP's `seas_1_1an` uses only last year's; our size sort is within the 500 largest (JKP spans micro caps). EU and Scandinavia are compared with World ex US, so their lower numbers measure the proxy, not the engine.
 
 ## 7. Where is the common ground?
 

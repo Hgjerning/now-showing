@@ -11,7 +11,7 @@ import data
 import perf
 import xs
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); D = os.path.join(HERE, "..", "data")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); D = data.D   # 2026-10-01: follows data.py
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 AUMS = [1e6, 1e7, 1e8, 1e9, 1e10]
 Y0, Y1 = 0.7, 1.0
@@ -26,7 +26,7 @@ def adv_usd(R):
     if R == "WD":
         return pd.concat([adv_usd(k) for k in ("US", "UK", "EU")], axis=1).T.groupby(level=0).first().T
     if R == "US":
-        tv = pd.read_parquet(os.path.join(D, "pit", "US_tradedvalue.parquet")).sort_index()
+        tv = pd.read_parquet(os.path.join(data.PITD, "US_tradedvalue.parquet")).sort_index()
         a = tv.where(tv > 0).rolling(63, min_periods=40).mean(); a = a.groupby(a.index.to_period("M")).last()
         mc = data.load("US")["mcap"].copy(); mc.index = mc.index.to_period("M")
         a = a.reindex(index=mc.index, columns=mc.columns)
@@ -37,7 +37,7 @@ def adv_usd(R):
             med = ratio.loc[t].groupby(q.loc[t]).median()
             fill.loc[t] = mc.loc[t] * q.loc[t].map(med)
         return a.fillna(fill)
-    tv = pd.read_parquet(os.path.join(D, "pit", f"{R}_pit_tradedvalue.parquet")).sort_index()
+    tv = pd.read_parquet(os.path.join(data.PITD, f"{R}_pit_tradedvalue.parquet")).sort_index()
     tv.index = pd.to_datetime(tv.index).tz_localize(None) if getattr(tv.index, "tz", None) else pd.to_datetime(tv.index)
     usd = data.to_usd.__globals__["fx_usd_returns"]  # returns only; build levels below
     F = os.path.join(HERE, "..", "factors"); x = pd.read_csv(os.path.join(F, "fx_daily_datasets.csv"), parse_dates=["Date"])

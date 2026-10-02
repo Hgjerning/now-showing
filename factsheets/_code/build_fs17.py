@@ -5,7 +5,7 @@ import os
 
 import build_factsheets as BF
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 p = lambda x, d=1: f"{x * 100:+.{d}f}%"
 
 

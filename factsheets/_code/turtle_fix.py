@@ -4,7 +4,7 @@ T0 baseline L/S (S1+S2) | T1 long-only | T2 + System 2 only (fewer, longer trade
 | T4 + market trend filter (universe index 25-day EMA above its 350-day EMA; Faith 2007 style)."""
 import os, sys, pandas as pd
 import data, turtle
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 R = sys.argv[1]; o = data.load(R); r, e = o["ret"], o["elig"]
 base = pd.read_pickle(os.path.join(RES, f"turtle_{R}.pkl"))
 idx = (1 + r.where(e).mean(axis=1).fillna(0)).cumprod()

@@ -18,7 +18,7 @@ import turtle
 from InvestmentLibrary.reporting import generate_standard_report
 from InvestmentLibrary.risk import cvar_historic, var_historic
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 FAC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "factors")
 NAMES = {"US": "US (S&P 500 PIT)", "EU": "EU (STOXX 600 ex UK)", "UK": "UK (FTSE 350*)", "DK": "DK (C25)", "SC": "SCANDI (Nordic STOXX 600)", "WD": "WD (World)"}
 END_M = "2026-08-31"

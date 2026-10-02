@@ -10,7 +10,7 @@ import pandas as pd
 
 import perf
 
-HERE = os.path.dirname(os.path.abspath(__file__)); FAC = os.path.join(HERE, "..", "factors"); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); FAC = os.path.join(HERE, "..", "factors"); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 SEG = {"usa": "US", "gbr": "UK", "dnk": "Denmark", "world_ex_us": "World ex US", "world": "World"}
 W0, W1 = "2013-01-01", "2025-12-31"
 

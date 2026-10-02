@@ -2,12 +2,12 @@ Ranking stocks on the part of their past return that the market does not explain
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (stocks with the strongest stock-specific trend minus the weakest): +1.9% to +7.9% a year, positive in all six markets. Adjusted for market beta: +4.3% to +10.7%.
+Long/short (stocks with the strongest stock-specific trend minus the weakest): +2.2% to +6.9% a year, positive in all six markets. Adjusted for market beta: +4.7% to +9.8%.
 Long-only (stocks with the strongest stock-specific trend): a better Sharpe than owning all the stocks equally in all six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.52 to 0.57.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from 0.50 to 0.58.
 
-360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
+360° view: it keeps some information beyond its nearest neighbours.
 
 Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs11-residual-momentum
 

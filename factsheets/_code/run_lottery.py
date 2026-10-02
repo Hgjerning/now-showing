@@ -1,3 +1,4 @@
+import os
 import sys, pandas as pd, numpy as np, time
 import data, lottery
 R = sys.argv[1]; o = data.load(R); t0 = time.time()
@@ -9,7 +10,7 @@ if R == "US":
 for k in ("max1", "max5", "max1_vw"):
     if k in res: res[k] = res[k].loc[:"2026-08-31"]
 res["current"] = lottery.current_portfolio(o)
-pd.to_pickle(res, f"../results/lottery_{R}.pkl")
+pd.to_pickle(res, os.path.join(os.environ.get("FS_RESULTS") or "../results", f"lottery_{R}.pkl"))
 P = res["max1"]; q = P.q.iloc[-1]
 print(R, f"{time.time()-t0:.0f}s", P.index[0].date(), P.index[-1].date(), "n", int(P.n.median()), "q", q,
       "LS gross %.3f net %.3f" % (P.ls_gross.mean()*12, P.ls_net.mean()*12), "Q1 %.3f Qn %.3f EW %.3f" % (P.Q1.mean()*12, P[f"Q{q}"].mean()*12, P.EW.mean()*12),

@@ -161,3 +161,27 @@ def run(ret, elig, system=2, risk=0.001, gross_cap=1.0, allow_short=True, start=
                                 entry=[days[j] for j in ent_i[sh != 0]], weight=(sh * np.nan_to_num(p[-1]) / E)[sh != 0],
                                 open_pnl_pct=(pnl_acc / E_ent)[sh != 0]))
     return dict(ret=r, expo=expo, trades=tl, open=openpos.sort_values("weight", key=abs, ascending=False))
+
+
+def fully_invested(res, cost=COST):
+    """Long-only book scaled to 100% invested (Henrik, 2026-10-01: "scale to 1").
+
+    The rules above size each position by risk (RISK x equity / N) and leave the rest in cash at 0%, so a long-only book
+    is often well below 100% invested. Here every position is scaled by the same factor so that the long book is 100% of
+    equity at every close: scale = 1 / (long notional / equity). Positions keep their relative sizes; only the total
+    changes. Re-scaling each day is charged at `cost` on the notional it moves, |1 - exposure before / 100%|, where the
+    exposure before is yesterday's 100% book after one day of price drift and today's entries, add-ons and exits.
+    Days with no position at all stay in cash (0%): there is nothing to scale. Returns dict(ret, scale, cash_days).
+    """
+    r, e = res["ret"], res["expo"].reindex(res["ret"].index)
+    L = e["long"].fillna(0).to_numpy(); npos = e["npos"].fillna(0).to_numpy()
+    out = np.zeros(len(r)); scale = np.zeros(len(r))
+    k = 0.0          # factor applied to today's return = 1 / exposure at yesterday's close
+    for i in range(len(r)):
+        out[i] = r.iloc[i] * k
+        scale[i] = k
+        new_k = 1.0 / L[i] if L[i] > 1e-9 else 0.0
+        if k > 0 and new_k > 0:
+            out[i] -= cost * abs(1 - L[i] * k)   # re-size the whole book back to 100%
+        k = new_k
+    return dict(ret=pd.Series(out, index=r.index), scale=pd.Series(scale, index=r.index), cash_days=float((npos == 0).mean()))

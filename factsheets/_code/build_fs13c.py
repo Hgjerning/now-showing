@@ -9,7 +9,7 @@ import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 import build_factsheets as BF
 from nbh_figs import DIV
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 SURF, INK = "#fcfcfb", "#0b0b0b"
 p = lambda x, d=1: f"{x * 100:+.{d}f}%"

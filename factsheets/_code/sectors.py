@@ -6,7 +6,8 @@ import os
 
 import pandas as pd
 
-D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "sectors")
+import data as _data
+D = os.path.join(_data.D, "sectors")   # 2026-10-01: follows data.py
 _M = None
 
 

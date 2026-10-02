@@ -11,7 +11,7 @@ import build_factsheets as BF
 import perf
 from battery import DIRECTION, SIGS
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 SURF, INK, INK2, GRID, BLUE, ORANGE, GREY, GREEN = "#fcfcfb", "#0b0b0b", "#52514e", "#e6e5e0", "#2a78d6", "#eb6834", "#8a8984", "#2c7a4b"
 UA = ["US_A", "EU_A", "UK_A", "DK_A", "WD_A"]; M4 = UA[:4]; AN = {"US_A": "US", "EU_A": "EU", "UK_A": "UK", "DK_A": "DK", "WD_A": "World"}
 LAB = {s: DIRECTION[s][2] for s in SIGS}

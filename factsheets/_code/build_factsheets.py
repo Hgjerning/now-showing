@@ -22,7 +22,7 @@ CSS = open(os.path.join(HERE, "style.css")).read() + """
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 GATE = 2.87
-UNL = {"US": "US (top 500, point-in-time)", "EU": "EU (11 national blue-chip indices, point-in-time)", "UK": "UK (FTSE 350, point-in-time)", "DK": "DK (OMXC25, point-in-time)", "SC": "SCANDI (OMXC25 + OMXS30 + OMXH25, point-in-time)", "WD": "World (US + UK + EU, point-in-time)"}
+UNL = {"US": "US (S&P 500 members, point-in-time)", "EU": "EU (11 national blue-chip indices, point-in-time)", "UK": "UK (FTSE 350, point-in-time)", "DK": "DK (OMXC25, point-in-time)", "SC": "SCANDI (OMXC25 + OMXS30 + OMXH25, point-in-time)", "WD": "World (US + UK + EU, point-in-time)"}
 p = lambda x, d=1: "n/a" if x is None or x != x else f"{x * 100:+.{d}f}%"
 pu = lambda x, d=1: "n/a" if x is None or x != x else f"{x * 100:.{d}f}%"
 f2 = lambda x: "n/a" if x is None or x != x else f"{x:.2f}"
@@ -46,7 +46,7 @@ def table(head, rows):
 
 def universe_table():
     rows = [
-        ["US", "Sharadar SEP `closeadj` (total return), 805 tickers incl. delisted", "**Point-in-time**: top 500 by market cap each month-end (Sharadar filings × price, A06 method)", "~499", "USD"],
+        ["US", "Sharadar SEP `closeadj` (total return), 805 tickers incl. delisted", "**Point-in-time**: the S&P 500 members at each month-end (Sharadar add/remove history; corrected 2 Oct 2026)", "~503", "USD"],
         ["EU", "Project1 yfinance cache, Adj Close (TR)", "**Point-in-time**: union of 11 national blue-chip indices (CAC 40, DAX, AEX, IBEX 35, FTSE MIB, OMXS30, OMXC25, OMXH25, BEL 20, PSI-20, WIG20), quarterly Wikipedia snapshots 2012–2026; 83% of member-quarters priced", "~238", "local (EUR, SEK, DKK, PLN)"],
         ["UK", "Project1 cache, Close + pence dividends (Yahoo under-adjusts LSE ~100×)", "**Point-in-time**: FTSE 100 + FTSE 250, quarterly snapshots; 75% priced", "~242", "GBP"],
         ["DK", "Project1 cache, Adj Close", "**Point-in-time**: OMX Copenhagen 25, quarterly snapshots; 91% priced", "~19", "DKK"],
@@ -102,7 +102,10 @@ def write(stem, md, title):
 
 
 def pdf(stem):
-    from playwright.sync_api import sync_playwright
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:   # 2026-10-02: PDFs are rendered separately where Playwright is not installed
+        print(f"pdf({stem}): Playwright not installed, PDF not rebuilt"); return
     with sync_playwright() as pw:
         b = pw.chromium.launch(); pg = b.new_page(color_scheme="light")
         pg.goto("file://" + os.path.abspath(os.path.join(OUT, f"{stem}.html"))); pg.wait_for_load_state("networkidle")
@@ -188,7 +191,7 @@ The Turtles were 23 novices recruited through a newspaper advert by Richard Denn
 ## 3. Data load
 
 {universe_table()}
-Window: signals from January 2012, performance from 2 January 2013 (a year of history needed for eligibility) to 24/25 September 2026. Eligibility: US, member of the point-in-time top 500 at the previous month-end; others, at least 252 days of price history. Cleaning follows Project2's rules: the five series Project2 verified as corrupt (DIA.MC, ATO.PA, ZEG.L, SPM.MI, VPLAY-B.ST) are dropped, and any daily move beyond ±100% is set to missing unless it was verified as real (ABVX.PA, MRNA, ECHO, GME). That removed 12 US and 2 European daily prints.
+Window: signals from January 2012, performance from 2 January 2013 (a year of history needed for eligibility) to 24/25 September 2026. Eligibility: US, member of the S&P 500 at the previous month-end; others, at least 252 days of price history. Cleaning follows Project2's rules: the five series Project2 verified as corrupt (DIA.MC, ATO.PA, ZEG.L, SPM.MI, VPLAY-B.ST) are dropped, and any daily move beyond ±100% is set to missing unless it was verified as real (ABVX.PA, MRNA, ECHO, GME). That removed 12 US and 2 European daily prints.
 
 ## 4. Signal ("factor") creation
 
@@ -385,7 +388,7 @@ For stock *i* in month *t*, with *r<sub>i,d</sub>* the daily total return:
 
 - **MAX1<sub>i,t</sub> = max<sub>d∈t</sub> r<sub>i,d</sub>**, requiring at least 15 valid days in the month
 - **MAX5<sub>i,t</sub>** = mean of the five largest daily returns (robustness, Bali et al.'s alternative)
-- Eligible: in the universe at month-end *t* (US point-in-time top 500; others survivor list, ≥ 252 days of history)
+- Eligible: in the universe at month-end *t* (US: S&P 500 members; others: point-in-time index members; ≥ 252 days of history)
 - Sort into equal-count groups: **deciles** with ≥ 100 names (US, EU, UK, World), **quintiles** with 50–99 (SCANDI), **terciles** below 50 (DK). The number of groups is fixed per universe for the whole sample.
 
 Average MAX in the extreme groups: {', '.join(f"{UN[R]} {J[R]['max_low'] * 100:.1f}% vs {J[R]['max_high'] * 100:.1f}%" for R in U)}.
@@ -458,7 +461,7 @@ Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk,
 ## 9. Statistical verdict
 
 - **Gate:** |t| > {GATE} (12 cells, Bonferroni 0.05/12, two-sided).
-- **Raw L/S:** negative after costs in {neg} of 6; before costs positive in {sum(gross[R] > 0 for R in U)} of 6. The US gross spread ({p(pd.read_csv(os.path.join(RES, 'lottery_monthly_record_US.csv')).ls_gross.mean() * 12)} a year; {p(us['ann_mean'])} net, t {us['t_mean']:.2f}) reproduces A15 *Viva Las Vegas* (A15-2: −9.2%/yr gross, t −1.93, same top-500 deciles on price returns).
+- **Raw L/S:** negative after costs in {neg} of 6; before costs positive in {sum(gross[R] > 0 for R in U)} of 6. The US gross spread ({p(pd.read_csv(os.path.join(RES, 'lottery_monthly_record_US.csv')).ls_gross.mean() * 12)} a year; {p(us['ann_mean'])} net, t {us['t_mean']:.2f}) is close to A15 *Viva Las Vegas* on the same corrected universe (A15-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
 - **CAPM alpha of the L/S:** {rng_([J[R]['stats'][LS]['alpha'] for R in U], True)}, passes in {len(capm_pass)} of 6. Once beta is priced the anomaly is neither alive nor reversed: the raw result is a beta bet in disguise.
 - **Low-MAX long-only:** alpha between {p(min(J[R]['stats'][LO]['alpha'] for R in U))} and {p(max(J[R]['stats'][LO]['alpha'] for R in U))} (largest t {max(J[R]['stats'][LO]['t_alpha'] for R in U):.2f}), none past the gate; beta {min(J[R]['stats'][LO]['beta'] for R in U):.2f}–{max(J[R]['stats'][LO]['beta'] for R in U):.2f}.
 - **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): {', '.join(f"{UN[R]} {J[R]['stats'][LS]['psr0']:.2f}" for R in U)}.

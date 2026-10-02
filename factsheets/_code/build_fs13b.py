@@ -11,7 +11,7 @@ import build_factsheets as BF
 import fundamentals as FU
 import perf
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 SURF, INK, INK2, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#e6e5e0"
 TC = {"Debt issuance": "#2a78d6", "Profit growth": "#0f8a6a", "Value": "#c0392b", "Profitability": "#8e5bb5", "Investment": "#d4880f", "Accruals": "#6b6a66"}
 p = lambda x, d=1: f"{x * 100:+.{d}f}%"
@@ -32,14 +32,14 @@ def figs(R, out):
         ax.axvline(0, color=INK2, lw=1); ax.set_title(title, loc="left", fontsize=11.5); ax.set_facecolor(SURF); ax.grid(axis="x", color=GRID)
         for sp_ in ax.spines.values(): sp_.set_visible(False)
     axs[0].set_yticks(y); axs[0].set_yticklabels([R["labels"][k] for k in order], fontsize=9)
-    fig.suptitle("US top 500, 2013–2026, net of costs, borrow and financing (outlined bars = theme composites)", x=0.01, ha="left", fontweight="bold")
+    fig.suptitle("US S&P 500 members, 2013–2026, net of costs, borrow and financing (outlined bars = theme composites)", x=0.01, ha="left", fontweight="bold")
     fig.tight_layout(); fig.savefig(os.path.join(FIG, "fs13b_signals.png"), dpi=140, facecolor=SURF); plt.close(fig)
     fig, ax = plt.subplots(figsize=(11, 5.2)); fig.patch.set_facecolor(SURF); ax.set_facecolor(SURF)
     for t in FU.THEMES:
         s = out[FU.COMP[t]].bn_net.dropna(); ax.plot((1 + s).cumprod(), color=TC[t], lw=2, label=t)
     ax.set_yscale("log"); ax.axhline(1, color=INK2, lw=0.8); ax.legend(frameon=False, ncol=3, fontsize=9); ax.grid(color=GRID)
     for sp_ in ax.spines.values(): sp_.set_visible(False)
-    ax.set_title("Growth of 1 in the beta-neutral theme composites, US top 500, net", loc="left", fontsize=11.5)
+    ax.set_title("Growth of 1 in the beta-neutral theme composites, US S&P 500 members, net", loc="left", fontsize=11.5)
     fig.tight_layout(); fig.savefig(os.path.join(FIG, "fs13b_themes.png"), dpi=140, facecolor=SURF); plt.close(fig)
 
 
@@ -74,7 +74,7 @@ def build():
 
 | Key facts | |
 |---|---|
-| Universe | US, point-in-time top 500 by market cap (Sharadar), monthly, Feb 2013 – Aug 2026 |
+| Universe | US, point-in-time S&P 500 members (Sharadar), monthly, Feb 2013 – Aug 2026 |
 | Data | Sharadar SF1 as-reported quarterly filings (ARQ), used from the filing date; a filing older than 200 days is dropped |
 | Signals | 14 fundamental signals in 6 themes (debt issuance, profit growth, value, profitability, investment, accruals) plus one composite per theme |
 | Books | top-minus-bottom decile, equal weight; long/short, beta-neutral long/short, long-only vs the equal-weight universe |
@@ -87,7 +87,7 @@ def build():
 
 ## 1. Data and point-in-time rules
 
-Sharadar SF1, dimension ARQ: each quarterly report as first filed, with its filing date. At every month-end a stock carries the latest filing dated on or before that day; filings older than 200 days are dropped, so a stock that stops reporting drops out. Flows (revenue, net income, gross profit, operating income, operating cash flow) are summed over the last four quarters where a level ratio needs a year; four-quarter changes require the earlier quarter to be 330–400 days back. Market capitalisation is the month-end value from the same source used for the universe. Every signal is winsorised at the 1st and 99th percentile each month. Coverage: about 620–650 of the ~800 stocks that are ever in the top 500 have a value in a typical month; the sort uses the stocks that are in the top 500 that month.
+Sharadar SF1, dimension ARQ: each quarterly report as first filed, with its filing date. At every month-end a stock carries the latest filing dated on or before that day; filings older than 200 days are dropped, so a stock that stops reporting drops out. Flows (revenue, net income, gross profit, operating income, operating cash flow) are summed over the last four quarters where a level ratio needs a year; four-quarter changes require the earlier quarter to be 330–400 days back. Market capitalisation is the month-end value from the same source used for the universe. Every signal is winsorised at the 1st and 99th percentile each month. Coverage: about 620–650 of the ~800 stocks that are ever S&P 500 members have a value in a typical month; the sort uses the stocks that are S&P 500 members that month.
 
 ## 2. Definitions
 
@@ -141,7 +141,7 @@ Profit growth keeps most of its return after the price signals: it is related to
 ## 8. Caveats
 
 - **Financials are included**; ratios such as gross profitability and net operating assets mean little for banks and insurers. A sector filter needs industry codes (FS00 gap).
-- **US only**, top 500, equal weight; JKP is value-weighted over the whole market.
+- **US only**, S&P 500 members, equal weight; JKP is value-weighted over the whole market.
 - **Aggregated balance-sheet lines** make the debt-issuance measures approximate (JKP correlation {min(S[k]['repl'] for k in ['dbt_gr', 'noa_at', 'nfna_gr']):.2f}–{max(S[k]['repl'] for k in ['dbt_gr', 'noa_at', 'nfna_gr']):.2f}).
 - **Multiple testing.** 20 signals × three books add 60 trials to the factsheet ledger, now {LG['n']} in all. Programme-wide, {('none of the 60 survives the correction; the closest is profit growth' + chr(39) + 's long-only alpha (t ' + format(pg['lo_t_alpha'], '.1f') + ')') if not fb_pass else (str(len(fb_pass)) + ' of the 60 survive' + ('s' if len(fb_pass) == 1 else '') + ' the Benjamini–Hochberg correction: ' + ', '.join(fb_pass))}; {dsr_txt} (`planning/FACTSHEET_TRIAL_LEDGER.md`).
 

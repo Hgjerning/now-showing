@@ -8,7 +8,7 @@ import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
 import build_factsheets as BF
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FIG = os.path.join(HERE, "..", "figures")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FIG = os.environ.get("FS_FIGURES") or os.path.join(HERE, "..", "figures")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; UN = {"US": "US", "EU": "EU", "UK": "UK", "DK": "DK", "SC": "SCANDI", "WD": "World"}
 SURF, INK, INK2, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#e6e5e0"
 COL = {"US": "#2a78d6", "EU": "#0f8a6a", "UK": "#c0392b", "DK": "#8e5bb5", "SC": "#d4880f", "WD": "#52514e"}
@@ -113,7 +113,7 @@ def build():
 ## 6. Caveats
 
 - One cost model with textbook parameters; real costs depend on execution skill, venue and timing. Y = 1.0 is shown as the harsher case.
-- US volume data are missing for about a third of the stocks ever in the top 500 (mostly delisted names); their ADV comes from market cap, a proxy.
+- US volume data are missing for about a third of the stocks ever in the US universe (mostly delisted names); their ADV comes from market cap, a proxy.
 - Trades are costed as if done in one day; spreading large trades over several days lowers impact but adds tracking error.
 - The exploratory sections were decided after seeing the pre-registered results and are not tests.
 

@@ -9,7 +9,7 @@ import pandas as pd
 
 import perf
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results"); FAC = os.path.join(HERE, "..", "factors")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results"); FAC = os.path.join(HERE, "..", "factors")
 THEMES = ["Profit growth", "Issuance", "Value", "Profitability"]
 JKP_CL = {"Profit growth": "Profit Growth", "Issuance": "Debt Issuance", "Value": "Value", "Profitability": "Profitability"}
 ART_F = {"Profit growth": "Revision (composite)", "Issuance": "Buyback (composite)", "Value": "Value (composite)", "Profitability": "Profitability (composite)"}

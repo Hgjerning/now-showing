@@ -11,8 +11,33 @@ import os
 import numpy as np
 import pandas as pd
 
-D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
-CACHE = os.path.join(D, "cache"); os.makedirs(CACHE, exist_ok=True)
+_HERE = os.path.dirname(os.path.abspath(__file__))
+# 2026-10-01: the original ../data folder lived in a cloud session; on the PC the same files are in ../_data_private.
+D = os.environ.get("FS_DATA") or next((p for p in (os.path.join(_HERE, "..", "data"), os.path.join(_HERE, "..", "_data_private"))
+                                       if os.path.isdir(os.path.join(p, "pit"))), os.path.join(_HERE, "..", "data"))
+_SHARADAR = os.path.join(_HERE, "..", "..", "..", "Project2 Investment Strategy", "reporting", "sharadar_cache")
+
+
+def _us(name):
+    """US Sharadar files: in D if present, else Project2's Sharadar cache."""
+    f = os.path.join(D, name)
+    return f if os.path.exists(f) else os.path.join(_SHARADAR, name)
+# US universe rule. "top500" = as published: the 500 largest of every name EVER in the S&P 500 2012-2026 (survivor
+# list: later additions are present before they joined). "sp500_pit" (2026-10-01) = the actual S&P 500 members at each
+# month-end, from Sharadar's add/remove history. Each rule keeps its own cache folder.
+US_UNIVERSE = os.environ.get("FS_US_UNIVERSE", "sp500_pit")   # default switched 2026-10-01; "top500" reproduces Sep 2026
+# PIT panels: D/pit by default (v2 of 2026-10-01); FS_PIT_DIR points elsewhere, e.g. pit/archive_2026-09-26 (the panels
+# the September factsheets were built on). A non-default panel folder gets its own cache folder too.
+PITD = os.environ.get("FS_PIT_DIR") or os.path.join(D, "pit")
+_PITTAG = "" if not os.environ.get("FS_PIT_DIR") else "_" + os.path.basename(os.path.normpath(PITD))
+# Oslo (OBX) is in pit v2's SCANDI membership but not in the universe the factsheets registered their tests on; it is
+# left out unless FS_SC_OSLO=1 (FACTSHEETS_RERUN_2026-10-02.md, "Oslo split").
+SC_OSLO = os.environ.get("FS_SC_OSLO") == "1"
+_PITTAG += "_oslo" if SC_OSLO else "_reg"   # separate caches: the 1 Oct runs (with Oslo) used the untagged one
+CACHE = os.path.join(D, ("cache" if US_UNIVERSE == "top500" else f"cache_{US_UNIVERSE}") + _PITTAG + ("_win" if os.name == "nt" else ""))
+os.makedirs(CACHE, exist_ok=True)   # pickles are not portable between the PC and Claude's Linux sandbox
+SP500_HISTORY = os.environ.get("FS_SP500_HISTORY", os.path.join(_HERE, "..", "..", "..", "Project2 Investment Strategy", "archive",
+                                                                  "sharadar_sp500_full_history.csv"))
 START, END = "2012-01-01", "2026-09-25"
 KNOWN_BAD = ["DIA.MC", "ATO.PA", "ZEG.L", "SPM.MI", "VPLAY-B.ST",   # Project2 data.py KNOWN_BAD_SERIES
              "TELIA1.HE", "AF.AS"]   # thin secondary listings in the PIT lists (+92%/-90% single-day prints)
@@ -44,12 +69,39 @@ def _clean(r, tag, low=True):
     return r.mask(bad)
 
 
+def _sp500_members(months, cols):
+    """S&P 500 members at each month-end from Sharadar's add/remove history (same rule as Articles/_shared/lib10/universes.py)."""
+    e = pd.read_csv(SP500_HISTORY, parse_dates=["date"])
+    start, end = pd.Timestamp("2010-01-01"), pd.Timestamp("2099-12-31")
+    current = set(e.loc[e.action == "current", "ticker"]); iv = {}
+    for t, g in e[e.action.isin(["added", "removed"])].sort_values(["ticker", "date"]).groupby("ticker"):
+        opens, cur = [], None
+        for r in g.itertuples():
+            if r.action == "added":
+                cur = r.date
+            else:
+                opens.append((start if cur is None else cur, r.date)); cur = None
+        if cur is not None:
+            opens.append((cur, end))
+        iv[t] = opens
+    for t in current:
+        if t not in iv:
+            iv[t] = [(start, end)]
+        elif not any(b == end for a, b in iv[t]):
+            iv[t].append((iv[t][-1][1], end))
+    M = pd.DataFrame(False, index=months, columns=cols)
+    for t in cols:
+        for a, b in iv.get(t, []):
+            M.loc[(months >= a) & (months <= b), t] = True
+    return M
+
+
 def us_membership(px):
     """Monthly PIT top-500 by market cap (implied shares x price), as lib10/panel.py."""
     f = os.path.join(CACHE, "us_uni.pkl")
     if os.path.exists(f):
         return pd.read_pickle(f)
-    fd = pd.read_csv(os.path.join(D, "us_fundamentals.csv"), usecols=["ticker", "calendardate", "date", "marketcap"],
+    fd = pd.read_csv(_us("us_fundamentals.csv"), usecols=["ticker", "calendardate", "date", "marketcap"],
                      parse_dates=["calendardate", "date"]).dropna(subset=["marketcap"])
     fd = fd.sort_values(["ticker", "date"]).drop_duplicates(["ticker", "date"], keep="last")
     pf = px.ffill()
@@ -71,8 +123,13 @@ def us_membership(px):
     shr = shr.where(age <= pd.Timedelta(days=400))
     pm = px.resample("ME").last().where(px.notna().resample("ME").sum() > 0)
     mc = shr * pm
-    rk = mc.rank(axis=1, ascending=False, method="first")
-    uni = (rk <= 500) & mc.notna()
+    if US_UNIVERSE == "top500":
+        rk = mc.rank(axis=1, ascending=False, method="first")
+        uni = (rk <= 500) & mc.notna()
+    elif US_UNIVERSE == "sp500_pit":
+        uni = _sp500_members(months, list(px.columns)) & pm.notna()
+    else:
+        raise ValueError(f"unknown FS_US_UNIVERSE {US_UNIVERSE!r}")
     out = (uni, mc)
     pd.to_pickle(out, f)
     return out
@@ -157,7 +214,7 @@ def load(region, pit=True):
         return pd.read_pickle(f)
     mc = None
     if region == "US":
-        px = pd.read_csv(os.path.join(D, "us_master_universe_prices.csv"), index_col=0, parse_dates=True).sort_index()
+        px = pd.read_csv(_us("us_master_universe_prices.csv"), index_col=0, parse_dates=True).sort_index()
         px = px.where(px > 0)
         r = px.pct_change(fill_method=None).where(px.notna())
         uni_m, mc = us_membership(px)
@@ -242,15 +299,17 @@ def load_pit(region):
         idxp = (1 + ret.fillna(0)).cumprod().where(ret.notna().cumsum() > 0)
         out = dict(ret=ret, idx=idxp, elig=elig & ret.notna(), mcap=None)
         pd.to_pickle(out, f); return out
-    A = pd.read_parquet(os.path.join(D, "pit", f"{region}_pit_adjclose.parquet")).sort_index()
+    A = pd.read_parquet(os.path.join(PITD, f"{region}_pit_adjclose.parquet")).sort_index()
     A = A.where(A > 0)
     r = A.pct_change(fill_method=None).where(A.notna())
     if region == "UK":
-        C = pd.read_parquet(os.path.join(D, "pit", "UK_pit_close.parquet")).sort_index()
+        C = pd.read_parquet(os.path.join(PITD, "UK_pit_close.parquet")).sort_index()
         r = _uk_tr_from(C.where(C > 0))
     r = _clean(r, region + "-PIT").loc[START:END]
     r = r.loc[r.notna().sum(axis=1) >= max(5, 0.2 * r.notna().sum(axis=1).median())]
-    m = pd.read_csv(os.path.join(D, "pit", f"members_{region}.csv"), parse_dates=["date"])
+    m = pd.read_csv(os.path.join(PITD, f"members_{region}.csv"), parse_dates=["date"])
+    if region == "SC" and not SC_OSLO:   # 2026-10-02: SCANDI stays as registered (OMXC25 + OMXS30 + OMXH25)
+        m = m[~m.ticker.str.endswith(".OL")]
     snaps = sorted(m.date.unique())
     mem = pd.DataFrame(False, index=pd.DatetimeIndex(snaps), columns=r.columns)
     for d, g in m.groupby("date"):

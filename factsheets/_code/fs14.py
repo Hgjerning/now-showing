@@ -11,7 +11,7 @@ from scipy import stats as sst
 
 import perf
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]
 WF, PSR_MIN, COST_SHARE, RHO = 36, 0.80, 0.50, 0.70
 VARIANTS = ["EQ", "RP"] + [f"W{w}-{k}" for w in (12, 36, 60) for k in ("E", "L", "X")]

@@ -16,7 +16,7 @@ import pandas as pd
 
 import data
 
-RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+RES = os.environ.get("FS_RESULTS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
 DESIGN = ("2013-01-01", "2019-12-31")
 WIN = {"t+1 (fill day)": (1, 1), "t+2..5": (2, 5), "t+6..20": (6, 20), "t+21..60": (21, 60)}
 

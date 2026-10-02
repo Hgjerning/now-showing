@@ -13,7 +13,7 @@ import perf
 import sectors
 import xs
 
-HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.path.join(HERE, "..", "results")
+HERE = os.path.dirname(os.path.abspath(__file__)); RES = os.environ.get("FS_RESULTS") or os.path.join(HERE, "..", "results")
 U = ["US", "EU", "UK", "DK", "SC", "WD"]; POOL = ["US", "EU", "UK", "DK", "SC"]
 EPIS = {"2015–16 sell-off": ("2015-06", "2016-02"), "Q4 2018": ("2018-10", "2018-12"), "COVID crash": ("2020-02", "2020-03"),
         "COVID rebound": ("2020-04", "2020-12"), "2022 rate shock": ("2022-01", "2022-09")}

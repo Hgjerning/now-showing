@@ -72,15 +72,16 @@ card("fs02_card.png", "FS02", "The lottery factor", "Do investors overpay for st
      rows, [("Low minus high MAX", BLUE, "o"), ("Calmest stocks only", ORANGE, "s"), ("Own all stocks equally", GREY, "D")],
      "The anomaly was beta in disguise. Hedge it, and nothing is left.")
 lh = F["lottery"]["pooled"]["L1_vs_zero_holdout"]
+_n6 = lambda k: 'all six' if k == 6 else ('none of the six' if k == 0 else f'{k} of six')   # 2026-10-02: counts, not fixed words
 post2 = f"""Would you buy a lottery ticket? Many investors do, in stock form: they chase the stocks that just had one spectacular day.
 
 Bali, Cakici & Whitelaw (2011) showed that US stocks with the biggest one-day jump last month earned about 1% a month less afterwards. Investors overpay for the thrill.
 
-I tested it in six markets, 2013–2026, point-in-time members, after costs. Buying the calmest stocks and shorting the most lottery-like lost money in all six markets ({min(L[R]['stats'][LS]['ann_mean'] for R in U) * 100:+.0f}% to {max(L[R]['stats'][LS]['ann_mean'] for R in U) * 100:+.0f}% a year).
+I tested it in six markets, 2013–2026, point-in-time members, after costs. Buying the calmest stocks and shorting the most lottery-like lost money in {_n6(sum(L[R]['stats'][LS]['ann_mean'] < 0 for R in U))} markets ({min(L[R]['stats'][LS]['ann_mean'] for R in U) * 100:+.0f}% to {max(L[R]['stats'][LS]['ann_mean'] for R in U) * 100:+.0f}% a year).
 
 The catch is beta. Lottery stocks carry a beta of about 1.3, calm stocks about 0.7. In a 13-year bull market that alone decides the race. Hedge the beta and the loss disappears, and so does the premium: {lh['ann'] * 100:+.1f}% a year, t {lh['t']:.1f}.
 
-The calm stocks on their own still did what low-risk investing promises: smaller drawdowns in every market and a better Sharpe than owning all the stocks in three of six.
+The calm stocks on their own still did what low-risk investing promises: smaller drawdowns than owning all the stocks in {_n6(sum(L[R]['stats']['Low-MAX long-only (net)']['maxdd'] > L[R]['stats']['EW universe (benchmark)']['maxdd'] for R in U))} markets and a better Sharpe in {_n6(sum(L[R]['stats']['Low-MAX long-only (net)']['sharpe'] > L[R]['stats']['EW universe (benchmark)']['sharpe'] for R in U))}.
 
 Where does it fit? Not a factor of its own, but a noisier member of the low-risk family.
 

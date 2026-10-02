@@ -2,10 +2,10 @@ Small companies earn higher returns than large ones. Banz (1981) found it in US 
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 
-Long/short (smallest names in the universe minus largest names): -3.0% to +4.9% a year, positive in 4 of six markets. Adjusted for market beta: -5.5% to +2.9%.
+Long/short (smallest names in the universe minus largest names): -4.3% to +4.3% a year, positive in 1 of six markets. Adjusted for market beta: -10.4% to +3.1%.
 Long-only (smallest names in the universe): a better Sharpe than owning all the stocks equally in 1 of six markets.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.44 to -0.45.
+The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.34 to -0.37.
 
 360° view: once its nearest neighbours are in the model, nothing is left: the signal is redundant.
 
