@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); FS = os.path.join(HERE, "..")
 NS = os.path.normpath(os.path.join(FS, "..", "now-showing", "factsheets"))
 REBUILT = ["FS00", "FS01", "FS02", "FS03", "FS04", "FS05", "FS06", "FS07", "FS08", "FS09", "FS10", "FS11", "FS12",
            "FS13", "FS13b", "FS13c", "FS14", "FS16", "FS18", "FS20", "FS21"]
-NEW_CODE = ["rebuild_all.py", "factsheet_v2.py", "build_xs.py", "build_factsheets.py", "us1999_run.py", "add_us1999_box.py", "ledger.py", "add_changed_box.py", "make_pdfs.py", "decompose.py", "rerun_pit.py", "turtle_full.py",
+NEW_CODE = ["rebuild_all.py", "relayout_fs01_fs02.py", "factsheet_v2.py", "build_xs.py", "build_factsheets.py", "us1999_run.py", "add_us1999_box.py", "ledger.py", "add_changed_box.py", "make_pdfs.py", "decompose.py", "rerun_pit.py", "turtle_full.py",
             "us_universe_check.py", "sync_now_showing.py"]
 n = 0
 

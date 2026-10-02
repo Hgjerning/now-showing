@@ -39,8 +39,7 @@ def prog_bar():
 
 
 # ---------------- 1. verdict and scorecard
-def verdict_scorecard(code, per):
-    LS, LO, EW = "L/S (net)", "Long-only (net)", "EW universe"
+def verdict_scorecard(code, per, LS="L/S (net)", LO="Long-only (net)", EW="EW universe"):
     st = lambda R, b: per[R]["stats"][b]
     n, zb = prog_bar()
     led = pd.read_csv(os.path.join(RES, "trial_ledger.csv")); led = led[(led.fs == code) & (led.kind == "primary")]
@@ -59,7 +58,7 @@ def verdict_scorecard(code, per):
     if u99:
         parts.append(f"US 1999–2012, a period the factsheet was not built on: L/S t {u99['ls_t']:+.2f}, long-only alpha t {u99['lo_alpha_t']:+.2f}.")
     rows = [[UN[R], mark(st(R, LS)["t_mean"]), f"{st(R, LS)['sharpe']:.2f}", mark(st(R, LO)["t_alpha"]), f"{st(R, LO)['sharpe']:.2f} vs {st(R, EW)['sharpe']:.2f}",
-             pu(st(R, LO)["maxdd"], 0)] for R in U]
+             pu(st(R, LO).get("il_maxdd", st(R, LO)["maxdd"]), 0)] for R in U]
     if u99:
         rows.append(["US 1999–2012", mark(u99["ls_t"]), f"{u99['ls_sharpe']:.2f}", mark(u99["lo_alpha_t"]), f"{u99['lo_sharpe']:.2f} vs {u99['ew_sharpe']:.2f}", "–"])
     return ("## 1. Verdict and scorecard\n\n> **Verdict.** " + " ".join(parts) + "\n\n"
@@ -130,7 +129,7 @@ def fits(code):
 
 
 # ---------------- reorganise the 15-section page into the v2 layout
-def reorganise(md, code, per, attr_alpha_rng, capm_rng):
+def reorganise(md, code, per, attr_alpha_rng, capm_rng, books=None):
     head, *chunks = re.split(r"(?m)^(?=## )", md)
     sec = {}
     for c in chunks:
@@ -145,12 +144,13 @@ def reorganise(md, code, per, attr_alpha_rng, capm_rng):
                                         f"alpha in section 7, after momentum, value and the other themes, is the better guide: here the L/S CAPM alpha ranges "
                                         f"{capm_rng} and the factor alpha {attr_alpha_rng}.\n\n")
     method = "## 6. Method: data, signal and portfolio\n\n" + "".join(re.sub(r"(?m)^## \d+\. ", "### ", sec[k]) for k in (3, 4, 5))
-    nine = re.sub(r"(?m)^### 10\.", "### 9.", ren(sec[10], 10, 9))
+    nine = re.sub(r"(?m)^### 10\.(\d)", r"### 9.\1", ren(sec[10], 10, 9))
     eight = ren(sec[9], 9, 8).replace("## 8. Statistical verdict", "## 8. Statistical detail")
     cav = ren(sec[13], 13, 10)
     cav = re.sub(r"\*\*Not a registered trial\.\*\* Descriptive; ", "**Trials.** Every gated cell is in the factsheet trial ledger; ", cav)
-    body = (verdict_scorecard(code, per) + s1 + anatomy(code) + fits(code) + ren(sec[2], 2, 5) + method + ren(sec[8], 8, 7) + eight + nine
+    body = (verdict_scorecard(code, per, *(books or ())) + s1 + anatomy(code) + fits(code) + ren(sec[2], 2, 5) + method + ren(sec[8], 8, 7) + eight + nine
             + cav + ren(sec[14], 14, 11) + ren(sec[15], 15, 12))
     app = ("\n## Appendix\n\n" + re.sub(r"(?m)^## 6\. ", "### A. ", sec[6]) + re.sub(r"(?m)^## 7\. Trading record", "### B. Trading record and current book", sec[7])
-           + re.sub(r"(?m)^## 11\. ", "### C. ", sec[11]) + re.sub(r"(?m)^## 12\. ", "### D. ", sec[12]))
+           + re.sub(r"(?m)^## 11\. ", "### C. ", sec[11]) + re.sub(r"(?m)^### 12\.(\d)", r"#### D.\1", re.sub(r"(?m)^## 12\. ", "### D. ", sec[12]))
+           + "".join(re.sub(r"(?m)^## ", "### E. ", c) for k, c in sec.items() if not isinstance(k, int)))
     return head + body + app

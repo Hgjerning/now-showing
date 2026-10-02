@@ -20,8 +20,6 @@
 
 
 
-
-
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Buy low-MAX, sell high-MAX stocks</div>
 <div><b>Origin</b>Bali, Cakici & Whitelaw (2011), JFE</div>
@@ -33,9 +31,26 @@
 <div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
-> **Verdict in one paragraph.** Bali, Cakici & Whitelaw found that US stocks with the largest one-day jump last month earned about 1% a month *less* the next month, in 1962–2005. Investors pay up for lottery tickets. In 2013–2026 the effect is gone: **after costs the long/short lost money in 5 of the six universes** (-10.6% to +1.9% a year); before costs it was slightly positive only in EU, SCANDI, and clearly negative in the US and World, where the lottery stocks won. The reason is beta. The high-MAX group has a beta of 1.16–1.32 against the universe, the low-MAX group 0.62–0.84, and markets rose strongly. Adjusted for that one number, the CAPM alpha of the long/short is between -2.5% and +8.5% a year and passes the gate in 0 of 6. The low-MAX long-only book delivered what low-risk investing promises: a beta of 0.62–0.84, a shallower drawdown than the universe in 6 of 6, a higher Sharpe in 2 of 6 (EU, UK), and alphas of -0.7% to +2.8% that do not pass the gate. **What goes wrong (§10):** an unhedged beta bet plus a signal that, in large caps, mostly measures volatility. Beta-neutral legs remove most of the loss in both the design and the 2020–26 holdout window, and what remains is a premium of about zero. **Classification (§11):** a member of the low-risk family, not a factor of its own. **360° view (§12):** lottery and falling knife are the two tails of the same volatility, mirrors in their returns but not in the stocks they pick; neither tail is priced on its own once volatility and beta are in the model, and MAX is fully spanned by its neighbours.
+> **Verdict in one paragraph.** Bali, Cakici & Whitelaw found that US stocks with the largest one-day jump last month earned about 1% a month *less* the next month, in 1962–2005. Investors pay up for lottery tickets. In 2013–2026 the effect is gone: **after costs the long/short lost money in 5 of the six universes** (-10.6% to +1.9% a year); before costs it was slightly positive only in EU, SCANDI, and clearly negative in the US and World, where the lottery stocks won. The reason is beta. The high-MAX group has a beta of 1.16–1.32 against the universe, the low-MAX group 0.62–0.84, and markets rose strongly. Adjusted for that one number, the CAPM alpha of the long/short is between -2.5% and +8.5% a year and passes the gate in 0 of 6. The low-MAX long-only book delivered what low-risk investing promises: a beta of 0.62–0.84, a shallower drawdown than the universe in 6 of 6, a higher Sharpe in 2 of 6 (EU, UK), and alphas of -0.7% to +2.8% that do not pass the gate. **What goes wrong (§9):** an unhedged beta bet plus a signal that, in large caps, mostly measures volatility. Beta-neutral legs remove most of the loss in both the design and the 2020–26 holdout window, and what remains is a premium of about zero. **Classification (appendix C):** a member of the low-risk family, not a factor of its own. **360° view (appendix D):** lottery and falling knife are the two tails of the same volatility, mirrors in their returns but not in the stocks they pick; neither tail is priced on its own once volatility and beta are in the model, and MAX is fully spanned by its neighbours.
 
-## 1. Headline performance
+*Layout revised 2 October 2026 (verdict and scorecard, Sharpe anatomy, fit with the other strategies; detail moved to the appendix). No number changed.*
+
+## 1. Verdict and scorecard
+
+> **Verdict.** Of the 12 registered cells (two books × six universes), **0 pass** the |t| > 2.87 gate. Programme-wide (772 trials, |t| > 3.99): nothing survives. US 1999–2012, a period the factsheet was not built on: L/S t -0.47, long-only alpha t +1.34.
+
+| Universe | L/S t | L/S Sharpe | Long-only alpha t | Long-only Sharpe vs equal-weight | Long-only max DD |
+|---|---|---|---|---|---|
+| US | -2.17 | -0.60 | +0.29 | 0.77 vs 0.85 | -19% |
+| EU | +0.43 | 0.13 | +1.86 | 0.89 vs 0.75 | -23% |
+| UK | -0.92 | -0.30 | +1.58 | 0.82 vs 0.68 | -23% |
+| DK | -0.81 | -0.22 | -0.40 | 0.67 vs 0.83 | -24% |
+| SCANDI | -0.53 | -0.13 | -0.30 | 0.74 vs 0.88 | -25% |
+| World | -1.65 | -0.44 | +0.10 | 0.66 vs 0.71 | -23% |
+| US 1999–2012 | -0.47 | -0.13 | +1.34 | 0.61 vs 0.49 | – |
+*✔ passes the 2.87 gate (Bonferroni over 12 cells); ✖ significantly negative. 2013–2026 unless stated.*
+
+## 2. Headline performance
 
 | Universe | Names / groups | L/S return / yr | L/S t | L/S CAPM alpha (t) | L/S beta | Low-MAX CAGR | Low-MAX Sharpe | Low-MAX max DD | EW CAGR | EW Sharpe | EW max DD |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -50,13 +65,53 @@
 
 ![Growth](../figures/fs02_fig1_growth.png)
 
-## 2. Strategy description
+**Read with care.** A long/short book with a negative beta shows a large CAPM alpha in a rising market. The factor-model alpha in section 7, after momentum, value and the other themes, is the better guide: here the L/S CAPM alpha ranges -2.5% to +8.5% and the factor alpha -8.8% to +0.3%.
+
+## 3. Where the Sharpe comes from
+
+Sharpe = annual return ÷ annual volatility. The return splits into the part the market explains (beta × market return) and the rest (alpha, net of costs); the volatility into the market's share and the strategy's own. The last column is the Sharpe the book would have with its market exposure hedged out (before hedging costs).
+
+| Universe | Book | Return / yr | = market part | + alpha | Costs / yr (inside the return) | Volatility | of which market | Sharpe | Sharpe, market hedged |
+|---|---|---|---|---|---|---|---|---|---|
+| US | L/S | -10.6% | -8.1% | -2.5% | – | 17.7% | 9.5% | -0.60 | -0.17 |
+| US | Long-only | +9.7% | +9.2% | +0.5% | – | 12.5% | 10.9% | 0.77 | 0.08 |
+| EU | L/S | +1.9% | -6.5% | +8.4% | – | 15.2% | 8.7% | 0.13 | 0.68 |
+| EU | Long-only | +9.7% | +6.8% | +2.9% | – | 10.9% | 9.2% | 0.89 | 0.49 |
+| UK | L/S | -4.4% | -5.7% | +1.2% | – | 14.9% | 8.4% | -0.30 | 0.10 |
+| UK | Long-only | +8.2% | +6.0% | +2.2% | – | 10.0% | 8.8% | 0.82 | 0.47 |
+| DK | L/S | -3.3% | -4.0% | +0.7% | – | 15.5% | 4.8% | -0.22 | 0.04 |
+| DK | Long-only | +9.9% | +10.6% | -0.7% | – | 14.8% | 12.8% | 0.67 | -0.09 |
+| SCANDI | L/S | -1.7% | -5.3% | +3.7% | – | 13.0% | 6.0% | -0.13 | 0.32 |
+| SCANDI | Long-only | +9.1% | +9.7% | -0.5% | – | 12.4% | 10.9% | 0.74 | -0.09 |
+| World | L/S | -6.5% | -6.4% | -0.1% | – | 14.7% | 9.1% | -0.44 | -0.01 |
+| World | Long-only | +7.9% | +7.8% | +0.1% | – | 12.0% | 11.0% | 0.66 | 0.02 |
+*Monthly, 2013–2026, market = equal-weight universe. Interactive version: the Strategy Cockpit.*
+
+![Growth, drawdown and rolling Sharpe](../figures/xs_FS02_panel.png)
+
+## 4. How it fits next to the market and the other strategies
+
+A long/short book improves a market portfolio when its own Sharpe beats the hurdle: its correlation with the market × the market's Sharpe. A negative correlation makes the hurdle negative, so even a book with a small positive Sharpe diversifies; the size of the gain still depends on that Sharpe.
+
+| Universe | Corr. with market | Avg corr. with the other strategies | Most similar strategy | Market Sharpe | Hurdle Sharpe | This L/S Sharpe | Verdict | L/S in the worst 10% of market months | Market in those months |
+|---|---|---|---|---|---|---|---|---|---|
+| US | -0.54 | +0.24 | Low volatility (+0.90) | 0.85 | -0.45 | -0.60 | dilutes | +3.2% | -7.3% |
+| EU | -0.57 | +0.28 | Low volatility (+0.80) | 0.75 | -0.43 | 0.13 | adds | +3.6% | -6.5% |
+| UK | -0.56 | +0.28 | Low volatility (+0.82) | 0.68 | -0.38 | -0.30 | adds | +3.4% | -6.6% |
+| DK | -0.31 | +0.22 | Low volatility (+0.62) | 0.83 | -0.26 | -0.22 | adds | +2.0% | -7.2% |
+| SCANDI | -0.46 | +0.22 | Low volatility (+0.68) | 0.89 | -0.41 | -0.13 | adds | +3.9% | -6.9% |
+| World | -0.62 | +0.25 | Low volatility (+0.90) | 0.71 | -0.44 | -0.44 | dilutes | +2.9% | -7.5% |
+*Long/short (net), monthly, 2013–2026; market = equal-weight universe; other strategies = the long/short books of FS01–FS12. The Strategy Cockpit lets you build books of several strategies.*
+
+## 5. Strategy description
 
 **The idea.** Many investors like lottery-like payoffs: a small chance of a very large gain. Cumulative prospect theory predicts that people overweight small probabilities (Tversky & Kahneman 1992). Barberis & Huang (2008) show that this makes positively skewed stocks overpriced, so they earn low future returns. Kumar (2009) documents that retail investors tilt towards lottery-type stocks. Bali, Cakici & Whitelaw (2011) proposed the simplest proxy for "lottery-ness": **MAX, the largest daily return in the previous month.** In US data 1962–2005 the highest-MAX decile underperformed the lowest by over 1% a month, value-weighted, and the effect subsumed idiosyncratic volatility (Ang et al. 2006). European evidence followed (Annaert, De Ceuster & Verstegen 2013; Walkshäusl 2014). Bali, Brown, Murray & Tang (2017) argue that lottery demand explains the beta anomaly (Frazzini & Pedersen 2014), which is why beta sits at the centre of this factsheet.
 
 **The trade.** Each month-end, rank stocks by MAX, buy the calmest group, sell the most lottery-like group, hold one month.
 
-## 3. Data load
+## 6. Method: data, signal and portfolio
+
+### Data load
 
 | Universe | Prices | Membership | Names eligible (median) | Currency |
 |---|---|---|---|---|
@@ -71,7 +126,7 @@
 
 Same cleaning as FS01: the five verified corrupt series are dropped and daily moves beyond ±100% are removed unless verified real. This matters more here than anywhere else, because a single bad print *is* a MAX signal.
 
-## 4. Factor creation
+### Factor creation
 
 For stock *i* in month *t*, with *r<sub>i,d</sub>* the daily total return:
 
@@ -82,7 +137,7 @@ For stock *i* in month *t*, with *r<sub>i,d</sub>* the daily total return:
 
 Average MAX in the extreme groups: US 1.5% vs 8.9%, EU 1.4% vs 8.9%, UK 1.2% vs 10.2%, DK 2.2% vs 6.1%, SCANDI 1.8% vs 6.9%, World 1.5% vs 9.5%.
 
-## 5. Model build
+### Model build
 
 - Equal-weighted groups, formed at month-end *t*, held through month *t+1* (compounded daily total returns; a stock that stops trading earns its return up to its last price).
 - **Long/short** = group 1 − last group. **Long-only** = group 1. **Benchmark** = equal-weighted universe, same month.
@@ -90,7 +145,152 @@ Average MAX in the extreme groups: US 1.5% vs 8.9%, EU 1.4% vs 8.9%, UK 1.2% vs 
 - **Robustness books:** MAX5 signal; US value-weighted (Sharadar market caps), which is closest to the original paper.
 - Code: `code/lottery.py` (portfolio build), `run_lottery.py`, `analyse.py lottery`.
 
-## 6. Performance in detail
+## 7. Risk and factor attribution
+
+Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk, quality, short-term reversal) for US, UK, DK and World; French Europe 5 factors + WML for EU and SCANDI. Newey-West t, 6 lags. JKP's own `rmax1_21d` factor (the MAX factor itself) sits inside the low-risk theme.
+
+**L/S low − high MAX**
+
+| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
+|---|---|---|---|---|---|---|
+| US | JKP USA 7 themes | 155 | -8.8% | -4.64 | 0.79 | value -0.49 (-5.9), momentum +0.22 (+2.1), low_risk +1.36 (+15.4), short_term_reversal +0.82 (+5.2) |
+| EU | French Europe 5F + WML | 162 | -0.1% | -0.01 | 0.41 | Mkt-RF -0.37 (-4.2), RMW +0.84 (+2.5), WML +0.36 (+2.5) |
+| UK | JKP GBR 7 themes | 155 | -5.2% | -1.38 | 0.62 | momentum +0.22 (+2.6), low_risk +1.45 (+7.5), short_term_reversal +0.37 (+2.2) |
+| DK | JKP DNK 7 themes | 155 | +0.3% | 0.08 | 0.49 | size -0.26 (-2.3), value +0.17 (+2.1), low_risk +1.06 (+8.6), short_term_reversal +0.54 (+4.0) |
+| SCANDI | French Europe 5F + WML | 162 | -2.2% | -0.68 | 0.21 | Mkt-RF -0.27 (-4.5) |
+| World | JKP World 7 themes | 155 | -7.8% | -2.58 | 0.60 | momentum +0.48 (+3.1), low_risk +1.03 (+7.1) |
+
+**Low-MAX long-only**
+
+| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
+|---|---|---|---|---|---|---|
+| US | JKP USA 7 themes | 155 | -0.2% | -0.16 | 0.90 | mkt +0.92 (+33.5), size -0.16 (-3.0), momentum +0.16 (+3.3), low_risk +0.57 (+6.0), short_term_reversal +0.46 (+4.9) |
+| EU | French Europe 5F + WML | 162 | +4.2% | 1.93 | 0.58 | Mkt-RF +0.53 (+8.4), RMW +0.47 (+2.9) |
+| UK | JKP GBR 7 themes | 155 | +3.9% | 2.00 | 0.62 | mkt +0.39 (+9.7), quality +0.36 (+2.6), short_term_reversal +0.32 (+3.3) |
+| DK | JKP DNK 7 themes | 155 | +4.5% | 1.64 | 0.63 | mkt +0.70 (+13.5), value +0.14 (+2.1), short_term_reversal +0.31 (+2.5) |
+| SCANDI | French Europe 5F + WML | 162 | +4.6% | 1.71 | 0.50 | Mkt-RF +0.54 (+9.7), RMW +0.47 (+2.5) |
+| World | JKP World 7 themes | 155 | +1.6% | 1.00 | 0.79 | mkt +0.67 (+17.0), momentum +0.19 (+3.3), low_risk +0.41 (+4.8) |
+
+**Reading it.** Once beta is removed, most of the L/S loss disappears (CAPM alpha t between -0.6 and 2.2). The L/S is, above all, a low-risk position: its loading on JKP's low-risk theme is 1.03 to 1.45 with t up to 15. Where the JKP alpha is negative (US, UK, World), the L/S earned less than that low-risk exposure would predict: net-of-cost, equal-weighted large-cap sorts are a costly way to hold low risk.
+
+**The low-MAX long-only alphas need a warning.** Against the factor models it shows +1.6% to +4.6% a year outside the US (largest t 2.00, UK). Against its own equal-weight universe, in the same currency, the alphas are smaller (-0.7% to +2.8%). The factor returns are in USD (JKP) or USD-based (French) while the book is in local currency, so I read the universe-relative alpha as the honest number.
+
+## 8. Statistical detail
+
+- **Gate:** |t| > 2.87 (12 cells, Bonferroni 0.05/12, two-sided).
+- **Raw L/S:** negative after costs in 5 of 6; before costs positive in 2 of 6. The US gross spread (-6.0% a year; -10.6% net, t -2.17) is close to A15 *Viva Las Vegas* on the same corrected universe (A15-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
+- **CAPM alpha of the L/S:** -2.5% to +8.5%, passes in 0 of 6. Once beta is priced the anomaly is neither alive nor reversed: the raw result is a beta bet in disguise.
+- **Low-MAX long-only:** alpha between -0.7% and +2.8% (largest t 1.86), none past the gate; beta 0.62–0.84.
+- **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): US 0.01, EU 0.68, UK 0.13, DK 0.21, SCANDI 0.32, World 0.05.
+- **Publication decay.** JKP's broad US MAX factor earned +4.0%/yr before 2006 (t 1.48) and +2.0%/yr in 2012–2025 (t 0.55), from A15. McLean & Pontiff (2016) predict roughly this post-publication shrinkage.
+
+## 9. What goes wrong, and how to fix it
+
+**Method.** As in FS01: diagnose on the design window (Feb 2013 – Dec 2019), fix in a pre-declared order, judge on the holdout (Jan 2020 – Aug 2026), one trial per step, pooled six-universe test of the Sharpe difference, gate p < 0.0071 (7 fix trials across both factsheets). The fixes stay inside the MAX strategy: they change how the two legs are sized, how MAX is measured, and how often names change, not what the strategy bets on.
+
+### 9.1 Diagnosis: four things go wrong
+
+**1. A hidden short on the market.** The L/S has a beta of about −0.6 because low-MAX stocks are low-beta and high-MAX stocks high-beta. With equal-weight universes rising 10–15% a year, beta alone costs -8.1% to -4.0% a year (beta × the universe's return), comparable to or larger than the raw loss (larger in EU, UK, DK, SCANDI); §1 shows CAPM alphas within 8%. The original paper sorted on MAX without neutralising beta; in a 1962–2005 sample that averaged out, in a 13-year bull market it does not.
+
+**2. MAX in large caps is mostly volatility.** The cross-sectional rank correlation of MAX with 60-day volatility is 0.53 to 0.70, and with beta 0.31 to 0.43 (table below). Among blue-chip stocks, a big up-day usually means a volatile stock or news (earnings, M&A), not a retail lottery ticket. The lottery premium lives in small, retail-held stocks (Kumar 2009; Bali et al. 2011), which these universes exclude by construction and which no fix inside them can bring back.
+
+**3. Turnover.** The low leg turns over 53% to 76% a month and the high leg about as much, so costs take 3.3% to 4.6% a year.
+
+**4. Waiting does not help.** The spread is no better, and mostly worse, two to six months after formation, so a longer holding period will not rescue it:
+
+| Universe | L/S, month t+1 (ann.) | t+2..3 | t+4..6 | Rank corr MAX vs volatility | Rank corr MAX vs beta |
+|---|---|---|---|---|---|
+| US | +0.5% | +1.8% | +1.7% | 0.62 | 0.43 |
+| EU | +9.0% | +3.6% | +0.8% | 0.63 | 0.37 |
+| UK | +0.1% | -5.0% | -4.7% | 0.70 | 0.34 |
+| DK | -3.5% | -4.8% | -2.6% | 0.54 | 0.41 |
+| SCANDI | +1.2% | -4.9% | -2.0% | 0.53 | 0.31 |
+| World | +1.3% | -0.9% | -0.2% | 0.66 | 0.37 |
+
+*Design window, gross, equal-weighted extreme groups.*
+
+### 9.2 The fixes, one step at a time
+
+L0 baseline → L1 **beta-neutral legs**: each leg scaled by 1/its ex-ante 252-day beta, so the L/S has zero expected beta (the Frazzini & Pedersen 2014 construction; point 1) → L2 **vol-scaled MAX**: rank on MAX5 / 21-day volatility (JKP's `rmax5_rvol_21d`), lottery-ness net of plain volatility (point 2) → L3 **turnover buffer**: enter the extreme 1/q, keep a name until it leaves the extreme 3/q (point 3).
+
+| Step | Design Sharpe (avg of 6) | Δ vs previous, design (p) | Holdout Sharpe (6-universe book) | Δ vs previous, holdout (p) | Holdout: universes improved | Holdout return / yr | Holdout max DD | t(mean) |
+|---|---|---|---|---|---|---|---|---|
+| L0 baseline | -0.23 | – | -0.41 | – | – | -5.7% | -43% | -1.07 |
+| L1 beta-neutral | 0.29 | +0.71 (p 0.001) | -0.21 | +0.20 (p 0.181) | 6 of 6 | -2.2% | -29% | -0.65 |
+| L2 + vol-scaled MAX | -0.17 | -0.63 (p 0.869) | -1.04 | -0.83 (p 0.967) | 1 of 6 | -10.9% | -58% | -3.23 |
+| L3 + turnover buffer | -0.11 | +0.08 (p 0.184) | -0.88 | +0.16 (p 0.084) | 4 of 6 | -8.5% | -51% | -2.95 |
+
+*Pooled test on the equal-weighted six-universe L/S. ✔ = passes p < 0.0071.*
+
+**Per universe, Sharpe design / holdout**
+
+| Universe | L0 | L1 | L2 | L3 |
+|---|---|---|---|---|
+| US | -0.31 / -0.83 | 0.36 / -0.66 | -0.08 / -0.57 | -0.15 / -0.64 |
+| EU | 0.31 / -0.06 | 0.80 / 0.27 | -0.49 / -1.10 | -0.34 / -1.12 |
+| UK | -0.26 / -0.34 | 0.44 / -0.17 | -0.41 / -0.52 | -0.24 / -0.38 |
+| DK | -0.54 / -0.08 | -0.22 / -0.03 | 0.12 / -0.73 | 0.26 / -0.54 |
+| SCANDI | -0.37 / 0.15 | -0.00 / 0.21 | 0.17 / -0.78 | 0.15 / -0.28 |
+| World | -0.24 / -0.61 | 0.39 / -0.44 | -0.32 / -0.97 | -0.34 / -0.85 |
+
+![Fix ladder](../figures/fs02_fig5_fixes.png)
+
+### 9.3 What the fixes achieve
+
+- **Beta-neutral legs are the real fix.** Sharpe +0.71 in the design window (p 0.0010, passes) and +0.20 in the holdout (p 0.181, does not pass the gate); better in 6 of 6 universes in the design window and 6 of 6 in the holdout. The fixed L/S earns -2.2% a year in the holdout (t -0.6): the beta drag is gone, and what is left is statistically zero.
+- **Vol-scaled MAX failed out of sample.** It helped in 2 of 6 universes in the design window and hurt in 5 of 6 in the holdout (-0.83). once plain volatility is removed, large-cap lottery-ness carries no premium.
+- **The turnover buffer** cuts costs from 4.3% to 3.4% a year (+0.08 design, +0.16 holdout, p 0.08), not significant.
+
+**Bottom line.** What went wrong is not the idea but the packaging: an unhedged beta bet and a signal that, in large caps, measures volatility. Fixing the beta turns a -5.7%/yr loser (six-universe book, holdout) into a market-neutral book earning -2.2% (t -0.6), statistically zero. The lottery premium itself is not present in these universes after 2012. Recommended specification if you want the exposure: **L1 (beta-neutral) with the turnover buffer on the original MAX signal**. That exact combination was not in the pre-declared ladder, so I report it post hoc and count it as nothing: costs fall to 2.3% a year and the holdout L/S earns -0.6% (t -0.2, Sharpe -0.06 vs -0.21 for L1). Treat it as a defensive, low-risk tilt with an expected premium near zero; for a long-only investor, the low-MAX portfolio is a reasonable low-beta equity sleeve, not an alpha source.
+
+## 10. Caveats
+
+1. **Survivorship, and it cut in a particular direction here.** The first edition used today's index members outside the US. A high-MAX stock that jumped and later collapsed out of the index was missing, while one that jumped and kept rising was present, which flattered the high-MAX leg. This edition uses point-in-time membership (§3), and the table confirms the direction (survivor list → point-in-time; the universe definitions also changed):
+
+| Universe | EW universe CAGR | L/S return / yr (net) | Low-MAX Sharpe | EW Sharpe |
+|---|---|---|---|---|
+| EU | +14.0% → +10.2% | -4.3% → +1.9% | 0.89 → 0.89 | 0.95 → 0.75 |
+| UK | +12.7% → +8.9% | -9.9% → -4.4% | 0.70 → 0.82 | 0.95 → 0.68 |
+| DK | +17.6% → +12.1% | -5.0% → -3.3% | 0.99 → 0.67 | 1.18 → 0.83 |
+| SCANDI | +15.3% → +12.1% | -4.9% → -1.7% | 1.02 → 0.74 | 1.09 → 0.88 |
+| World | +16.1% → +10.5% | -12.4% → -6.5% | 0.99 → 0.66 | 1.13 → 0.71 |
+
+The non-US L/S numbers moved towards zero and the low-MAX book improved relative to its universe. About a fifth of member-quarters still have no price (mostly delisted names), so a residual bias of the same sign remains.
+2. **Large caps only.** The effect is strongest in small, retail-held stocks; these universes are blue chips. DK (3 groups of ~6) and SCANDI (5 groups of ~12) are thin and noisy.
+3. **Equal-weighting** (except the US value-weighted robustness book). The original paper's headline is value-weighted.
+4. **Currency:** local; World mixes currencies.
+5. **Trials.** A15 carries the registered article tests (A15-1, A15-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
+
+## 11. Academic references
+
+- Bali, T. G., Cakici, N. & Whitelaw, R. F. (2011). Maxing out: Stocks as lotteries and the cross-section of expected returns. *Journal of Financial Economics*, 99(2), 427–446.
+- Barberis, N. & Huang, M. (2008). Stocks as lotteries: The implications of probability weighting for security prices. *American Economic Review*, 98(5), 2066–2100.
+- Kumar, A. (2009). Who gambles in the stock market? *Journal of Finance*, 64(4), 1889–1933.
+- Tversky, A. & Kahneman, D. (1992). Advances in prospect theory: Cumulative representation of uncertainty. *Journal of Risk and Uncertainty*, 5(4), 297–323.
+- Ang, A., Hodrick, R., Xing, Y. & Zhang, X. (2006). The cross-section of volatility and expected returns. *Journal of Finance*, 61(1), 259–299.
+- Annaert, J., De Ceuster, M. & Verstegen, K. (2013). Are extreme returns priced in the stock market? European evidence. *Journal of Banking & Finance*, 37(9), 3401–3411.
+- Walkshäusl, C. (2014). The MAX effect: European evidence. *Journal of Banking & Finance*, 42, 1–10.
+- Bali, T. G., Brown, S., Murray, S. & Tang, Y. (2017). A lottery-demand-based explanation of the beta anomaly. *Journal of Financial and Quantitative Analysis*, 52(6), 2369–2397.
+- Frazzini, A. & Pedersen, L. H. (2014). Betting against beta. *Journal of Financial Economics*, 111(1), 1–25.
+- McLean, R. D. & Pontiff, J. (2016). Does academic research destroy stock return predictability? *Journal of Finance*, 71(1), 5–32.
+- Jensen, T. I., Kelly, B. & Pedersen, L. H. (2023). Is there a replication crisis in finance? *Journal of Finance*, 78(5), 2465–2518.
+- Harvey, C., Liu, Y. & Zhu, H. (2016). …and the cross-section of expected returns. *Review of Financial Studies*, 29(1), 5–68.
+- Novy-Marx, R. & Velikov, M. (2016). A taxonomy of anomalies and their trading costs. *Review of Financial Studies*, 29(1), 104–147.
+- Treynor, J. & Mazuy, K. (1966). Can mutual funds outguess the market? *Harvard Business Review*, 44(4), 131–136.
+- Boyer, B., Mitton, T. & Vorkink, K. (2010). Expected idiosyncratic skewness. *Review of Financial Studies*, 23(1), 169–202.
+- Conrad, J., Dittmar, R. & Ghysels, E. (2013). Ex ante skewness and expected stock returns. *Journal of Finance*, 68(1), 85–124.
+- George, T. & Hwang, C.-Y. (2004). The 52-week high and momentum investing. *Journal of Finance*, 59(5), 2145–2176.
+- Jegadeesh, N. (1990). Evidence of predictable behavior of security returns. *Journal of Finance*, 45(3), 881–898.
+- Jegadeesh, N. & Titman, S. (1993). Returns to buying winners and selling losers. *Journal of Finance*, 48(1), 65–91.
+- Newey & West (1987); Politis & Romano (1994); Bailey & López de Prado (2012): as in FS01.
+
+## 12. Reproduce
+
+`code/data.py` → `lottery.py` + `run_lottery.py <U>` → `analyse.py lottery` → §10–11: `lottery_fix.py`, `fix_analysis.py` → §12: `signals.py`, `neighbourhood.py max`, `nbh_figs.py`, `nbh_section.py` → `make_figures.py` → `build_factsheets.py`. Metrics call Project1 `InvestmentLibrary`. Licensed prices are not included.
+
+## Appendix
+
+### A. Performance in detail
 
 **US (S&P 500 members, point-in-time)**, median 503 names, 10 groups
 
@@ -201,7 +401,7 @@ The beta chart is the whole story in one picture: across 48 MAX groups in six un
 | 2025 | -4.6% | +12.5% | +10.6% | +9.7% | +15.6% | +8.9% |
 | 2026 | +5.3% | +9.5% | -1.5% | +3.7% | +9.2% | +3.6% |
 
-## 7. Trading record
+### B. Trading record and current book
 
 A factor has no discrete trades; its record is the monthly rebalance log, `results/lottery_monthly_record_<universe>.csv` (names, average MAX per leg, turnover, leg returns, gross and net L/S).
 
@@ -223,105 +423,7 @@ A factor has no discrete trades; its record is the monthly rebalance log, `resul
 | DK | TRYG.CO, DANSKE.CO, NDA-DK.CO, CARL-B.CO, JYSK.CO, RBREW.CO, DEMANT.CO, DSV.CO | VWS.CO, NSIS-B.CO, MAERSK-B.CO, BAVA.CO, MAERSK-A.CO, PNDORA.CO, GMAB.CO, AMBU-B.CO |
 | SCANDI | TRYG.CO, DANSKE.CO, SHB-A.ST, SEB-A.ST, KESKOB.HE, SAMPO.HE, NDA-FI.HE, LIFCO-B.ST | QTCOM.HE, VWS.CO, NSIS-B.CO, NOKIA.HE, MAERSK-B.CO, BAVA.CO, NIBE-B.ST, MAERSK-A.CO |
 
-## 8. Risk and factor attribution
-
-Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk, quality, short-term reversal) for US, UK, DK and World; French Europe 5 factors + WML for EU and SCANDI. Newey-West t, 6 lags. JKP's own `rmax1_21d` factor (the MAX factor itself) sits inside the low-risk theme.
-
-**L/S low − high MAX**
-
-| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
-|---|---|---|---|---|---|---|
-| US | JKP USA 7 themes | 155 | -8.8% | -4.64 | 0.79 | value -0.49 (-5.9), momentum +0.22 (+2.1), low_risk +1.36 (+15.4), short_term_reversal +0.82 (+5.2) |
-| EU | French Europe 5F + WML | 162 | -0.1% | -0.01 | 0.41 | Mkt-RF -0.37 (-4.2), RMW +0.84 (+2.5), WML +0.36 (+2.5) |
-| UK | JKP GBR 7 themes | 155 | -5.2% | -1.38 | 0.62 | momentum +0.22 (+2.6), low_risk +1.45 (+7.5), short_term_reversal +0.37 (+2.2) |
-| DK | JKP DNK 7 themes | 155 | +0.3% | 0.08 | 0.49 | size -0.26 (-2.3), value +0.17 (+2.1), low_risk +1.06 (+8.6), short_term_reversal +0.54 (+4.0) |
-| SCANDI | French Europe 5F + WML | 162 | -2.2% | -0.68 | 0.21 | Mkt-RF -0.27 (-4.5) |
-| World | JKP World 7 themes | 155 | -7.8% | -2.58 | 0.60 | momentum +0.48 (+3.1), low_risk +1.03 (+7.1) |
-
-**Low-MAX long-only**
-
-| Universe | Factor model | Months | Alpha / yr | t(alpha) | R² | Loadings with &#124;t&#124; ≥ 2 (t) |
-|---|---|---|---|---|---|---|
-| US | JKP USA 7 themes | 155 | -0.2% | -0.16 | 0.90 | mkt +0.92 (+33.5), size -0.16 (-3.0), momentum +0.16 (+3.3), low_risk +0.57 (+6.0), short_term_reversal +0.46 (+4.9) |
-| EU | French Europe 5F + WML | 162 | +4.2% | 1.93 | 0.58 | Mkt-RF +0.53 (+8.4), RMW +0.47 (+2.9) |
-| UK | JKP GBR 7 themes | 155 | +3.9% | 2.00 | 0.62 | mkt +0.39 (+9.7), quality +0.36 (+2.6), short_term_reversal +0.32 (+3.3) |
-| DK | JKP DNK 7 themes | 155 | +4.5% | 1.64 | 0.63 | mkt +0.70 (+13.5), value +0.14 (+2.1), short_term_reversal +0.31 (+2.5) |
-| SCANDI | French Europe 5F + WML | 162 | +4.6% | 1.71 | 0.50 | Mkt-RF +0.54 (+9.7), RMW +0.47 (+2.5) |
-| World | JKP World 7 themes | 155 | +1.6% | 1.00 | 0.79 | mkt +0.67 (+17.0), momentum +0.19 (+3.3), low_risk +0.41 (+4.8) |
-
-**Reading it.** Once beta is removed, most of the L/S loss disappears (CAPM alpha t between -0.6 and 2.2). The L/S is, above all, a low-risk position: its loading on JKP's low-risk theme is 1.03 to 1.45 with t up to 15. Where the JKP alpha is negative (US, UK, World), the L/S earned less than that low-risk exposure would predict: net-of-cost, equal-weighted large-cap sorts are a costly way to hold low risk.
-
-**The low-MAX long-only alphas need a warning.** Against the factor models it shows +1.6% to +4.6% a year outside the US (largest t 2.00, UK). Against its own equal-weight universe, in the same currency, the alphas are smaller (-0.7% to +2.8%). The factor returns are in USD (JKP) or USD-based (French) while the book is in local currency, so I read the universe-relative alpha as the honest number.
-
-## 9. Statistical verdict
-
-- **Gate:** |t| > 2.87 (12 cells, Bonferroni 0.05/12, two-sided).
-- **Raw L/S:** negative after costs in 5 of 6; before costs positive in 2 of 6. The US gross spread (-6.0% a year; -10.6% net, t -2.17) is close to A15 *Viva Las Vegas* on the same corrected universe (A15-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
-- **CAPM alpha of the L/S:** -2.5% to +8.5%, passes in 0 of 6. Once beta is priced the anomaly is neither alive nor reversed: the raw result is a beta bet in disguise.
-- **Low-MAX long-only:** alpha between -0.7% and +2.8% (largest t 1.86), none past the gate; beta 0.62–0.84.
-- **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): US 0.01, EU 0.68, UK 0.13, DK 0.21, SCANDI 0.32, World 0.05.
-- **Publication decay.** JKP's broad US MAX factor earned +4.0%/yr before 2006 (t 1.48) and +2.0%/yr in 2012–2025 (t 0.55), from A15. McLean & Pontiff (2016) predict roughly this post-publication shrinkage.
-
-## 10. What goes wrong, and how to fix it
-
-**Method.** As in FS01: diagnose on the design window (Feb 2013 – Dec 2019), fix in a pre-declared order, judge on the holdout (Jan 2020 – Aug 2026), one trial per step, pooled six-universe test of the Sharpe difference, gate p < 0.0071 (7 fix trials across both factsheets). The fixes stay inside the MAX strategy: they change how the two legs are sized, how MAX is measured, and how often names change, not what the strategy bets on.
-
-### 10.1 Diagnosis: four things go wrong
-
-**1. A hidden short on the market.** The L/S has a beta of about −0.6 because low-MAX stocks are low-beta and high-MAX stocks high-beta. With equal-weight universes rising 10–15% a year, beta alone costs -8.1% to -4.0% a year (beta × the universe's return), comparable to or larger than the raw loss (larger in EU, UK, DK, SCANDI); §1 shows CAPM alphas within 8%. The original paper sorted on MAX without neutralising beta; in a 1962–2005 sample that averaged out, in a 13-year bull market it does not.
-
-**2. MAX in large caps is mostly volatility.** The cross-sectional rank correlation of MAX with 60-day volatility is 0.53 to 0.70, and with beta 0.31 to 0.43 (table below). Among blue-chip stocks, a big up-day usually means a volatile stock or news (earnings, M&A), not a retail lottery ticket. The lottery premium lives in small, retail-held stocks (Kumar 2009; Bali et al. 2011), which these universes exclude by construction and which no fix inside them can bring back.
-
-**3. Turnover.** The low leg turns over 53% to 76% a month and the high leg about as much, so costs take 3.3% to 4.6% a year.
-
-**4. Waiting does not help.** The spread is no better, and mostly worse, two to six months after formation, so a longer holding period will not rescue it:
-
-| Universe | L/S, month t+1 (ann.) | t+2..3 | t+4..6 | Rank corr MAX vs volatility | Rank corr MAX vs beta |
-|---|---|---|---|---|---|
-| US | +0.5% | +1.8% | +1.7% | 0.62 | 0.43 |
-| EU | +9.0% | +3.6% | +0.8% | 0.63 | 0.37 |
-| UK | +0.1% | -5.0% | -4.7% | 0.70 | 0.34 |
-| DK | -3.5% | -4.8% | -2.6% | 0.54 | 0.41 |
-| SCANDI | +1.2% | -4.9% | -2.0% | 0.53 | 0.31 |
-| World | +1.3% | -0.9% | -0.2% | 0.66 | 0.37 |
-
-*Design window, gross, equal-weighted extreme groups.*
-
-### 10.2 The fixes, one step at a time
-
-L0 baseline → L1 **beta-neutral legs**: each leg scaled by 1/its ex-ante 252-day beta, so the L/S has zero expected beta (the Frazzini & Pedersen 2014 construction; point 1) → L2 **vol-scaled MAX**: rank on MAX5 / 21-day volatility (JKP's `rmax5_rvol_21d`), lottery-ness net of plain volatility (point 2) → L3 **turnover buffer**: enter the extreme 1/q, keep a name until it leaves the extreme 3/q (point 3).
-
-| Step | Design Sharpe (avg of 6) | Δ vs previous, design (p) | Holdout Sharpe (6-universe book) | Δ vs previous, holdout (p) | Holdout: universes improved | Holdout return / yr | Holdout max DD | t(mean) |
-|---|---|---|---|---|---|---|---|---|
-| L0 baseline | -0.23 | – | -0.41 | – | – | -5.7% | -43% | -1.07 |
-| L1 beta-neutral | 0.29 | +0.71 (p 0.001) | -0.21 | +0.20 (p 0.181) | 6 of 6 | -2.2% | -29% | -0.65 |
-| L2 + vol-scaled MAX | -0.17 | -0.63 (p 0.869) | -1.04 | -0.83 (p 0.967) | 1 of 6 | -10.9% | -58% | -3.23 |
-| L3 + turnover buffer | -0.11 | +0.08 (p 0.184) | -0.88 | +0.16 (p 0.084) | 4 of 6 | -8.5% | -51% | -2.95 |
-
-*Pooled test on the equal-weighted six-universe L/S. ✔ = passes p < 0.0071.*
-
-**Per universe, Sharpe design / holdout**
-
-| Universe | L0 | L1 | L2 | L3 |
-|---|---|---|---|---|
-| US | -0.31 / -0.83 | 0.36 / -0.66 | -0.08 / -0.57 | -0.15 / -0.64 |
-| EU | 0.31 / -0.06 | 0.80 / 0.27 | -0.49 / -1.10 | -0.34 / -1.12 |
-| UK | -0.26 / -0.34 | 0.44 / -0.17 | -0.41 / -0.52 | -0.24 / -0.38 |
-| DK | -0.54 / -0.08 | -0.22 / -0.03 | 0.12 / -0.73 | 0.26 / -0.54 |
-| SCANDI | -0.37 / 0.15 | -0.00 / 0.21 | 0.17 / -0.78 | 0.15 / -0.28 |
-| World | -0.24 / -0.61 | 0.39 / -0.44 | -0.32 / -0.97 | -0.34 / -0.85 |
-
-![Fix ladder](../figures/fs02_fig5_fixes.png)
-
-### 10.3 What the fixes achieve
-
-- **Beta-neutral legs are the real fix.** Sharpe +0.71 in the design window (p 0.0010, passes) and +0.20 in the holdout (p 0.181, does not pass the gate); better in 6 of 6 universes in the design window and 6 of 6 in the holdout. The fixed L/S earns -2.2% a year in the holdout (t -0.6): the beta drag is gone, and what is left is statistically zero.
-- **Vol-scaled MAX failed out of sample.** It helped in 2 of 6 universes in the design window and hurt in 5 of 6 in the holdout (-0.83). once plain volatility is removed, large-cap lottery-ness carries no premium.
-- **The turnover buffer** cuts costs from 4.3% to 3.4% a year (+0.08 design, +0.16 holdout, p 0.08), not significant.
-
-**Bottom line.** What went wrong is not the idea but the packaging: an unhedged beta bet and a signal that, in large caps, measures volatility. Fixing the beta turns a -5.7%/yr loser (six-universe book, holdout) into a market-neutral book earning -2.2% (t -0.6), statistically zero. The lottery premium itself is not present in these universes after 2012. Recommended specification if you want the exposure: **L1 (beta-neutral) with the turnover buffer on the original MAX signal**. That exact combination was not in the pre-declared ladder, so I report it post hoc and count it as nothing: costs fall to 2.3% a year and the holdout L/S earns -0.6% (t -0.2, Sharpe -0.06 vs -0.21 for L1). Treat it as a defensive, low-risk tilt with an expected premium near zero; for a long-only investor, the low-MAX portfolio is a reasonable low-beta equity sleeve, not an alpha source.
-
-## 11. Classification: where does it fit?
+### C. Classification: where does it fit?
 
 Evidence as in FS01: correlations with the JKP themes or French Europe factors, a Treynor–Mazuy convexity regression on the equal-weight universe, and behaviour in the worst and best 10% of market months.
 
@@ -345,11 +447,11 @@ Evidence as in FS01: correlations with the JKP themes or French Europe factors, 
 
 On the map the MAX long/short sits high on the low-risk axis; beta-neutralising moves it toward the centre but keeps it in the defensive half. The Turtle books from FS01 sit in the opposite corner. The two strategies are close to mirror images: a breakout rule buys exactly the volatile, recently jumping stocks that the MAX rule sells.
 
-## 12. 360° view: lottery, falling knife and everything in between
+### D. 360° view: lottery, falling knife and everything in between
 
 A factor is only understood next to its neighbours: the signals that pick the same stocks (lookalikes), the signal that should pick the opposite stocks (the mirror), the same idea at another speed (cousins), and the pieces it is made of (decomposition). MAX is the up-tail of last month's daily returns; its natural mirror is **MIN, the worst day**, which is the fast version of a *falling knife*. The slow version is a stock sitting at its 52-week low. This section tests all of them on the same six point-in-time universes, same months, same construction: equal-weighted top quantile minus bottom quantile, gross, Feb 2013 – Aug 2026 (`code/signals.py`, `code/neighbourhood.py`). Signs are raw: the MAX line is *most lottery-like minus calmest*, the MIN line is *mildest worst day minus deepest crash*, the 52-week-low line is *far above the low minus at the low*.
 
-### 12.1 The neighbourhood in one table
+#### D.1 The neighbourhood in one table
 
 | Signal (top minus bottom) | Role | Likeness to MAX (best day): stocks | Likeness: L/S returns | Raw L/S, avg of 6 | CAPM alpha range | Universes with alpha t ≥ +2 / ≤ −2 |
 |---|---|---|---|---|---|---|
@@ -373,7 +475,7 @@ A factor is only understood next to its neighbours: the signals that pick the sa
 
 ![360 map](../figures/nbh_max_map.png)
 
-### 12.2 Are lottery and falling knife mirrors?
+#### D.2 Are lottery and falling knife mirrors?
 
 **In the stocks they pick: no.** The rank correlation of MAX and MIN is only -0.33. A stock with a huge best day usually also has a deep worst day, because both come from volatility: MAX correlates +0.79 with the range and +0.67 with idiosyncratic volatility; MIN correlates -0.78 with the range. What separates them is direction: MAX is +0.54 correlated with the net tail and MIN +0.50. So each signal is roughly half "how big are the tails" and half "which tail is bigger".
 
@@ -396,7 +498,7 @@ The size of the tails swings with the market; the direction of the tails hardly 
 
 Holding the worst day fixed (down a column), the best day adds little: the spread from calmest to most lottery-like is -1.7, +0.3 and -0.4 points a year. Holding the best day fixed (along a row), the worst day matters more: deep crashes out-earned mild worst days by +1.7, +1.4 and +0.4 points, a beta effect again (§12.3). MAX carries no information that MIN and volatility do not already carry.
 
-### 12.3 What is actually priced
+#### D.3 What is actually priced
 
 ![Alpha grid](../figures/nbh_max_alpha.png)
 
@@ -415,7 +517,7 @@ Holding the worst day fixed (down a column), the best day adds little: the sprea
 
 - **Persistence.** The MAX spread is about as large 2, 3, 4 and 6 months after formation as in the first month (US: t+1 +6%, t+2 +7%, t+3 +4%, t+4 +10%, t+6 +7%). A mispricing that gets corrected would fade; a stable characteristic such as volatility does not. That fits MAX measuring a lasting trait of the stock rather than a passing overreaction.
 
-### 12.4 The falling knife at two speeds
+#### D.4 The falling knife at two speeds
 
 | | Fast knife: MIN, a big one-day crash | Slow knife: sitting at the 52-week low |
 |---|---|---|
@@ -426,7 +528,7 @@ Holding the worst day fixed (down a column), the best day adds little: the sprea
 
 Both speeds say the same thing once beta is removed: **the knife keeps falling relative to the market.** Only its beta makes a fast knife look like a bargain in a bull market. This matches A10 *Free Fallin'*, where knives rebounded only in market-wide crashes (0 of 3 tests passed), and it is the reverse of the "blood in the streets" folklore.
 
-### 12.5 Verdict of the 360° view, and what is still missing
+#### D.5 Verdict of the 360° view, and what is still missing
 
 **Lottery and falling knife are the two tails of the same volatility.** They are mirrors in their returns (-0.70) but not in the stocks they pick (-0.33). Neither tail carries a premium of its own once volatility and beta are in the model (largest exception: MIN in DK, t 1.3 after its neighbours); what remains priced is the low-risk anomaly (avoid large tails of either sign) and, for the slow knife, momentum. For the multifactor battery this means: keep the root signals (volatility or beta, momentum), not MAX or MIN.
 
@@ -441,47 +543,3 @@ Not covered, and why:
 | Nominal share price | Kumar (2009): lottery stocks are cheap per share | Only adjusted prices for most markets |
 | Short interest and borrow fees | Limits to arbitrage on the short leg | Not in the data set |
 
-## 13. Caveats
-
-1. **Survivorship, and it cut in a particular direction here.** The first edition used today's index members outside the US. A high-MAX stock that jumped and later collapsed out of the index was missing, while one that jumped and kept rising was present, which flattered the high-MAX leg. This edition uses point-in-time membership (§3), and the table confirms the direction (survivor list → point-in-time; the universe definitions also changed):
-
-| Universe | EW universe CAGR | L/S return / yr (net) | Low-MAX Sharpe | EW Sharpe |
-|---|---|---|---|---|
-| EU | +14.0% → +10.2% | -4.3% → +1.9% | 0.89 → 0.89 | 0.95 → 0.75 |
-| UK | +12.7% → +8.9% | -9.9% → -4.4% | 0.70 → 0.82 | 0.95 → 0.68 |
-| DK | +17.6% → +12.1% | -5.0% → -3.3% | 0.99 → 0.67 | 1.18 → 0.83 |
-| SCANDI | +15.3% → +12.1% | -4.9% → -1.7% | 1.02 → 0.74 | 1.09 → 0.88 |
-| World | +16.1% → +10.5% | -12.4% → -6.5% | 0.99 → 0.66 | 1.13 → 0.71 |
-
-The non-US L/S numbers moved towards zero and the low-MAX book improved relative to its universe. About a fifth of member-quarters still have no price (mostly delisted names), so a residual bias of the same sign remains.
-2. **Large caps only.** The effect is strongest in small, retail-held stocks; these universes are blue chips. DK (3 groups of ~6) and SCANDI (5 groups of ~12) are thin and noisy.
-3. **Equal-weighting** (except the US value-weighted robustness book). The original paper's headline is value-weighted.
-4. **Currency:** local; World mixes currencies.
-5. **Trials.** A15 carries the registered article tests (A15-1, A15-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
-
-## 14. Academic references
-
-- Bali, T. G., Cakici, N. & Whitelaw, R. F. (2011). Maxing out: Stocks as lotteries and the cross-section of expected returns. *Journal of Financial Economics*, 99(2), 427–446.
-- Barberis, N. & Huang, M. (2008). Stocks as lotteries: The implications of probability weighting for security prices. *American Economic Review*, 98(5), 2066–2100.
-- Kumar, A. (2009). Who gambles in the stock market? *Journal of Finance*, 64(4), 1889–1933.
-- Tversky, A. & Kahneman, D. (1992). Advances in prospect theory: Cumulative representation of uncertainty. *Journal of Risk and Uncertainty*, 5(4), 297–323.
-- Ang, A., Hodrick, R., Xing, Y. & Zhang, X. (2006). The cross-section of volatility and expected returns. *Journal of Finance*, 61(1), 259–299.
-- Annaert, J., De Ceuster, M. & Verstegen, K. (2013). Are extreme returns priced in the stock market? European evidence. *Journal of Banking & Finance*, 37(9), 3401–3411.
-- Walkshäusl, C. (2014). The MAX effect: European evidence. *Journal of Banking & Finance*, 42, 1–10.
-- Bali, T. G., Brown, S., Murray, S. & Tang, Y. (2017). A lottery-demand-based explanation of the beta anomaly. *Journal of Financial and Quantitative Analysis*, 52(6), 2369–2397.
-- Frazzini, A. & Pedersen, L. H. (2014). Betting against beta. *Journal of Financial Economics*, 111(1), 1–25.
-- McLean, R. D. & Pontiff, J. (2016). Does academic research destroy stock return predictability? *Journal of Finance*, 71(1), 5–32.
-- Jensen, T. I., Kelly, B. & Pedersen, L. H. (2023). Is there a replication crisis in finance? *Journal of Finance*, 78(5), 2465–2518.
-- Harvey, C., Liu, Y. & Zhu, H. (2016). …and the cross-section of expected returns. *Review of Financial Studies*, 29(1), 5–68.
-- Novy-Marx, R. & Velikov, M. (2016). A taxonomy of anomalies and their trading costs. *Review of Financial Studies*, 29(1), 104–147.
-- Treynor, J. & Mazuy, K. (1966). Can mutual funds outguess the market? *Harvard Business Review*, 44(4), 131–136.
-- Boyer, B., Mitton, T. & Vorkink, K. (2010). Expected idiosyncratic skewness. *Review of Financial Studies*, 23(1), 169–202.
-- Conrad, J., Dittmar, R. & Ghysels, E. (2013). Ex ante skewness and expected stock returns. *Journal of Finance*, 68(1), 85–124.
-- George, T. & Hwang, C.-Y. (2004). The 52-week high and momentum investing. *Journal of Finance*, 59(5), 2145–2176.
-- Jegadeesh, N. (1990). Evidence of predictable behavior of security returns. *Journal of Finance*, 45(3), 881–898.
-- Jegadeesh, N. & Titman, S. (1993). Returns to buying winners and selling losers. *Journal of Finance*, 48(1), 65–91.
-- Newey & West (1987); Politis & Romano (1994); Bailey & López de Prado (2012): as in FS01.
-
-## 15. Reproduce
-
-`code/data.py` → `lottery.py` + `run_lottery.py <U>` → `analyse.py lottery` → §10–11: `lottery_fix.py`, `fix_analysis.py` → §12: `signals.py`, `neighbourhood.py max`, `nbh_figs.py`, `nbh_section.py` → `make_figures.py` → `build_factsheets.py`. Metrics call Project1 `InvestmentLibrary`. Licensed prices are not included.
