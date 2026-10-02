@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t -0.27 (2013–2026: -3.07),
+> same sign, weaker. Long-only alpha vs the equal-weight universe: +1.1% a year, t +0.43 (2013–2026: -2.94), reversed.
+> The 2013–2026 US losses did not repeat; they read as specific to that period. Registered verdicts are unchanged.
+> Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Contrarian / bottom-fishing</div>
 <div><b>Origin</b>Market folklore (bottom-fishing); tested against George & Hwang (2004)</div>

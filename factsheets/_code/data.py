@@ -35,10 +35,17 @@ _PITTAG = "" if not os.environ.get("FS_PIT_DIR") else "_" + os.path.basename(os.
 SC_OSLO = os.environ.get("FS_SC_OSLO") == "1"
 _PITTAG += "_oslo" if SC_OSLO else "_reg"   # separate caches: the 1 Oct runs (with Oslo) used the untagged one
 CACHE = os.path.join(D, ("cache" if US_UNIVERSE == "top500" else f"cache_{US_UNIVERSE}") + _PITTAG + ("_win" if os.name == "nt" else ""))
+# 2026-10-02 sensitivities of PREREG_US_1999_2012.md section 6 (off unless set): membership lag in months, and a
+# delisting haircut applied on the trading day after the last price of the tickers listed in FS_DELIST_TICKERS (json)
+US_LAG = int(os.environ.get("FS_US_LAG", "1"))
+DELIST_HAIRCUT = float(os.environ.get("FS_DELIST_HAIRCUT", "0"))
+if US_LAG != 1 or DELIST_HAIRCUT:
+    CACHE += f"_lag{US_LAG}_dl{int(DELIST_HAIRCUT * 100)}"
 os.makedirs(CACHE, exist_ok=True)   # pickles are not portable between the PC and Claude's Linux sandbox
 SP500_HISTORY = os.environ.get("FS_SP500_HISTORY", os.path.join(_HERE, "..", "..", "..", "Project2 Investment Strategy", "archive",
                                                                   "sharadar_sp500_full_history.csv"))
-START, END = "2012-01-01", "2026-09-25"
+START, END = os.environ.get("FS_START", "2012-01-01"), os.environ.get("FS_END", "2026-09-25")   # env: 2026-10-02 US 1999-2012 study
+EARLY = START < "2011-01-01"   # True only for the pre-registered 1999-2012 run (PREREG_US_1999_2012.md)
 KNOWN_BAD = ["DIA.MC", "ATO.PA", "ZEG.L", "SPM.MI", "VPLAY-B.ST",   # Project2 data.py KNOWN_BAD_SERIES
              "TELIA1.HE", "AF.AS"]   # thin secondary listings in the PIT lists (+92%/-90% single-day prints)
 VERIFIED = ["ABVX.PA", "MRNA", "ECHO", "GME"]
@@ -72,7 +79,7 @@ def _clean(r, tag, low=True):
 def _sp500_members(months, cols):
     """S&P 500 members at each month-end from Sharadar's add/remove history (same rule as Articles/_shared/lib10/universes.py)."""
     e = pd.read_csv(SP500_HISTORY, parse_dates=["date"])
-    start, end = pd.Timestamp("2010-01-01"), pd.Timestamp("2099-12-31")
+    start, end = pd.Timestamp(os.environ.get("FS_SP500_START", "2010-01-01")), pd.Timestamp("2099-12-31")
     current = set(e.loc[e.action == "current", "ticker"]); iv = {}
     for t, g in e[e.action.isin(["added", "removed"])].sort_values(["ticker", "date"]).groupby("ticker"):
         opens, cur = [], None
@@ -219,7 +226,7 @@ def load(region, pit=True):
         r = px.pct_change(fill_method=None).where(px.notna())
         uni_m, mc = us_membership(px)
         # member in month m if in top-500 at end of month m-1
-        elig = uni_m.shift(1).reindex(px.index, method="ffill").fillna(False).astype(bool)
+        elig = uni_m.shift(US_LAG).reindex(px.index, method="ffill").fillna(False).astype(bool)
     else:
         if region == "UK":
             r = _uk_tr()
@@ -233,6 +240,16 @@ def load(region, pit=True):
                 r[common] = uk[common].reindex(r.index)
         elig = None
     r = _clean(r, region, low=(region != "US")).loc[START:END]
+    if region == "US" and DELIST_HAIRCUT:
+        import json as _j
+        hit = 0
+        for tk in _j.load(open(os.environ["FS_DELIST_TICKERS"])):
+            if tk in r.columns and r[tk].notna().any():
+                last = r[tk].last_valid_index(); i = r.index.get_loc(last)
+                if i + 1 < len(r.index) and last < r.index[-1] - pd.Timedelta(days=10):
+                    r.iloc[i + 1, r.columns.get_loc(tk)] = -DELIST_HAIRCUT; hit += 1
+                    if elig is not None: elig.loc[r.index[i + 1], tk] = elig.loc[last, tk] if last in elig.index else False
+        print(f"[US] delisting haircut -{DELIST_HAIRCUT:.0%} applied to {hit} names")
     r = r.loc[r.notna().sum(axis=1) >= max(5, 0.2 * r.shape[1])]    # drop exchange holidays with thin data
     if elig is None:
         # survivor list: eligible once the name has 252 days of history

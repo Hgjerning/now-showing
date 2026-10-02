@@ -12,6 +12,13 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t +0.39 (2013–2026: +1.17),
+> same sign, weaker. Long-only alpha vs the equal-weight universe: +2.4% a year, t +1.41 (2013–2026: +1.93), same sign,
+> weaker. Registered verdicts are unchanged. Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Defensive / betting against beta</div>
 <div><b>Origin</b>Frazzini & Pedersen (2014)</div>

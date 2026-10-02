@@ -12,6 +12,12 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`. **FS18 on the corrected universe: t 1.72 (published 1.85), still below the gate.**
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. US overlay at $50m: -1.3% a year, t
+> -0.72: **fail**, as in 2013–2026. Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 | Key facts | |
 |---|---|
 | Pre-registration | `planning/PREREG_FS18.md`, saved to the Factsheets folder before any FS18 number was computed; no deviations |

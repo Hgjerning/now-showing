@@ -6,7 +6,7 @@ from add_changed_box import OUT, REBUILT
 
 from playwright.sync_api import sync_playwright
 
-stems = [f[:-5] for f in sorted(os.listdir(OUT)) if f.endswith(".html") and f.split("_")[0] in REBUILT]
+stems = [f[:-5] for f in sorted(os.listdir(OUT)) if f.endswith(".html") and f.split("_")[0] in REBUILT + ["FS15"]]   # FS15: US 1999-2012 box, 2026-10-02
 with sync_playwright() as pw:
     b = pw.chromium.launch(); pg = b.new_page(color_scheme="light")
     for s in stems:

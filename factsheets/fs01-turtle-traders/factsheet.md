@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t -5.00 (2013–2026: -3.96),
+> confirmed. Long-only alpha vs the equal-weight universe: -10.7% a year, t -3.61 (2013–2026: -1.38), confirmed.
+> Negative in both halves (1999–2005 and 2006–2012): the most robust result in the whole series, and it is a loss.
+> Registered verdicts are unchanged. Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Donchian channel breakout, pyramiding, 2N stops</div>
 <div><b>Origin</b>Dennis & Eckhardt, 1983; rules published by Faith (2003)</div>

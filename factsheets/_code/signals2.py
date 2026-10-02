@@ -43,7 +43,7 @@ def build(R):
     if os.path.exists(f):
         return pd.read_pickle(f)
     base = SG.build(R); E = base["E"]; fwd = base["fwd"]
-    o = data.load(R); r = o["ret"].loc["1998":] if R.endswith("_A") else o["ret"].loc["2011":]
+    o = data.load(R); r = o["ret"].loc["1998":] if (R.endswith("_A") or data.EARLY) else o["ret"].loc["2011":]
     per = r.index.to_period("M"); g = r.groupby(per); cnt = g.count()
     S = {}
     S["vol252"] = r.rolling(252, min_periods=200).std().groupby(per).last()

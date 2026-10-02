@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t -0.09 (2013–2026: -1.36),
+> same sign, weaker. Long-only alpha vs the equal-weight universe: +4.6% a year, t +2.08 (2013–2026: +1.73), confirmed.
+> The one positive long-only result that holds in both periods. Registered verdicts are unchanged. Pre-registration,
+> method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Defensive / low-risk anomaly</div>
 <div><b>Origin</b>Haugen & Heins (1975); Blitz & van Vliet (2007)</div>

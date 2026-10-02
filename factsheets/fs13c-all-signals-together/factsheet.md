@@ -12,6 +12,12 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. 12-1 momentum's multivariate slope: t
+> -0.65 (pass mark t > 2): **fail**. Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 | Key facts | |
 |---|---|
 | Method | Fama-MacBeth: every month, next-month stock returns regressed on all signals at once; slopes averaged over time, Newey–West t (6 lags) |

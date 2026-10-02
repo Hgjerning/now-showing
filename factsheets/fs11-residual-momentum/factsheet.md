@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t -0.12 (2013–2026: +1.22),
+> reversed. Long-only alpha vs the equal-weight universe: +0.1% a year, t +0.05 (2013–2026: +2.30), same sign, weaker.
+> Positive in 2000–2005, negative in 2006–2012 (the 2009 momentum crash). Registered verdicts are unchanged.
+> Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Residual (idiosyncratic) momentum</div>
 <div><b>Origin</b>Blitz, Huij & Martens (2011)</div>

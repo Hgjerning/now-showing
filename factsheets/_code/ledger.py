@@ -134,6 +134,30 @@ def rows():
         for k, lab in (("T1", "HRP minus equal weight"), ("T2", "HRP minus inverse variance")):
             v = F21[k]; tt = float(_st.norm.ppf(1 - v["p_gt"])) if 0 < v["p_gt"] < 1 else 0.0
             R.append(dict(fs="FS21", strategy="Hierarchical risk parity (primary)", kind="portfolio", test=f"{lab}, pooled Sharpe, 5 markets (pre-registered)", t=tt, sharpe=None, months=v["months"]))
+    U99 = os.path.join(HERE, "..", "results_us1999")   # 2026-10-02: PREREG_US_1999_2012.md, 65 trials + FS20's 11 variants
+    if os.path.exists(os.path.join(U99, "t1_xs.json")):
+        J = {}
+        for f in ("t1_turtle", "t1_lottery", "t1_xs"):
+            J.update(json.load(open(os.path.join(U99, f + ".json"))))
+        names = {"FS01": "Turtle Traders", "FS02": "Lottery (MAX)", **{c: specs.S[c]["title"] for c in specs.ORDER}}
+        for c, v in sorted(J.items()):
+            R.append(dict(fs="US99", strategy=f"{c} {names[c]}", kind="out-of-sample", test="L/S net mean, US 1999-2012", t=v["ls_t"], sharpe=v["ls_sharpe"], months=v["months"]))
+            R.append(dict(fs="US99", strategy=f"{c} {names[c]}", kind="out-of-sample", test="long-only alpha vs EW, US 1999-2012", t=v["lo_alpha_t"], sharpe=v["lo_sharpe"], months=v["months"]))
+        for f, lab in (("t2_battery", "FS13 signal, beta-neutral, financed, US 1999-2012"), ("t3_fund", "FS13b signal, long-only alpha vs EW, US 1999-2012")):
+            for s, r in json.load(open(os.path.join(U99, f + ".json")))["rows"].items():
+                R.append(dict(fs="US99", strategy=s, kind="out-of-sample", test=lab, t=r["new"], sharpe=None, months=None))
+        v = json.load(open(os.path.join(U99, "t4_fmb.json")))
+        R.append(dict(fs="US99", strategy="Momentum 12-1", kind="out-of-sample", test="FS13c multivariate slope, US 1999-2012", t=v["mom_t"], sharpe=None, months=v["months"]))
+        v = json.load(open(os.path.join(U99, "t5_fs18.json")))
+        R.append(dict(fs="US99", strategy="FS18 overlay", kind="out-of-sample", test="overlay mean, US $50m, 1999-2012", t=v["t"], sharpe=v["sharpe"], months=v["months"]))
+        v = json.load(open(os.path.join(U99, "t6_fs20.json")))
+        for k, x in v["variants"].items():
+            prim = k == v["primary"]
+            R.append(dict(fs="US99", strategy="FS20 checklist" + (" (primary)" if prim else ""), kind="out-of-sample", test=f"CAPM alpha, US 1999-2012, {k}" + (" (pre-registered)" if prim else ""), t=x["capm"]["t"], sharpe=None, months=x["capm"]["n"]))
+        p7 = os.path.join(HERE, "..", "..", "..", "Project2 Investment Strategy", "us_oos_1999_result.json")
+        if os.path.exists(p7):
+            v = json.load(open(p7))["decision"]
+            R.append(dict(fs="US99", strategy="Project2 US leg (live book)", kind="out-of-sample", test="alpha vs French US market, 1999-2011 (pre-registered)", t=v["t"], sharpe=v["strat_sharpe"], months=None))
     D = pd.DataFrame(R)
     D["p"] = D.apply(lambda r: r["p"] if "p" in r and pd.notna(r.get("p")) else p2(r["t"]), axis=1)
     return D
@@ -200,11 +224,11 @@ def md(D, O):
     by = [[b["fs"], b["trials"], b["local_pass"], b["bonf"], b["bh"]] for b in O["by"]]
     ps = [[r["fs"], r["strategy"], r["test"], f"{r['t']:+.2f}", f"{r['p']:.4f}", "✓" if r["bonferroni"] else "", "✓" if r["bh"] else ""] for r in O["passes"]]
     ds = [[d["fs"], d["strategy"], d["test"], f"{d['t']:+.2f}", f"{d['sr_ann']:.2f}", f"{d['sr0_ann']:.2f}", f"{d['dsr']:.2f}", f"{d['sr0_null_ann']:.2f}", f"{d['dsr_null']:.2f}"] for d in O["dsr"]]
-    txt = f"""# Factsheet trial ledger (FS01–FS13)
+    txt = f"""# Factsheet trial ledger (FS01–FS21, plus the US 1999–2012 test)
 
 Built {pd.Timestamp.today().date()} by `code/ledger.py` from the results files; re-run after every rebuild. This ledger is separate from the article programme's `TRIAL_LEDGER.md` files (which count pre-registered hypotheses); here every gated cell of every factsheet is a trial.
 
-**Trials: {O['n']}**: primary cells (6 markets × L/S and long-only per strategy), fix-ladder holdout tests, the FS13 battery (19 signals × raw/beta-neutral) the FS13b US fundamental battery (20 signals × raw, beta-neutral and long-only) the FS13c Fama-MacBeth slopes (multivariate, per market and averaged) the pre-registered FS14 multifactor tests the FS15 re-run on 1998–2013 the FS17 factor-level tests of non-US fundamentals the FS18 portfolio overlay, the FS19 robustness tests the FS20 checklist proxy and the FS21 portfolio-construction tests. The 153 JKP factors in FS13 are published factors, tested there with their own correction, and not counted here.
+**Trials: {O['n']}**: primary cells (6 markets × L/S and long-only per strategy), fix-ladder holdout tests, the FS13 battery (19 signals × raw/beta-neutral) the FS13b US fundamental battery (20 signals × raw, beta-neutral and long-only) the FS13c Fama-MacBeth slopes (multivariate, per market and averaged) the pre-registered FS14 multifactor tests the FS15 re-run on 1998–2013 the FS17 factor-level tests of non-US fundamentals the FS18 portfolio overlay, the FS19 robustness tests the FS20 checklist proxy, the FS21 portfolio-construction tests, and (US99) the pre-registered US 1999–2012 out-of-sample test on Sharadar (`PREREG_US_1999_2012.md`). The 153 JKP factors in FS13 are published factors, tested there with their own correction, and not counted here.
 
 Programme-wide bars: Bonferroni at 5% over {O['n']} trials needs |t| > {O['z_bonf']:.2f}; Benjamini–Hochberg at 5% controls the false-discovery rate instead.
 

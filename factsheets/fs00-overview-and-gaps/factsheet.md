@@ -12,6 +12,15 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period these factsheets were not built on. 65 trials. What holds: the Turtle
+> loss (FS01) and the low-volatility long-only alpha (FS04). What does not: momentum in every form (FS03, FS11, FS13c),
+> and the 2013–2026 US losses for seasonality and the 52-week low. The checklist (FS20) passes in 1999–2012 only. The
+> live book's US leg does not replicate (alpha t +1.10, needed 2). The trial ledger now holds 772 trials (Bonferroni |t|
+> > 3.99). Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 > **In one paragraph.** Twelve strategies were run with the same code on six point-in-time universes (US, EU, UK, Denmark, Scandinavia, World), 2013–2026, after costs, each with a full factsheet: P&L, trade records, drawdowns, attribution, a pre-declared fix ladder, a classification and a 360° view. Only 0 of eleven long/short books (none) earn a **positive** return that passes the 2.87 gate in at least one market; 4 (FS01, FS06, FS08, FS12) pass it with a significantly **negative** return; long-only books beat the equal-weight universe's Sharpe most often in the momentum and low-risk families. Many signals are **redundant**: once their nearest library neighbours are in the model, 4 of eleven have no alpha left. The price-only battery collapses into a few roots: **momentum** (12-1, 52-week high, residual momentum), **low risk** (volatility, beta, MAX) and, weakly, **reversal** and **size**. The biggest gaps are data (fundamentals and delisted prices outside the US), models (no multivariate test yet) and implementation (capacity outside the US). Borrow fees, financing of leverage, World in one currency, a replication check, a programme-wide trial ledger and a market-impact cost model were added on 27 September 2026 (§3.0).
 
 ## 1. All strategies in one table

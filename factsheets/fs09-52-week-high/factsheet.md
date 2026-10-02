@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t -0.98 (2013–2026: -1.00),
+> same sign, weaker. Long-only alpha vs the equal-weight universe: -1.6% a year, t -0.64 (2013–2026: +0.05), no
+> 2013–2026 effect to test. Registered verdicts are unchanged. Pre-registration, method and every result:
+> `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Anchoring momentum</div>
 <div><b>Origin</b>George & Hwang (2004)</div>

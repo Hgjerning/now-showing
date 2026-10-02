@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`. On the corrected universe the pooled holdout spread is more clearly negative (t −2.21): beyond 2, though not past this factsheet's 2.87 gate.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. L/S net: t +1.16 (2013–2026: -2.83),
+> reversed. Long-only alpha vs the equal-weight universe: +2.2% a year, t +0.61 (2013–2026: -3.17), reversed. The
+> 2013–2026 US loss did not repeat; it reads as specific to that period. Registered verdicts are unchanged.
+> Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 <div class="kf" markdown="0">
 <div><b>Strategy</b>Return seasonality (cross-sectional)</div>
 <div><b>Origin</b>Heston & Sadka (2008)</div>

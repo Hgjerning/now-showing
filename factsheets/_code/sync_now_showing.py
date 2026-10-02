@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); FS = os.path.join(HERE, "..")
 NS = os.path.normpath(os.path.join(FS, "..", "now-showing", "factsheets"))
 REBUILT = ["FS00", "FS01", "FS02", "FS03", "FS04", "FS05", "FS06", "FS07", "FS08", "FS09", "FS10", "FS11", "FS12",
            "FS13", "FS13b", "FS13c", "FS14", "FS16", "FS18", "FS20", "FS21"]
-NEW_CODE = ["rebuild_all.py", "add_changed_box.py", "make_pdfs.py", "decompose.py", "rerun_pit.py", "turtle_full.py",
+NEW_CODE = ["rebuild_all.py", "us1999_run.py", "add_us1999_box.py", "ledger.py", "add_changed_box.py", "make_pdfs.py", "decompose.py", "rerun_pit.py", "turtle_full.py",
             "us_universe_check.py", "sync_now_showing.py"]
 n = 0
 
@@ -48,6 +48,9 @@ def main():
             cp(os.path.join(HERE, f), os.path.join(code_dir, f))
     for f in ("FACTSHEETS_RERUN_2026-10-02.md", "US_UNIVERSE_CHECK_2026-10-01.md"):
         cp(os.path.join(FS, f), os.path.join(NS, f))
+    # 2026-10-02: the US 1999-2012 pre-registration with its results, and the rebuilt trial ledger
+    cp(os.path.join(FS, "planning", "PREREG_US_1999_2012.md"), os.path.join(NS, "PREREG_US_1999_2012.md"))
+    cp(os.path.join(FS, "planning", "FACTSHEET_TRIAL_LEDGER.md"), os.path.join(NS, "TRIAL_LEDGER.md"))
     print(f"{n} files written")
 
 

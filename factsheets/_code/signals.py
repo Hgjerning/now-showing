@@ -47,7 +47,7 @@ def build(R):
     f = os.path.join(CACHE, f"signals_{R}.pkl")
     if os.path.exists(f):
         return pd.read_pickle(f)
-    s0 = "1998" if R.endswith("_A") else "2012"
+    s0 = "1998" if (R.endswith("_A") or data.EARLY) else "2012"
     o = data.load(R); r, e = o["ret"].loc[s0:], o["elig"].loc[s0:]
     mkt = r.where(e).mean(axis=1)
     per = r.index.to_period("M"); g = r.groupby(per); cnt = g.count(); ok = cnt >= 15

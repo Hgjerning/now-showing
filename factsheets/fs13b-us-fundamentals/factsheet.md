@@ -12,6 +12,14 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. 15 of 20 fundamental signals keep their
+> long-only sign (the pass mark was 15): passes exactly at the bar, and the six composites are built from the fourteen
+> single signals, so this is weaker evidence than 20 independent tests. Profit growth, this factsheet's strongest US
+> result: t +0.76 (2013–2026: +3.42). Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 | Key facts | |
 |---|---|
 | Universe | US, point-in-time S&P 500 members (Sharadar), monthly, Feb 2013 – Aug 2026 |

@@ -12,6 +12,13 @@
 > Registered verdicts are unchanged; where a corrected number crosses a gate, the text says so.
 > Comparison and method: `FACTSHEETS_RERUN_2026-10-02.md`.
 
+> **US, 1999–2012 (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time S&P
+> 500 with delisted stocks, 1999–2012, a period this factsheet was not built on. 11 of 19 signals keep their US sign in
+> the beta-neutral book (the pass mark was 14): **fail**. Signs that flipped: max1, max5, asym, r1, mom, resmom, seas,
+> size. Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
+
+
+
 | Key facts | |
 |---|---|
 | Price battery | 19 price signals × 6 point-in-time universes (US, EU, UK, DK, SCANDI, World), monthly, 2013–2026, our engine, net of 10 bp per side and a size-tiered borrow fee on the short leg |
