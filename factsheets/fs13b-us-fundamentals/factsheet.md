@@ -1,5 +1,8 @@
 # FACTSHEET FS13b · US fundamentals, stock by stock
 
+> **Correction of 5 October 2026.** The fundamental signals on this sheet were not restricted to the S&P 500 members of each month: the books could also hold companies outside the index at that time (about 66 instead of 50 names per decile). Re-run with members only, the composite results move as follows (long-only alpha t, published → corrected): Profit growth +3.42 → +1.37 (beta-neutral L/S +3.01 → +0.71); Debt issuance +2.50 → +1.22 (beta-neutral L/S +0.83 → +0.69); Profitability +0.71 → +0.18 (beta-neutral L/S +1.37 → +1.09); Value -1.69 → -1.05 (beta-neutral L/S -2.26 → -1.05); Investment -1.75 → -0.87 (beta-neutral L/S -2.83 → -1.92); Accruals +0.44 → +0.49 (beta-neutral L/S +0.52 → +0.37). **The profit growth long-only result (t 3.42) does not survive the correction (t 1.37); no composite now clears 2.** The pre-registered 1999–2012 check (T3, 'at least 15 of 20 signals keep their sign') was re-run the same way: **9 of 20 keep their sign — FAIL** (published: 15 of 20, pass at the bar); profit growth 1999–2012 t −0.75 (published +0.76). Numbers below are as published. Method: `fundamentals.mask`, `results_usmask/fund_battery.json`, `results_us1999/sens_fundmask/t3_fund.json`.
+
+
 ### Do the published fundamental themes work in our own US engine?
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10 sidebar: strategy factsheets · data to 31 August 2026*
@@ -19,8 +22,11 @@
 > result: t +0.76 (2013–2026: +3.42). Pre-registration, method and every result: `PREREG_US_1999_2012.md`.
 
 
-
-
+> **What changed on 3 October 2026.** The European price panels (UK, EU, SCANDI, DK) included 275 stocks priced only from EODHD, the source
+> used for members that stopped trading. They now pass the vendor-glitch filter first (fake weekend prints, one-day spikes
+> that reverse, pence/pound flips, mis-printed last prices); three series are dropped (TIFS.L, WTAN.L, SCV-B.ST).
+> Every number below is re-run. Registered verdicts are unchanged.
+> Comparison: `planning/RECHECK_2026-10-03_EODHD_CLEAN.md`.
 
 | Key facts | |
 |---|---|
@@ -155,7 +161,7 @@ Profit growth keeps most of its return after the price signals: it is related to
 - **Financials are included**; ratios such as gross profitability and net operating assets mean little for banks and insurers. A sector filter needs industry codes (FS00 gap).
 - **US only**, S&P 500 members, equal weight; JKP is value-weighted over the whole market.
 - **Aggregated balance-sheet lines** make the debt-issuance measures approximate (JKP correlation -0.10–0.43).
-- **Multiple testing.** 20 signals × three books add 60 trials to the factsheet ledger, now 682 in all. Programme-wide, 1 of the 60 survives the Benjamini–Hochberg correction: Profit growth (composite) (long-only alpha vs EW, US); its deflated Sharpe ratio is 0.56 on the lenient bound, below the 0.95 bar (`planning/FACTSHEET_TRIAL_LEDGER.md`).
+- **Multiple testing.** 20 signals × three books add 60 trials to the factsheet ledger, now 825 in all. Programme-wide, 4 of the 60 survive the Benjamini–Hochberg correction: Book-to-market (beta-neutral, financed, US), Profit growth (composite) (beta-neutral, financed, US), Profit growth (composite) (long-only alpha vs EW, US), Investment (composite) (beta-neutral, financed, US); its deflated Sharpe ratio is 0.54 on the lenient bound, below the 0.95 bar (`planning/FACTSHEET_TRIAL_LEDGER.md`).
 
 ## 9. References
 
