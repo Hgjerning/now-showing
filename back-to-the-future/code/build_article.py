@@ -69,9 +69,9 @@ md = f"""# Back to the Future: my strategy beat the market by 5% a year. In the 
 
 ![Now Showing](../figures/hero_back_to_the_future.png)
 
-*Henrik Gjerning · Rude Investment Consulting · September 2026, updated 7 October 2026 · Project 10, Case 33*\n\n*Updated 7 October 2026 after an external review: a figure of where the alpha died, the specification of the factor model, a clearer note on factor-adjusted versus out-of-sample alpha, and more room for the placebo test. No number changed.*
+*Henrik Gjerning · Rude Investment Consulting · September 2026, updated 7 October 2026 · Project 10, Case 33*\n\n*Updated 7 October 2026 after an external review: a figure of where the alpha died, the specification of the factor model, the holding bug in numbers, a clearer note on factor-adjusted versus out-of-sample alpha, more room for the placebo test, and how the trials were counted. No result changed.*
 
-> **In one paragraph.** On 1 September 2026 a weekly momentum strategy I had built showed **{pc(a(1))} a year of alpha** against the MSCI World ETF, with a t-statistic of {t(1):.2f}. Two weeks of checking later, the same strategy's number of record is **{pc(rec['alpha'])} (t {rec['t_block']:.2f})**. Adjusted for known factors it is **{pc(a(5))}**. On sixteen years of point-in-time data it had never seen, it earned **{pc(oos['record_alpha'])} (t {oos['record_t']:.2f})** with a **{oos['record_mdd'] * 100:.0f}%** drawdown against the market's {oos['record_bench_mdd'] * 100:.0f}%. Nothing was fraudulent, and every correction came from a mistake that is common in practical backtesting: dividends, currency, a code bug that had quietly turned a momentum strategy into buy-and-hold, survivorship, the wrong null hypothesis, and not counting the trials. The most instructive test was a placebo: among the stocks actually in the index at the time, about one random portfolio in eleven, traded on the strategy's own schedule, did better than the strategy. The haircut, {hc['alpha_first_to_record'] * 100:.0f}%, is in line with what the literature finds for published anomalies and for bank strategies once they go live. The only result that survived was about **trading less**.
+> **In one paragraph.** On 1 September 2026 a weekly momentum strategy I had built showed **{pc(a(1))} a year of alpha** against the MSCI World ETF, with a t-statistic of {t(1):.2f}. Two weeks of checking later, the same strategy's number of record is **{pc(rec['alpha'])} (t {rec['t_block']:.2f})**. Adjusted for known factors it is **{pc(a(5))}**. On sixteen years of point-in-time data it had never seen, it earned **{pc(oos['record_alpha'])} (t {oos['record_t']:.2f})** with a **{oos['record_mdd'] * 100:.0f}%** drawdown against the market's {oos['record_bench_mdd'] * 100:.0f}%. Nothing here was intentional and no data were manipulated. Every correction came from a common backtesting mistake that made the result look better than reality: dividends, currency, a code bug that had quietly turned a momentum strategy into buy-and-hold, survivorship, the wrong null hypothesis, and not counting the trials. The most instructive test was a placebo: among the stocks actually in the index at the time, about one random portfolio in eleven, traded on the strategy's own schedule, did better than the strategy. The haircut, {hc['alpha_first_to_record'] * 100:.0f}%, is in line with what the literature finds for published anomalies and for bank strategies once they go live. The only result that survived was about **trading less**.
 
 **Statistics box.** In-sample: {ins['n']} weeks, {ins['start']} to {ins['end']}. Number of record: alpha {pc(rec['alpha'], 2)} a year, 95% CI [{pc(rec['ci'][0])}, {pc(rec['ci'][1])}], t {rec['t_block']:.2f} (block bootstrap) / {rec['t_ols']:.2f} (OLS), beta {rec['beta']:.2f}. Trials {rec['trials']}, Bonferroni bar t {rec['bonferroni_t']:.2f}. Harvey–Liu–Zhu haircut of the first t at 33 trials: {mt['hlz_33']['haircut'] * 100:.0f}%. Out of sample: {oos['n']} weeks, alpha {pc(oos['record_alpha'], 2)}, t {oos['record_t']:.2f}. Cross-sectional placebo z: {plc['z_live']:.2f} on today's members, {plc['z_pit']:.2f} on point-in-time members.
 
@@ -107,6 +107,17 @@ European legs were summed in their local currencies (EUR, SEK, DKK, CHF and PLN)
 
 To save trading costs, the strategy gives a bonus to stocks it already holds. A parameter search had set that bonus so high that the book barely traded: about forty names over fifteen years, changed in roughly one week in seventeen. It had become a buy-and-hold portfolio of stocks picked early in the sample. Resetting the bonus on mechanical grounds, not on performance, gives today's number of record: **{pc(rec['alpha'], 2)} a year, t {rec['t_block']:.2f}**. Its Sharpe of {ins['sharpe_book']:.3f} is now *below* the benchmark's {ins['sharpe_urth']:.3f}. Maximum drawdown is {ins['mdd_book'] * 100:.1f}% against {ins['mdd_urth'] * 100:.1f}%. I re-derived these from the stored weekly series and they match to the last digit.
 
+> **The holding bug in numbers.** The rule adds a bonus to the score of every stock already held, measured in cross-sectional standard deviations of the score. At 8 standard deviations no newcomer can displace a holding: the best of about 400 candidates sits roughly 2.9 standard deviations above the average, so even a decayed holding keeps its place. The 8 came from a joint parameter sweep picked on in-sample Sharpe (trial 33). The correction went back to 4, the level the project had adopted earlier on principle, and it was chosen from trading mechanics alone: the holding life closest to the momentum signal's own half-life of about 26 weeks. No performance number entered the choice.
+>
+> | European leg, 765 weeks | Bonus 8 (bugged) | Bonus 4 (corrected) |
+> |---|---:|---:|
+> | Different names ever held | 36 | 126 |
+> | Name changes per week | 0.06 | 0.32 |
+> | Weeks with no change at all | 94% | 71% |
+> | Average holding life | 168 weeks | 31 weeks |
+>
+> The US leg looked the same before the fix: 41 names, 95% of weeks without a change, 166 weeks per holding.
+
 ### Correction 4: known factors (→ {pc(a(5))})
 
 With the bug fixed, the strategy's momentum loading appears clearly (+0.51, t 5.8, on 13 JKP themes). Regressed on those factors, the alpha is {pc(a(5))} (t {t(5):.2f}). Across four attribution models it lies between −1.7% and +2.9% a year, and every t is below 1. **It is a momentum fund, and momentum is available cheaply.**
@@ -127,7 +138,7 @@ The haircut ranges from {svmin * 100:.0f}% to {svmax * 100:.0f}% of the Sharpe r
 
 ### The placebo: random stocks, the strategy's own schedule
 
-Most investors know about survivorship and overfitting. Fewer ask what random portfolios in the same universe would have done with the same trading pattern. The placebo replays the strategy's exact holding schedule, the same number of names and the same dates in and out, but with randomly chosen stocks. On today's index members the strategy looked extraordinary against its placebos (z = {plc['z_live']:.2f}). On members at the time it sits at the {ordinal(plc['pct_pit'])} percentile (z = {plc['z_pit']:.2f}): about one random portfolio in eleven did better. Survivorship and momentum interact. Among survivors, past winners are disproportionately the names that kept winning, so the same test on the convenient universe inflates the answer about 3.7 times.
+Most investors know about survivorship and overfitting. Fewer ask what random portfolios in the same universe would have done with the same trading pattern. The placebo replays the strategy's exact holding schedule, the same number of names and the same dates in and out, but with randomly chosen stocks. On today's index members the strategy looked extraordinary against its placebos (z = {plc['z_live']:.2f}). On members at the time it sits at the {ordinal(plc['pct_pit'])} percentile (z = {plc['z_pit']:.2f}): about one random portfolio in eleven did better. The placebo names are drawn at random from the same universe, not matched on sector, size or volatility, so this is a slightly easier bar than a matched placebo would be. Survivorship and momentum interact. Among survivors, past winners are disproportionately the names that kept winning, so the same test on the convenient universe inflates the answer about 3.7 times.
 
 ## 4. The wrong null: a dartboard beats the market
 
@@ -151,7 +162,7 @@ It did not replicate. The in-sample drawdown advantage also disappeared. The 201
 
 ## 6. Counting the trials
 
-Every choice you make after seeing the data (a feature, a lookback, a region, a parameter) is another draw from the lottery. This project counted them: {rec['trials']} pre-registered trials by the time of the last correction.
+Every choice you make after seeing the data (a feature, a lookback, a region, a parameter) is another draw from the lottery. This project counted them: {rec['trials']} pre-registered trials by the time of the last correction. The count follows one rule: every pre-registered hypothesis that decided something is a trial, whether it passed or failed. It is a floor, not a ceiling. A parameter sweep counts as one trial (trial 33 was a 7-by-7 grid), and looks at the data that never became a registered test are not counted.
 
 **Table 4. What t is needed when you have tried N things**
 
@@ -179,6 +190,8 @@ One result cleared every test I put to it. The strategy skips trades below a fix
 
 It is not selection skill. It is cost control: the same strategy, run with less churn. Compared with an index fund, the strategy still has nothing to show. Its rolling three-year alpha has been negative in {roll['share_neg_since_2019'] * 100:.0f}% of weeks since 2019 and stood at {pc(roll['last'])} at the last reading ({roll['last_date']}).
 
+So the strategy did not survive as a source of alpha; the cost control did. The main discovery was not how to beat the market, but how easy it is to believe you already have.
+
 ## 9. A checklist before you believe a backtest
 
 1. **Same return basis** for every leg and the benchmark (total return, same currency).
@@ -195,6 +208,9 @@ It is not selection skill. It is cost control: the same strategy, run with less 
 - The point-in-time European universe is itself incomplete (26% of historical names lack prices), so its survivorship estimate is a lower bound.
 - The out-of-sample period (1995–2011) comes from a licensed database. Only summary statistics and charts are published, not the series.
 - Currency restatement was measured on the pre-fix book (row 3 of Table 1).
+- **Regime.** The in-sample window, 2012–2026, was kind to momentum and has no full bear market. The corrections are measured inside it, so the article cannot separate how much of the first +5.1% was error and how much was a friendly regime. The out-of-sample period, with two bear markets, is the check on that, and the strategy failed it.
+- **Not run:** White's Reality Check and Hansen's test of superior predictive ability on the 33 variants together. They would ask the multiple-testing question more sharply than Bonferroni. The corrected strategy does not clear even the uncorrected bar (t {rec['t_block']:.2f}), so I do not expect them to change the answer.
+- **A fair referee's summary:** the contribution is educational rather than scientific. The biases are known one by one; what is rarer is an end-to-end case of how several modest corrections combine to remove an apparently significant result. The evidence for the strategy is weak. The evidence for the dangers of backtesting is much stronger.
 
 ## Reproduce
 
