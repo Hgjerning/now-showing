@@ -7,7 +7,7 @@ In early September I had what every quant hopes for: a momentum strategy with +5
 Then I checked it, one correction at a time:
 → Include dividends everywhere: +4.3%
 → Measure every leg in the same currency: +3.4%
-→ Fix a bug that had quietly frozen the portfolio: +1.1%, t 0.35
+→ Fix a bug that had quietly turned it into buy-and-hold: +1.1%, t 0.35
 → Adjust for known factors: -1.7%
 
 Then the test I wrote down in advance: sixteen years of data it had never seen. Result: +1.2% a year, t 0.24, and a -79% drawdown against the market's -56%.
@@ -20,7 +20,7 @@ I tried 33 things along the way, so the honest bar was t = 3.17. Nothing cleared
 
 One thing survived: skipping small trades added +0.16 to the Sharpe ratio, significant in every region. The only edge I found was trading less.
 
-The total haircut, 79%, is ordinary. Published anomalies lose 58% after publication; bank strategies lose a median 73% once live.
+The total haircut, 79%, is ordinary. Published anomalies lose 58% after publication; bank strategies lose a median 73% once live. The hard part is not beating the market. It is not believing you already have.
 
 Full article, tables and code: hgjerning.github.io/now-showing/back-to-the-future
 

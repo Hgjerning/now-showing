@@ -252,7 +252,7 @@ In early September I had what every quant hopes for: a momentum strategy with {p
 Then I checked it, one correction at a time:
 → Include dividends everywhere: {pc(a(2))}
 → Measure every leg in the same currency: {pc(a(3))}
-→ Fix a bug that had quietly frozen the portfolio: {pc(rec['alpha'])}, t {rec['t_block']:.2f}
+→ Fix a bug that had quietly turned it into buy-and-hold: {pc(rec['alpha'])}, t {rec['t_block']:.2f}
 → Adjust for known factors: {pc(a(5))}
 
 Then the test I wrote down in advance: sixteen years of data it had never seen. Result: {pc(oos['record_alpha'])} a year, t {oos['record_t']:.2f}, and a {oos['record_mdd'] * 100:.0f}% drawdown against the market's {oos['record_bench_mdd'] * 100:.0f}%.
@@ -265,7 +265,7 @@ I tried {rec['trials']} things along the way, so the honest bar was t = {rec['bo
 
 One thing survived: skipping small trades added {band['book_diff']:+.2f} to the Sharpe ratio, significant in every region. The only edge I found was trading less.
 
-The total haircut, {hc['alpha_first_to_record'] * 100:.0f}%, is ordinary. Published anomalies lose 58% after publication; bank strategies lose a median 73% once live.
+The total haircut, {hc['alpha_first_to_record'] * 100:.0f}%, is ordinary. Published anomalies lose 58% after publication; bank strategies lose a median 73% once live. The hard part is not beating the market. It is not believing you already have.
 
 Full article, tables and code: {REPO}
 
