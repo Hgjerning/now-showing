@@ -12,3 +12,5 @@ Case 33 spent none.
 **Legibility:** Nikkei 1989 passed and Nasdaq 2000 passed. **S&P 500 1929 FAILED**: GSADF 2.07 vs 2.16, and the only flagged episode was 1932 (the post-crash rebound). The data start in Dec 1927, only 21 months before the peak, too short for the minimum window. One failure of three is allowed by §4, so the trials stand.
 
 **Spent in this ledger: 3. Programme total: 20 run, 1 registered (C31-3).**
+
+**Update 2026-10-07 (after external review):** `code/valuation_table.py` adds a valuation snapshot (section 8: eight AI leaders at 2026-09-30 vs Cisco, Microsoft, Oracle, Intel, NVIDIA at 2000-03-10, Sharadar). Reported, not gated, **not a trial**; trial count unchanged. Text: "Why these eight?" box, Figure 1 caption, precise conclusion ("under this definition no evidence of an active bubble"). No pre-registered number changed.

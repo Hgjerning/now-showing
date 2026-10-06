@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Now Showing</title>
-<meta name="description" content="Sixteen pre-registered investment theses, each named after a film or a song. One a week on LinkedIn.">
-<meta property="og:title" content="Now Showing: 16 investment theses on trial">
+<meta name="description" content="Twenty-two pre-registered investment theses, each named after a film or a song. One a week on LinkedIn.">
+<meta property="og:title" content="Now Showing: 22 investment theses on trial">
 <meta property="og:image" content="titanic/poster.jpg">
 <style>
 :root{--bg:#0f0e0c;--card:#1a1815;--ink:#f3eee4;--dim:#a39c8e;--gold:#d8b25a;--line:#2c2924}
@@ -36,7 +36,7 @@ footer a{color:var(--gold)}
 <body>
 <header>
   <div class="kicker">Now Showing &middot; Now Playing</div>
-  <h1>16 theses on trial</h1>
+  <h1 id="count">22 theses on trial</h1>
   <p class="lead">Every thesis is named after a film or a song, written down before the data were opened, and tested with placebos,
   bootstraps and multiple-testing corrections. One premiere a week, Tuesdays at 08:00 CET.</p>
   <div class="bar"><a href="https://github.com/Hgjerning/now-showing">Code and data notes on GitHub</a><a href="https://www.linkedin.com/in/henrikgjerning">Follow on LinkedIn</a></div>
@@ -48,6 +48,7 @@ const CARDS = [{"no": 1, "iso": "2026-10-06", "lab": "6 Oct 2026", "slug": "tita
 const all = new URLSearchParams(location.search).has("preview");
 const today = new Date().toISOString().slice(0, 10);
 const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+document.getElementById("count").textContent = CARDS.length + " theses on trial";
 document.getElementById("wall").innerHTML = CARDS.map(c => {
   const out = all || c.iso <= today;
   const label = (c.kind === "Song" ? "Track" : "Feature") + " No. " + c.no + " &middot; " + c.lab;

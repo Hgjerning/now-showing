@@ -11,6 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES, FIG = os.path.join(ROOT, "results"), os.path.join(ROOT, "figures")
 S = json.load(open(os.path.join(RES, "summary.json"))); X = json.load(open(os.path.join(RES, "reported_extra.json")))
 B = json.load(open(os.path.join(RES, "breadth.json")))
+V = json.load(open(os.path.join(RES, "valuation.json")))  # added 7 Oct 2026 (v2), reported, not gated
 REPO = "hgjerning.github.io/now-showing/titanic"
 pc = lambda v, d=0: f"{v * 100:+.{d}f}%"
 L = {r["name"]: r for r in S["legibility"]}; t1, t2 = S["trials"]["C1-1"], S["trials"]["C1-2"]
@@ -61,6 +62,22 @@ for k, v in rh.items():
     months = "" if v["first"] == -60 else f" (only {-v['first']} months of data)"
     T7 += f"| {k} | {pc(v['runup_to_peak'])}{months} | {f(v['after_12m'])} | {f(v['after_36m'])} | {f(v['trough_36m'])} |\n"
 
+vt, v0 = V["today"], V["march_2000"]
+vb, v0b = vt["basket"], v0["basket"]
+NM2000 = {"CSCO": "Cisco", "MSFT": "Microsoft", "ORCL": "Oracle", "INTC": "Intel", "NVDA": "NVIDIA"}
+fx = lambda x, d=0: "n/m" if x is None else f"{x:.{d}f}"
+gw = lambda g: "n/a" if g is None else f"{g:+.0f}%"
+def vrow(label, r):
+    return f"| {label} | {r['mcap_bn']:,.0f} | {fx(r['ps'], 1)} | {fx(r['pe'])} | {fx(r['fcf_yield'], 1)}% | {gw(r['rev_growth'])} | {fx(r['net_margin'])}% | {fx(r['capex_to_rev'])}% |"
+T8 = "| Company | Market value (USD bn) | Price / sales | Price / earnings | Free-cash-flow yield | Revenue growth (1 yr) | Net margin | Capex / revenue |\n|---|---:|---:|---:|---:|---:|---:|---:|\n"
+T8 += f"| ***The eight AI leaders, {vt['date']}*** | | | | | | | |\n"
+T8 += "\n".join(vrow(names[k].strip("*"), r) for k, r in vt["names"].items()) + "\n"
+T8 += vrow("**All eight, as one company**", vb) + "\n"
+T8 += f"| ***Tech leaders at the Nasdaq peak, {v0['date']}*** | | | | | | | |\n"
+T8 += "\n".join(vrow(NM2000[k] + " (2000)", r) for k, r in v0["names"].items()) + "\n"
+T8 += vrow("**All five, as one company**", v0b)
+T8 += "\n\n*Trailing four quarters known on the date (filing date on or before it). Market value at the latest filing, moved with the share price to the date. 'As one company' sums market values, sales, earnings and cash flows, so the large names weigh in proportion. Source: Sharadar SF1 and SEP (licensed; only the ratios are published).*"
+
 dbl_txt = ", ".join(f"{names[r.name]} ({pc(r.run24)})" for r in dbl.itertuples())
 md = f"""# Titanic: every bubble was unsinkable. Is this one?
 
@@ -68,13 +85,15 @@ md = f"""# Titanic: every bubble was unsinkable. Is this one?
 
 ![Now Showing](../figures/hero_titanic.png)
 
-*Henrik Gjerning · Rude Investment Consulting · September 2026 · Project 10, Case 1*
+*Henrik Gjerning · Rude Investment Consulting · September 2026, updated 7 October 2026 · Project 10, Case 1*\n\n*Updated 7 October 2026 after an external review: a valuation table (section 8), a box on why these eight names, a plain reading of the basket's p value, and a clearer conclusion. No pre-registered number changed.*
 
-> **In one paragraph.** Over the last five years an equal-weight basket of eight AI leaders rose **{pc(rh['AI-leaders basket, today']['runup_to_peak'])}**. The Nikkei rose {pc(rh['Nikkei 225, peak Dec 1989']['runup_to_peak'])} into its 1989 peak and the Nasdaq Composite {pc(rh['Nasdaq Composite, peak Mar 2000']['runup_to_peak'])} into March 2000. The gains are bubble-sized. I tested whether the *shape* is bubble-like with the Phillips–Shi–Yu GSADF test, which asks whether a price rises faster than any random walk can explain. The test dates Tokyo 1989 and Nasdaq 2000 in real time; it misses 1929 only because my data start 21 months before that peak. **Pre-registered result: neither the Nasdaq-100 nor the AI basket is explosive now** (basket GSADF p = {t2['gsadf_p']:.2f}, and no explosive phase since 2021). NVIDIA alone was explosive in 2024–25 and has since cooled. The second, older fact about bubbles holds strongly. Among {c3['n_event']:,} US stocks that doubled in two years, **{c3['p_event'] * 100:.0f}% then fell 40%** within the next two, against {c3['p_ctrl'] * 100:.0f}% for all stocks. Yet their average returns afterwards stayed positive. Three of the eight AI names meet that doubling test today.
+> **In one paragraph.** Over the last five years an equal-weight basket of eight AI leaders rose **{pc(rh['AI-leaders basket, today']['runup_to_peak'])}**. The Nikkei rose {pc(rh['Nikkei 225, peak Dec 1989']['runup_to_peak'])} into its 1989 peak and the Nasdaq Composite {pc(rh['Nasdaq Composite, peak Mar 2000']['runup_to_peak'])} into March 2000. The gains are bubble-sized. I tested whether the *shape* is bubble-like with the Phillips–Shi–Yu GSADF test, which asks whether a price rises faster than any random walk can explain. The test dates Tokyo 1989 and Nasdaq 2000 in real time; it misses 1929 only because my data start 21 months before that peak. **Pre-registered result: neither the Nasdaq-100 nor the AI basket is explosive now** (basket GSADF p = {t2['gsadf_p']:.2f}, and no explosive phase since 2021). Under this definition of a bubble, there is no evidence of an active one. That is not the same as proof that there is none. NVIDIA alone was explosive in 2024–25 and has since cooled. The second, older fact about bubbles holds strongly. Among {c3['n_event']:,} US stocks that doubled in two years, **{c3['p_event'] * 100:.0f}% then fell 40%** within the next two, against {c3['p_ctrl'] * 100:.0f}% for all stocks. Yet their average returns afterwards stayed positive. Three of the eight AI names meet that doubling test today. On valuation, the eight trade at {vb['pe']:.0f} times earnings against {v0b['pe']:.0f} for the tech leaders of March 2000, but at the same free-cash-flow yield ({vb['fcf_yield']:.1f}%), because they now spend a quarter of their sales on investment.
 
-**Statistics box.** Trials 3 (Bonferroni: 98.33% critical values; p < 0.0167). C1-1 Nasdaq-100: GSADF {t1['gsadf']:.2f} vs {t1['gsadf_cv']:.2f}, fail. C1-2 AI basket: GSADF {t2['gsadf']:.2f} vs {t2['gsadf_cv']:.2f} (MC p {t2['gsadf_p']:.3f}), fail. C1-3 crash probability after a doubling: {c3['p_event'] * 100:.1f}% vs {c3['p_ctrl'] * 100:.1f}%, z {c3['z']:.1f}, **pass**, both halves. Legibility: 2 of 3 historic bubbles dated. Monte Carlo critical values: 2,000 draws per sample length, seed 42. Programme trial count: 20.
+**Statistics box.** Trials 3 (Bonferroni: 98.33% critical values; p < 0.0167). C1-1 Nasdaq-100: GSADF {t1['gsadf']:.2f} vs {t1['gsadf_cv']:.2f}, fail. C1-2 AI basket: GSADF {t2['gsadf']:.2f} vs {t2['gsadf_cv']:.2f} (MC p {t2['gsadf_p']:.3f}), fail. C1-3 crash probability after a doubling: {c3['p_event'] * 100:.1f}% vs {c3['p_ctrl'] * 100:.1f}%, z {c3['z']:.1f}, **pass**, both halves. Legibility: 2 of 3 historic bubbles dated. Monte Carlo critical values: 2,000 draws per sample length, seed 42. Programme trial count: 20. Valuation (section 8): reported, not gated.
 
 ![Figure 1](../figures/fig1_every_bubble_rhymes.png)
+
+*Figure 1. Every episode is aligned at its peak. Today is placed at the peak by assumption, not because the data show one. The chart says nothing about whether the AI basket has peaked.*
 
 ---
 
@@ -95,6 +114,8 @@ The specification (`PREREGISTRATION_C1_2026-09-25.md`) was written before any st
 - C1-3 (crash probability after a doubling) passes.
 - Returns after run-ups are not significantly lower.
 
+> **Why these eight?** NVIDIA, Broadcom, AMD, Microsoft, Meta, Alphabet, Amazon and Oracle: the largest US-listed companies whose business is directly tied to the AI build-out, in chips, cloud capacity or models. They were fixed in the pre-registration before any statistic was computed, held at equal weight and rebalanced monthly. The choice is deliberately imperfect. Picking today's leaders after the fact favours finding bubble-like behaviour, because the winners are chosen once their run is known. A cleaner basket would have been fixed years ago. So the fact that the test finds no explosive phase now, despite a selection that leans towards one, counts against the bubble reading, not for it. It is also narrow. The AI boom reaches well beyond eight listed giants: software, chip-equipment makers, data-centre landlords, power utilities and private and venture-funded companies are all part of it, and none is in this test. A broader basket is the natural extension.
+
 ## 3. Can the test recognise a bubble?
 
 **Table 1. Legibility: dating the famous three**
@@ -111,7 +132,7 @@ The test dates Tokyo from 1984 to mid-1990 and the Nasdaq from June 1999 to Apri
 
 {T2}
 
-**Neither trial passes, and not narrowly.** The AI basket's explosive phases, as the test dates them, were 2013–14, 2016–18 and late 2021, not 2023–26. That sounds wrong until you look at the arithmetic. The basket compounded quickly for the whole fifteen years, so its recent gains are large but not *faster than its own history*. That is what explosiveness measures. NVIDIA is the one name that did go explosive in this cycle, twice in 2024–25, and its BSADF has since fallen back below the critical value. The S&P 500 shows a six-month flicker above its 95% line since April 2026. With a whole-sample GSADF p of {sp['gsadf_p']:.2f}, that is a watch item, not a result.
+**Neither trial passes.** The basket's p of {t2['gsadf_p']:.3f} deserves one plain sentence, because it invites the reading "almost significant". Its statistic is higher than in about {(1 - t2['gsadf_p']) * 100:.0f}% of random-walk simulations, so the path is unusual. But it clears neither the pre-registered threshold (98.33%) nor the conventional 95% one. The AI basket's explosive phases, as the test dates them, were 2013–14, 2016–18 and late 2021, not 2023–26. That sounds wrong until you look at the arithmetic. The basket compounded quickly for the whole fifteen years, so its recent gains are large but not *faster than its own history*. That is what explosiveness measures. NVIDIA is the one name that did go explosive in this cycle, twice in 2024–25, and its BSADF has since fallen back below the critical value. The S&P 500 shows a six-month flicker above its 95% line since April 2026. With a whole-sample GSADF p of {sp['gsadf_p']:.2f}, that is a watch item, not a result.
 
 Robustness: with 0 lags instead of 1, and at the 95% level instead of 98.33%, the trial verdicts are unchanged.
 
@@ -155,23 +176,42 @@ By the GSY yardstick, the names that meet the doubling test are {dbl_txt}. In th
 
 **Breadth.** GSY also find that bubbles come with broad participation and new issuance. Today {B['share_now']:.1f}% of the US stocks in the panel have doubled over two years. The panel average is {B['share_mean']:.1f}%, and the peak was {B['share_max']:.0f}% in {B['share_max_date']}, the post-Covid rebound. The market is above its average, but nowhere near a broad mania.
 
-## 8. What this does and does not show
+## 8. Expensive? A valuation check (added 7 October 2026)
 
-- **Not a valuation study.** No earnings or dividend data are used, because the sandbox has no access to them. PSY originally applied the test to the price-dividend ratio. On log prices the test can confuse a strong fundamental trend with a bubble, and here it did the opposite: it declined to call one.
+The explosiveness test looks only at prices. A fund manager's first question is a different one: fine, not explosive, but is it expensive? Table 8 sets the eight against the largest tech names at the Nasdaq peak on 10 March 2000: Cisco, Microsoft, Oracle, Intel and, for scale, a much smaller NVIDIA. Reported, not gated.
+
+**Table 8. The eight today against the tech leaders of March 2000**
+
+{T8}
+
+**On earnings, far cheaper than 2000.** As one company, the eight trade at {vb['pe']:.0f} times trailing earnings and {vb['ps']:.1f} times sales. The five leaders of March 2000 traded at {v0b['pe']:.0f} and {v0b['ps']:.1f}; Cisco alone at {v0['names']['CSCO']['pe']:.0f} times earnings. Today's leaders also keep more of each dollar of sales: a net margin of {vb['net_margin']:.0f}% against {v0b['net_margin']:.0f}%. Revenue grew {vb['rev_growth']:.0f}% over the last year, as it did for the 2000 leaders ({v0b['rev_growth']:.0f}%).
+
+**On free cash flow, as expensive as 2000.** The free-cash-flow yield is {vb['fcf_yield']:.1f}%, the same as in March 2000 ({v0b['fcf_yield']:.1f}%). The difference is investment. The eight spend {vb['capex_to_rev']:.0f}% of their sales on capital expenditure, against {v0b['capex_to_rev']:.0f}% for the 2000 leaders. Oracle spends {vt['names']['ORCL']['capex_to_rev']:.0f}% of its sales, and Amazon's and Oracle's free cash flow is negative. The earnings are real. Whether the data-centre spending will earn its cost of capital is the open question.
+
+**What this adds.** The AI leaders are expensive ({vb['pe']:.0f} times earnings is well above the US market's long-run average in the mid-teens), but not on the scale of 2000, and unlike in 2000 the profits are there. The valuation question is therefore not whether cash flows exist, but whether today's investment will produce enough of them. That calls for a different tool, a reverse discounted-cash-flow model ("what growth is already priced in?"), which I will take up in a separate article.
+
+*Caveats: one date for each episode; trailing figures; net income includes one-off items (Alphabet's margin appears lifted by non-operating gains); the 2000 group is the largest names, not the whole bubble, where many companies had no earnings at all.*
+
+## 9. What this does and does not show
+
+- **A price test.** The trials use prices only; section 8 adds a valuation snapshot, not a valuation test. PSY originally applied the test to the price-dividend ratio. On log prices the test can confuse a strong fundamental trend with a bubble, and here it did the opposite: it declined to call one.
 - **The AI basket was chosen ex post** as today's leaders. That biases *towards* finding a bubble, and none was found.
 - **One legibility miss** (1929), explained by the data window.
 - **Survivorship** in the stock panel understates crash rates.
 - **Not a timing signal.** An explosiveness test says whether a price path is unusual, not when it ends.
 
-## 9. So, does this one rhyme?
+## 10. So, does this one rhyme?
 
 In size, yes: five years, +300%, between Tokyo and the Nasdaq. In shape, not yet: the statistic that dated both of those bubbles in real time does not fire on the AI basket or the Nasdaq-100 today. What the data do say is that individual names after a doubling carry crash risk of roughly one in two. That is a statement about position sizing, not about the index.
+
+Put precisely: under the GSADF definition, there is no evidence of an active bubble in the AI basket or the Nasdaq-100 today. A bubble that has not yet turned explosive, or one that sits in valuations rather than in the price path, is not ruled out. On earnings the eight are far cheaper than the leaders of 2000. On free cash flow they are not, because of the investment boom. If there is a reckoning, the place to look is the return on that investment.
 
 ## Reproduce
 
 ```bash
 python code/run_bubbles.py      # legibility, C1-1, C1-2, C1-3 (about 4 minutes, Monte Carlo)
 python code/reported_extra.py   # NVIDIA and AMD, rhyme paths
+python code/valuation_table.py  # section 8 (needs the licensed Sharadar cache)
 python code/make_figures.py && python code/build_article.py && python code/make_pdfs.py
 ```
 
