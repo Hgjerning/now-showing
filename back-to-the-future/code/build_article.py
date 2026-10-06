@@ -11,6 +11,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES, FIG, D = (os.path.join(ROOT, x) for x in ("results", "figures", "data"))
 S = json.load(open(os.path.join(RES, "summary.json")))
 REPO = "hgjerning.github.io/now-showing/back-to-the-future"
+def ordinal(x):
+    n = int(round(x)); suf = 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return f'{n}{suf}'
 pc = lambda v, d=1: f"{v * 100:+.{d}f}%"
 wf = pd.DataFrame(S["waterfall"]); rec, oos, mt, hc = S["record"], S["oos"], S["multiple_testing"], S["haircuts"]
 ins, sv, rb, band, roll, plc = S["insample_rederived"], pd.DataFrame(S["survivorship"]), S["random_books"], S["band"], S["rolling"], S["placebo"]
@@ -66,9 +69,9 @@ md = f"""# Back to the Future: my strategy beat the market by 5% a year. In the 
 
 ![Now Showing](../figures/hero_back_to_the_future.png)
 
-*Henrik Gjerning · Rude Investment Consulting · September 2026 · Project 10, Case 33*
+*Henrik Gjerning · Rude Investment Consulting · September 2026, updated 7 October 2026 · Project 10, Case 33*\n\n*Updated 7 October 2026 after an external review: a figure of where the alpha died, the specification of the factor model, a clearer note on factor-adjusted versus out-of-sample alpha, and more room for the placebo test. No number changed.*
 
-> **In one paragraph.** On 1 September 2026 a weekly momentum strategy I had built showed **{pc(a(1))} a year of alpha** against the MSCI World ETF, with a t-statistic of {t(1):.2f}. Two weeks of checking later, the same strategy's number of record is **{pc(rec['alpha'])} (t {rec['t_block']:.2f})**. Adjusted for known factors it is **{pc(a(5))}**. On sixteen years of point-in-time data it had never seen, it earned **{pc(oos['record_alpha'])} (t {oos['record_t']:.2f})** with a **{oos['record_mdd'] * 100:.0f}%** drawdown against the market's {oos['record_bench_mdd'] * 100:.0f}%. Nothing was fraudulent and nothing was unusual. Every correction was a standard one: dividends, currency, a code bug, survivorship, the right null hypothesis, and counting the trials. The haircut, {hc['alpha_first_to_record'] * 100:.0f}%, is in line with what the literature finds for published anomalies and for bank strategies once they go live. The only result that survived was about **trading less**.
+> **In one paragraph.** On 1 September 2026 a weekly momentum strategy I had built showed **{pc(a(1))} a year of alpha** against the MSCI World ETF, with a t-statistic of {t(1):.2f}. Two weeks of checking later, the same strategy's number of record is **{pc(rec['alpha'])} (t {rec['t_block']:.2f})**. Adjusted for known factors it is **{pc(a(5))}**. On sixteen years of point-in-time data it had never seen, it earned **{pc(oos['record_alpha'])} (t {oos['record_t']:.2f})** with a **{oos['record_mdd'] * 100:.0f}%** drawdown against the market's {oos['record_bench_mdd'] * 100:.0f}%. Nothing was fraudulent, and every correction came from a mistake that is common in practical backtesting: dividends, currency, a code bug that had quietly turned a momentum strategy into buy-and-hold, survivorship, the wrong null hypothesis, and not counting the trials. The most instructive test was a placebo: among the stocks actually in the index at the time, about one random portfolio in eleven, traded on the strategy's own schedule, did better than the strategy. The haircut, {hc['alpha_first_to_record'] * 100:.0f}%, is in line with what the literature finds for published anomalies and for bank strategies once they go live. The only result that survived was about **trading less**.
 
 **Statistics box.** In-sample: {ins['n']} weeks, {ins['start']} to {ins['end']}. Number of record: alpha {pc(rec['alpha'], 2)} a year, 95% CI [{pc(rec['ci'][0])}, {pc(rec['ci'][1])}], t {rec['t_block']:.2f} (block bootstrap) / {rec['t_ols']:.2f} (OLS), beta {rec['beta']:.2f}. Trials {rec['trials']}, Bonferroni bar t {rec['bonferroni_t']:.2f}. Harvey–Liu–Zhu haircut of the first t at 33 trials: {mt['hlz_33']['haircut'] * 100:.0f}%. Out of sample: {oos['n']} weeks, alpha {pc(oos['record_alpha'], 2)}, t {oos['record_t']:.2f}. Cross-sectional placebo z: {plc['z_live']:.2f} on today's members, {plc['z_pit']:.2f} on point-in-time members.
 
@@ -88,6 +91,10 @@ The first regression against the MSCI World ETF, over 2012–2026, gave {pc(a(1)
 
 {T1}
 
+![Figure 6](../figures/fig6_where_the_alpha_died.png)
+
+**Two different questions.** The factor-adjusted figure ({pc(a(5))}) and the out-of-sample figure ({pc(oos['record_alpha'])}) are not in conflict. The first asks whether any alpha is left in 2012–2025 once the strategy's exposure to known factors, above all momentum, is accounted for. The second asks whether the strategy, run unchanged on sixteen years it never saw, still beat the market at all. Neither found an edge that clears the noise.
+
 ### Correction 1: dividends (+5.1% → +4.3%)
 
 The US leg used total-return prices. The European legs, and the benchmark itself, used price-only closes. Mixing the two quietly favours whichever side leaves out dividends, and the benchmark's return rose more when dividends were added: its Sharpe went from {float(wf.sharpe_bench[0]):.3f} to {float(wf.sharpe_bench[1]):.3f}. **Lesson: strategy and benchmark must be on the same return basis, every leg.**
@@ -96,13 +103,15 @@ The US leg used total-return prices. The European legs, and the benchmark itself
 
 European legs were summed in their local currencies (EUR, SEK, DKK, CHF and PLN) as if they had been hedged for free, while the benchmark is an unhedged USD fund. Restated in the benchmark's currency, the alpha fell to {pc(a(3))} and the t to {t(3):.2f}. **Lesson: a return has a currency. Say which one.**
 
-### Correction 3: the holding bug (→ {pc(rec['alpha'])})
+### Correction 3: the holding bug, or a momentum strategy that had stopped trading (→ {pc(rec['alpha'])})
 
 To save trading costs, the strategy gives a bonus to stocks it already holds. A parameter search had set that bonus so high that the book barely traded: about forty names over fifteen years, changed in roughly one week in seventeen. It had become a buy-and-hold portfolio of stocks picked early in the sample. Resetting the bonus on mechanical grounds, not on performance, gives today's number of record: **{pc(rec['alpha'], 2)} a year, t {rec['t_block']:.2f}**. Its Sharpe of {ins['sharpe_book']:.3f} is now *below* the benchmark's {ins['sharpe_urth']:.3f}. Maximum drawdown is {ins['mdd_book'] * 100:.1f}% against {ins['mdd_urth'] * 100:.1f}%. I re-derived these from the stored weekly series and they match to the last digit.
 
 ### Correction 4: known factors (→ {pc(a(5))})
 
 With the bug fixed, the strategy's momentum loading appears clearly (+0.51, t 5.8, on 13 JKP themes). Regressed on those factors, the alpha is {pc(a(5))} (t {t(5):.2f}). Across four attribution models it lies between −1.7% and +2.9% a year, and every t is below 1. **It is a momentum fund, and momentum is available cheaply.**
+
+> **The factor model, specified.** Weekly returns (Friday to Friday, daily returns compounded), 730 weeks from January 2012 to December 2025, where the factor data end. Dependent variable: the book's return in USD minus the US Treasury bill rate. Regressors: the JKP world market excess return and the 13 JKP world theme factors (accruals, debt issuance, investment, low leverage, low risk, momentum, profit growth, profitability, quality, seasonality, short-term reversal, size, value), each a capped value-weighted long-short return in USD (Jensen, Kelly & Pedersen, 2023). Ordinary least squares with an intercept; t-statistics use Newey-West standard errors with four lags. The intercept times 52 is the alpha. R² 0.54. The themes are correlated, so only the alpha and the momentum loading are read. The other three models: French six factors on developed markets (−0.72%, t −0.26), 20 clusters of the 153 JKP factors (+0.08%, t 0.03) and the JKP market alone (+2.93%, t 0.94). Code: `run_jkp_country_benchmarks.py` and `run_factor_attribution.py` in Project 2.
 
 ## 3. Survivorship: backtesting on today's winners
 
@@ -114,7 +123,11 @@ The easiest universe to download is today's index. It is also the most dangerous
 
 ![Figure 3](../figures/fig3_survivorship.png)
 
-The haircut ranges from {svmin * 100:.0f}% to {svmax * 100:.0f}% of the Sharpe ratio. The effect is even larger on a placebo test, which replays the strategy's exact holding schedule with randomly chosen names. On today's index members the strategy looked extraordinary (z = {plc['z_live']:.2f}). On members at the time it sits at the {plc['pct_pit']:.0f}th percentile (z = {plc['z_pit']:.2f}): about one random portfolio in eleven did better. Survivorship and momentum interact. Among survivors, past winners are disproportionately the names that kept winning, so the same test on the convenient universe inflates the answer about 3.7 times.
+The haircut ranges from {svmin * 100:.0f}% to {svmax * 100:.0f}% of the Sharpe ratio. The effect is even larger on a placebo test, and the placebo is the most instructive test in this article.
+
+### The placebo: random stocks, the strategy's own schedule
+
+Most investors know about survivorship and overfitting. Fewer ask what random portfolios in the same universe would have done with the same trading pattern. The placebo replays the strategy's exact holding schedule, the same number of names and the same dates in and out, but with randomly chosen stocks. On today's index members the strategy looked extraordinary against its placebos (z = {plc['z_live']:.2f}). On members at the time it sits at the {ordinal(plc['pct_pit'])} percentile (z = {plc['z_pit']:.2f}): about one random portfolio in eleven did better. Survivorship and momentum interact. Among survivors, past winners are disproportionately the names that kept winning, so the same test on the convenient universe inflates the answer about 3.7 times.
 
 ## 4. The wrong null: a dartboard beats the market
 

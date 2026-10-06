@@ -4,9 +4,11 @@
 
 ![Now Showing](../figures/hero_back_to_the_future.png)
 
-*Henrik Gjerning · Rude Investment Consulting · September 2026 · Project 10, Case 33*
+*Henrik Gjerning · Rude Investment Consulting · September 2026, updated 7 October 2026 · Project 10, Case 33*
 
-> **In one paragraph.** On 1 September 2026 a weekly momentum strategy I had built showed **+5.1% a year of alpha** against the MSCI World ETF, with a t-statistic of 2.90. Two weeks of checking later, the same strategy's number of record is **+1.1% (t 0.35)**. Adjusted for known factors it is **-1.7%**. On sixteen years of point-in-time data it had never seen, it earned **+1.2% (t 0.24)** with a **-79%** drawdown against the market's -56%. Nothing was fraudulent and nothing was unusual. Every correction was a standard one: dividends, currency, a code bug, survivorship, the right null hypothesis, and counting the trials. The haircut, 79%, is in line with what the literature finds for published anomalies and for bank strategies once they go live. The only result that survived was about **trading less**.
+*Updated 7 October 2026 after an external review: a figure of where the alpha died, the specification of the factor model, a clearer note on factor-adjusted versus out-of-sample alpha, and more room for the placebo test. No number changed.*
+
+> **In one paragraph.** On 1 September 2026 a weekly momentum strategy I had built showed **+5.1% a year of alpha** against the MSCI World ETF, with a t-statistic of 2.90. Two weeks of checking later, the same strategy's number of record is **+1.1% (t 0.35)**. Adjusted for known factors it is **-1.7%**. On sixteen years of point-in-time data it had never seen, it earned **+1.2% (t 0.24)** with a **-79%** drawdown against the market's -56%. Nothing was fraudulent, and every correction came from a mistake that is common in practical backtesting: dividends, currency, a code bug that had quietly turned a momentum strategy into buy-and-hold, survivorship, the wrong null hypothesis, and not counting the trials. The most instructive test was a placebo: among the stocks actually in the index at the time, about one random portfolio in eleven, traded on the strategy's own schedule, did better than the strategy. The haircut, 79%, is in line with what the literature finds for published anomalies and for bank strategies once they go live. The only result that survived was about **trading less**.
 
 **Statistics box.** In-sample: 764 weeks, 2012-01-20 to 2026-09-04. Number of record: alpha +1.06% a year, 95% CI [-4.8%, +7.1%], t 0.35 (block bootstrap) / 0.33 (OLS), beta 0.85. Trials 33, Bonferroni bar t 3.17. Harvey–Liu–Zhu haircut of the first t at 33 trials: 47%. Out of sample: 885 weeks, alpha +1.15%, t 0.24. Cross-sectional placebo z: 4.92 on today's members, 1.34 on point-in-time members.
 
@@ -35,6 +37,10 @@ The first regression against the MSCI World ETF, over 2012–2026, gave +5.11% a
 
 *The rows are restatements in the order they happened, not additive components: row 3 was measured on the row-2 book, and row 4 is today's number of record. Sources for every row are in `data/waterfall_sources.csv`.*
 
+![Figure 6](../figures/fig6_where_the_alpha_died.png)
+
+**Two different questions.** The factor-adjusted figure (-1.7%) and the out-of-sample figure (+1.2%) are not in conflict. The first asks whether any alpha is left in 2012–2025 once the strategy's exposure to known factors, above all momentum, is accounted for. The second asks whether the strategy, run unchanged on sixteen years it never saw, still beat the market at all. Neither found an edge that clears the noise.
+
 ### Correction 1: dividends (+5.1% → +4.3%)
 
 The US leg used total-return prices. The European legs, and the benchmark itself, used price-only closes. Mixing the two quietly favours whichever side leaves out dividends, and the benchmark's return rose more when dividends were added: its Sharpe went from 0.695 to 0.819. **Lesson: strategy and benchmark must be on the same return basis, every leg.**
@@ -43,13 +49,15 @@ The US leg used total-return prices. The European legs, and the benchmark itself
 
 European legs were summed in their local currencies (EUR, SEK, DKK, CHF and PLN) as if they had been hedged for free, while the benchmark is an unhedged USD fund. Restated in the benchmark's currency, the alpha fell to +3.4% and the t to 1.36. **Lesson: a return has a currency. Say which one.**
 
-### Correction 3: the holding bug (→ +1.1%)
+### Correction 3: the holding bug, or a momentum strategy that had stopped trading (→ +1.1%)
 
 To save trading costs, the strategy gives a bonus to stocks it already holds. A parameter search had set that bonus so high that the book barely traded: about forty names over fifteen years, changed in roughly one week in seventeen. It had become a buy-and-hold portfolio of stocks picked early in the sample. Resetting the bonus on mechanical grounds, not on performance, gives today's number of record: **+1.06% a year, t 0.35**. Its Sharpe of 0.663 is now *below* the benchmark's 0.819. Maximum drawdown is -37.6% against -32.7%. I re-derived these from the stored weekly series and they match to the last digit.
 
 ### Correction 4: known factors (→ -1.7%)
 
 With the bug fixed, the strategy's momentum loading appears clearly (+0.51, t 5.8, on 13 JKP themes). Regressed on those factors, the alpha is -1.7% (t -0.54). Across four attribution models it lies between −1.7% and +2.9% a year, and every t is below 1. **It is a momentum fund, and momentum is available cheaply.**
+
+> **The factor model, specified.** Weekly returns (Friday to Friday, daily returns compounded), 730 weeks from January 2012 to December 2025, where the factor data end. Dependent variable: the book's return in USD minus the US Treasury bill rate. Regressors: the JKP world market excess return and the 13 JKP world theme factors (accruals, debt issuance, investment, low leverage, low risk, momentum, profit growth, profitability, quality, seasonality, short-term reversal, size, value), each a capped value-weighted long-short return in USD (Jensen, Kelly & Pedersen, 2023). Ordinary least squares with an intercept; t-statistics use Newey-West standard errors with four lags. The intercept times 52 is the alpha. R² 0.54. The themes are correlated, so only the alpha and the momentum loading are read. The other three models: French six factors on developed markets (−0.72%, t −0.26), 20 clusters of the 153 JKP factors (+0.08%, t 0.03) and the JKP market alone (+2.93%, t 0.94). Code: `run_jkp_country_benchmarks.py` and `run_factor_attribution.py` in Project 2.
 
 ## 3. Survivorship: backtesting on today's winners
 
@@ -66,7 +74,11 @@ The easiest universe to download is today's index. It is also the most dangerous
 
 ![Figure 3](../figures/fig3_survivorship.png)
 
-The haircut ranges from 20% to 37% of the Sharpe ratio. The effect is even larger on a placebo test, which replays the strategy's exact holding schedule with randomly chosen names. On today's index members the strategy looked extraordinary (z = 4.92). On members at the time it sits at the 91th percentile (z = 1.34): about one random portfolio in eleven did better. Survivorship and momentum interact. Among survivors, past winners are disproportionately the names that kept winning, so the same test on the convenient universe inflates the answer about 3.7 times.
+The haircut ranges from 20% to 37% of the Sharpe ratio. The effect is even larger on a placebo test, and the placebo is the most instructive test in this article.
+
+### The placebo: random stocks, the strategy's own schedule
+
+Most investors know about survivorship and overfitting. Fewer ask what random portfolios in the same universe would have done with the same trading pattern. The placebo replays the strategy's exact holding schedule, the same number of names and the same dates in and out, but with randomly chosen stocks. On today's index members the strategy looked extraordinary against its placebos (z = 4.92). On members at the time it sits at the 91st percentile (z = 1.34): about one random portfolio in eleven did better. Survivorship and momentum interact. Among survivors, past winners are disproportionately the names that kept winning, so the same test on the convenient universe inflates the answer about 3.7 times.
 
 ## 4. The wrong null: a dartboard beats the market
 
@@ -127,7 +139,7 @@ The first t of 2.90 would have survived only up to 13 trials. The Harvey, Liu & 
 | McLean & Pontiff (2016) | 97 published anomalies | Returns lower out of sample (before publication) | 26% |
 | McLean & Pontiff (2016) | 97 published anomalies | Returns lower after publication | 58% |
 | Suhonen, Lennkh & Perez (2017) | 215 alternative-beta strategies from 15 banks | Median Sharpe decline from backtest to live | 73% |
-| Hou, Xue & Zhang (2020) | 452 anomalies | Share failing &#124;t&#124; >= 1.96 once microcaps are controlled | 65% |
+| Hou, Xue & Zhang (2020) | 452 anomalies | Share failing |t| >= 1.96 once microcaps are controlled | 65% |
 | Hou, Xue & Zhang (2020) | 452 anomalies | Share failing a multiple-testing hurdle of t >= 2.78 | 82% |
 | Wiecki et al. (2016) | 888 algorithms on Quantopian | Backtest Sharpe explains less than 2.5% of live Sharpe (R-squared) |  |
 | **This strategy** | one momentum book, 2012–2026 | alpha, first result → number of record | **79%** |
