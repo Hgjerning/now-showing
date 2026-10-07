@@ -1,8 +1,9 @@
 # Now Showing / Now Playing
 
-Sixteen investment theses, each named after a film or a song, each **pre-registered before the data were opened**
+Investment theses, each named after a film or a song, each **pre-registered before the data were opened**
 and tested with placebo, bootstrap and multiple-testing corrections. One article a week on LinkedIn, Tuesdays 08:00 CET,
-6 October 2026 to 2 February 2027. The finale scores all of them.
+from 6 October 2026: Season 1 to 2 February 2027 (its finale scores all sixteen), Season 2 from 23 February 2027,
+Season 3 ("Machines") from April to June 2027.
 
 **Read the series:** https://hgjerning.github.io/now-showing
 
@@ -30,6 +31,13 @@ and tested with placebo, bootstrap and multiple-testing corrections. One article
 | 21 | 23 Mar 2027 | [The Dirty Dozen](https://hgjerning.github.io/now-showing/the-dirty-dozen) | Film | Twelve odd strategies, seven markets | [`the-dirty-dozen/`](the-dirty-dozen/) |
 | 22 | 30 Mar 2027 | [The Da Vinci Code](https://hgjerning.github.io/now-showing/da-vinci-code) | Film | Do chart patterns hide a message? | [`da-vinci-code/`](da-vinci-code/) |
 | 23 | 6 Apr 2027 | [Déjà Vu](https://hgjerning.github.io/now-showing/deja-vu) | Film | Do backtests repeat when you go back in time? | [`deja-vu/`](deja-vu/) |
+| 24 | 13 Apr 2027 | [The Big Blue](https://hgjerning.github.io/now-showing/the-big-blue) | Film | Is a minimum-tail-risk portfolio just momentum in disguise? | [`the-big-blue/`](the-big-blue/) |
+| 25 | 20 Apr 2027 | [Ocean's Eleven](https://hgjerning.github.io/now-showing/oceans-eleven) | Film | Every famous investor on one map, sorted by what they buy | [`oceans-eleven/`](oceans-eleven/) |
+| 26 | 27 Apr 2027 | [The Matrix](https://hgjerning.github.io/now-showing/the-matrix) | Film | Do deep networks beat simple models? | [`the-matrix/`](the-matrix/) |
+| 27 | 4 May 2027 | [Inside Out](https://hgjerning.github.io/now-showing/inside-out) | Film | What is inside the machine-learning black boxes? | [`inside-out/`](inside-out/) |
+| 28 | 11 May 2027 | [The King's Speech](https://hgjerning.github.io/now-showing/the-kings-speech) | Film | Does an LLM read the Fed better than a word list? | [`the-kings-speech/`](the-kings-speech/) |
+| 29 | 18 May 2027 | [Arrival](https://hgjerning.github.io/now-showing/arrival) | Film | Can a machine read an annual report? | [`arrival/`](arrival/) |
+| 30 | 25 May 2027 | [Memento](https://hgjerning.github.io/now-showing/memento) | Film | How fast does text sentiment fade? | [`memento/`](memento/) |
 
 A folder appears here on the Monday before its post. Groundhog Day's sequel (pre-registered trial C31-3) runs on 16 March 2027.
 
