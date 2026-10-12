@@ -15,7 +15,6 @@ __pycache__/
 .cache/
 
 # Unreleased articles: delete ONE line each Monday before the post (then commit and push)
-/groundhog-day/
 /magnificent-seven/
 /viva-las-vegas/
 /usual-suspects/
@@ -42,3 +41,21 @@ __pycache__/
 /the-kings-speech/
 /arrival/
 /memento/
+/the-book-thief/
+/unbreakable/
+/_to_delete_a36/
+/old-school/
+/speed/
+/the-accountant/
+/jerry-maguire/
+/catch-me-if-you-can/
+/the-italian-job/
+/copycat/
+/factsheets/cf01-the-book-thief/
+/factsheets/cf02-unbreakable/
+/factsheets/cf03-old-school/
+/factsheets/cf04-speed/
+/factsheets/cf05-the-accountant/
+/factsheets/cf06-jerry-maguire/
+/factsheets/cf07-catch-me-if-you-can/
+/factsheets/cf08-the-italian-job/

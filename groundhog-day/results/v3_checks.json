@@ -1,0 +1,99 @@
+{
+  "note": "Added 9 Oct 2026 after the stress test. Reported, not gated.",
+  "studentized_perm_p": 0.006899310068993101,
+  "primary_p": 0.005599440055994401,
+  "mc_se_primary_p": 0.000746196108744459,
+  "holm_case31": [
+    {
+      "trial": "C31-4",
+      "p": 0.00019998000199980003,
+      "holm_threshold": 0.0125,
+      "rejected": true
+    },
+    {
+      "trial": "C31-1",
+      "p": 0.005599440055994401,
+      "holm_threshold": 0.016666666666666666,
+      "rejected": true
+    },
+    {
+      "trial": "C31-2",
+      "p": 0.2074792520747925,
+      "holm_threshold": 0.025,
+      "rejected": false
+    },
+    {
+      "trial": "C31-5",
+      "p": 0.519048095190481,
+      "holm_threshold": 0.05,
+      "rejected": false
+    }
+  ],
+  "programme_trials_run": 19,
+  "programme_bonferroni_gate": 0.002631578947368421,
+  "cycle_positions": {
+    "midterm": {
+      "n": 24,
+      "gap_vs_rest_pts": 5.724252951179713
+    },
+    "pre-election year": {
+      "n": 24,
+      "gap_vs_rest_pts": -1.5240075227678955
+    },
+    "presidential election": {
+      "n": 25,
+      "gap_vs_rest_pts": -2.4463649247407666
+    },
+    "post-election year": {
+      "n": 25,
+      "gap_vs_rest_pts": -1.6411067907986243
+    }
+  },
+  "recession_midterms": {
+    "1930": 0.0716003951034622,
+    "1970": 0.1957966946658738,
+    "1974": 0.1451205090840683,
+    "1982": 0.1000072692606273,
+    "1990": 0.1941145984923951
+  },
+  "recession_mean_all5": 0.14132789332128531,
+  "recession_mean_4_ended": 0.15875976787574111,
+  "drop_best5_years": [
+    1970,
+    1990,
+    1998,
+    1986,
+    1942
+  ],
+  "drop_best5_gap_pts": 3.0240233130255083,
+  "post2003": {
+    "n_mid": 5,
+    "n_ctrl": 18,
+    "gap_pts": 2.575195993947763,
+    "ci95_pts": [
+      -3.4969106122654567,
+      8.647302600160984
+    ]
+  },
+  "C31_5": {
+    "gap_pts": -0.1411760744075839,
+    "se_pts": 2.3087568212851246,
+    "ci95_pts": [
+      -4.666339444126429,
+      4.38398729531126
+    ],
+    "power_vs_modern_gap": 0.6445427541200901,
+    "modern_monthly_gap_pts": 5.380770552102079,
+    "era_difference_z": 1.8568226157688157
+  },
+  "forecast": {
+    "point": 0.04724512581286196,
+    "pi80": [
+      -0.08926336316017237,
+      0.18203184430920966
+    ],
+    "control_only_forecast": 0.018623861056963377,
+    "midterm_specific_part_pts": 2.862126475589858,
+    "breakeven_return_for_squared_error": 0.03293449343491267
+  }
+}

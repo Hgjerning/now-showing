@@ -1,0 +1,327 @@
+{
+ "note": "Added in version 2 after external review. Reported, not gated.",
+ "base_diff": 0.0572,
+ "n_mid": 24,
+ "n_ctrl": 74,
+ "era_permutation": {
+  "diff": 0.0572,
+  "p_one_sided": 0.0047,
+  "within_era_weighted_diff": 0.0574,
+  "by_era": {
+   "1928-59": {
+    "n_mid": 8,
+    "n_ctrl": 24,
+    "mid": 0.038,
+    "ctrl": 0.0062,
+    "diff": 0.0318
+   },
+   "1960-89": {
+    "n_mid": 7,
+    "n_ctrl": 23,
+    "mid": 0.1299,
+    "ctrl": 0.0226,
+    "diff": 0.1074
+   },
+   "1990-2025": {
+    "n_mid": 9,
+    "n_ctrl": 27,
+    "mid": 0.0675,
+    "ctrl": 0.0263,
+    "diff": 0.0412
+   }
+  }
+ },
+ "recessions": {
+  "recession_at_election": {
+   "mid_years_with": [
+    1930,
+    1970,
+    1974,
+    1982,
+    1990
+   ],
+   "share_mid": 0.2083,
+   "share_ctrl": 0.1351,
+   "matched_diff": 0.0615,
+   "matched_p": 0.0073,
+   "excl_n_mid": 19,
+   "excl_n_ctrl": 64,
+   "excl_diff": 0.0322,
+   "excl_p": 0.0788,
+   "mid_rec": 0.1413,
+   "ctrl_rec": -0.0311,
+   "n_ctrl_rec": 10,
+   "mid_norec": 0.0586,
+   "ctrl_norec": 0.0264,
+   "ctrl_years_with": [
+    1929,
+    1931,
+    1932,
+    1937,
+    1953,
+    1957,
+    1960,
+    1981,
+    2001,
+    2008
+   ]
+  },
+  "recession_in_window": {
+   "mid_years_with": [
+    1930,
+    1970,
+    1974,
+    1982,
+    1990
+   ],
+   "share_mid": 0.2083,
+   "share_ctrl": 0.2297,
+   "matched_diff": 0.0555,
+   "matched_p": 0.0063,
+   "excl_n_mid": 19,
+   "excl_n_ctrl": 57,
+   "excl_diff": 0.0209,
+   "excl_p": 0.1647,
+   "mid_rec": 0.1413,
+   "ctrl_rec": -0.0453,
+   "n_ctrl_rec": 17,
+   "mid_norec": 0.0586,
+   "ctrl_norec": 0.0377,
+   "ctrl_years_with": [
+    1929,
+    1931,
+    1932,
+    1937,
+    1944,
+    1948,
+    1953,
+    1957,
+    1960,
+    1969,
+    1973,
+    1979,
+    1981,
+    2001,
+    2007,
+    2008,
+    2019
+   ]
+  },
+  "mid_recession_ended_within_6m": {
+   "1930": false,
+   "1970": true,
+   "1974": true,
+   "1982": true,
+   "1990": true
+  }
+ },
+ "control_weakness": {
+  "ctrl_mean": 0.0186,
+  "ctrl_median": 0.0353,
+  "mid_mean": 0.0759,
+  "mid_median": 0.0807,
+  "median_diff": 0.0454,
+  "trimmed10_diff": 0.061,
+  "ctrl_share_negative": 0.4054,
+  "mid_share_negative": 0.125,
+  "ctrl_worst8": [
+   {
+    "year": 1931,
+    "ret": -0.2505
+   },
+   {
+    "year": 2008,
+    "ret": -0.2263
+   },
+   {
+    "year": 2000,
+    "ret": -0.202
+   },
+   {
+    "year": 2019,
+    "ret": -0.1774
+   },
+   {
+    "year": 1932,
+    "ret": -0.1546
+   },
+   {
+    "year": 1941,
+    "ret": -0.1511
+   },
+   {
+    "year": 2007,
+    "ret": -0.1247
+   },
+   {
+    "year": 1981,
+    "ret": -0.123
+   }
+  ],
+  "mid_worst3": [
+   {
+    "year": 1938,
+    "ret": -0.1356
+   },
+   {
+    "year": 1934,
+    "ret": -0.0838
+   },
+   {
+    "year": 2002,
+    "ret": -0.0535
+   }
+  ],
+  "drop_worst_ctrl": {
+   "3": {
+    "ctrl": 0.029,
+    "diff": 0.0469
+   },
+   "5": {
+    "ctrl": 0.0346,
+    "diff": 0.0412
+   },
+   "8": {
+    "ctrl": 0.0422,
+    "diff": 0.0336
+   }
+  },
+  "drop_worst_both": {
+   "2": 0.0554,
+   "3": 0.0552
+  },
+  "by_kind": {
+   "midterm": 0.0759,
+   "odd": 0.0208,
+   "presidential": 0.0144
+  },
+  "by_decade": {
+   "1920s": {
+    "mid": null,
+    "ctrl": 0.168,
+    "n_ctrl": 2
+   },
+   "1930s": {
+    "mid": -0.0493,
+    "ctrl": -0.0397,
+    "n_ctrl": 7
+   },
+   "1940s": {
+    "mid": 0.0918,
+    "ctrl": -0.0185,
+    "n_ctrl": 8
+   },
+   "1950s": {
+    "mid": 0.0893,
+    "ctrl": 0.0341,
+    "n_ctrl": 7
+   },
+   "1960s": {
+    "mid": 0.1105,
+    "ctrl": 0.0093,
+    "n_ctrl": 8
+   },
+   "1970s": {
+    "mid": 0.1392,
+    "ctrl": 0.0247,
+    "n_ctrl": 7
+   },
+   "1980s": {
+    "mid": 0.1354,
+    "ctrl": 0.034,
+    "n_ctrl": 8
+   },
+   "1990s": {
+    "mid": 0.1452,
+    "ctrl": 0.0741,
+    "n_ctrl": 7
+   },
+   "2000s": {
+    "mid": -0.0079,
+    "ctrl": -0.0264,
+    "n_ctrl": 8
+   },
+   "2010s": {
+    "mid": 0.0473,
+    "ctrl": 0.0243,
+    "n_ctrl": 7
+   },
+   "2020s": {
+    "mid": 0.0457,
+    "ctrl": 0.0467,
+    "n_ctrl": 5
+   }
+  }
+ },
+ "decay": {
+  "splits": {
+   "1980": {
+    "before": 0.0623,
+    "n_mid_before": 13,
+    "after": 0.0518,
+    "n_mid_after": 11,
+    "p_after": 0.067
+   },
+   "2003": {
+    "before": 0.0656,
+    "n_mid_before": 19,
+    "after": 0.0258,
+    "n_mid_after": 5,
+    "p_after": 0.3299
+   }
+  },
+  "rolling_min": 0.0173,
+  "rolling_max": 0.1286,
+  "rolling_share_positive": 1.0,
+  "rolling_last": {
+   "start": 2000,
+   "end": 2025,
+   "n_mid": 6,
+   "diff": 0.0191
+  },
+  "slope_per_decade": 0.0035
+ },
+ "total_return": {
+  "diff": 0.0578,
+  "p": 0.0053,
+  "yld_mid": 0.0374,
+  "yld_ctrl": 0.0358,
+  "n": 98,
+  "method": "price return + dividend yield at election x 90/252 (Shiller)"
+ },
+ "international": {
+  "Nikkei 225": {
+   "first_year": 1965,
+   "n_mid": 15,
+   "n_ctrl": 46,
+   "mid": 0.0499,
+   "ctrl": 0.0476,
+   "diff": 0.0023,
+   "p_one_sided": 0.4816,
+   "sp500_diff_same_years": 0.0728,
+   "corr_with_sp500": 0.5718
+  },
+  "FTSE 100": {
+   "first_year": 1984,
+   "n_mid": 10,
+   "n_ctrl": 32,
+   "mid": 0.05,
+   "ctrl": 0.0327,
+   "diff": 0.0173,
+   "p_one_sided": 0.3306,
+   "sp500_diff_same_years": 0.0431,
+   "corr_with_sp500": 0.8561
+  },
+  "DAX": {
+   "first_year": 1988,
+   "n_mid": 9,
+   "n_ctrl": 29,
+   "mid": 0.0464,
+   "ctrl": 0.0687,
+   "diff": -0.0223,
+   "p_one_sided": 0.6321,
+   "sp500_diff_same_years": 0.0403,
+   "corr_with_sp500": 0.6881
+  }
+ }
+}

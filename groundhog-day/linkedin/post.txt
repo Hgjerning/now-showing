@@ -1,0 +1,23 @@
+GROUNDHOG DAY: does the stock market rally every four years?
+
+I tried to kill the midterm rally with November. November lost.
+
+The claim is old: after a US midterm election, stocks rally. Since 1930 the S&P 500 has gained 7.6% on average in the 90 trading days after a midterm, and rose in 21 of 24 cases.
+
+My objection: every one of those windows opens in early November, the start of the historically strong half of the year. So before running anything I wrote down a harder test: each midterm against the same 90 days in the other 74 years.
+
+I predicted it would fail. It didn't. The same season in ordinary years returned 1.9%. The gap, 5.7 points, has a permutation p of 0.006 against a pre-registered gate of 0.025. (It would not clear a gate corrected for all 19 trials I have run.)
+
+So it is not just November. That is all it shows.
+→ Leave out the five recession-year midterms and the gap halves. Leave out the five best years and it halves too: 24 elections lean on a few.
+→ Since 2003: +2.6 points, on five midterms.
+→ Adding macro controls (recession, prior-year return, valuation, inflation) did not shrink it: +7.4 points.
+→ But in the 14 midterms before 1928, which nobody in this project had looked at, the gap is about zero.
+
+3 November 2026 cannot settle that history. It tests my forecast, on the record before the vote: +4.7% by 16 March 2027, 80% range −9% to +18%. Most of that is ordinary seasonality; the midterm part is about 3 points.
+
+Not investment advice.
+
+Full article, tables, code and pre-registration: hgjerning.github.io/now-showing/groundhog-day
+
+#investing #markets #statistics #midterms #quant
