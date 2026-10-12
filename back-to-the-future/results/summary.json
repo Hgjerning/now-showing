@@ -15,19 +15,19 @@
     {
       "step": 2,
       "date": "2026-09-08",
-      "label": "Total-return re-basing",
+      "label": "Total return, new allocation",
       "alpha_ann": 0.0434,
       "t_stat": 2.21,
       "t_type": "block bootstrap",
       "sharpe_book": 0.932,
       "sharpe_bench": 0.819,
-      "what_changed": "All legs and the benchmark moved to total return (dividends)",
+      "what_changed": "Dividends added to every leg and the benchmark; between rows 1 and 2 also re-allocated to 50/50 US/EU (trial 32) and bonus re-parametrised to 8 sd (trial 33)",
       "source": "Project2 BENCHMARK_HURDLE.md l.414-424"
     },
     {
       "step": 3,
       "date": "2026-09-11",
-      "label": "Stated in USD",
+      "label": "Side check, not on the path: stated in USD",
       "alpha_ann": 0.0339,
       "t_stat": 1.36,
       "t_type": "OLS",
@@ -57,7 +57,7 @@
       "t_type": "OLS",
       "sharpe_book": NaN,
       "sharpe_bench": NaN,
-      "what_changed": "Momentum loading +0.51 (t 5.8) explains the rest",
+      "what_changed": "Momentum loading +0.512 (t 5.8) at 13 JKP themes; +0.369 (t 4.2) at six factors",
       "source": "Project2 README.md l.6140-6152"
     }
   ],
@@ -119,6 +119,55 @@
         "alpha": 0.0230005675246543,
         "t": 0.3443256534311875
       }
+    }
+  },
+  "warmup": {
+    "insample_all_weeks": {
+      "n": 764,
+      "start": "2012-01-20",
+      "alpha_ann": 0.010647077265471134,
+      "t_ols": 0.33343428005889103,
+      "beta": 0.8472885286561562,
+      "sharpe": 0.6632633464303489,
+      "bench_sharpe": 0.8185959114123651,
+      "se_alpha_ann": 0.031931561636645914
+    },
+    "insample_from_first_holding": {
+      "n": 709,
+      "start": "2013-02-08",
+      "alpha_ann": 0.01928283331400875,
+      "t_ols": 0.5775145064149623,
+      "beta": 0.886380281323772,
+      "sharpe": 0.688700221674373,
+      "bench_sharpe": 0.7752176101221486,
+      "se_alpha_ann": 0.03338934883854403
+    },
+    "insample_zero_weeks": 55,
+    "oos_all_weeks": {
+      "n": 885,
+      "start": "1995-01-13",
+      "alpha_ann": 0.011542327503877362,
+      "t_ols": 0.2931834012955316,
+      "beta": 1.1770912776687679,
+      "sharpe": 0.47540328967310114,
+      "bench_sharpe": 0.5397985838632334,
+      "se_alpha_ann": 0.03936896649971868
+    },
+    "oos_from_first_holding": {
+      "n": 829,
+      "start": "1996-02-09",
+      "alpha_ann": 0.033259454209633374,
+      "t_ols": 0.8004305711899863,
+      "beta": 1.1895559304393193,
+      "sharpe": 0.4912513924074193,
+      "bench_sharpe": 0.4617849806330467,
+      "se_alpha_ann": 0.04155195391923515
+    },
+    "oos_zero_weeks": 56,
+    "oos_power": {
+      "se_alpha_ann": 0.04819563212389346,
+      "power_vs_first_result": 0.17367599842665715,
+      "mde80": 0.1369537316087245
     }
   },
   "multiple_testing": {

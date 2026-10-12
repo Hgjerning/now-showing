@@ -55,6 +55,28 @@ S["oos"] = dict(record_alpha=comb.alpha_ann, record_t=comb.t, record_ci=[comb.ci
 dd = pd.DataFrame({"strategy": (1 + o.COMBINED).cumprod(), "benchmark": (1 + o.bench).cumprod()})
 (dd / dd.cummax() - 1).to_csv(os.path.join(OUT, "oos_drawdown.csv"))
 
+# ---------------------------------------------------------------- warm-up weeks (stress test 9 Oct 2026)
+# Both books hold nothing (return exactly 0) until their first portfolio forms; those weeks sit inside the
+# headline regressions. Report every headline both ways, plus the power of the out-of-sample test.
+def ols(y, xb):
+    X = np.column_stack([np.ones(len(xb)), xb]); bb, *_ = np.linalg.lstsq(X, y, rcond=None)
+    r = y - X @ bb; s = np.sqrt(r.var(ddof=2) * np.linalg.inv(X.T @ X)[0, 0]); return bb, s
+def first_live(s):
+    nz = np.flatnonzero(s.values != 0); return s.index[nz[0]]
+w = {}
+for lab, frame, yc, xc in (("insample", x, "BOOK", "URTH"), ("oos", o, "COMBINED", "bench")):
+    f0 = first_live(frame[yc]); live = frame.loc[f0:]
+    for k, fr in (("all_weeks", frame), ("from_first_holding", live)):
+        bb, s = ols(fr[yc].values, fr[xc].values)
+        w[f"{lab}_{k}"] = dict(n=len(fr), start=str(fr.index[0].date()), alpha_ann=bb[0] * 52, t_ols=bb[0] / s, beta=bb[1],
+                               sharpe=sr(fr[yc]), bench_sharpe=sr(fr[xc]), se_alpha_ann=s * 52)
+    w[f"{lab}_zero_weeks"] = int(len(frame) - len(live))
+from scipy.stats import norm
+se_oos = S["oos"]["record_alpha"] / S["oos"]["record_t"]
+w["oos_power"] = dict(se_alpha_ann=se_oos, power_vs_first_result=float(1 - norm.cdf(2 - 0.0511 / se_oos)),
+                      mde80=float((2 + norm.ppf(0.8)) * se_oos))
+S["warmup"] = w
+
 # ---------------------------------------------------------------- multiple testing: what t is needed, and HLZ haircut
 t0 = float(wf.loc[wf.step == 1, "t_stat"].iloc[0])
 p0 = 2 * stats.norm.sf(t0)
