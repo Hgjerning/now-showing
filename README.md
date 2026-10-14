@@ -10,24 +10,25 @@ Season 3 ("Machines") from April to June 2027.
 | No. | LinkedIn | Article | Kind | Question | Folder |
 |---|---|---|---|---|---|
 | 1 | 6 Oct 2026 | [Titanic](https://hgjerning.github.io/now-showing/titanic) | Film | Every bubble was unsinkable. Is this one? | [`titanic/`](titanic/) |
-| 2 | 13 Oct 2026 | [Back to the Future](https://hgjerning.github.io/now-showing/back-to-the-future) | Film | My strategy beat the market by 5% a year. In the past. | [`back-to-the-future/`](back-to-the-future/) |
-| 3 | 20 Oct 2026 | [Groundhog Day](https://hgjerning.github.io/now-showing/groundhog-day) | Film | The rally that comes back every four years | [`groundhog-day/`](groundhog-day/) |
-| 4 | 27 Oct 2026 | [The Magnificent Seven](https://hgjerning.github.io/now-showing/magnificent-seven) | Film | Does concentration come back to bite? | [`magnificent-seven/`](magnificent-seven/) |
-| 5 | 3 Nov 2026 | [Viva Las Vegas](https://hgjerning.github.io/now-showing/viva-las-vegas) | Song | Do lottery stocks still lose? | [`viva-las-vegas/`](viva-las-vegas/) |
-| 6 | 10 Nov 2026 | [The Usual Suspects](https://hgjerning.github.io/now-showing/usual-suspects) | Film | Fifteen legends, one Fool, one regression | [`usual-suspects/`](usual-suspects/) |
-| 7 | 17 Nov 2026 | [Minority Report](https://hgjerning.github.io/now-showing/minority-report) | Film | Can machine-learning precogs see next month's winners? | [`minority-report/`](minority-report/) |
-| 8 | 24 Nov 2026 | [Under Pressure](https://hgjerning.github.io/now-showing/under-pressure) | Song | Which distress score sees the crash coming? | [`under-pressure/`](under-pressure/) |
-| 9 | 1 Dec 2026 | [Video Killed the Radio Star](https://hgjerning.github.io/now-showing/video-killed-the-radio-star) | Song | Does publication kill a factor? | [`video-killed-the-radio-star/`](video-killed-the-radio-star/) |
-| 10 | 8 Dec 2026 | [Miracle on 34th Street](https://hgjerning.github.io/now-showing/miracle-on-34th-street) | Film | Does Santa Claus visit Wall Street? | [`miracle-on-34th-street/`](miracle-on-34th-street/) |
-| 11 | 15 Dec 2026 | [Inception](https://hgjerning.github.io/now-showing/inception) | Film | What happens when you mine 1,000 trading rules? | [`inception/`](inception/) |
-| 12 | 5 Jan 2027 | [Money for Nothing](https://hgjerning.github.io/now-showing/money-for-nothing) | Song | Does trading less pay? | [`money-for-nothing/`](money-for-nothing/) |
-| 13 | 12 Jan 2027 | [A Beautiful Mind](https://hgjerning.github.io/now-showing/a-beautiful-mind) | Film | Do chart rules still time the market? | [`a-beautiful-mind/`](a-beautiful-mind/) |
-| 14 | 19 Jan 2027 | [Stormy Weather](https://hgjerning.github.io/now-showing/stormy-weather) | Song | Does cutting risk after volatile months pay? | [`stormy-weather/`](stormy-weather/) |
-| 15 | 26 Jan 2027 | [Free Fallin'](https://hgjerning.github.io/now-showing/free-fallin) | Song | Should you catch a falling knife? | [`free-fallin/`](free-fallin/) |
+| 2 | 13 Oct 2026 | [Groundhog Day](https://hgjerning.github.io/now-showing/groundhog-day) | Film | Does the market rally every four years? | [`groundhog-day/`](groundhog-day/) |
+| 3 | 20 Oct 2026 | [The Magnificent Seven](https://hgjerning.github.io/now-showing/magnificent-seven) | Film | Does concentration come back to bite? | [`magnificent-seven/`](magnificent-seven/) |
+| 4 | 27 Oct 2026 | [Viva Las Vegas](https://hgjerning.github.io/now-showing/viva-las-vegas) | Song | Do lottery stocks still lose? | [`viva-las-vegas/`](viva-las-vegas/) |
+| 5 | 3 Nov 2026 | [The Usual Suspects](https://hgjerning.github.io/now-showing/usual-suspects) | Film | Fifteen legends, one Fool, one regression | [`usual-suspects/`](usual-suspects/) |
+| 6 | 10 Nov 2026 | [Minority Report](https://hgjerning.github.io/now-showing/minority-report) | Film | Can machine-learning precogs see next month's winners? | [`minority-report/`](minority-report/) |
+| 7 | 17 Nov 2026 | [Under Pressure](https://hgjerning.github.io/now-showing/under-pressure) | Song | Which distress score sees the crash coming? | [`under-pressure/`](under-pressure/) |
+| 8 | 24 Nov 2026 | [Video Killed the Radio Star](https://hgjerning.github.io/now-showing/video-killed-the-radio-star) | Song | Does publication kill a factor? | [`video-killed-the-radio-star/`](video-killed-the-radio-star/) |
+| 9 | 1 Dec 2026 | [Miracle on 34th Street](https://hgjerning.github.io/now-showing/miracle-on-34th-street) | Film | Does Santa Claus visit Wall Street? | [`miracle-on-34th-street/`](miracle-on-34th-street/) |
+| 10 | 8 Dec 2026 | [Inception](https://hgjerning.github.io/now-showing/inception) | Film | What happens when you mine 1,000 trading rules? | [`inception/`](inception/) |
+| 11 | 15 Dec 2026 | [Money for Nothing](https://hgjerning.github.io/now-showing/money-for-nothing) | Song | Does trading less pay? | [`money-for-nothing/`](money-for-nothing/) |
+| 12 | 5 Jan 2027 | [A Beautiful Mind](https://hgjerning.github.io/now-showing/a-beautiful-mind) | Film | Do chart rules still time the market? | [`a-beautiful-mind/`](a-beautiful-mind/) |
+| 13 | 12 Jan 2027 | [Stormy Weather](https://hgjerning.github.io/now-showing/stormy-weather) | Song | Does cutting risk after volatile months pay? | [`stormy-weather/`](stormy-weather/) |
+| 14 | 19 Jan 2027 | [Free Fallin'](https://hgjerning.github.io/now-showing/free-fallin) | Song | Should you catch a falling knife? | [`free-fallin/`](free-fallin/) |
+| 15 | 26 Jan 2027 | [Back to the Future](https://hgjerning.github.io/now-showing/back-to-the-future) | Film | The seven deadly sins of backtesting (rework) | [`back-to-the-future/`](back-to-the-future/) |
 | 16 | 2 Feb 2027 | [The Good, the Bad and the Ugly](https://hgjerning.github.io/now-showing/good-bad-ugly) | Film | What did 15 theses teach us? | [`good-bad-ugly/`](good-bad-ugly/) |
 | 17 | 23 Feb 2027 | [Trading Places](https://hgjerning.github.io/now-showing/trading-places) | Film | Would the Turtle rules still work? | [`trading-places/`](trading-places/) |
 | 18 | 2 Mar 2027 | [Moneyball](https://hgjerning.github.io/now-showing/moneyball) | Film | Haugen's inefficient market, after the book | [`moneyball/`](moneyball/) |
 | 19 | 9 Mar 2027 | [Dirty Dancing](https://hgjerning.github.io/now-showing/dirty-dancing) | Film | Would Darvas's box still work? | [`dirty-dancing/`](dirty-dancing/) |
+| 20 | 16 Mar 2027 | [Groundhog Day: the sequel](https://hgjerning.github.io/now-showing/groundhog-day) | Film | Did the midterm rally come back in 2026? (forward test C31-3) | [`groundhog-day/`](groundhog-day/) |
 | 21 | 23 Mar 2027 | [The Dirty Dozen](https://hgjerning.github.io/now-showing/the-dirty-dozen) | Film | Twelve odd strategies, seven markets | [`the-dirty-dozen/`](the-dirty-dozen/) |
 | 22 | 30 Mar 2027 | [The Da Vinci Code](https://hgjerning.github.io/now-showing/da-vinci-code) | Film | Do chart patterns hide a message? | [`da-vinci-code/`](da-vinci-code/) |
 | 23 | 6 Apr 2027 | [Déjà Vu](https://hgjerning.github.io/now-showing/deja-vu) | Film | Do backtests repeat when you go back in time? | [`deja-vu/`](deja-vu/) |
