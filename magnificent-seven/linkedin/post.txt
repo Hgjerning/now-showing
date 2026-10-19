@@ -1,0 +1,37 @@
+THE MAGNIFICENT SEVEN: does concentration come back to bite?
+
+Guess before you scroll: Since 2012, did the 10 largest US stocks beat the other 490 over the following year?
+A) They lagged, as the lore says
+B) About even
+C) They beat them
+Comment A, B or C. The answer is below.
+
+In 2012 the ten largest US stocks were 21% of the 500 largest. Today they are 39%. At the dot-com peak in 2000 the S&P 500 figure was 27%.
+
+Market lore says this ends badly:
+→ the biggest stocks lag the rest
+→ when concentration peaks, the average stock catches up
+
+I wrote both claims down as tests before looking, then ran them on every month since 2012.
+
+Neither showed up.
+
+The then-top-10 beat the other 490 by +5.7% over the following year on average, and did so in 66% of start months. Rising concentration predicted nothing about the catch-up (t = 0.7).
+
+Why did the giants win? A standard factor model explains about half of the lead: they were large, growth-tilted stocks in an era that paid for both. And it was no free lunch: the lead fell 28% into 2022.
+
+Of $70 trillion created since 2012, 39% came from just ten stocks.
+
+The difference from 1972 and 2000: then the leaders cost about twice the market's multiple. In 2024 the premium was about a third.
+
+Concentration is a risk to size, not a date to guess.
+
+Answer: C: by +5.7% per year on average, in 66% of start months.
+
+In the film, seven gunfighters defend a village. In the S&P 500, the village has handed the ten biggest 39% of its savings.
+
+Which market rule would you like put on trial next?
+
+Tables, code and the pre-registration: hgjerning.github.io/now-showing/magnificent-seven
+
+#investing #indexfunds #magnificent7 #statistics

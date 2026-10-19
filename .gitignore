@@ -15,7 +15,6 @@ __pycache__/
 .cache/
 
 # Unreleased articles: delete ONE line each Monday before the post (then commit and push)
-/magnificent-seven/
 /viva-las-vegas/
 /usual-suspects/
 /minority-report/

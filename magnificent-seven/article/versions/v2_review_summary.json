@@ -1,0 +1,45 @@
+{
+  "code": "A03",
+  "title": "The Magnificent Seven: does concentration come back to bite?",
+  "stem": "magnificent_seven",
+  "main_claim_v2": "In 2012-2026 the ten largest US stocks outperformed rather than lagged the other 490 (mostly after 2019) and rising concentration did not detectably predict an equal-weight catch-up, which argues against concentration as a timing signal but does not show that concentration is harmless.",
+  "verdict": "0 of 2 passed. A03-1 failed with the opposite sign (+5.7% per 12m, NW t +2.07, p 0.981); A03-2 failed (slope +0.32, t 0.72, R2 0.03). Corrected universe: +6.2% (t 2.11) and slope 0.43 (t 0.70), verdicts unchanged.",
+  "reviewer_score_latest": 9.0,
+  "strongest_evidence": "Top-10 slog resten med +5,7% pr. 12 måneder (t 2,07) i 66% af startmånederne, og resultatet står næsten uændret efter univers-korrektionen.",
+  "weakest_evidence": "A03-2 har meget lav power (ca. 14 uafhængige år, R² 0,03), så fraværet af catch-up siger lidt om, hvorvidt det findes.",
+  "adopted": [
+    "A03-2 omformuleret til 'ingen målbar evidens' (v1, v3)",
+    "Eksplicit: viser ikke at koncentration er ufarlig (v1, v3)",
+    "Konklusion strammet (v3)",
+    "Deskriptiv koncentrations-ladder for formuedannelse (v3 prio 1)",
+    "Benchmark-boks for 39% med Bessembinder 2018 (v1, v3)",
+    "Formuefund i abstract (v1, v3)",
+    "Top-10-cutoff og faktorforklaring som forbehold (v1, v3)"
+  ],
+  "rejected": [
+    {
+      "point": "Omtal spreadet som '+5,7% årligt'",
+      "why": "Målet er overlappende 12-måneders spreads, ikke et årligt strategiafkast; 'per 12 months' bevares."
+    },
+    {
+      "point": "Flyt formueafsnittet tidligere end testene",
+      "why": "Det ligger allerede efter de præregistrerede tests og står nu i abstract; testene bør komme først."
+    }
+  ],
+  "open_analyses": [
+    "A03-1 for top 5, 20 og 50",
+    "Lorenz-figur for formuedannelse",
+    "Faktorattribution af top-10 (kvalitet, profitabilitet, momentum)",
+    "Totalafkast inkl. udbytte",
+    "Længere historik med flere koncentrationsregimer"
+  ],
+  "own_additions": [
+    "Periodesplit 2012-18 vs 2019-25 af top-10-spreadet (+1,1% vs +10,5%)",
+    "Følsomhed uden startår 2019 og 2023 (+2,4%)",
+    "Note om at modsat-fortegn-resultatet ikke er en registreret test af outperformance",
+    "Forbehold om at artiklen ikke måler nedsiderisiko ved koncentration",
+    "Antal startmåneder (163) og uafhængige år i statistikboks",
+    "År-for-år-tabellen fjernet; periodesplit og Figure 2 bærer pointen"
+  ],
+  "priority_next": "Gentag A03-1 for top 5, 20 og 50 og kombinér med periodesplittet, så det kan ses om top-10-forspringet er et cutoff- og 2019-2025-fænomen."
+}
