@@ -58,3 +58,23 @@ __pycache__/
 /factsheets/cf06-jerry-maguire/
 /factsheets/cf07-catch-me-if-you-can/
 /factsheets/cf08-the-italian-job/
+/fear-and-loathing-in-las-vegas/
+/same-time-next-year/
+/the-tree-of-life/
+
+# Internal review files loose in article/ never go public (23 Oct 2026). The deliberate paper trail lives in
+# article/versions/ with a README (see magnificent-seven), which these patterns do not touch.
+/*/article/CHANGES_*.md
+/*/article/review_summary.json
+/*/article/*_v2.*
+/*/article/*_v3.*
+
+# Per-firm score panels in any results folder (23 Oct 2026, A07 stress test)
+*/results_*/scores_panel*.csv
+/*/STRESS_TEST_*
+
+# Storm P. drawings dated after 1930 never go on the US-hosted public site (STORM_P_SHORTLIST rule; 23 Oct 2026, A09 stress test)
+/miracle-on-34th-street/figures/stormp_*
+
+# 23 Oct 2026: Storm P. drawings after 1930 stay off the public site (US copyright caution)
+/*/figures/stormp_*_194*.png
