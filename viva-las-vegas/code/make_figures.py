@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+"""A04 figures + hero card (song)."""
+import json
+import os
+import sys
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "_shared", "lib10")); sys.path.insert(0, "/home/claude/lib10")
+from common import BLUE, GREY, INK, INK2, ORANGE, mpl_style  # noqa: E402
+from poster import BOLD, DIM, poster  # noqa: E402
+from poster import INK as PINK  # noqa: E402
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); RES, FIG = os.path.join(ROOT, "results"), os.path.join(ROOT, "figures")
+os.makedirs(FIG, exist_ok=True); mpl_style(plt)
+S = json.load(open(os.path.join(RES, "summary.json"))); R = S["reported"]
+J = pd.read_csv(os.path.join(RES, "jkp_max_factor.csv"), index_col=0, parse_dates=True)["ret"]
+dec = [R["decile_ann"][f"D{k}"] * 100 for k in range(1, 11)]
+
+fig, ax = plt.subplots(figsize=(10, 4.4), dpi=200)
+ax.bar(range(1, 11), dec, color=[BLUE] + [GREY] * 8 + [ORANGE], width=0.65)
+for k, v in enumerate(dec, 1):
+    ax.text(k, v + 0.4, f"{v:.0f}%", ha="center", fontsize=9.5)
+ax.set_xticks(range(1, 11)); ax.set_xticklabels(["1\nsteadiest"] + [str(i) for i in range(2, 10)] + ["10\nlottery"])
+ax.set_ylabel("Return, % a year (next month, equal weight)")
+ax.set_title("First (hindsight) list, 2013-2026: raw return by MAX decile (corrected list: Table 4)", loc="left", fontsize=12.5, fontweight="bold", color=INK)
+fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig1_deciles.png")); plt.close(fig)
+
+c = (1 + J.loc["1963-07-31":]).cumprod()
+fig, ax = plt.subplots(figsize=(10, 4.2), dpi=200)
+ax.plot(c.index, c.values, color=BLUE, lw=2); ax.axvline(pd.Timestamp("2011-01-01"), color=INK2, lw=1, ls=":")
+ax.text(pd.Timestamp("2011-06-01"), c.max() * 0.95, "published 2011", fontsize=10, color=INK2)
+ax.set_yscale("log"); ax.set_ylabel("Growth of $1, low-MAX minus high-MAX")
+ax.set_title("The MAX factor across the US market (JKP): it went sideways after the paper", loc="left", fontsize=13, fontweight="bold", color=INK)
+fig.tight_layout(); fig.savefig(os.path.join(FIG, "fig2_jkp_max.png")); plt.close(fig)
+
+
+def draw(ax, acc):
+    cols = [acc] + [DIM] * 8 + ["#f5b301"]
+    ax.bar(range(1, 11), dec, color=cols, width=0.66)
+    ax.text(1, dec[0] + 0.8, f"{dec[0]:.0f}%", ha="center", color=PINK, fontproperties=BOLD, fontsize=24)
+    ax.text(10, dec[-1] + 0.8, f"{dec[-1]:.0f}%", ha="center", color=PINK, fontproperties=BOLD, fontsize=24)
+    ax.text(1, -2.8, f"β {R['beta_D1']:.1f}", ha="center", color=acc, fontproperties=BOLD, fontsize=17)
+    ax.text(10, -2.8, f"β {R['beta_D10']:.1f}", ha="center", color="#f5b301", fontproperties=BOLD, fontsize=17)
+    ax.text(5.5, dec[-1] - 2, f"SAME SHARPE: {R['sharpe_D1']:.2f} vs {R['sharpe_D10']:.2f}", ha="center", color=PINK, fontproperties=BOLD, fontsize=22)
+    ax.set_xticks([1, 10]); ax.set_xticklabels(["STEADIEST", "LOTTERY"], fontsize=16); ax.set_yticks([]); ax.grid(False); ax.set_ylim(-4.5, dec[-1] + 4)
+    ax.text(0.5, dec[-1] + 3, "500 largest US stocks, return a year by MAX decile", color=DIM, fontsize=13)
+
+
+poster(os.path.join(FIG, "hero_viva_las_vegas.png"), 4, "VIVA\nLAS VEGAS", "In large caps the lottery ticket paid, as a leveraged bet", draw,
+       "FEATURING  THE BIGGEST ONE-DAY JUMPERS AMONG AMERICA'S 500 LARGEST\nWITH BALI, CAKICI & WHITELAW (2011) AS THE HOUSE",
+       f"RATED  LOW-MINUS-HIGH MAX {S['A04-2']['ann']:+.0%} A YEAR  ·  0 OF 2 PASSED", "ON REPEAT FROM 27 OCTOBER 2026", accent="#c23b8e", kind="song")
+
+
+# 21 Oct 2026 (Henrik: click teaser): a teaser version of the poster that asks instead of answering.
+# No beta, no Sharpe ratios, no verdict -- those are the answers to the teaser's questions. The article keeps the poster above.
+def draw_teaser(ax, acc):
+    cols = [acc] + [DIM] * 8 + ["#f5b301"]
+    ax.bar(range(1, 11), dec, color=cols, width=0.66)
+    ax.text(1, dec[0] + 0.8, f"{dec[0]:.0f}%", ha="center", color=PINK, fontproperties=BOLD, fontsize=24)
+    ax.text(10, dec[-1] + 0.8, f"{dec[-1]:.0f}%?", ha="center", color=PINK, fontproperties=BOLD, fontsize=24)
+    ax.text(5.5, dec[-1] - 2, "WHO REALLY WON?", ha="center", color=PINK, fontproperties=BOLD, fontsize=24)
+    ax.set_xticks([1, 10]); ax.set_xticklabels(["STEADIEST", "LOTTERY"], fontsize=16); ax.set_yticks([]); ax.grid(False); ax.set_ylim(-4.5, dec[-1] + 4)
+    ax.text(0.5, dec[-1] + 3, "500 largest US stocks, return a year by MAX decile (at first sight)", color=DIM, fontsize=13)
+
+
+poster(os.path.join(FIG, "hero_viva_las_vegas_teaser.png"), 4, "VIVA\nLAS VEGAS", "The lottery tickets won. Or did they?", draw_teaser,
+       "FEATURING  THE BIGGEST ONE-DAY JUMPERS AMONG AMERICA'S 500 LARGEST\nWITH BALI, CAKICI & WHITELAW (2011) AS THE HOUSE",
+       "RATED  TWO PRE-REGISTERED TESTS  ·  THE VERDICT IS IN THE ARTICLE", "ON REPEAT FROM 27 OCTOBER 2026", accent="#c23b8e", kind="song")

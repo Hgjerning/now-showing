@@ -15,7 +15,6 @@ __pycache__/
 .cache/
 
 # Unreleased articles: delete ONE line each Monday before the post (then commit and push)
-/viva-las-vegas/
 /usual-suspects/
 /minority-report/
 /under-pressure/
@@ -78,3 +77,9 @@ __pycache__/
 
 # 23 Oct 2026: Storm P. drawings after 1930 stay off the public site (US copyright caution)
 /*/figures/stormp_*_194*.png
+
+# 23 Oct 2026: A10 index path (Yahoo data are not redistributed); the published series is results/best_rule_growth.csv
+/inception/results/best_vs_bh_growth.csv
+
+# 23 Oct 2026: A11 Storm P. drawing is undated with later colouring: keep off the public site
+/money-for-nothing/figures/stormp_stegte_duer.png

@@ -1,0 +1,16 @@
+VIVA LAS VEGAS: do lottery stocks still lose?
+
+Meme stocks, zero-commission apps, options for everyone. If lottery stocks were ever going to cost their buyers money, it was now.
+
+A famous paper says they should: stocks with the biggest one-day jumps last month go on to underperform (Bali, Cakici & Whitelaw, 2011).
+
+I tested it again on large US stocks, with the tests written down first. At first sight, the lottery tickets beat the steadiest stocks by 6% a year on the actual S&P 500 members (9% on my first, flawed list).
+
+Three questions before you decide the gamblers won:
+1. Did they win, or did they just carry more risk?
+2. Which flaw in my own stock list was worth 3% a year, and which way did it push the result?
+3. How much of 13 years comes down to the last 20 months?
+
+Your answer to question 1 in the comments, then check it here, with tables, code and the pre-registration: hgjerning.github.io/now-showing/viva-las-vegas
+
+#investing #behavioralfinance #quant #statistics
