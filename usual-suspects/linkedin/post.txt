@@ -1,0 +1,14 @@
+THE USUAL SUSPECTS: are the legends' stock-picking rules anything more than textbook factors?
+
+Value, momentum and quality now come in ETFs for a few basis points. Yet whole businesses still sell the rules of Graham, Lynch, Greenblatt and O'Neil as stock screens, as if the rules held an edge of their own.
+
+I rebuilt 16 of those rule sets as factor recipes (the rules they wrote down, not the investors' portfolios) and put each through one pre-registered regression on six textbook factors. At first sight the recipes earn a median premium of 2.8% a year.
+
+Three questions before you buy the screen:
+1. How much of that premium is left after six textbook factors, and which famous recipes turn out to be plain momentum or value?
+2. Five recipes survive. Is that a lot, next to fake gurus built from random academic factors?
+3. Who is the seventh suspect behind most of what the survivors keep?
+
+Your answer to question 1 in the comments, then check it here, with tables, code and the pre-registration: hgjerning.github.io/now-showing/usual-suspects · Not investment advice.
+
+#investing #factorinvesting #quant #valueinvesting
