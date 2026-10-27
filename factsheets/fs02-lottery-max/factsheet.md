@@ -178,11 +178,11 @@ Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk,
 ## 8. Statistical detail
 
 - **Gate:** |t| > 2.87 (12 cells, Bonferroni 0.05/12, two-sided).
-- **Raw L/S:** negative after costs in 5 of 6; before costs positive in 2 of 6. The US gross spread (-6.0% a year; -10.6% net, t -2.17) is close to A15 *Viva Las Vegas* on the same corrected universe (A15-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
+- **Raw L/S:** negative after costs in 5 of 6; before costs positive in 2 of 6. The US gross spread (-6.0% a year; -10.6% net, t -2.17) is close to A04 *Viva Las Vegas* on the same corrected universe (A04-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
 - **CAPM alpha of the L/S:** -2.5% to +8.5%, passes in 0 of 6. Once beta is priced the anomaly is neither alive nor reversed: the raw result is a beta bet in disguise.
 - **Low-MAX long-only:** alpha between -0.7% and +2.8% (largest t 1.86), none past the gate; beta 0.62–0.84.
 - **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): US 0.01, EU 0.68, UK 0.13, DK 0.21, SCANDI 0.32, World 0.05.
-- **Publication decay.** JKP's broad US MAX factor earned +4.0%/yr before 2006 (t 1.48) and +2.0%/yr in 2012–2025 (t 0.55), from A15. McLean & Pontiff (2016) predict roughly this post-publication shrinkage.
+- **Publication decay.** JKP's broad US MAX factor earned +4.0%/yr before 2006 (t 1.48) and +2.0%/yr in 2012–2025 (t 0.55), from A04. McLean & Pontiff (2016) predict roughly this post-publication shrinkage.
 
 ## 9. What goes wrong, and how to fix it
 
@@ -259,7 +259,7 @@ The non-US L/S numbers moved towards zero and the low-MAX book improved relative
 2. **Large caps only.** The effect is strongest in small, retail-held stocks; these universes are blue chips. DK (3 groups of ~6) and SCANDI (5 groups of ~12) are thin and noisy.
 3. **Equal-weighting** (except the US value-weighted robustness book). The original paper's headline is value-weighted.
 4. **Currency:** local; World mixes currencies.
-5. **Trials.** A15 carries the registered article tests (A15-1, A15-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
+5. **Trials.** A04 carries the registered article tests (A04-1, A04-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
 
 ## 11. Academic references
 
@@ -526,7 +526,7 @@ Holding the worst day fixed (down a column), the best day adds little: the sprea
 | CAPM alpha of avoiding it | +3.3% to +11.1%, t ≥ 2 in 4 of 6 | +5.2% to +13.6%, t ≥ 2 in 4 of 6 |
 | What explains it | Low risk: crashed stocks are high-beta, high-vol | Momentum: losers keep losing (correlation of returns with momentum +0.60) |
 
-Both speeds say the same thing once beta is removed: **the knife keeps falling relative to the market.** Only its beta makes a fast knife look like a bargain in a bull market. This matches A10 *Free Fallin'*, where knives rebounded only in market-wide crashes (0 of 3 tests passed), and it is the reverse of the "blood in the streets" folklore.
+Both speeds say the same thing once beta is removed: **the knife keeps falling relative to the market.** Only its beta makes a fast knife look like a bargain in a bull market. This matches A14 *Free Fallin'*, where knives rebounded only in market-wide crashes (0 of 3 tests passed), and it is the reverse of the "blood in the streets" folklore.
 
 #### D.5 Verdict of the 360° view, and what is still missing
 
