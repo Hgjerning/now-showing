@@ -15,7 +15,6 @@ __pycache__/
 .cache/
 
 # Unreleased articles: delete ONE line each Monday before the post (then commit and push)
-/usual-suspects/
 /minority-report/
 /under-pressure/
 /video-killed-the-radio-star/
@@ -83,3 +82,5 @@ __pycache__/
 
 # 23 Oct 2026: A11 Storm P. drawing is undated with later colouring: keep off the public site
 /money-for-nothing/figures/stormp_stegte_duer.png
+/_backup_2026-10-28_a62/
+/the-devil-wears-prada/

@@ -1,0 +1,19 @@
+{
+  "n_recipes": 16,
+  "n_pass": 5,
+  "passed": true,
+  "gate_t": 2.955,
+  "passers": [
+    "Greenblatt",
+    "P. O'Shaughnessy millennial",
+    "Buffett (quality)",
+    "Graham",
+    "Mohanram P/B growth"
+  ],
+  "median_r2": 0.735651092509449,
+  "n_raw_sig": 7,
+  "median_abs_raw": 0.028485176661660574,
+  "median_abs_alpha": 0.00526971556023942,
+  "world_n_sig": 4,
+  "world_median_r2": 0.7817318932204184
+}
