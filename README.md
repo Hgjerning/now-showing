@@ -14,12 +14,12 @@ Season 3 ("Machines") from April to June 2027.
 | 3 | 20 Oct 2026 | [The Magnificent Seven](https://hgjerning.github.io/now-showing/magnificent-seven) | Film | Does concentration come back to bite? | [`magnificent-seven/`](magnificent-seven/) |
 | 4 | 27 Oct 2026 | [Viva Las Vegas](https://hgjerning.github.io/now-showing/viva-las-vegas) | Song | Do lottery stocks still lose? | [`viva-las-vegas/`](viva-las-vegas/) |
 | 5 | 3 Nov 2026 | [The Usual Suspects](https://hgjerning.github.io/now-showing/usual-suspects) | Film | Fifteen legends, one Fool, one regression | [`usual-suspects/`](usual-suspects/) |
-| 6 | 10 Nov 2026 | [Minority Report](https://hgjerning.github.io/now-showing/minority-report) | Film | Can machine-learning precogs see next month's winners? | [`minority-report/`](minority-report/) |
-| 7 | 17 Nov 2026 | [Under Pressure](https://hgjerning.github.io/now-showing/under-pressure) | Song | Which distress score sees the crash coming? | [`under-pressure/`](under-pressure/) |
-| 8 | 24 Nov 2026 | [Video Killed the Radio Star](https://hgjerning.github.io/now-showing/video-killed-the-radio-star) | Song | Does publication kill a factor? | [`video-killed-the-radio-star/`](video-killed-the-radio-star/) |
-| 9 | 1 Dec 2026 | [Miracle on 34th Street](https://hgjerning.github.io/now-showing/miracle-on-34th-street) | Film | Does Santa Claus visit Wall Street? | [`miracle-on-34th-street/`](miracle-on-34th-street/) |
-| 10 | 8 Dec 2026 | [Inception](https://hgjerning.github.io/now-showing/inception) | Film | What happens when you mine 1,000 trading rules? | [`inception/`](inception/) |
-| 11 | 15 Dec 2026 | [Money for Nothing](https://hgjerning.github.io/now-showing/money-for-nothing) | Song | Does trading less pay? | [`money-for-nothing/`](money-for-nothing/) |
+| 6 | 10 Nov 2026 | [Under Pressure](https://hgjerning.github.io/now-showing/under-pressure) | Song | Which distress score sees the crash coming? | [`under-pressure/`](under-pressure/) |
+| 7 | 17 Nov 2026 | [Video Killed the Radio Star](https://hgjerning.github.io/now-showing/video-killed-the-radio-star) | Song | Does publication kill a factor? | [`video-killed-the-radio-star/`](video-killed-the-radio-star/) |
+| 9 | 8 Dec 2026 | [Miracle on 34th Street](https://hgjerning.github.io/now-showing/miracle-on-34th-street) | Film | Does Santa Claus visit Wall Street? | [`miracle-on-34th-street/`](miracle-on-34th-street/) |
+| 10 | 15 Dec 2026 | [Inception](https://hgjerning.github.io/now-showing/inception) | Film | What happens when you mine 1,000 trading rules? | [`inception/`](inception/) |
+| 11 | 22 Dec 2026 | [Money for Nothing](https://hgjerning.github.io/now-showing/money-for-nothing) | Song | Does trading less pay? | [`money-for-nothing/`](money-for-nothing/) |
+| 11½ | 29 Dec 2026 | [The Devil Wears Prada](https://hgjerning.github.io/now-showing/the-devil-wears-prada) | Film | Do investment themes go out of fashion? | [`the-devil-wears-prada/`](the-devil-wears-prada/) |
 | 12 | 5 Jan 2027 | [A Beautiful Mind](https://hgjerning.github.io/now-showing/a-beautiful-mind) | Film | Do chart rules still time the market? | [`a-beautiful-mind/`](a-beautiful-mind/) |
 | 13 | 12 Jan 2027 | [Stormy Weather](https://hgjerning.github.io/now-showing/stormy-weather) | Song | Does cutting risk after volatile months pay? | [`stormy-weather/`](stormy-weather/) |
 | 14 | 19 Jan 2027 | [Free Fallin'](https://hgjerning.github.io/now-showing/free-fallin) | Song | Should you catch a falling knife? | [`free-fallin/`](free-fallin/) |
@@ -39,8 +39,11 @@ Season 3 ("Machines") from April to June 2027.
 | 28 | 11 May 2027 | [The King's Speech](https://hgjerning.github.io/now-showing/the-kings-speech) | Film | Does an LLM read the Fed better than a word list? | [`the-kings-speech/`](the-kings-speech/) |
 | 29 | 18 May 2027 | [Arrival](https://hgjerning.github.io/now-showing/arrival) | Film | Can a machine read an annual report? | [`arrival/`](arrival/) |
 | 30 | 25 May 2027 | [Memento](https://hgjerning.github.io/now-showing/memento) | Film | How fast does text sentiment fade? | [`memento/`](memento/) |
+| 31 | 1 Jun 2027 | [Fear and Loathing in Las Vegas](https://hgjerning.github.io/now-showing/fear-and-loathing-in-las-vegas) | Film | Do lottery stocks lose in small caps? (sequel to Viva Las Vegas) | [`fear-and-loathing-in-las-vegas/`](fear-and-loathing-in-las-vegas/) |
+| 16¾ | 16 Feb 2027 | [The Tree of Life](https://hgjerning.github.io/now-showing/the-tree-of-life) | Film | Did a bank's 2012 accounting screen pick winners? | [`the-tree-of-life/`](the-tree-of-life/) |
+| 16½ | 9 Feb 2027 | [Same Time, Next Year](https://hgjerning.github.io/now-showing/same-time-next-year) | Film | Do companies that rewrite their annual report underperform? | [`same-time-next-year/`](same-time-next-year/) |
 
-A folder appears here on the Monday before its post. Groundhog Day's sequel (pre-registered trial C31-3) runs on 16 March 2027.
+A folder appears here on the Monday before its post. Groundhog Day's sequel (pre-registered trial C31-3) runs on 16 March 2027. Viva Las Vegas's sequel, Fear and Loathing in Las Vegas (trials A53-1 and A53-2), closes the run on 1 June 2027.
 
 ## What is in each folder
 

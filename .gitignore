@@ -16,7 +16,6 @@ __pycache__/
 
 # Unreleased articles: delete ONE line each Monday before the post (then commit and push)
 /minority-report/
-/under-pressure/
 /video-killed-the-radio-star/
 /miracle-on-34th-street/
 /inception/
@@ -84,3 +83,4 @@ __pycache__/
 /money-for-nothing/figures/stormp_stegte_duer.png
 /_backup_2026-10-28_a62/
 /the-devil-wears-prada/
+/machine-learning-road/

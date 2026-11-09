@@ -1,0 +1,109 @@
+{
+ "_about": "A07 extra checks, 23 Oct 2026. Reported, not tested: no trial, no gate, verdict of record unchanged (1 of 3, corrected list). Data: Season 1 cache (Factsheets/_data_private/p10_cache, 1 Oct 2026) on the corrected list's scores_panel (results_pit). Same crash target, per-date AUC and moving-block bootstrap (block 4, 10,000 draws, seed 42, one-sided p vs 0.5) as A07-1. Z'' = 6.56 WC/TA + 3.26 RE/TA + 6.72 EBIT/TA + 1.05 book equity/TL (Altman 1983/2002; Altman, Iwanicz-Drozdowska, Laitinen & Suvas 2017). Utilities/REIT-like = SIC 4900-4999, SIC 6798, or Sharadar sector Utilities/Real Estate (Sharadar TICKERS, SF1 table). Within-sector = Z ranked within Sharadar sector on each date. Piotroski fix = F missing when any of its inputs is missing. A07-4 re-run with scikit-learn logistic regression, C=1e6 (the registered fallback, Clarification 1; statsmodels not available).",
+ "check_cache": {
+  "Z_corr_with_published_panel": 0.9999999999999999,
+  "Z_max_abs_diff": 2.842170943040401e-14,
+  "F_same_share": 1.0
+ },
+ "A07-1_reproduced_from_cache": {
+  "mean": 0.5977,
+  "p": 0.0006,
+  "lo": 0.5412,
+  "hi": 0.6594,
+  "n": 50
+ },
+ "A07-1_published_panel": {
+  "mean": 0.5977,
+  "p": 0.0006,
+  "lo": 0.5412,
+  "hi": 0.6594,
+  "n": 50
+ },
+ "Zpp_all": {
+  "mean": 0.5628,
+  "p": 0.0137,
+  "lo": 0.5112,
+  "hi": 0.6166,
+  "n": 50
+ },
+ "Z_excl_util_reit": {
+  "mean": 0.6277,
+  "p": 0.0002,
+  "lo": 0.5692,
+  "hi": 0.6895,
+  "n": 50
+ },
+ "Zpp_excl_util_reit": {
+  "mean": 0.5883,
+  "p": 0.001,
+  "lo": 0.5362,
+  "hi": 0.6409,
+  "n": 50
+ },
+ "Z_within_sector": {
+  "mean": 0.6004,
+  "p": 0.0008,
+  "lo": 0.5481,
+  "hi": 0.6525,
+  "n": 49
+ },
+ "n_util_reit_obs": 2128,
+ "share_util_reit": 0.0999,
+ "sector_coverage": 0.9356,
+ "F_published": {
+  "mean": 0.6143,
+  "p": 0.0001,
+  "lo": 0.5637,
+  "hi": 0.6642,
+  "n": 50
+ },
+ "F_fixed": {
+  "mean": 0.6144,
+  "p": 0.0001,
+  "lo": 0.5635,
+  "hi": 0.6645,
+  "n": 50
+ },
+ "F_missing_share_published": 0.0136,
+ "F_missing_share_fixed": 0.0145,
+ "A07-4_rerun_published_F": {
+  "n_obs": 20942,
+  "n_test_dates": 39,
+  "auc_V": 0.7828,
+  "auc_V+A": 0.7619,
+  "A07-4": {
+   "mean": -0.0209,
+   "p": 0.9811,
+   "lo": -0.0387,
+   "hi": 0.001,
+   "n": 39
+  },
+  "V+F_minus_V": {
+   "mean": -0.001,
+   "p": 0.7797,
+   "lo": -0.0039,
+   "hi": 0.0011,
+   "n": 39
+  }
+ },
+ "A07-4_rerun_fixed_F": {
+  "n_obs": 20925,
+  "n_test_dates": 39,
+  "auc_V": 0.7828,
+  "auc_V+A": 0.7618,
+  "A07-4": {
+   "mean": -0.021,
+   "p": 0.981,
+   "lo": -0.039,
+   "hi": 0.0011,
+   "n": 39
+  },
+  "V+F_minus_V": {
+   "mean": -0.001,
+   "p": 0.7825,
+   "lo": -0.0039,
+   "hi": 0.0011,
+   "n": 39
+  }
+ }
+}

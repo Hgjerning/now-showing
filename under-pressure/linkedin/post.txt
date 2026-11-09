@@ -1,0 +1,14 @@
+UNDER PRESSURE: which distress score sees the crash coming?
+
+Higher rates have brought distress scores back. Altman's Z (1968) and Ohlson's O (1980) are still the textbook tools for spotting a company in trouble.
+
+I put them, and Piotroski's F, up against one number from the price chart: how much the stock swung last year. The job: rank next year's crashes (falls of 40% or more) among America's 500 largest companies, 2012–2025, with the tests written down first. One limit up front: these scores were built to predict bankruptcy, not price crashes. At first sight, on my first stock list, Altman's Z scored 0.54, where 0.50 is a coin flip.
+
+Three questions before you trust the balance sheet:
+1. Once you know how much a stock swings, does its balance sheet add anything?
+2. Which flaw in my own stock list hid most of Altman's signal?
+3. Is it fair to ask a bankruptcy score to spot price crashes?
+
+Your answer to question 1 in the comments, then check it here, with tables, code and the pre-registration: hgjerning.github.io/now-showing/under-pressure · Not investment advice.
+
+#investing #creditrisk #quant #statistics
