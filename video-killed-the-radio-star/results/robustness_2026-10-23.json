@@ -1,0 +1,34 @@
+{
+  "note": "Reported, not tested (23 Oct 2026 stress test). No trial.",
+  "actual_coef_ann": -0.02119066220323496,
+  "pre_mean_ann": 0.041565600865038695,
+  "registered_placebo": {
+    "draws": 1000,
+    "mean_ann": -0.0064184666569865635,
+    "min_ann": -0.017187648657709095,
+    "share_le_actual": 0.0,
+    "net_decline_ann": -0.014772195546248396,
+    "net_decline_share": 0.3553947311916152
+  },
+  "shuffle_placebo": {
+    "draws": 2000,
+    "seed": 42,
+    "mean_ann": -0.01663338691231271,
+    "min_ann": -0.02555349077664689,
+    "share_le_actual": 0.0375,
+    "net_decline_ann": -0.004557275290922249,
+    "net_decline_share": 0.10964054882111486
+  },
+  "month_fixed_effects": {
+    "coef_ann": -0.014350160181699734,
+    "t": -1.4002649419087811,
+    "share_of_pre_mean": 0.3452412543798884,
+    "se": "clustered by month, as A08-1"
+  },
+  "pubyear_sensitivity_reported": {
+    "share_positive_post": 0.896551724137931,
+    "median_decay": 0.4421800071887514,
+    "share_decayed": 0.7931034482758621,
+    "n_factors": 29
+  }
+}

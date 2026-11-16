@@ -1,0 +1,16 @@
+VIDEO KILLED THE RADIO STAR: does publication kill a factor?
+
+Factor funds sell value, momentum and profitability on backtests. Every one of those factors was made famous by a paper: value in 1985, momentum in 1993, gross profitability in 2013.
+
+The claim: once a factor is published, its returns shrink. McLean & Pontiff (2016) found a 58% drop across 97 anomalies.
+
+I tested it on 29 of the best-known US factors, 1926–2025, with the tests written down first. At first sight: before their papers, the 29 factors earned 4.2% a year on average.
+
+Three questions before you buy the backtest:
+1. Is it the paper, or just the calendar?
+2. Which stars faded, and which kept singing?
+3. Is what's left worth paying for?
+
+Your answer to question 1 in the comments, then check it here, with tables, code and the pre-registration: hgjerning.github.io/now-showing/video-killed-the-radio-star · Not investment advice.
+
+#factorinvesting #quant #investing #research

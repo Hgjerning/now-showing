@@ -1,0 +1,30 @@
+factor,label,our_paper,our_year,jkp_cite,jkp_year,check
+market_equity,Size,Banz,1981,Banz (1981),1981.0,OK
+be_me,Book/market,"Rosenberg, Reid & Lanstein",1985,Rosenberg Reid and Lanstein (1985),1985.0,OK
+ni_me,Earnings/price,Basu,1977,Basu (1983),1983.0,DIFF
+sale_me,Sales/price,"Barbee, Mukherji & Raines",1996,Barbee Mukherji and Raines (1996),1996.0,OK
+div12m_me,Dividend yield,Litzenberger & Ramaswamy,1979,Litzenberger and Ramaswamy (1979),1979.0,OK
+ret_12_1,Momentum 12-1,Jegadeesh & Titman,1993,Jegadeesh and Titman (1993),1993.0,OK
+ret_12_7,Momentum 12-7,Novy-Marx,2012,Novy-Marx (2012),2012.0,OK
+ret_1_0,Short-term reversal,Jegadeesh,1990,Jegadeesh (1990),1990.0,OK
+ret_60_12,Long-term reversal,De Bondt & Thaler,1985,De Bondt and Thaler (1985),1985.0,OK
+resff3_12_1,Residual momentum,"Blitz, Huij & Martens",2011,Blitz Huij and Martens (2011),2011.0,OK
+seas_1_1an,Seasonality,Heston & Sadka,2008,Heston and Sadka (2008),2008.0,OK
+prc_highprc_252d,52-week high,George & Hwang,2004,George and Hwang (2004),2004.0,OK
+gp_at,Gross profitability,Novy-Marx,2013,Novy-Marx (2013),2013.0,OK
+ope_be,Operating profitability,Fama & French,2015,Fama and French (2015),2015.0,OK
+cop_at,Cash-based profitability,Ball et al.,2016,nan,,DIFF
+qmj,Quality minus junk,"Asness, Frazzini & Pedersen",2019,"Assness, Frazzini and Pedersen (2018)",2018.0,DIFF
+f_score,Piotroski F-score,Piotroski,2000,Piotroski (2000),2000.0,OK
+o_score,Ohlson O-score,Dichev,1998,Dichev (1998),1998.0,OK
+oaccruals_at,Accruals,Sloan,1996,Sloan (1996),1996.0,OK
+noa_at,Net operating assets,Hirshleifer et al.,2004,Hirshleifer et al. (2004),2004.0,OK
+at_gr1,Asset growth,"Cooper, Gulen & Schill",2008,Cooper Gulen and Schill (2008),2008.0,OK
+chcsho_12m,Net share issuance,Pontiff & Woodgate,2008,Pontiff and Woodgate (2008),2008.0,OK
+niq_su,Earnings surprise,"Foster, Olsen & Shevlin",1984,Foster Olsen and Shevlin (1984),1984.0,OK
+rd_me,R&D/market,"Chan, Lakonishok & Sougiannis",2001,Chan Lakonishok and Sougiannis (2001),2001.0,OK
+ivol_ff3_21d,Idiosyncratic volatility,Ang et al.,2006,Ang et al. (2006),2006.0,OK
+rmax1_21d,MAX (lottery),"Bali, Cakici & Whitelaw",2011,Bali Cakici and Whitelaw (2011),2011.0,OK
+betabab_1260d,Betting against beta,Frazzini & Pedersen,2014,Frazzini and Pedersen (2014),2014.0,OK
+ami_126d,Amihud illiquidity,Amihud,2002,Amihud (2002),2002.0,OK
+turnover_126d,Share turnover,"Datar, Naik & Radcliffe",1998,Datar Naik and Radcliffe (1998),1998.0,OK

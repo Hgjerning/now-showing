@@ -16,6 +16,8 @@ Season 3 ("Machines") from April to June 2027.
 | 5 | 3 Nov 2026 | [The Usual Suspects](https://hgjerning.github.io/now-showing/usual-suspects) | Film | Fifteen legends, one Fool, one regression | [`usual-suspects/`](usual-suspects/) |
 | 6 | 10 Nov 2026 | [Under Pressure](https://hgjerning.github.io/now-showing/under-pressure) | Song | Which distress score sees the crash coming? | [`under-pressure/`](under-pressure/) |
 | 7 | 17 Nov 2026 | [Video Killed the Radio Star](https://hgjerning.github.io/now-showing/video-killed-the-radio-star) | Song | Does publication kill a factor? | [`video-killed-the-radio-star/`](video-killed-the-radio-star/) |
+| 8 | 24 Nov 2026 | [Minority Report, Part 1](https://hgjerning.github.io/now-showing/minority-report) | Film | Where do the machines find anything? | [`minority-report/`](minority-report/) |
+| 8½ | 1 Dec 2026 | [Minority Report, Part 2: The Slow Print](https://hgjerning.github.io/now-showing/the-slow-print) | Film | Can the signal be traded slowly enough to keep it? | [`the-slow-print/`](the-slow-print/) |
 | 9 | 8 Dec 2026 | [Miracle on 34th Street](https://hgjerning.github.io/now-showing/miracle-on-34th-street) | Film | Does Santa Claus visit Wall Street? | [`miracle-on-34th-street/`](miracle-on-34th-street/) |
 | 10 | 15 Dec 2026 | [Inception](https://hgjerning.github.io/now-showing/inception) | Film | What happens when you mine 1,000 trading rules? | [`inception/`](inception/) |
 | 11 | 22 Dec 2026 | [Money for Nothing](https://hgjerning.github.io/now-showing/money-for-nothing) | Song | Does trading less pay? | [`money-for-nothing/`](money-for-nothing/) |
