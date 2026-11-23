@@ -1,0 +1,16 @@
+MINORITY REPORT, PART 1: where do the machines find anything?
+
+Almost every fund now sells an AI edge. Few of us have watched a stock-picking model meet its trading bill.
+
+The best-known evidence: Gu, Kelly & Xiu (2020) found that tree models and neural nets predict US stock returns better than linear models.
+
+I gave eight standard models the same twelve inputs, fixed every setting in advance, and ran them on the S&P 500, on 2,000 US small caps and on European blue chips. In one of the three, all eight earned 12% to 16% a year before costs. None of nine pre-registered tests passed; the interesting part is why.
+
+Three questions:
+1. Same models, same inputs: where do they find something, the 500 largest stocks or the 2,000 small ones?
+2. How much of a +15% a year signal is left after trading costs?
+3. Which slow one-line rule kept more than the machines after costs in small caps (and only there)?
+
+Your answer to question 1 in the comments, then check it here, with tables, code and the pre-registrations: hgjerning.github.io/now-showing/minority-report · Not investment advice.
+
+#machinelearning #AI #investing #quant

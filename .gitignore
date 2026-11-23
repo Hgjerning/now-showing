@@ -15,7 +15,6 @@ __pycache__/
 .cache/
 
 # Unreleased articles: delete ONE line each Monday before the post (then commit and push)
-/minority-report/
 /the-slow-print/
 /miracle-on-34th-street/
 /inception/
@@ -87,3 +86,15 @@ __pycache__/
 
 # 21 Nov 2026: A68 A Night to Remember, not released yet (remove this line on the day of release)
 /a-night-to-remember/
+/network/
+/knowing/
+/last-man-standing/
+/clockwise/
+/the-perfect-storm/
+/margin-call/
+/rocky-balboa/
+/ex-machina/
+/up-in-the-air/
+/turn-turn-turn/
+/twister/
+/back-to-the-future/

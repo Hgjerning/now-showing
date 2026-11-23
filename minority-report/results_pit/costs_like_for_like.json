@@ -1,0 +1,105 @@
+{
+  "note": "reported, not gated; 6 Nov 2026; window 2017-01..2026-07 formation months",
+  "check_Ensemble_gross_vs_A06": 0.004254491939782085,
+  "sp500_Ensemble_cost0.10pct": {
+    "gross_ann": -0.01768751386931751,
+    "gross_t": -0.36095471768112936,
+    "net_ann": -0.04861620828447208,
+    "net_t": -0.9976957808785342,
+    "net_sharpe": -0.3229457229025936,
+    "turnover_m": 2.5824560363616764,
+    "breakeven_oneway": -0.0005707587925432401,
+    "months": 115
+  },
+  "sp500_Ensemble_cost0.05pct": {
+    "gross_ann": -0.01768751386931751,
+    "gross_t": -0.36095471768112936,
+    "net_ann": -0.03315186107689481,
+    "net_t": -0.6784433278962082,
+    "net_sharpe": -0.22015259223733583,
+    "turnover_m": 2.5824560363616764,
+    "breakeven_oneway": -0.0005707587925432401,
+    "months": 115
+  },
+  "sp500_Ensemble_cost0.25pct": {
+    "gross_ann": -0.01768751386931751,
+    "gross_t": -0.36095471768112936,
+    "net_ann": -0.09500924990720393,
+    "net_t": -1.9659173547061368,
+    "net_sharpe": -0.6316301371076625,
+    "turnover_m": 2.5824560363616764,
+    "breakeven_oneway": -0.0005707587925432401,
+    "months": 115
+  },
+  "check_Momentum_gross_vs_A06": 0.001669418433900012,
+  "sp500_Momentum_cost0.10pct": {
+    "gross_ann": 0.03211004565820235,
+    "gross_t": 0.48056500508907274,
+    "net_ann": 0.0176016127442446,
+    "net_t": 0.2635507616129618,
+    "net_sharpe": 0.07474306629281807,
+    "turnover_m": 1.2020977961294876,
+    "breakeven_oneway": 0.0022259729173443165,
+    "months": 115
+  },
+  "sp500_Momentum_cost0.05pct": {
+    "gross_ann": 0.03211004565820235,
+    "gross_t": 0.48056500508907274,
+    "net_ann": 0.02485582920122348,
+    "net_t": 0.3720841090450385,
+    "net_sharpe": 0.10554772722695946,
+    "turnover_m": 1.2020977961294876,
+    "breakeven_oneway": 0.0022259729173443165,
+    "months": 115
+  },
+  "sp500_Momentum_cost0.25pct": {
+    "gross_ann": 0.03211004565820235,
+    "gross_t": 0.48056500508907274,
+    "net_ann": -0.0041610366266919985,
+    "net_t": -0.06234389832755343,
+    "net_sharpe": -0.017668639331429706,
+    "turnover_m": 1.2020977961294876,
+    "breakeven_oneway": 0.0022259729173443165,
+    "months": 115
+  },
+  "smallcap_Ensemble_cost0.50pct": {
+    "gross_ann": 0.1403475601773913,
+    "gross_t": 1.3768282146598723,
+    "net_ann": 0.03131444665801619,
+    "net_t": 0.30831381578672235,
+    "net_sharpe": 0.11220971389441012,
+    "turnover_m": 1.8187857204296425,
+    "breakeven_oneway": 0.006430460654826238,
+    "months": 115
+  },
+  "smallcap_Ensemble_cost0.40pct": {
+    "gross_ann": 0.1403475601773913,
+    "gross_t": 1.3768282146598723,
+    "net_ann": 0.05312106936189122,
+    "net_t": 0.522648167260177,
+    "net_sharpe": 0.19034599837595848,
+    "turnover_m": 1.8187857204296425,
+    "breakeven_oneway": 0.006430460654826238,
+    "months": 115
+  },
+  "smallcap_Momentum_cost0.50pct": {
+    "gross_ann": 0.058421684904,
+    "gross_t": 0.9135728998475527,
+    "net_ann": -0.023649352427408718,
+    "net_t": -0.36856865391878757,
+    "net_sharpe": -0.10266844713701238,
+    "turnover_m": 1.368239103737937,
+    "breakeven_oneway": 0.0035582039196947806,
+    "months": 115
+  },
+  "smallcap_Momentum_cost0.40pct": {
+    "gross_ann": 0.058421684904,
+    "gross_t": 0.9135728998475527,
+    "net_ann": -0.007235144961126988,
+    "net_t": -0.11283607581642577,
+    "net_sharpe": -0.03141958477481915,
+    "turnover_m": 1.368239103737937,
+    "breakeven_oneway": 0.0035582039196947806,
+    "months": 115
+  }
+}
