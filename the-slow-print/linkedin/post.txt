@@ -1,0 +1,14 @@
+MINORITY REPORT, PART 2: can a machine's signal be traded slowly enough to keep it?
+
+Last week the machines found a strong signal in US small caps before costs (+15.4% a year), and trading at 179% of capital a month ate most of it.
+
+The textbook answer is "trade slower" (Garleanu & Pedersen, 2013). I signed three ways to do it before computing any of them, and priced every trade with a cost model fitted on real institutional fills.
+
+Three questions:
+1. Trade halfway, wait for a clear exit, or smooth the signal: which kept the most after costs?
+2. Does slowing down beat the plain fast book?
+3. At what cost per trade does slowing start to pay?
+
+Your answer to question 2 in the comments, then check it here, with tables, code and the pre-registration: hgjerning.github.io/now-showing/the-slow-print · Not investment advice.
+
+#machinelearning #AI #investing #quant
