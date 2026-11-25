@@ -1,0 +1,126 @@
+{
+ "run": "2026-11-21 11:19",
+ "start_close": 6910.39,
+ "start_date": "2026-11-20",
+ "pattern_first_day": "2026-08-28",
+ "candidates": 19034,
+ "analogs": [
+  {
+   "rank": 1,
+   "window_end": "2008-10-08",
+   "distance": 4.329,
+   "3 months": -0.0764,
+   "6 months": -0.1303,
+   "12 months": 0.0818
+  },
+  {
+   "rank": 2,
+   "window_end": "2020-03-12",
+   "distance": 4.417,
+   "3 months": 0.2102,
+   "6 months": 0.3461,
+   "12 months": 0.5896
+  },
+  {
+   "rank": 3,
+   "window_end": "2001-09-21",
+   "distance": 4.417,
+   "3 months": 0.1803,
+   "6 months": 0.172,
+   "12 months": -0.1368
+  },
+  {
+   "rank": 4,
+   "window_end": "1962-04-30",
+   "distance": 4.581,
+   "3 months": -0.1136,
+   "6 months": -0.164,
+   "12 months": 0.0699
+  },
+  {
+   "rank": 5,
+   "window_end": "1990-08-23",
+   "distance": 4.654,
+   "3 months": 0.0292,
+   "6 months": 0.1908,
+   "12 months": 0.2744
+  },
+  {
+   "rank": 6,
+   "window_end": "2001-03-16",
+   "distance": 4.658,
+   "3 months": 0.0555,
+   "6 months": -0.1443,
+   "12 months": -0.0016
+  },
+  {
+   "rank": 7,
+   "window_end": "2018-10-29",
+   "distance": 4.659,
+   "3 months": 0.0238,
+   "6 months": 0.1046,
+   "12 months": 0.1535
+  },
+  {
+   "rank": 8,
+   "window_end": "1980-03-27",
+   "distance": 4.81,
+   "3 months": 0.183,
+   "6 months": 0.3105,
+   "12 months": 0.3709
+  },
+  {
+   "rank": 9,
+   "window_end": "1965-06-29",
+   "distance": 4.816,
+   "3 months": 0.0973,
+   "6 months": 0.1141,
+   "12 months": 0.0396
+  },
+  {
+   "rank": 10,
+   "window_end": "1953-09-16",
+   "distance": 4.817,
+   "3 months": 0.086,
+   "6 months": 0.1643,
+   "12 months": 0.372
+  }
+ ],
+ "forecast": {
+  "3 months": {
+   "median": 0.0707,
+   "low": -0.1136,
+   "high": 0.2102,
+   "share_up": 0.8
+  },
+  "6 months": {
+   "median": 0.1392,
+   "low": -0.164,
+   "high": 0.3461,
+   "share_up": 0.7
+  },
+  "12 months": {
+   "median": 0.1177,
+   "low": -0.1368,
+   "high": 0.5896,
+   "share_up": 0.8
+  }
+ },
+ "baseline": {
+  "3 months": {
+   "median": 0.0271,
+   "share_up": 0.667,
+   "n": 19058
+  },
+  "6 months": {
+   "median": 0.0508,
+   "share_up": 0.705,
+   "n": 18995
+  },
+  "12 months": {
+   "median": 0.1046,
+   "share_up": 0.744,
+   "n": 18869
+  }
+ }
+}

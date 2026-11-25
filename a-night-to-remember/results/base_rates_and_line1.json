@@ -1,0 +1,91 @@
+{
+ "corrections": {
+  "n_past": 26,
+  "became_bear": 11,
+  "share_bear": 0.423,
+  "current": {
+   "peak": "2026-10-06",
+   "peak_close": 7818.9261,
+   "first_10pct_day": "2026-11-20",
+   "close_20_nov": 6910.39,
+   "fall_from_peak": -0.116197,
+   "days_peak_to_10pct": 33
+  },
+  "median_days_peak_to_10pct": 48.5,
+  "faster_than_current": 10,
+  "median_further_fall": -0.098991,
+  "median_depth": -0.195571,
+  "median_days_to_new_high": 291.5,
+  "3 months": {
+   "median": 0.025355,
+   "p10": -0.054934,
+   "p90": 0.114047,
+   "share_up": 0.615,
+   "n": 26,
+   "median_if_no_bear": 0.060709,
+   "median_if_bear": -0.021082
+  },
+  "6 months": {
+   "median": 0.057007,
+   "p10": -0.089828,
+   "p90": 0.190139,
+   "share_up": 0.731,
+   "n": 26,
+   "median_if_no_bear": 0.125766,
+   "median_if_bear": -0.036015
+  },
+  "12 months": {
+   "median": 0.136383,
+   "p10": -0.140225,
+   "p90": 0.216043,
+   "share_up": 0.692,
+   "n": 26,
+   "median_if_no_bear": 0.173722,
+   "median_if_bear": -0.076691
+  }
+ },
+ "line1": {
+  "start": "2026-11-20",
+  "end": "2027-11-19",
+  "since_titanic_published_2026_10_06": {
+   "basket": -0.238494,
+   "spy": -0.114595,
+   "names": {
+    "NVDA": -0.475297,
+    "AVGO": -0.18999,
+    "AMD": -0.346509,
+    "MSFT": -0.082834,
+    "META": -0.240959,
+    "GOOGL": -0.236971,
+    "AMZN": -0.03695,
+    "ORCL": -0.298444
+   },
+   "worst": "NVDA",
+   "best": "AMZN"
+  }
+ },
+ "favourites": [
+  {
+   "name": "Nasdaq Composite",
+   "peak": "2000-03-10",
+   "day": "2000-04-12",
+   "trading_days_from_peak": 23,
+   "below_peak": -0.253335,
+   "r3": 0.107499,
+   "r6": -0.159469,
+   "r12": -0.479676,
+   "low_3y": -0.704451
+  },
+  {
+   "name": "Nikkei 225",
+   "peak": "1989-12-29",
+   "day": "1990-04-02",
+   "trading_days_from_peak": 60,
+   "below_peak": -0.280446,
+   "r3": 0.157579,
+   "r6": -0.277844,
+   "r12": -0.061896,
+   "low_3y": -0.488987
+  }
+ ]
+}

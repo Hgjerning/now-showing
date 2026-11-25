@@ -1,0 +1,16 @@
+A NIGHT TO REMEMBER: did my pre-registered tests see the AI sell-off coming?
+
+On 6 October I published Titanic, three pre-registered tests of the AI boom. The S&P 500 closed at its high that same day. That is luck, not a forecast. By Friday 20 November SPY, the S&P 500 fund, was 11.5% lower and eight AI leaders had lost 23.8%.
+
+On Monday Nvidia's chief executive came back and the stock rose 31% in a day. My tests did not see that coming either.
+
+So this is not a forecast. It is the record: what I had signed and dated before the fall, why none of it gave a warning, and a new forward record signed on Saturday, with the market closed and before the rebound. Its first number is scored on 19 February 2027.
+
+Three questions:
+1. Did my own tests see it coming?
+2. What were they built to see, and over what horizon?
+3. What usually follows the first 10% fall?
+
+Your answer to question 1 in the comments, then check it here, with tables, code and the pre-registration: hgjerning.github.io/now-showing/a-night-to-remember
+
+#investing #AI #stockmarket #statistics
