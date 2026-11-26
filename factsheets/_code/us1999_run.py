@@ -10,7 +10,7 @@ results_us1999/ so nothing published is touched. Steps (each cached; rerun skips
 """
 import json, os, sys, pathlib
 HERE = pathlib.Path(__file__).resolve().parent; FS = HERE.parent
-P2 = FS.parent.parent / "Project2 Investment Strategy" / "reporting" / "sharadar_cache" / "backfill_1998"
+P2 = FS.parent.parent / "Project20 Investments/Project2" / "reporting" / "sharadar_cache" / "backfill_1998"
 SENS = os.environ.get("US1999_SENS", "")   # "" | "delist" | "lag"  (section 6 sensitivities)
 OUT = FS / "results_us1999" / (f"sens_{SENS}" if SENS else ""); OUT.mkdir(parents=True, exist_ok=True)
 if SENS == "delist":

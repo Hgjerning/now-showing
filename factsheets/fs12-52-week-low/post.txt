@@ -1,4 +1,4 @@
-Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A10 Free Fallin' found knives rebound only in market-wide crashes.
+Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A14 Free Fallin' found knives rebound only in market-wide crashes.
 
 I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
 

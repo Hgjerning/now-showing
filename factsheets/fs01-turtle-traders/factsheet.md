@@ -190,7 +190,7 @@ Monthly returns regressed on seven factor themes: JKP (Jensen, Kelly & Pedersen 
 - **Gate.** 12 strategy × universe cells across the two factsheets; Bonferroni two-sided 0.05/12 gives |t| > 2.87.
 - **Long/short:** negative Sharpe in 6 of 6. The negative factor alphas are significant in several universes, so this is evidence the rule *loses*, not just that it fails to win.
 - **Long-only:** higher Sharpe than the equal-weight universe in 0 of 6; alpha vs the universe passes the gate in 0 of 6. Its appeal is a lower beta (0.53–0.60) and a shallower maximum drawdown than the universe in 3 of 6, not extra return. Results lean on a few trades: single positions such as Abivax (ABVX.PA, the verified +561% trial-result week in 2025) or Rheinmetall can make a year.
-- **Index version:** Sharpe between -0.28 and 0.25. Small either way: timing the index with breakouts does not add value in a 13-year bull market, the same result as A11 *A Beautiful Mind* for moving-average rules.
+- **Index version:** Sharpe between -0.28 and 0.25. Small either way: timing the index with breakouts does not add value in a 13-year bull market, the same result as A12 *A Beautiful Mind* for moving-average rules.
 - **Probabilistic Sharpe** (Bailey & López de Prado 2012), P(true Sharpe > 0): L/S US 0.00, EU 0.04, UK 0.27, DK 0.10, SCANDI 0.00, World 0.00.
 
 ## 9. What goes wrong, and how to fix it

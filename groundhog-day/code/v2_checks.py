@@ -178,7 +178,7 @@ def main():
 
     # 6. international placebo: the same US election dates, other markets, local currency
     intl = {}
-    n225 = [os.path.join(ROOT, "data", "N225_daily_close.csv")] + [os.path.join(ROOT, "..", d, "data", "N225_daily_close.csv") for d in ("A03_Titanic_AI_Bubble", "titanic")]
+    n225 = [os.path.join(ROOT, "data", "N225_daily_close.csv")] + [os.path.join(ROOT, "..", d, "data", "N225_daily_close.csv") for d in ("A01_Titanic_AI_Bubble", "titanic")]
     srcs = {"Nikkei 225": next((f for f in n225 if os.path.exists(f)), n225[0]),
             "FTSE 100": os.path.join(ROOT, "data", "FTSE_daily_close.csv"),
             "DAX": os.path.join(ROOT, "data", "GDAXI_daily_close.csv")}

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""A01 hero card (revised 9 Oct 2026 after the stress test: poster No. 2, question tagline). No number typed in."""
+"""A02 hero card (revised 9 Oct 2026 after the stress test: poster No. 2, question tagline). No number typed in."""
 import json, os, sys
 import numpy as np, pandas as pd
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

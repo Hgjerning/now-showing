@@ -1,3 +1,5 @@
+> **Note added 14 October 2026, not part of the signed text below.** The articles were renumbered to match the Now Showing feature numbers. This pre-registration keeps the codes it was signed with: A12 is now A10 (trial IDs follow, e.g. A12-1 is now A10-1). Full map: `Articles/RENUMBERING_2026-10-14.md`.
+
 # Pre-registration: Case 31 revisited, the midterm rally: election or business cycle? (2026-10-08)
 
 **SIGNED by Henrik Gjerning, 8 October 2026, before any number in it was computed.** The ledger rows were entered at signing, before the run. Project10, theme T01. Follows `PREREGISTRATION_C31_2026-09-25.md` and the version 2 article

@@ -14,7 +14,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "..", "_shared", "lib10"))
 from panel import load_all  # noqa: E402
 from stats import nw_ols, nw_t  # noqa: E402
 CC = os.path.abspath(os.path.join(ROOT, "..", "..", ".."))
-FF = os.path.join(CC, "Project2 Investment Strategy", "reporting", "style_cache")
+FF = os.path.join(CC, "Project20 Investments/Project2", "reporting", "style_cache")
 
 def ff_monthly():
     f = pd.read_csv(os.path.join(FF, "french_us_5f_daily.csv"), index_col=0, parse_dates=True)

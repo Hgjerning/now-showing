@@ -6,6 +6,10 @@
 
 *Henrik Gjerning · Rude Investment Consulting · Project 10, Case 31 · written 25 September 2026, revised 9 October 2026, published 13 October 2026*
 
+<!-- interval:guess -->
+> **The Interval · guess before you read on.** In the 90 trading days after a US midterm election, has the S&P 500 beaten the same 90 days in other years since 1930? A) No difference · B) Yes, by about 6 points · C) It lagged. *The answer is in the next paragraph.*
+<!-- /interval -->
+
 > **Summary.** Since 1930 the S&P 500 has risen +7.6% on average in the 90 trading days after a US midterm election. Every one of those windows opens in early November, at the start of the stronger half of the year. So I registered a harder test before running anything: each midterm against **the same 90 days in the other 74 years**. I predicted it would fail. It passed: the control returned +1.9%, the gap was +5.7 pts, permutation p 0.006 against a gate of 0.025, positive in both halves. That rules out "it is just November". It does not establish a midterm effect. About half the gap goes if the five recession-year midterms are left out; it has been +2.6 pts since 2003, on five midterms; and in the 14 midterms before 1928, which this programme had never looked at, the gap is about zero (−0.1 pts). The 3 November 2026 election tests a forecast, registered here, not the history.
 
 **Statistics box.** 24 midterms vs 74 control years, 1930–2022 · gap +5.7 pts, 95% CI [+1.7, +9.6] · permutation p 0.006 (one-sided; Monte Carlo SE ±0.0007; studentized version 0.007) · gate 0.025: **C31-1 passed**, C31-2 failed · Holm within Case 31: C31-1 and C31-4 survive · programme-wide Bonferroni over 19 trials (gate 0.0026): C31-1 **not cleared**, C31-4 cleared · recession-year midterms left out: +3.2 pts, p 0.079 (reported) · C31-4 (macro controls): +7.4 pts, passed · C31-5 (1874–1926): −0.1 pts, 95% CI [−4.7, +4.4], failed · **read as:** evidence against the November explanation, not an established anomaly.
@@ -231,6 +235,31 @@ python code/make_pdfs.py        # PDFs
 ```
 
 The price files are not in the repository (Yahoo and Shiller terms). `code/download_data.py` fetches the Yahoo series; Shiller's `ie_data.xls` is saved by hand and `code/v2_download.py` derives `shiller_dividends.csv` from it; `data/SHA256SUMS` holds the hashes of the files used here. Seeds fixed (42). Python 3.12, pandas, numpy, scipy, statsmodels, matplotlib.
+
+<!-- interval:joke -->
+> **Interval.** I predicted this one would fail. The market then did what it does every four years: proved me wrong.
+<!-- /interval -->
+
+<!-- research -->
+## What I would research next
+
+**Not researched here**
+
+- Whether the gap exists in other countries' election cycles.
+- Sector detail: which industries carry the post-midterm rally.
+
+**With more or better data**
+
+- Daily index data for more markets back to the 1930s.
+- Point-in-time macro vintages (first releases) for the controls.
+
+**With better analysis**
+
+- A regime split: gold standard, Bretton Woods and floating rates.
+- Score the March 2027 forecast and keep a running record across elections.
+
+*Already taken up: No. 24, Groundhog Day sequel (C31-3, 16 March 2027).*
+<!-- /research -->
 
 ## References
 

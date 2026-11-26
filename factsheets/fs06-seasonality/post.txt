@@ -1,14 +1,17 @@
-A stock that did well relative to others in, say, March tends to do well again in March in later years, at annual lags up to 20 years. Heston & Sadka (2008) found it in US stocks 1965–2002; Keloharju, Linnainmaa & Nyberg (2016) found the same across markets and asset classes.
+Do stocks repeat their best calendar month? Heston & Sadka (2008) found that a stock that did well in March tends to do well in March again, for up to 20 years. It became one of the better-documented anomalies.
 
-I tested it on six markets, 2013–2026: US, Europe, UK, Denmark, Scandinavia and the world. Point-in-time index members, after costs.
+I tested it on blue-chip stocks, 2013–2026, in the US, the UK and continental Europe (plus Denmark, Scandinavia and a combined world book), using the index members of the time and after costs.
 
-Long/short (stocks with the highest past returns in the coming calendar month minus stocks with the lowest): -14.0% to +3.4% a year, positive in 1 of six markets. Adjusted for market beta: -13.5% to +2.0%.
-Long-only (stocks with the highest past returns in the coming calendar month): a better Sharpe than owning all the stocks equally in 1 of six markets.
+The result: it lost money in 5 of 6 markets after costs. Denmark is clearly negative; the US and Europe sit right at the edge of significance. Before costs there was no reliable edge: -0.7% a year across the US, UK and Europe (t -0.29). Most of the loss is the cost of trading the signal at about 80% turnover a month.
 
-The pre-declared fixes (beta-neutral legs, a turnover buffer, volatility targeting) took the 2020–26 holdout Sharpe from -0.89 to -0.68.
+I checked the signal itself: requiring five years of history or using only the 12-month lag gives no reliable premium in any market, and shifting it by a month gives no reliable premium either.
 
-360° view: it keeps some information beyond its nearest neighbours.
+Earlier data are mixed. In 1998–2013 the portfolio spread was also small (t +0.4; US 1999–2012 t +1.16), even though the cross-sectional slope was strongly positive (t +4.33). None of the pre-declared fixes rescued it, and none of its 12 cells passes a gate corrected for the 825 trials in this series.
 
-Full factsheet with P&L, trade records, drawdowns, factor attribution, fixes, classification and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs06-seasonality
+Has anyone seen calendar-month seasonality survive costs in large caps recently? I would like to compare notes.
+
+Not investment advice.
+
+Full factsheet with P&L, trade records, costs, sensitivity checks and the 360° view: https://hgjerning.github.io/now-showing/factsheets/fs06-seasonality
 
 #investing #quant #factorinvesting #backtesting

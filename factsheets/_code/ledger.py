@@ -154,7 +154,7 @@ def rows():
         for k, x in v["variants"].items():
             prim = k == v["primary"]
             R.append(dict(fs="US99", strategy="FS20 checklist" + (" (primary)" if prim else ""), kind="out-of-sample", test=f"CAPM alpha, US 1999-2012, {k}" + (" (pre-registered)" if prim else ""), t=x["capm"]["t"], sharpe=None, months=x["capm"]["n"]))
-        p7 = os.path.join(HERE, "..", "..", "..", "Project2 Investment Strategy", "us_oos_1999_result.json")
+        p7 = os.path.join(HERE, "..", "..", "..", "Project20 Investments/Project2", "us_oos_1999_result.json")
         if os.path.exists(p7):
             v = json.load(open(p7))["decision"]
             R.append(dict(fs="US99", strategy="Project2 US leg (live book)", kind="out-of-sample", test="alpha vs French US market, 1999-2011 (pre-registered)", t=v["t"], sharpe=v["strat_sharpe"], months=None))

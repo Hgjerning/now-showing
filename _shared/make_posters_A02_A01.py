@@ -1,6 +1,6 @@
 import os
 # -*- coding: utf-8 -*-
-"""Hero cards for A01-A03 from each article's results. No number typed in."""
+"""Hero cards for A02-A01 from each article's results. No number typed in."""
 import json
 import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,7 +11,7 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib10"))
 from poster import poster, DIM, INK, BOLD  # noqa: E402
 
-# ---------------- A01 Groundhog Day
+# ---------------- A02 Groundhog Day
 R = ROOT + "/groundhog-day/results/"
 S = json.load(open(R + "summary.json")); RB = json.load(open(R + "robustness_extra.json"))
 def reb(f):
@@ -28,12 +28,12 @@ def d1(ax, acc):
     ax.text(3, mm[90] * 100 * 0.80, "same days, every other year", color=DIM, fontsize=15)
     ax.set_xlim(0, 112); ax.set_xticks([0, 30, 60, 90]); ax.set_xticklabels(["election\nday", "+30", "+60", "+90 days"])
     ax.yaxis.set_major_formatter(__import__("matplotlib").ticker.FuncFormatter(lambda v, _: f"{v:.0f}%"))
-poster(ROOT + "/groundhog-day/figures/hero_groundhog_day.png", 3, "GROUNDHOG\nDAY",
+poster(ROOT + "/groundhog-day/figures/hero_groundhog_day.png", 2, "GROUNDHOG\nDAY",
        "The rally that comes back every four years", d1,
        f"STARRING  {S['n_midterm']} MIDTERMS  ·  {S['n_control']} ORDINARY NOVEMBERS\n10,000 SHUFFLED LABELS  ·  ONE PRE-REGISTRATION",
        f"RATED  p = {S['C31-1']['p_perm']:.3f}  ·  GATE 0.025", "SEQUEL OPENS 3 NOVEMBER 2026", accent="#f5b301")
 
-# ---------------- A02 Back to the Future
+# ---------------- A15 Back to the Future
 R2 = ROOT + "/back-to-the-future/results/"
 S2 = json.load(open(R2 + "summary.json")); wf = pd.DataFrame(S2["waterfall"])
 vals = list(wf.alpha_ann * 100) + [S2["oos"]["record_alpha"] * 100]
@@ -48,12 +48,12 @@ def d2(ax, acc):
     ax.set_xticks(x); ax.set_xticklabels(labs, fontsize=14)
     ax.set_ylim(-3, 6.8); ax.set_yticks([])
     ax.text(5.4, 6.2, "alpha a year", color=DIM, fontsize=14, ha="right")
-poster(ROOT + "/back-to-the-future/figures/hero_back_to_the_future.png", 2, "BACK TO\nTHE FUTURE",
+poster(ROOT + "/back-to-the-future/figures/hero_back_to_the_future.png", 15, "BACK TO\nTHE FUTURE",
        "My strategy beat the market by 5% a year. In the past.", d2,
        "STARRING  ONE MOMENTUM STRATEGY  ·  33 TRIALS\nSURVIVORSHIP BIAS  ·  AND 16 YEARS IT HAD NEVER SEEN",
-       f"RATED  t = {S2['record']['t_block']:.2f}  ·  BAR {S2['record']['bonferroni_t']:.2f}", "IN CINEMAS 13 OCTOBER 2026", accent="#f5b301")
+       f"RATED  t = {S2['record']['t_block']:.2f}  ·  BAR {S2['record']['bonferroni_t']:.2f}", "IN CINEMAS 26 JANUARY 2027", accent="#f5b301")
 
-# ---------------- A03 Titanic
+# ---------------- A01 Titanic
 R3 = ROOT + "/titanic/results/"
 X3 = json.load(open(R3 + "reported_extra.json")); S3 = json.load(open(R3 + "summary.json"))
 P = pd.read_csv(R3 + "rhyme_paths.csv", index_col=0)

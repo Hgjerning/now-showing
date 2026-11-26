@@ -1,5 +1,11 @@
 TITANIC: every bubble was unsinkable. Is this one?
 
+Guess before you scroll: Is today's AI rally a bubble by the textbook test, prices rising faster than any random walk can explain?
+A) Yes, clearly explosive
+B) No, not explosive right now
+C) The test can't tell
+Comment A, B or C. The answer is below.
+
 Over the last five years, an equal-weight basket of eight AI leaders (NVIDIA, Broadcom, AMD, Microsoft, Meta, Alphabet, Amazon, Oracle) rose 305%. The Nikkei rose 237% into its 1989 peak. The Nasdaq rose 460% into 2000.
 
 So I ran the test that dated both of those bubbles in real time: Phillips-Shi-Yu's GSADF, which asks whether a price is rising faster than any random walk can explain. It caught Tokyo and the Nasdaq before their peaks. (It missed 1929. My data start too late.)
@@ -11,6 +17,12 @@ Then the part that matters for a portfolio. Of 3,053 US stocks that doubled in t
 Today 3 of the 8 AI names meet that doubling test: AMD (+241%), Alphabet (+112%), Broadcom (+111%).
 
 So: a boom with bubble-sized gains, but not a bubble-shaped path. The statistics point to crash risk in individual names rather than a collapse of the whole group.
+
+Answer: B: neither the Nasdaq-100 nor the AI basket is explosive now (basket p 0.06).
+
+Every bubble was unsinkable. The iceberg never reads the prospectus.
+
+Which market do you think is the next Titanic, and why?
 
 All three tests were pre-registered before I looked. Code, tables and the pre-registration: hgjerning.github.io/now-showing/titanic
 

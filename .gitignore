@@ -96,3 +96,8 @@ __pycache__/
 /turn-turn-turn/
 /twister/
 /back-to-the-future/
+
+# Local backups and earlier drafts (added 26 Nov)
+*.bak
+**/earlier_versions/
+**/_restored_*

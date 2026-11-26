@@ -111,7 +111,7 @@ Holding the worst day fixed (down a column), the best day adds little: the sprea
 | CAPM alpha of avoiding it | {rng(min_alpha, p)}, t ≥ 2 in {nsig(N, 'min1', 1)} of 6 | {rng(lo_alpha, p)}, t ≥ 2 in {nsig(N, 'lo52', 1)} of 6 |
 | What explains it | Low risk: crashed stocks are high-beta, high-vol | Momentum: losers keep losing (correlation of returns with momentum {rc.loc['lo52', 'mom']:+.2f}) |
 
-Both speeds say the same thing once beta is removed: **the knife keeps falling relative to the market.** Only its beta makes a fast knife look like a bargain in a bull market. This matches A10 *Free Fallin'*, where knives rebounded only in market-wide crashes (0 of 3 tests passed), and it is the reverse of the "blood in the streets" folklore.
+Both speeds say the same thing once beta is removed: **the knife keeps falling relative to the market.** Only its beta makes a fast knife look like a bargain in a bull market. This matches A14 *Free Fallin'*, where knives rebounded only in market-wide crashes (0 of 3 tests passed), and it is the reverse of the "blood in the streets" folklore.
 
 ### 12.5 Verdict of the 360° view, and what is still missing
 

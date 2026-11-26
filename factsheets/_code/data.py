@@ -15,7 +15,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 # 2026-10-01: the original ../data folder lived in a cloud session; on the PC the same files are in ../_data_private.
 D = os.environ.get("FS_DATA") or next((p for p in (os.path.join(_HERE, "..", "data"), os.path.join(_HERE, "..", "_data_private"))
                                        if os.path.isdir(os.path.join(p, "pit"))), os.path.join(_HERE, "..", "data"))
-_SHARADAR = os.path.join(_HERE, "..", "..", "..", "Project2 Investment Strategy", "reporting", "sharadar_cache")
+_SHARADAR = os.path.join(_HERE, "..", "..", "..", "Project20 Investments/Project2", "reporting", "sharadar_cache")
 
 
 def _us(name):
@@ -42,7 +42,7 @@ DELIST_HAIRCUT = float(os.environ.get("FS_DELIST_HAIRCUT", "0"))
 if US_LAG != 1 or DELIST_HAIRCUT:
     CACHE += f"_lag{US_LAG}_dl{int(DELIST_HAIRCUT * 100)}"
 os.makedirs(CACHE, exist_ok=True)   # pickles are not portable between the PC and Claude's Linux sandbox
-SP500_HISTORY = os.environ.get("FS_SP500_HISTORY", os.path.join(_HERE, "..", "..", "..", "Project2 Investment Strategy", "archive",
+SP500_HISTORY = os.environ.get("FS_SP500_HISTORY", os.path.join(_HERE, "..", "..", "..", "Project20 Investments/Project2", "archive",
                                                                   "sharadar_sp500_full_history.csv"))
 START, END = os.environ.get("FS_START", "2012-01-01"), os.environ.get("FS_END", "2026-09-25")   # env: 2026-10-02 US 1999-2012 study
 EARLY = START < "2011-01-01"   # True only for the pre-registered 1999-2012 run (PREREG_US_1999_2012.md)

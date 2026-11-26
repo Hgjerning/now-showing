@@ -7,7 +7,7 @@ import specs
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
 OUT, U99 = os.path.join(ROOT, "factsheets"), os.path.join(ROOT, "results_us1999")
-P7 = os.path.join(ROOT, "..", "..", "Project2 Investment Strategy", "us_oos_1999_result.json")
+P7 = os.path.join(ROOT, "..", "..", "Project20 Investments/Project2", "us_oos_1999_result.json")
 MARK = "US, 1999–2012"
 REF = " Pre-registration, method and every result: `PREREG_US_1999_2012.md`."
 INTRO = (f"**{MARK} (pre-registered second period, run 2 October 2026).** The same rules on Sharadar's point-in-time "

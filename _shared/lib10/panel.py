@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Point-in-time monthly panel for the S&P master universe (A06-A10).
+"""Point-in-time monthly panel for the S&P master universe (A06-A14).
 
 Market cap at month-end t = latest Sharadar `marketcap` filed on or before t, scaled by the
 split-adjusted price change since that filing date (i.e. implied shares x price).

@@ -29,7 +29,7 @@
 <div><b>Status</b>Registered gate |t| &gt; 2.87 over 12 cells; every cell in the programme trial ledger</div>
 </div>
 
-> **The claim.** Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A10 Free Fallin' found knives rebound only in market-wide crashes. **What we find, 2013–2026, point-in-time universes, after costs:** the long/short earned -14.7% to -5.8% a year and was positive in none of the six; no universe passes the 2.87 gate (significantly negative in US, EU, World). The long-only book (stocks closest to their 52-week low) had a higher Sharpe than the equal-weight universe in none of the six, with alphas of -9.7% to -2.5%, none past the gate. **What goes wrong (§9):** no single dominant drag. None of the pre-declared fixes passes the gate in both windows. **Classification (appendix C):** Reversal & bottom-fishing; its returns sit closest to the momentum cluster of the signal library. **360° view (appendix D):** nearest neighbours Momentum 12-1, Residual momentum; after those neighbours and the market, nothing is left (alpha |t| < 2 everywhere): the signal is redundant.
+> **The claim.** Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A14 Free Fallin' found knives rebound only in market-wide crashes. **What we find, 2013–2026, point-in-time universes, after costs:** the long/short earned -14.7% to -5.8% a year and was positive in none of the six; no universe passes the 2.87 gate (significantly negative in US, EU, World). The long-only book (stocks closest to their 52-week low) had a higher Sharpe than the equal-weight universe in none of the six, with alphas of -9.7% to -2.5%, none past the gate. **What goes wrong (§9):** no single dominant drag. None of the pre-declared fixes passes the gate in both windows. **Classification (appendix C):** Reversal & bottom-fishing; its returns sit closest to the momentum cluster of the signal library. **360° view (appendix D):** nearest neighbours Momentum 12-1, Residual momentum; after those neighbours and the market, nothing is left (alpha |t| < 2 everywhere): the signal is redundant.
 
 *Layout revised 2 October 2026 (verdict and scorecard, Sharpe anatomy, fit with the other strategies; detail moved to the appendix). No number changed.*
 
@@ -103,7 +103,7 @@ A long/short book improves a market portfolio when its own Sharpe beats the hurd
 
 ## 5. Strategy description
 
-Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A10 Free Fallin' found knives rebound only in market-wide crashes.
+Folklore says stocks at their yearly low are bargains: 'buy low'. The academic evidence points the other way: stocks near their lows tend to keep underperforming (George & Hwang 2004), and in the series A14 Free Fallin' found knives rebound only in market-wide crashes.
 
 **Why it might work.** Folklore: mean reversion and value. Evidence: momentum and anchoring (George & Hwang 2004) predict continued weakness; losers carry high beta and volatility.
 
@@ -386,7 +386,7 @@ The rebalance log per universe is in `results/xs_FS12_record_<universe>.csv` (na
 | Nearest factor theme | momentum (4 of 6 universes), WML (2 of 6 universes) |
 | Nearest library signals (returns) | Momentum 12-1 (6 universes), Last month return (4 universes), Residual momentum (3 universes) |
 | Economic rationale | Folklore: mean reversion and value. Evidence: momentum and anchoring (George & Hwang 2004) predict continued weakness; losers carry high beta and volatility. |
-| Publication | No academic origin; George & Hwang 2004 as the counter-claim; series A10 (Free Fallin') |
+| Publication | No academic origin; George & Hwang 2004 as the counter-claim; series A14 (Free Fallin') |
 | Where it fits | In the **momentum** cluster of the library; fully explained by its neighbours. |
 
 ![Classification map](../figures/battery_map.png)

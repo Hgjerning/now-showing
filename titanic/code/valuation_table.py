@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CACHE = os.path.join(ROOT, "..", "..", "..", "Project2 Investment Strategy", "reporting", "sharadar_cache")
+CACHE = os.path.join(ROOT, "..", "..", "..", "Project20 Investments/Project2", "reporting", "sharadar_cache")
 TODAY_NAMES = ["NVDA", "AVGO", "AMD", "MSFT", "META", "GOOGL", "AMZN", "ORCL"]
 Y2K_NAMES = ["CSCO", "MSFT", "ORCL", "INTC", "NVDA"]
 Y2K_DATE = pd.Timestamp("2000-03-10")  # Nasdaq Composite peak close

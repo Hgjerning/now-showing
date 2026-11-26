@@ -1,0 +1,30 @@
+GROUNDHOG DAY, THE NIGHT BEFORE: my forecast is in the drawer
+
+Draft for Monday 2 November 2026 (the evening before the US midterms). Numbers from PREREGISTRATION_C31_3_scoring_2026-10-09.md, signed 11 October 2026.
+
+Guess before you scroll: From the close on 3 November to the close on 16 March 2027, what will the S&P 500 do?
+A) Fall
+B) Rise, but less than 3.3%
+C) Rise more than 3.3%
+Comment A, B or C. I score everyone in March, me included.
+
+Tomorrow America votes. Since 1930 the S&P 500 has gained 7.6% on average in the 90 trading days after a midterm, against 1.9% for the same days in other years.
+
+I wrote my forecast down a month ago, before anyone could know the answer:
+→ +4.7% by 16 March 2027
+→ 80% range: −9% to +18%
+→ Most of that is ordinary seasonality. The midterm part is about 3 points.
+
+How it gets scored, fixed in advance:
+→ Inside the 80% range = a hit. (That bar is low. I'm saying so now so nobody has to say it in March.)
+→ The real test: my +4.7% against a plain seasonal +1.9%. If the market ends above +3.3%, the midterm forecast wins. Below, plain seasonality wins.
+
+One election proves nothing either way. And the 14 midterms before 1928, which nobody in this project had looked at, show no gap at all. So this is one more data point for a running record, not a verdict.
+
+Not investment advice.
+
+The groundhog has been asked. Now we wait for it to come out.
+
+Article, code and the signed scoring rule: hgjerning.github.io/now-showing/groundhog-day
+
+#investing #markets #midterms #forecasting #quant

@@ -1,0 +1,28 @@
+LinkedIn post v2 (11 Nov 2026). Rewrite of post.txt: v1 (10 Nov) asked three questions and kept the answers behind the
+link; 256 impressions, 92 members, 0 reactions. v2 gives the answer in the post, uses the decile chart as the image, and
+puts the link in the first comment. Image: figures/fig2_crash_by_decile.png (fix the cut-off title first, see below).
+
+----- POST -----
+A 50-year-old balance-sheet score versus one number from the price chart. The price chart won, by a mile.
+
+I tested which number best spots next year's crashes (a fall of 40% or more) in the S&P 500, 2012–2025, with the test written down before I ran it:
+
+• Last year's volatility: 0.79
+• Piotroski F: 0.61
+• Altman Z: 0.60
+• Ohlson O: 0.53 (0.50 is a coin flip)
+
+Sort the index on volatility and the crash rate climbs like a staircase: about 1% in the calmest tenth, nearly 1 in 4 in the wildest. Sort on Ohlson's O and the line is flat.
+
+And once you know the volatility, adding all three accounting scores did not improve the ranking out of sample.
+
+The takeaway: if you want to know which stocks can fall hard, start with the price chart. It is free, it updates daily, and it beat each balance-sheet score in at least 48 of the 50 quarters with a crash.
+
+Fair caveat: Altman and Ohlson built their scores to predict bankruptcy, not price crashes. Altman's Z still beat chance, just not volatility.
+
+Do you use a distress score in your process, and what does it add that the price chart doesn't?
+
+#investing #riskmanagement #quant
+
+----- FIRST COMMENT (post it straight after) -----
+Full article with tables, code and the pre-registration (including the one prediction I got wrong): hgjerning.github.io/now-showing/under-pressure · Not investment advice.

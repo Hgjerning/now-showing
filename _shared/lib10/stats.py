@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Small, dependency-light statistics used across A06-A10."""
+"""Small, dependency-light statistics used across A06-A14."""
 import numpy as np
 from scipy import stats as st
 

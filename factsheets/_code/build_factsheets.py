@@ -284,7 +284,7 @@ Monthly returns regressed on seven factor themes: JKP (Jensen, Kelly & Pedersen 
 - **Gate.** 12 strategy × universe cells across the two factsheets; Bonferroni two-sided 0.05/12 gives |t| > {GATE}.
 - **Long/short:** negative Sharpe in {n_neg} of 6. The negative factor alphas are significant in several universes, so this is evidence the rule *loses*, not just that it fails to win.
 - **Long-only:** higher Sharpe than the equal-weight universe in {lo_beats} of 6; alpha vs the universe passes the gate in {len(lo_alpha_pass)} of 6{(' (' + ', '.join(lo_alpha_pass) + ')') if lo_alpha_pass else ''}. Its appeal is a lower beta ({min(J[R]['stats'][LO]['beta'] for R in U):.2f}–{max(J[R]['stats'][LO]['beta'] for R in U):.2f}) and a shallower maximum drawdown than the universe in {sum(J[R]['stats'][LO]['il_maxdd'] > J[R]['stats'][B]['il_maxdd'] for R in U)} of 6, not extra return. Results lean on a few trades: single positions such as Abivax (ABVX.PA, the verified +561% trial-result week in 2025) or Rheinmetall can make a year.
-- **Index version:** Sharpe between {min(J[R]['stats'][IX]['sharpe'] for R in U):.2f} and {max(J[R]['stats'][IX]['sharpe'] for R in U):.2f}. Small either way: timing the index with breakouts does not add value in a 13-year bull market, the same result as A11 *A Beautiful Mind* for moving-average rules.
+- **Index version:** Sharpe between {min(J[R]['stats'][IX]['sharpe'] for R in U):.2f} and {max(J[R]['stats'][IX]['sharpe'] for R in U):.2f}. Small either way: timing the index with breakouts does not add value in a 13-year bull market, the same result as A12 *A Beautiful Mind* for moving-average rules.
 - **Probabilistic Sharpe** (Bailey & López de Prado 2012), P(true Sharpe > 0): L/S {', '.join(f"{UN[R]} {J[R]['stats'][M]['psr0']:.2f}" for R in U)}.
 
 ## 13. Caveats
@@ -461,11 +461,11 @@ Same factor sets as FS01: JKP 7 themes (market, size, value, momentum, low risk,
 ## 9. Statistical verdict
 
 - **Gate:** |t| > {GATE} (12 cells, Bonferroni 0.05/12, two-sided).
-- **Raw L/S:** negative after costs in {neg} of 6; before costs positive in {sum(gross[R] > 0 for R in U)} of 6. The US gross spread ({p(pd.read_csv(os.path.join(RES, 'lottery_monthly_record_US.csv')).ls_gross.mean() * 12)} a year; {p(us['ann_mean'])} net, t {us['t_mean']:.2f}) is close to A15 *Viva Las Vegas* on the same corrected universe (A15-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
+- **Raw L/S:** negative after costs in {neg} of 6; before costs positive in {sum(gross[R] > 0 for R in U)} of 6. The US gross spread ({p(pd.read_csv(os.path.join(RES, 'lottery_monthly_record_US.csv')).ls_gross.mean() * 12)} a year; {p(us['ann_mean'])} net, t {us['t_mean']:.2f}) is close to A04 *Viva Las Vegas* on the same corrected universe (A04-2 re-run on S&P 500 members: −5.9%/yr gross, t −1.30, deciles on price returns; −9.2%, t −1.93 on the earlier survivor list).
 - **CAPM alpha of the L/S:** {rng_([J[R]['stats'][LS]['alpha'] for R in U], True)}, passes in {len(capm_pass)} of 6. Once beta is priced the anomaly is neither alive nor reversed: the raw result is a beta bet in disguise.
 - **Low-MAX long-only:** alpha between {p(min(J[R]['stats'][LO]['alpha'] for R in U))} and {p(max(J[R]['stats'][LO]['alpha'] for R in U))} (largest t {max(J[R]['stats'][LO]['t_alpha'] for R in U):.2f}), none past the gate; beta {min(J[R]['stats'][LO]['beta'] for R in U):.2f}–{max(J[R]['stats'][LO]['beta'] for R in U):.2f}.
 - **Probabilistic Sharpe** of the L/S, P(true Sharpe > 0): {', '.join(f"{UN[R]} {J[R]['stats'][LS]['psr0']:.2f}" for R in U)}.
-- **Publication decay.** JKP's broad US MAX factor earned +4.0%/yr before 2006 (t 1.48) and +2.0%/yr in 2012–2025 (t 0.55), from A15. McLean & Pontiff (2016) predict roughly this post-publication shrinkage.
+- **Publication decay.** JKP's broad US MAX factor earned +4.0%/yr before 2006 (t 1.48) and +2.0%/yr in 2012–2025 (t 0.55), from A04. McLean & Pontiff (2016) predict roughly this post-publication shrinkage.
 
 ## 13. Caveats
 
@@ -476,7 +476,7 @@ The non-US L/S numbers moved towards zero and the low-MAX book improved relative
 2. **Large caps only.** The effect is strongest in small, retail-held stocks; these universes are blue chips. DK (3 groups of ~6) and SCANDI (5 groups of ~12) are thin and noisy.
 3. **Equal-weighting** (except the US value-weighted robustness book). The original paper's headline is value-weighted.
 4. **Currency:** local; World mixes currencies.
-5. **Trials.** A15 carries the registered article tests (A15-1, A15-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
+5. **Trials.** A04 carries the registered article tests (A04-1, A04-2); every gated cell of this factsheet is also in the factsheet trial ledger (`TRIAL_LEDGER.md`). The fix ladder in §10 is counted inside the factsheets (7 trials, gate 0.05/7).
 
 ## 14. Academic references
 

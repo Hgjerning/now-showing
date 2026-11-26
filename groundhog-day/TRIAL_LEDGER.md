@@ -18,7 +18,7 @@ placebo, +7.6% vs +2.9%, p 0.039 (suggestive, failed the 0.0083 gate).
 
 ## Revisited trials (signed 2026-10-08, `PREREGISTRATION_C31_R_2026-10-08.md`, sha256 a646210058ad8d06… of the signed text, i.e. the file up to the line before "## Clarification 1"; the full file with its clarification hashes to 3af961cce351353d…)
 
-Entered at signing, before the run. These do not change any earlier trial. Family-wide gate across the six revisited trials (C31-4/5, A07-4/5, A12-3/4): 0.0083, reported alongside.
+Entered at signing, before the run. These do not change any earlier trial. Family-wide gate across the six revisited trials (C31-4/5, A07-4/5, A10-3/4): 0.0083, reported alongside.
 
 | # | date | hypothesis | spec | outcome |
 |---|---|---|---|---|
@@ -27,7 +27,7 @@ Entered at signing, before the run. These do not change any earlier trial. Famil
 
 Clarification 1 (2026-10-08, before any computation): C31-4 deferred until ie_data.xls (CAPE, CPI) is saved by Henrik (download blocked); C31-5 uses Shiller P from data/shiller_dividends.csv (sha256 7ca61a86…).
 
-Revisited family (6 trials, 2026-10-08): 6 run, 2 pass (C31-4 p 0.0002 and A12-3 p 0.002, both below the family gate 0.0083). A07 harness note: the run used `run_distress.py` with the `/home/claude/lib10` path insert removed, because it shadowed the point-in-time library; the corrected run reproduced the 2026-10-01 numbers (A07-1 AUC 0.598) before A07-4/5 were run.
+Revisited family (6 trials, 2026-10-08): 6 run, 2 pass (C31-4 p 0.0002 and A10-3 p 0.002, both below the family gate 0.0083). A07 harness note: the run used `run_distress.py` with the `/home/claude/lib10` path insert removed, because it shadowed the point-in-time library; the corrected run reproduced the 2026-10-01 numbers (A07-1 AUC 0.598) before A07-4/5 were run.
 
 Data for C31-4 (8 Oct 2026, recorded before any computation): `data/ie_data.xls` saved by Henrik from shillerdata.com, sha256 98a54927942e842e…, last saved by Shiller's office 5 Oct 2026.
 

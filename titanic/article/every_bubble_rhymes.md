@@ -6,6 +6,10 @@
 
 *Henrik Gjerning · Rude Investment Consulting · September 2026, updated 7 October 2026 · Project 10, Case 1*
 
+<!-- interval:guess -->
+> **The Interval · guess before you read on.** Is today's AI rally a bubble by the textbook test, prices rising faster than any random walk can explain? A) Yes, clearly explosive · B) No, not explosive right now · C) The test can't tell. *The answer is in the next paragraph.*
+<!-- /interval -->
+
 *Updated 7 October 2026 after an external review: a valuation table (section 8), a box on why these eight names, a plain reading of the basket's p value, and a clearer conclusion. No pre-registered number changed.*
 
 > **In one paragraph.** Over the last five years an equal-weight basket of eight AI leaders rose **+305%**. The Nikkei rose +237% into its 1989 peak and the Nasdaq Composite +460% into March 2000. The gains are bubble-sized. I tested whether the *shape* is bubble-like with the Phillips–Shi–Yu GSADF test, which asks whether a price rises faster than any random walk can explain. The test dates Tokyo 1989 and Nasdaq 2000 in real time; it misses 1929 only because my data start 21 months before that peak. **Pre-registered result: neither the Nasdaq-100 nor the AI basket is explosive now** (basket GSADF p = 0.06, and no explosive phase since 2021). Under this definition of a bubble, there is no evidence of an active one. That is not the same as proof that there is none. NVIDIA alone was explosive in 2024–25 and has since cooled. The second, older fact about bubbles holds strongly. Among 3,053 US stocks that doubled in two years, **48% then fell 40%** within the next two, against 38% for all stocks. Yet their average returns afterwards stayed positive. Three of the eight AI names meet that doubling test today. On valuation, the eight trade at 26 times earnings against 83 for the tech leaders of March 2000, but at the same free-cash-flow yield (1.4%), because they now spend a quarter of their sales on investment.
@@ -76,7 +80,6 @@ Robustness: with 0 lags instead of 1, and at the 95% level instead of 98.33%, th
 | Nikkei 225, peak Dec 1989 | +237% | -39% | -57% | -59% |
 | Nasdaq Composite, peak Mar 2000 | +460% | -60% | -71% | -74% |
 | AI-leaders basket, today | +305% | n/a | n/a | n/a |
-
 
 The hero chart aligns every episode at its peak and treats *today* as the AI basket's peak. That is the worst case for AI by construction, and it is what analogy charts do without saying so. On the way up the AI run sits between Tokyo and the Nasdaq. What followed the historic peaks was a 57–85% fall within three years. **The chart cannot tell you whether today is a peak. Only the explosiveness test addresses that, and it says the shape of the last three years is not the shape of 1989 or 1999.**
 
@@ -190,6 +193,31 @@ The explosiveness test looks only at prices. A fund manager's first question is 
 In size, yes: five years, +300%, between Tokyo and the Nasdaq. In shape, not yet: the statistic that dated both of those bubbles in real time does not fire on the AI basket or the Nasdaq-100 today. What the data do say is that individual names after a doubling carry crash risk of roughly one in two. That is a statement about position sizing, not about the index.
 
 Put precisely: under the GSADF definition, there is no evidence of an active bubble in the AI basket or the Nasdaq-100 today. A bubble that has not yet turned explosive, or one that sits in valuations rather than in the price path, is not ruled out. On earnings the eight are far cheaper than the leaders of 2000. On free cash flow they are not, because of the investment boom. If there is a reckoning, the place to look is the return on that investment.
+
+<!-- interval:joke -->
+> **Interval.** The bubble test caught Tokyo 1989 and Nasdaq 2000 in real time. It missed 1929 only because my data boarded too late.
+<!-- /interval -->
+
+<!-- research -->
+## What I would research next
+
+**Not researched here**
+
+- Valuation was a snapshot, not a test: the bubble test ran on prices, not on the price-to-dividend ratio the method was built for.
+- When bubbles end: an explosiveness test says a path is unusual, not when it turns.
+
+**With more or better data**
+
+- Daily data from before 1927, so the 1929 bubble can be dated in real time too.
+- A survivorship-free stock panel for the crash-rate test.
+
+**With better analysis**
+
+- Run the same test on valuation ratios (price/dividends, price/earnings) for the AI basket and the Nasdaq-100.
+- Compare cycles across markets and decades as a forecast, not a story.
+
+*Already taken up: A52 Raise the Titanic (cycle analogs as a forecast).*
+<!-- /research -->
 
 ## Reproduce
 
