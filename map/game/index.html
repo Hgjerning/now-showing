@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where does it land? · Now Showing</title>
+<meta property="og:title" content="Where does it land? A 60-second game about famous stock strategies">
+<meta property="og:description" content="19 famous stock-picking rules, 6 markets, 13 years, after costs. Guess which ones beat owning everything.">
+<style>
+:root{--bg:#fcfcfb;--ink:#111;--ink2:#5a5955;--rule:#e6e5e0;--box:#f3f2ee;--acc:#2a78d6;--good:#1f9e6e;--bad:#c9672b;--gold:#e0a020}
+@media (prefers-color-scheme: dark){:root{--bg:#1a1a19;--ink:#f4f1ea;--ink2:#c3c2b7;--rule:#3a3a38;--box:#262624;--acc:#5a9be8;--good:#3cc28f;--bad:#e08a4e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:28px;line-height:1.15;margin:8px 0 4px}.sub{color:var(--ink2);margin:0 0 18px}
+.card{background:var(--box);border-radius:10px;padding:18px;margin:14px 0}
+.btn{display:block;width:100%;text-align:left;padding:12px 14px;margin:8px 0;border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--ink);font-size:15px;cursor:pointer}
+.btn:hover{border-color:var(--acc)}.btn.pick{border:2px solid var(--acc)}.btn.right{border:2px solid var(--good)}
+.go{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:11px 18px;font-size:16px;cursor:pointer;text-decoration:none}
+.meta{font-size:13px;color:var(--ink2)}.big{font-size:40px;font-weight:700}
+.bar{position:relative;height:46px;margin:22px 0 6px;border-bottom:2px solid var(--rule)}
+.zero{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--ink)}
+.dot{position:absolute;top:14px;width:14px;height:14px;margin-left:-7px;border-radius:50%;opacity:.85}
+.med{position:absolute;top:4px;width:4px;height:36px;margin-left:-2px;background:var(--ink)}
+.ax{display:flex;justify-content:space-between;font-size:12px;color:var(--ink2)}
+.prog{font-size:13px;color:var(--ink2)}.pts{font-weight:700;color:var(--gold)}
+table{border-collapse:collapse;width:100%;font-size:14px}td{padding:4px 6px;border-bottom:1px solid var(--rule)}
+a{color:var(--acc)}
+</style></head><body><main>
+<p class="meta">NOW SHOWING · THE MAP · INTERACTIVE</p>
+<h1>Where does it land?</h1>
+<p class="sub">Famous stock-picking rules, tested the same way in six markets from 2013 to 2026, after trading costs. For each one, guess: did it beat simply owning every stock in the market equally?</p>
+<div id="app"></div>
+<p class="meta" style="margin-top:28px">Data: the Now Showing factsheet battery (19 price signals × 6 point-in-time markets, long-only top decile against the equal-weighted universe, alpha after costs). Full-sample numbers, not a forecast. Nothing here is investment advice. <a href="https://hgjerning.github.io/now-showing/">All articles</a></p>
+</main>
+<script>
+const D=[{"id": "asym", "title": "Buy stocks with small tails", "desc": "Stocks with the smallest gap between their best and worst days.", "family": "Lottery & tails", "source": "Boyer, Mitton & Vorkink 2010 (low skew)", "med": -3.5, "mk": {"US": -4.0, "Europe": -3.3, "UK": -7.0, "Denmark": -3.6, "Scandinavia": -0.8, "World": -3.0}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "beta", "title": "Buy low-beta stocks", "desc": "Stocks that move least with the market as a whole.", "family": "Low risk", "source": "Frazzini & Pedersen 2014", "med": 3.6, "mk": {"US": 3.5, "Europe": 4.5, "UK": 6.0, "Denmark": 3.0, "Scandinavia": 3.8, "World": 2.5}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs10-betting-against-beta/"}, {"id": "brk55", "title": "Buy 55-day breakouts", "desc": "The Turtle traders' rule: stocks at or near a new 55-day high.", "family": "Momentum", "source": "Turtle breakout, cross-sectional", "med": 1.7, "mk": {"US": -0.7, "Europe": 3.0, "UK": 0.4, "Denmark": 3.1, "Scandinavia": 3.2, "World": -1.1}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs01-turtle-traders/"}, {"id": "hi52", "title": "Buy stocks near their 52-week high", "desc": "Stocks trading close to their highest price of the past year.", "family": "Momentum", "source": "George & Hwang 2004", "med": 3.5, "mk": {"US": 0.1, "Europe": 7.1, "UK": 3.4, "Denmark": 6.8, "Scandinavia": 3.6, "World": 1.6}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs09-52-week-high/"}, {"id": "ivol", "title": "Buy stocks with few surprises of their own", "desc": "Stocks with the smallest moves not explained by the market.", "family": "Low risk", "source": "Ang, Hodrick, Xing & Zhang 2006", "med": 1.5, "mk": {"US": 0.2, "Europe": 3.9, "UK": 1.4, "Denmark": 2.6, "Scandinavia": 0.8, "World": 1.6}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "lo52", "title": "Buy stocks far above their 52-week low", "desc": "Stocks that have climbed furthest from their lowest price of the year.", "family": "Momentum", "source": "momentum-consistent (falling knife loses)", "med": 4.5, "mk": {"US": 4.8, "Europe": 4.2, "UK": 7.6, "Denmark": 4.5, "Scandinavia": 1.0, "World": 4.4}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs12-52-week-low/"}, {"id": "max1", "title": "Avoid lottery stocks", "desc": "Skip the stocks with the biggest one-day jump last month.", "family": "Lottery & tails", "source": "Bali, Cakici & Whitelaw 2011", "med": 0.3, "mk": {"US": 0.5, "Europe": 2.7, "UK": 2.0, "Denmark": -0.7, "Scandinavia": -0.8, "World": 0.1}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs02-lottery-max/"}, {"id": "max5", "title": "Avoid lottery stocks (5 days)", "desc": "Skip the stocks with the biggest five-day jumps last month.", "family": "Lottery & tails", "source": "Bali, Cakici & Whitelaw 2011", "med": 1.2, "mk": {"US": 0.8, "Europe": 1.8, "UK": 2.2, "Denmark": -0.4, "Scandinavia": 1.6, "World": 0.2}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "min1", "title": "Buy stocks with mild crashes", "desc": "Stocks whose worst day last month was the least bad.", "family": "Lottery & tails", "source": "low-risk convention: small crashes", "med": 1.1, "mk": {"US": 0.9, "Europe": 1.8, "UK": 1.2, "Denmark": 1.7, "Scandinavia": -2.0, "World": 0.3}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "min5", "title": "Buy stocks with mild 5-day drops", "desc": "Stocks whose worst five days last month were the least bad.", "family": "Lottery & tails", "source": "low-risk convention", "med": 1.2, "mk": {"US": 1.4, "Europe": 2.4, "UK": 2.0, "Denmark": 0.9, "Scandinavia": -2.6, "World": 1.0}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "mom", "title": "Buy last year's winners", "desc": "Stocks that rose most over the past 12 months (skipping the latest month).", "family": "Momentum", "source": "Jegadeesh & Titman 1993", "med": 5.3, "mk": {"US": 3.4, "Europe": 5.4, "UK": 8.4, "Denmark": 5.9, "Scandinavia": 0.3, "World": 5.1}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs03-momentum/"}, {"id": "r1", "title": "Buy last month's losers", "desc": "Short-term reversal: the stocks that fell most last month.", "family": "Reversal", "source": "Jegadeesh 1990", "med": -6.3, "mk": {"US": -8.2, "Europe": -9.9, "UK": -4.8, "Denmark": -3.6, "Scandinavia": -1.2, "World": -7.7}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs08-short-term-reversal/"}, {"id": "range", "title": "Buy stocks with narrow daily swings", "desc": "Stocks whose daily high-low range is smallest.", "family": "Lottery & tails", "source": "low-risk convention", "med": 1.3, "mk": {"US": 1.0, "Europe": 3.0, "UK": 1.6, "Denmark": 2.9, "Scandinavia": 0.9, "World": 0.0}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "resmom", "title": "Buy winners, market moves removed", "desc": "Last year's winners, after taking out what the whole market did.", "family": "Momentum", "source": "Blitz, Huij & Martens 2011", "med": 3.4, "mk": {"US": 3.7, "Europe": 3.8, "UK": 3.0, "Denmark": 3.4, "Scandinavia": 3.5, "World": 2.5}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs11-residual-momentum/"}, {"id": "seas", "title": "Buy this month's usual winners", "desc": "Stocks that did well in the same calendar month in past years.", "family": "Seasonality", "source": "Heston & Sadka 2008", "med": -3.9, "mk": {"US": -5.8, "Europe": -5.5, "UK": 2.5, "Denmark": -5.8, "Scandinavia": -2.3, "World": -1.8}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs06-seasonality/"}, {"id": "size", "title": "Buy small companies", "desc": "The smallest companies in each market's index.", "family": "Size", "source": "Banz 1981", "med": -1.6, "mk": {"US": -6.2, "Europe": -5.1, "UK": 6.1, "Denmark": -0.6, "Scandinavia": -1.2, "World": -2.0}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs07-size/"}, {"id": "skew", "title": "Buy stocks with low skew", "desc": "Avoid stocks whose returns come in rare big jumps.", "family": "Lottery & tails", "source": "Boyer, Mitton & Vorkink 2010", "med": -2.2, "mk": {"US": -2.5, "Europe": -1.2, "UK": -3.8, "Denmark": -5.2, "Scandinavia": -1.2, "World": -2.0}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}, {"id": "vol", "title": "Buy the calmest stocks (3 months)", "desc": "Stocks whose price moved least over the past three months.", "family": "Low risk", "source": "Blitz & van Vliet 2007", "med": 3.9, "mk": {"US": 4.2, "Europe": 4.9, "UK": 4.0, "Denmark": 3.1, "Scandinavia": 1.7, "World": 3.8}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs04-low-volatility/"}, {"id": "vol252", "title": "Buy the calmest stocks (1 year)", "desc": "Stocks whose price moved least over the past year.", "family": "Low risk", "source": "Blitz & van Vliet 2007", "med": 3.5, "mk": {"US": 3.2, "Europe": 5.2, "UK": 2.9, "Denmark": 4.8, "Scandinavia": 3.9, "World": 2.7}, "link": "https://hgjerning.github.io/now-showing/factsheets/fs13-signal-battery/"}];
+const B=[["Big loser","worse than −3% a year",-99,-3],["Loser","between −3% and 0",-3,0],["Winner","between 0 and +3%",0,3],["Big winner","better than +3% a year",3,99]];
+const ROUNDS=5;let deck=[],i=0,score=0,log=[];
+const $=s=>document.querySelector(s),app=$("#app");
+function gc(ev){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:ev,title:ev,event:true})}catch(e){}}
+function bucket(v){return B.findIndex(b=>v>=b[2]&&v<b[3])}
+function shuffle(a){for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
+const Q=new URLSearchParams(location.search);
+function clean(n){return (n||"").replace(/[^\p{L}\p{N} .'-]/gu,"").trim().slice(0,20)}
+let CHAIN=(Q.get("b")||"").split(",").map(x=>{const k=x.lastIndexOf(":");return k>0?[clean(x.slice(0,k)),Math.max(0,Math.min(100,parseInt(x.slice(k+1))||0))]:null}).filter(x=>x&&x[0]).slice(-10);
+let SEED=(Q.get("c")||"").replace(/[^a-z0-9]/gi,"").slice(0,8)||Math.random().toString(36).slice(2,8);
+function rng(str){let h=1779033703^str.length;for(let k=0;k<str.length;k++){h=Math.imul(h^str.charCodeAt(k),3432918353);h=h<<13|h>>>19}return function(){h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return((h^=h>>>16)>>>0)/4294967296}}
+function seeded(a,seed){const r=rng(seed);for(let k=a.length-1;k>0;k--){const j=Math.floor(r()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
+function board(extra){const rows=CHAIN.concat(extra?[extra]:[]).map((r,k)=>({n:r[0],s:r[1],me:extra&&k==CHAIN.length})).sort((a,b)=>b.s-a.s);
+return `<table>${rows.map((r,k)=>`<tr${r.me?' style="font-weight:700"':''}><td>${k+1}.</td><td>${r.n.replace(/</g,"")}${r.me?" (you)":""}</td><td style="text-align:right" class="pts">${r.s}</td></tr>`).join("")}</table>`}
+function start(){deck=seeded(D.slice().sort((a,b)=>a.id<b.id?-1:1),SEED).slice(0,ROUNDS);i=0;score=0;log=[];gc(CHAIN.length?"game-start-challenge":"game-start");ask()}
+function fresh(){SEED=Math.random().toString(36).slice(2,8);CHAIN=[];start()}
+function ask(){const s=deck[i];app.innerHTML=`<div class="card"><p class="prog">Round ${i+1} of ${ROUNDS} · score <span class="pts">${score}</span></p>
+<h2 style="margin:4px 0">${s.title}</h2><p>${s.desc}</p><p class="meta">Source of the idea: ${s.source}</p>
+<p><b>Your guess, after costs, against owning everything:</b></p>${B.map((b,k)=>`<button class="btn" onclick="answer(${k})"><b>${b[0]}</b> · ${b[1]}</button>`).join("")}</div>`}
+function pos(v){return Math.max(2,Math.min(98,(v+10)/20*100))}
+window.answer=function(k){const s=deck[i],t=bucket(s.med),d=Math.abs(k-t),p=d==0?20:d==1?10:0;score+=p;log.push([s.title,B[k][0],B[t][0],p]);
+const cols=v=>v>=0?"var(--good)":"var(--bad)";
+app.innerHTML=`<div class="card"><p class="prog">Round ${i+1} of ${ROUNDS} · <span class="pts">+${p}</span> · score <span class="pts">${score}</span></p>
+<h2 style="margin:4px 0">${s.title}</h2><p>${d==0?"Spot on.":d==1?"Close.":"Not this time."} You said <b>${B[k][0]}</b>; the answer is <b>${B[t][0]}</b>: a median of <b>${s.med>0?"+":""}${s.med}% a year</b> across six markets.</p>
+<div class="bar"><div class="zero" style="left:${pos(0)}%"></div>${Object.entries(s.mk).map(([m,v])=>`<div class="dot" title="${m}: ${v}%" style="left:${pos(v)}%;background:${cols(v)}"></div>`).join("")}<div class="med" style="left:${pos(s.med)}%"></div></div>
+<div class="ax"><span>−10%</span><span>owning everything</span><span>+10%</span></div>
+<table style="margin-top:10px">${Object.entries(s.mk).map(([m,v])=>`<tr><td>${m}</td><td style="text-align:right;color:${cols(v)}">${v>0?"+":""}${v}%</td></tr>`).join("")}</table>
+<p class="meta">Beat owning everything in ${Object.values(s.mk).filter(v=>v>0).length} of 6 markets. <a href="${s.link}" target="_blank">The full test</a></p>
+<button class="go" onclick="next()">${i+1<ROUNDS?"Next strategy":"See my score"}</button></div>`};
+window.next=function(){i++;if(i<ROUNDS)ask();else finish()};
+function finish(){gc("game-finish");const max=ROUNDS*20,best=(()=>{try{const b=+localStorage.getItem("ns_best")||0;if(score>b)localStorage.setItem("ns_best",score);return Math.max(b,score)}catch(e){return score}})();
+const verdict=score>=80?"Quant-level instinct.":score>=50?"Better than most fund buyers.":"The market fooled you, as it fools most of us.";
+gc("game-score-"+score);
+const top=CHAIN.length?Math.max(...CHAIN.map(r=>r[1])):null;
+const vs=CHAIN.length?(score>top?`<p><b>You top the board.</b></p>`:score==top?`<p><b>A tie for first.</b></p>`:`<p>Not top this time: the leader has ${top}.</p>`):"";
+app.innerHTML=`<div class="card"><p class="prog">Final score</p><p class="big">${score} / ${max}</p><p><b>${verdict}</b> Your best: ${best}.</p>${vs}
+<table>${log.map(r=>`<tr><td>${r[0]}</td><td>you: ${r[1]}</td><td>answer: ${r[2]}</td><td class="pts">+${r[3]}</td></tr>`).join("")}</table>
+<p style="margin-top:14px">The pattern across all 19: rules that follow <b>momentum</b> or buy <b>calm stocks</b> beat owning everything in all six markets; buying <b>last month's losers</b> and <b>small companies</b> did not. Thirteen years is one market regime, so read this as history, not a promise.</p></div>
+<div class="card"><h2 style="margin:0 0 6px">Challenge someone</h2><p>They get the <b>same five strategies</b> and join this scoreboard. The board lives only in the link, so every new player adds a line.</p>
+<p><input id="nm" maxlength="20" placeholder="Your name or initials (shown on the board)" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);font-size:15px"></p>
+<div id="bd">${board(["You",score])}</div>
+<p><a class="go" id="li" target="_blank">Challenge on LinkedIn</a> <button class="btn" style="display:inline-block;width:auto" id="cp">Copy challenge link</button></p>
+<p class="meta" id="cpm"></p>
+<p><button class="btn" onclick="fresh()">Play again (new strategies)</button></p><p class="meta">Curious what else we test? <a href="https://hgjerning.github.io/now-showing/map/tree/?utm_campaign=game" onclick="gc('game-to-tree')">Walk the whole tree</a> and vote for what comes next.</p></div>`;
+const nm=document.getElementById("nm");
+function link(){const me=clean(nm.value)||"Anonymous",ch=CHAIN.concat([[me,score]]).slice(-10);
+return `https://hgjerning.github.io/now-showing/map/game/?c=${SEED}&b=${encodeURIComponent(ch.map(r=>r[0]+":"+r[1]).join(","))}&utm_campaign=game-challenge`}
+function upd(){document.getElementById("bd").innerHTML=board([clean(nm.value)||"You",score]);document.getElementById("li").href="https://www.linkedin.com/sharing/share-offsite/?url="+encodeURIComponent(link())}
+nm.oninput=upd;upd();
+document.getElementById("li").onclick=()=>gc(CHAIN.length?"game-share-rechallenge":"game-share");
+document.getElementById("cp").onclick=()=>{const t=`I scored ${score}/${max} guessing which famous stock strategies beat the market. Same five strategies, can you beat me? ${link()}`;
+gc("game-copy-link");try{navigator.clipboard.writeText(t).then(()=>document.getElementById("cpm").textContent="Copied with a short message. Paste it in a post, a DM or an e-mail.")}catch(e){prompt("Copy this:",t)}}}
+app.innerHTML=CHAIN.length?`<div class="card"><p class="prog">YOU HAVE BEEN CHALLENGED</p><h2 style="margin:4px 0">Beat ${CHAIN[CHAIN.length-1][0].replace(/</g,"")}'s ${CHAIN[CHAIN.length-1][1]}</h2><p>Same five strategies they got. 5 rounds · about 60 seconds · no sign-up.</p>${board()}<p><button class="go" onclick="start()">Accept the challenge</button></p></div>`
+:`<div class="card"><p>5 rounds · about 60 seconds · no sign-up</p><button class="go" onclick="start()">Start</button></div>`;
+window.fresh=fresh;
+window.start=start;
+</script>
+<!-- goatcounter --><script data-goatcounter="https://hgjerning.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<!-- offer:start --><style>#ns-offer{border:2px solid #2a78d6;border-radius:10px;padding:16px 18px;margin:28px auto;max-width:760px;width:calc(100% - 32px);box-sizing:border-box;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif}#ns-offer h3{margin:0 0 6px}#ns-offer .b{display:inline-block;background:#2a78d6;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:15px;cursor:pointer}#ns-offer small{display:block;opacity:.75;margin-top:8px}#ns-offer textarea,#ns-offer select{width:100%;box-sizing:border-box;margin:6px 0;padding:8px;font:inherit;border-radius:6px;border:1px solid #bbb;background:transparent;color:inherit}</style><div id="ns-offer"><h3>Have a strategy of your own?</h3><p>We run it through the same engine as this series: six point-in-time markets, 2013 to 2026, after trading costs, pre-registered before we look. You get one factsheet showing where it lands among 19 famous rules, including how it behaves in crash months.</p>
+<button class="b" id="ns-offer-open">Test my strategy · from DKK 2,500</button>
+<div id="ns-offer-form" style="display:none"><p><b>Your rule in plain words</b> (what to buy, how often, how many stocks):</p>
+<textarea id="ns-offer-rule" rows="3" placeholder="e.g. Each month buy the 30 stocks with the highest 6-month return and dividend yield above 2%"></textarea>
+<select id="ns-offer-mkt"><option>Any / not sure</option><option>US</option><option>Europe</option><option>UK</option><option>Denmark</option><option>Scandinavia</option><option>World</option></select>
+<button class="b" id="ns-offer-send">Copy request and message me on LinkedIn</button><p id="ns-offer-msg"></p></div>
+<small>Research, not investment advice. Your rule stays confidential unless you say otherwise, and you get the honest result, which is usually that the market is hard to beat. No payment is taken here.</small></div>
+<script>(function(){var P='game',F='',U='https://www.linkedin.com/in/henrikgjerning/';
+function gc(ev){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:ev,title:ev,event:true})}catch(e){}}
+var box=document.getElementById('ns-offer'),seen=false;
+if('IntersectionObserver' in window){new IntersectionObserver(function(es,o){es.forEach(function(x){if(x.isIntersecting&&!seen){seen=true;gc('offer-seen-'+P);o.disconnect()}})}).observe(box)}
+document.getElementById('ns-offer-open').onclick=function(){gc('offer-click-'+P);if(F){window.open(F,'_blank');return}document.getElementById('ns-offer-form').style.display='block'};
+document.getElementById('ns-offer-send').onclick=function(){var r=document.getElementById('ns-offer-rule').value.trim(),m=document.getElementById('ns-offer-mkt').value;
+if(r.length<10){document.getElementById('ns-offer-msg').textContent='Describe the rule in a sentence or two first.';return}
+var t='Now Showing strategy test request\nRule: '+r+'\nMarket: '+m+'\nSeen on: '+location.pathname;
+var go=function(){gc('offer-sent-'+P);document.getElementById('ns-offer-msg').textContent='Copied. Paste it in a LinkedIn message and I will reply with a quote.';window.open(U,'_blank')};
+try{navigator.clipboard.writeText(t).then(go,function(){prompt('Copy this text:',t);go()})}catch(e){prompt('Copy this text:',t);go()}}})();</script><!-- offer:end --></body></html>

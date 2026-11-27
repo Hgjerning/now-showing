@@ -29,7 +29,7 @@ Season 3 ("Machines") from April to June 2027.
 | 17 | 26 Jan 2027 | [Back to the Future](https://hgjerning.github.io/now-showing/back-to-the-future) | Film | The seven deadly sins of backtesting (rework) | [`back-to-the-future/`](back-to-the-future/) |
 | 18 | 2 Feb 2027 | [The Good, the Bad and the Ugly](https://hgjerning.github.io/now-showing/good-bad-ugly) | Film | What did 15 theses teach us? | [`good-bad-ugly/`](good-bad-ugly/) |
 | 19 | 9 Feb 2027 | [Same Time, Next Year](https://hgjerning.github.io/now-showing/same-time-next-year) | Film | Do companies that rewrite their annual report underperform? | [`same-time-next-year/`](same-time-next-year/) |
-| 20 | 16 Feb 2027 | [The Tree of Life](https://hgjerning.github.io/now-showing/the-tree-of-life) | Film | Did a bank's 2012 accounting screen pick winners? | [`the-tree-of-life/`](the-tree-of-life/) |
+| 20 | 16 Feb 2027 | [Up in the Air](https://hgjerning.github.io/now-showing/up-in-the-air) | Film | Do the managers hired on a strong record keep winning? | [`up-in-the-air/`](up-in-the-air/) |
 | 21 | 23 Feb 2027 | [Trading Places](https://hgjerning.github.io/now-showing/trading-places) | Film | Would the Turtle rules still work? | [`trading-places/`](trading-places/) |
 | 22 | 2 Mar 2027 | [Moneyball](https://hgjerning.github.io/now-showing/moneyball) | Film | Haugen's inefficient market, after the book | [`moneyball/`](moneyball/) |
 | 23 | 9 Mar 2027 | [Dirty Dancing](https://hgjerning.github.io/now-showing/dirty-dancing) | Film | Would Darvas's box still work? | [`dirty-dancing/`](dirty-dancing/) |
