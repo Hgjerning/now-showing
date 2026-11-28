@@ -9,7 +9,7 @@ to Henrik on LinkedIn (no e-mail address is published). If a form service is set
 (Microsoft Forms, Tally, Formspree), put its URL in FORM_URL and the button goes there instead.
 GoatCounter events: offer-seen-<place>, offer-click-<place>, offer-sent-<place>.
 """
-PRICE = "from DKK 2,500"            # placeholder until Henrik sets it
+PRICE = ""   # 28 Nov 2026: no price shown until the product, data licences and the advice line are checked by a lawyer
 CONTACT_URL = "https://www.linkedin.com/in/henrikgjerning/"
 FORM_URL = ""                        # optional external form; empty = copy-and-message flow
 HEADLINE = "Have a strategy of your own?"

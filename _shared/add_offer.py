@@ -32,7 +32,7 @@ try{navigator.clipboard.writeText(t).then(go,function(){prompt('Copy this text:'
            "#ns-offer small{display:block;opacity:.75;margin-top:8px}#ns-offer textarea,#ns-offer select{width:100%;box-sizing:border-box;"
            "margin:6px 0;padding:8px;font:inherit;border-radius:6px;border:1px solid #bbb;background:transparent;color:inherit}</style>")
     return (A + css + f"""<div id="ns-offer"><h3>{e(C.HEADLINE)}</h3><p>{e(C.PITCH)}</p>
-<button class="b" id="ns-offer-open">Test my strategy · {e(C.PRICE)}</button>
+<button class="b" id="ns-offer-open">{"Test my strategy · " + e(C.PRICE) if C.PRICE else "Tell me more"}</button>
 <div id="ns-offer-form" style="display:none"><p><b>Your rule in plain words</b> (what to buy, how often, how many stocks):</p>
 <textarea id="ns-offer-rule" rows="3" placeholder="e.g. Each month buy the 30 stocks with the highest 6-month return and dividend yield above 2%"></textarea>
 <select id="ns-offer-mkt"><option>Any / not sure</option><option>US</option><option>Europe</option><option>UK</option><option>Denmark</option><option>Scandinavia</option><option>World</option></select>
