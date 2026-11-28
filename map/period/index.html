@@ -53,12 +53,12 @@ app.innerHTML=`<div class="card"><p class="prog">Round ${i+1} of ${ROUNDS} · <s
 <button class="go" onclick="next()">${i+1<ROUNDS?"Next year":"See my score"}</button></div>`};
 window.next=function(){i++;if(i<ROUNDS)ask();else finish()};
 function finish(){gc("period-finish");gc("period-score-"+score);const max=ROUNDS*20;
-const verdict=score>=80?"You have lived through a few cycles.":score>=50?"A decent memory for markets.":"Markets forget, and so do we.";
+const verdict=score>=70?"You have lived through a few cycles.":score>=40?"Better than the numbers alone: a decent memory for markets.":"Markets forget, and so do we.";
 const top=CHAIN.length?Math.max(...CHAIN.map(r=>r[1])):null;
 const vs=CHAIN.length?(score>top?`<p><b>You top the board.</b></p>`:score==top?`<p><b>A tie for first.</b></p>`:`<p>Not top this time: the leader has ${top}.</p>`):"";
 app.innerHTML=`<div class="card"><p class="prog">Final score</p><p class="big">${score} / ${max}</p><p><b>${verdict}</b></p>${vs}
 <table>${log.map(r=>`<tr><td>${r[0]}</td><td>you: ${r[1]}s</td><td class="pts">+${r[2]}</td></tr>`).join("")}</table>
-<p style="margin-top:14px">The giveaway is usually the Treasury bill rate: near zero in the 1930s, 1940s, after 2009 and in 2020-21, double digits around 1980. Without it, a year of returns rarely tells you when it was. That is a lesson in itself: the market's moods repeat.</p></div>
+<p style="margin-top:14px">The giveaway is usually the Treasury bill rate: near zero in the 1930s, 1940s, after 2009 and in 2020-21, double digits around 1980. Without it, a year of returns rarely tells you when it was. That is a lesson in itself: the market's moods repeat. (Guessing at random scores about 18; reading all six numbers well, about 45.)</p></div>
 <div class="card" id="who"><p style="margin:0 0 8px"><b>One anonymous click helps the research:</b> who are you?</p>
 <div style="display:flex;flex-wrap:wrap;gap:6px">${["Professional investor","Private investor","Student or academic","Other"].map((w,k)=>`<button class="btn" style="width:auto;display:inline-block;margin:0" onclick="who(${k},this)">${w}</button>`).join("")}</div>
 <p class="meta" style="margin:8px 0 0">No name, no cookie: only a count. Your guesses above are counted the same way, so we can write about what readers believe against what the data says.</p></div><div class="card"><h2 style="margin:0 0 6px">Challenge someone</h2><p>They get the <b>same five years</b> and join this scoreboard. The board lives only in the link.</p>
@@ -76,7 +76,7 @@ document.getElementById("cp").onclick=()=>{const t=`I scored ${score}/${max} gue
 gc("period-copy-link");try{navigator.clipboard.writeText(t).then(()=>document.getElementById("cpm").textContent="Copied with a short message. Paste it in a post, a DM or an e-mail.")}catch(e){prompt("Copy this:",t)}}}
 app.innerHTML=CHAIN.length?`<div class="card"><p class="prog">YOU HAVE BEEN CHALLENGED</p><h2 style="margin:4px 0">Beat ${CHAIN[CHAIN.length-1][0].replace(/</g,"")}'s ${CHAIN[CHAIN.length-1][1]}</h2><p>Same five years they got. About 90 seconds, no sign-up.</p>${board()}<p><button class="go" onclick="start()">Accept the challenge</button></p></div>`
 :`<div class="card"><p>5 rounds · about 90 seconds · no sign-up</p><p class="meta">Scoring: the right decade 20 points, one decade off 10.</p><button class="go" onclick="start()">Start</button></div>`;
-window.who=function(k,b){gc("g2-who-"+["pro","private","student","other"][k]+"-"+(score>=80?"high":score>=50?"mid":"low"));document.getElementById("who").innerHTML='<p style="margin:0"><b>Thank you.</b> Counted, anonymously.</p>'};window.start=start;window.fresh=fresh;
+window.who=function(k,b){gc("g2-who-"+["pro","private","student","other"][k]+"-"+(score>=70?"high":score>=40?"mid":"low"));document.getElementById("who").innerHTML='<p style="margin:0"><b>Thank you.</b> Counted, anonymously.</p>'};window.start=start;window.fresh=fresh;
 </script>
 <script>window.goatcounter={path:function(){var q=new URLSearchParams(location.search),u=q.get("utm_campaign");return location.pathname+(u?"?utm_campaign="+encodeURIComponent(u):"")}};</script>
 <!-- goatcounter --><script data-goatcounter="https://hgjerning.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
